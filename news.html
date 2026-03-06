@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最新情報・コラム一覧 | BuildMate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Noto Sans JP"', 'sans-serif'], serif: ['"Noto Serif JP"', 'serif'] },
+                    colors: { wa: { bg: '#f4f0e6', text: '#3b342f', brand: '#2f5d50', gray: '#7a7067' } },
+                    borderRadius: { 'wa': '12px' }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background-color: #f4f0e6; color: #3b342f; letter-spacing: 0.05em; }
+        .modal-enter { opacity: 0; transform: scale(0.95); }
+        .modal-enter-active { opacity: 1; transform: scale(1); transition: opacity 300ms, transform 300ms; }
+        .modal-exit { opacity: 1; transform: scale(1); }
+        .modal-exit-active { opacity: 0; transform: scale(0.95); transition: opacity 200ms, transform 200ms; }
+        .prose h4 { margin-top: 2em; margin-bottom: 1em; }
+        .prose p { margin-bottom: 1.5em; line-height: 1.8; }
+        .prose ul { margin-bottom: 1.5em; }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
+        <div class="max-w-[1024px] mx-auto px-6 h-[64px] flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="bg-wa-brand text-white p-1.5 rounded"><i data-lucide="home" class="w-4 h-4"></i></div>
+                <span class="text-[18px] font-serif font-bold text-wa-brand">BuildMate</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+                <a href="index.html" class="hover:text-wa-brand">ホーム</a>
+                
+                <a href="diagnosis.html" class="hover:text-wa-brand flex items-center gap-1 font-bold">
+                    <i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断
+                </a>
+                
+                <a href="index.html" class="text-wa-gray hover:text-wa-brand">トップへ戻る</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-24 px-6">
+        <div class="max-w-[1024px] mx-auto">
+            
+            <div class="text-center mb-16">
+                <span class="text-wa-brand font-bold text-sm tracking-widest uppercase mb-3 block">Archives</span>
+                <h1 class="text-3xl md:text-4xl font-serif font-bold text-wa-text">最新情報・コラム一覧</h1>
+                <p class="mt-4 text-wa-gray">工務店経営に役立つAI活用術や、業界の最新トレンドを定期的にお届けしています。</p>
+            </div>
+
+            <div id="news-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div>
+
+            <div class="mt-16 flex justify-center gap-2">
+                <span class="w-10 h-10 flex items-center justify-center bg-wa-brand text-white rounded font-bold">1</span>
+                <span class="w-10 h-10 flex items-center justify-center border border-wa-gray/30 text-wa-text rounded hover:bg-white transition-colors cursor-pointer">2</span>
+                <span class="w-10 h-10 flex items-center justify-center border border-wa-gray/30 text-wa-text rounded hover:bg-white transition-colors cursor-pointer">3</span>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-wa-text text-white/80 py-8 text-center text-xs">
+        <p>Copyright © 2025 BuildMate. All rights reserved.</p>
+    </footer>
+
+    <div id="article-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+        <div id="modal-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+        <div id="modal-panel" class="relative bg-white rounded-wa w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl modal-enter flex flex-col">
+            <button onclick="closeModal()" class="absolute top-4 right-4 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors z-10 backdrop-blur-md">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div class="h-64 md:h-80 bg-gray-200 w-full flex-shrink-0 relative">
+                <img id="modal-image" src="" alt="" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute bottom-6 left-6 md:left-10 md:bottom-10 right-6 text-white">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span id="modal-tag" class="bg-wa-accent text-white text-xs font-bold px-3 py-1 rounded-full"></span>
+                        <span id="modal-date" class="text-sm font-mono opacity-90"></span>
+                    </div>
+                    <h3 id="modal-title" class="text-2xl md:text-3xl font-serif font-bold leading-tight shadow-black drop-shadow-md"></h3>
+                </div>
+            </div>
+            <div class="p-8 md:p-12">
+                <div id="modal-body" class="prose prose-lg text-wa-text leading-loose text-base md:text-lg opacity-90 max-w-none"></div>
+            </div>
+            <div class="p-6 border-t border-wa-border bg-wa-bg text-center sticky bottom-0">
+                <button onclick="closeModal()" class="px-10 py-3 bg-wa-brand text-white rounded-md text-sm font-bold hover:bg-wa-brandHover transition-colors shadow-md w-full md:w-auto">
+                    記事を閉じる
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // ★★★ 記事データをすべて復活させました ★★★
+        const categoryImages = {
+            "AI活用": "images/ai.jpg", 
+            "アフター": "images/after.jpg",
+            "事例": "images/case.jpg", 
+            "業務効率化": "images/work.jpg", 
+            "DX": "images/dx.jpg", 
+            "採用": "images/recruit.jpg", 
+            "営業": "images/sales.jpg"  
+        };
+        
+        const defaultImage = "https://via.placeholder.com/800x450/cccccc/888888?text=No+Image";
+
+        // 元の記事データを完全復元
+        const allArticles = [
+            { title: "月8万円の削減！工務店がAI導入で最初にやるべき3つのこと", tag: "AI活用", content: `<p class="font-bold text-xl mb-6 text-wa-brand">なぜ、あの工務店は残業ゼロなのか？</p><p>多くの工務店様から「AIって難しそう」という声をいただきます。しかし、実は<strong>無料のChatGPTやGoogleのツールを使うだけで、事務作業の時間は半分以下にできる</strong>のです。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">1. ブログ執筆の自動化</h4><p>「ネタがない」と悩む必要はありません。AIに「30代の子育て世代に向けた、自然素材の家のメリットを3つ挙げて」と頼むだけで、プロ並みの記事構成が5秒で完成します。</p><ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>キーワード選定から構成案までAIが担当</li><li>誤字脱字のチェックも一瞬</li></ul>` },
+            { title: "「売りっぱなし」と言わせない。AIで書く心のこもった手紙術", tag: "アフター", content: `<p class="font-bold text-xl mb-6 text-wa-brand">デジタルの力で、アナログな温もりを。</p><p>引き渡し後の定期点検、ハガキ一通で済ませていませんか？AIを使えば、お客様一人ひとりの家族構成や趣味に合わせた、温かみのある手紙を数分で作成できます。</p><div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-6 italic text-wa-gray">「先日のお子様の入学式はいかがでしたか？」</div><p>こうした一言を添えるだけで、お客様との関係性は劇的に変わります。</p>` },
+            { title: "【事例】商談時間が半分に。即時パース作成で成約率アップ", tag: "事例", content: `<p>「イメージが湧かない」という理由でお客様が迷っている時間、もったいないですよね。画像生成AIを活用すれば、商談中にその場でパース画像を作成可能です。</p><ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>「もう少し明るい色で」に即座に対応</li><li>家具を配置したイメージも一瞬で生成</li></ul>` },
+            { title: "職人の移動時間を30%削減する「出面管理アプリ」の作り方", tag: "業務効率化", content: `<p>現場ごとの職人の配置や稼働時間の管理、まだホワイトボードですか？スマホアプリを導入することで、職人は直行直帰が可能になります。</p><p>ノーコードツールを使えば、低コストかつ短期間で自社専用のアプリを作ることが可能です。</p>` },
+            { title: "クレームを資産に変える！アフターメンテナンスの自動化戦略", tag: "アフター", content: `<p>攻めのアフターメンテナンスこそが、次の紹介受注を生みます。過去の修繕データをAIに学習させることで、故障予測が可能になります。</p>` },
+            { title: "2026年問題に備える。建設DXの最初の一歩とは", tag: "DX", content: `<p>職人の高齢化と人手不足が加速する2026年問題。ベテランの技を動画に残し、AIでマニュアル化することで、若手の育成スピードを上げましょう。</p>` },
+            { title: "Z世代の職人を採用するためのSNS活用メソッド", tag: "採用", content: `<p>求人媒体にお金をかけるよりも、TikTokやInstagramのリール動画が採用に直結する時代です。AIを使って「バズる」台本を作り、スマホ1台で撮影しましょう。</p>` },
+            { title: "紙の日報はもう古い？音声入力で終わらせる現場報告", tag: "業務効率化", content: `<p>現場から疲れて帰ってきた後に書く日報は苦痛です。LINEに向かって喋るだけで、AIが日報フォーマットに変換し自動保存する仕組みを作りましょう。</p>` },
+            { title: "補助金申請の書類作成をChatGPTで半自動化する方法", tag: "AI活用", content: `<p>補助金の申請書類作成は複雑ですが、過去の採択事例をAIに読み込ませることで、作業時間は劇的に短縮できます。</p>` },
+            { title: "リフォーム営業の成約率を上げる「即レス」の仕組みづくり", tag: "営業", content: `<p>顧客は「返信が早い業者」を選びます。問い合わせメールの内容をAIが解析し、最適な返信文案を自動生成してスマホに通知するシステムで、一次対応のスピードを上げましょう。</p>` },
+            { title: "【失敗談】高いシステムを導入しても現場が使ってくれない理由", tag: "事例", content: `<p>多機能すぎるシステムは定着しません。成功の鍵は、現場の職人が普段使い慣れている「LINE」を入り口にすることです。</p>` },
+            { title: "現場監督の「言ったつもり」をなくすタスク管理術", tag: "業務効率化", content: `<p>口頭指示をスマホに吹き込むだけで、AIがテキスト化し、関係者全員のタスクリストに自動登録します。</p>` },
+            { title: "ニュースレター作成時間を3日から30分に短縮する技", tag: "アフター", content: `<p>季節のネタや地域情報をAIに提案させ、構成案を作らせます。あとは現場の写真を数枚はめ込むだけで、温かみのある紙面が完成します。</p>` },
+            { title: "見積書作成のミスをAIチェックで防ぐ方法", tag: "AI活用", content: `<p>過去の類似工事のデータと照らし合わせ、単価や数量に異常値がないかをAIが自動検知します。</p>` },
+            { title: "Googleマップ活用で現場へのルート作成を完全自動化", tag: "DX", content: `<p>複数の現場を巡回する際、住所リストを読み込ませるだけで、AIが最適なルートを算出してくれるツールの活用法をご紹介します。</p>` },
+            { title: "「施主様向けLINE」で満足度を高める進捗報告のコツ", tag: "アフター", content: `<p>写真に対して「今日は断熱材が入りました。これで冬も暖かく過ごせますよ」といった気の利いた一言をAIに生成させましょう。</p>` },
+            { title: "電子契約の導入で印紙代と郵送コストをゼロにする", tag: "業務効率化", content: `<p>法改正により建設業界でも電子契約が一般的になりました。収入印紙代、製本の手間、郵送代を削減しましょう。</p>` },
+            { title: "キャッチコピーひとつで反響が変わる！AIコピーライティング術", tag: "営業", content: `<p>チラシやWebサイトの「見出し」は命です。ターゲットを入力するだけで、AIが刺さるキャッチコピー案を50個出してくれます。</p>` },
+            { title: "現場の「ヒヤリハット」情報を共有し安全意識を高める仕組み", tag: "DX", content: `<p>ヒヤリハットをスマホ写真で報告し、AIが集計・分析。安全大会の資料まで自動生成することで、安全管理の質が変わります。</p>` },
+            { title: "工務店ホームページのSEO対策、AIならここまでできる", tag: "AI活用", content: `<p>「地域名 + 注文住宅」で検索上位を狙うため、キーワード選定から記事作成までをAIと二人三脚で行いましょう。</p>` },
+            { title: "経理担当が泣いて喜ぶ！レシート読み取りと仕訳の自動化", tag: "業務効率化", content: `<p>レシートをスマホで撮影するだけで、AIが日付・金額・勘定科目を読み取って会計ソフトに連動させます。</p>` },
+            { title: "【対談】アナログ一筋だった社長がDXに目覚めたきっかけ", tag: "事例", content: `<p>「パソコンは苦手」と言っていたベテラン社長が、孫と遊ぶ時間を確保するためにスマホアプリを導入し、利益率を改善させた実話です。</p>` },
+            { title: "若手社員が育つ！AIを使ったロールプレイング研修", tag: "採用", content: `<p>営業の練習相手をAIが務めます。様々な性格のお客様をAIに演じさせ、チャットや音声で商談練習を行いましょう。</p>` },
+            { title: "在庫管理の適正化！現場の余り材を無駄にしない方法", tag: "業務効率化", content: `<p>倉庫の余り材を写真で共有し、「使える在庫リスト」を可視化することで、無駄な発注を防ぎます。</p>` },
+            { title: "OB訪問の予定調整をAIカレンダーで自動化する", tag: "アフター", content: `<p>空き時間を提示し、お客様に選んでもらうだけの予約システムを導入すれば、日程調整のコストはゼロになります。</p>` },
+            { title: "現場の清掃状況を画像解析でスコアリングしてみた", tag: "DX", content: `<p>現場写真をAIが解析し、「整理整頓度」を点数化。ゲーム感覚で職人のモチベーションを上げましょう。</p>` },
+            { title: "会議時間を半分に。ファシリテーターとしてのAI活用", tag: "業務効率化", content: `<p>AIに会議音声を聞かせ、議論の整理と議事録作成を任せることで、生産性の高い会議運営が可能になります。</p>` },
+            { title: "VR内覧会で遠方のお客様ともスムーズに商談する", tag: "営業", content: `<p>360度カメラとVRツールを使えば、遠方のお客様にも、まるでその場にいるような案内が可能です。</p>` },
+            { title: "協力業者とのFAXやり取りを卒業するステップ", tag: "DX", content: `<p>スマホ発注を導入することで、「言った言わない」がなくなり、履歴が残るメリットを協力業者にも伝えましょう。</p>` },
+            { title: "BuildMateが考える、10年後の工務店の姿", tag: "AI活用", content: `<p>AIは敵ではなく、面倒な作業を肩代わりしてくれるパートナーです。人が「人らしい仕事」に集中できる未来を作りましょう。</p>` }
+        ];
+
+        const container = document.getElementById('news-grid');
+        const today = new Date();
+        const minDate = new Date('2025-06-11');
+        let currentDate = new Date(today);
+        let generatedArticles = [];
+
+        for (let i = 0; i < allArticles.length; i++) {
+            const dateStr = currentDate.getFullYear() + '.' + String(currentDate.getMonth() + 1).padStart(2, '0') + '.' + String(currentDate.getDate()).padStart(2, '0');
+            const data = allArticles[i];
+            
+            // 画像URLを categoryImages から取得
+            const imgSrc = categoryImages[data.tag] || defaultImage;
+            
+            generatedArticles.push({
+                title: data.title, tag: data.tag, date: dateStr, content: data.content, image: imgSrc
+            });
+
+            const html = `
+                <article onclick="openModal(${i})" class="bg-white rounded-wa overflow-hidden shadow-sm hover:shadow-xl transition-all cursor-pointer group border border-gray-100 flex flex-col h-full transform hover:-translate-y-1">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden flex-shrink-0">
+                        <img src="${imgSrc}" alt="${data.title}" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" onerror="this.src='${defaultImage}'">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+                        <span class="absolute top-4 left-4 bg-wa-brand text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md z-10">
+                            ${data.tag}
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <time class="text-xs text-wa-gray block mb-2 font-mono">${dateStr}</time>
+                        <h3 class="text-lg font-bold text-wa-text leading-snug group-hover:text-wa-brand transition-colors mb-3">
+                            ${data.title}
+                        </h3>
+                        <p class="text-sm text-wa-gray line-clamp-2 opacity-80 mt-auto">
+                            この記事では、工務店の現場で実際に起きている課題を解決するための...
+                            <span class="text-wa-brand text-xs font-bold ml-1">詳細を見る</span>
+                        </p>
+                    </div>
+                </article>
+            `;
+            container.insertAdjacentHTML('beforeend', html);
+
+            const randomGap = Math.floor(Math.random() * 8) + 2; 
+            currentDate.setDate(currentDate.getDate() - randomGap);
+            if (currentDate < minDate) currentDate = new Date(minDate);
+        }
+
+        const modal = document.getElementById('article-modal');
+        const backdrop = document.getElementById('modal-backdrop');
+        const panel = document.getElementById('modal-panel');
+        const mTitle = document.getElementById('modal-title');
+        const mTag = document.getElementById('modal-tag');
+        const mDate = document.getElementById('modal-date');
+        const mBody = document.getElementById('modal-body');
+        const mImage = document.getElementById('modal-image');
+
+        function openModal(index) {
+            const article = generatedArticles[index];
+            mTitle.innerHTML = article.title;
+            mTag.textContent = article.tag;
+            mDate.textContent = article.date;
+            mBody.innerHTML = article.content;
+            mImage.src = article.image;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0');
+                backdrop.classList.add('opacity-100');
+                panel.classList.remove('modal-enter');
+                panel.classList.add('modal-enter-active');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            backdrop.classList.remove('opacity-100');
+            backdrop.classList.add('opacity-0');
+            panel.classList.remove('modal-enter-active');
+            panel.classList.add('modal-exit-active');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                panel.classList.remove('modal-exit-active');
+                panel.classList.add('modal-enter');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal || e.target === backdrop) closeModal();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>無料相談・お問い合わせ | BuildMate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        serif: ['"Noto Serif JP"', 'serif'],
+                    },
+                    colors: {
+                        wa: {
+                            bg: '#f4f0e6', paper: '#ffffff', text: '#3b342f', gray: '#7a7067',
+                            brand: '#2f5d50', brandHover: '#24473d', accent: '#c75d2c', accentHover: '#ad4e22',
+                            border: '#e6e0d4', input: '#f9f8f4',
+                        }
+                    },
+                    borderRadius: { 'wa': '12px' },
+                    boxShadow: { 'soft': '0 4px 20px -2px rgba(59, 52, 47, 0.08)' }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background-color: #f4f0e6; color: #3b342f; -webkit-font-smoothing: antialiased; letter-spacing: 0.02em; }
+        .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.03); }
+        .form-input:focus { outline: 2px solid #2f5d50; outline-offset: -1px; background-color: white; }
+        
+        /* 読み込み中のローディングスピナー */
+        .spinner { border: 3px solid rgba(255,255,255,0.3); border-radius: 50%; border-top: 3px solid white; width: 20px; height: 20px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-[1024px] mx-auto px-6">
+            <div class="flex justify-between items-center h-[64px]">
+                <a href="index.html" class="flex items-center gap-2 group z-50 hover:opacity-80 transition-opacity">
+                    <div class="bg-wa-brand text-white p-1.5 rounded"><i data-lucide="home" class="w-4 h-4"></i></div>
+                    <span class="text-[18px] font-serif font-bold tracking-wide text-wa-brand">BuildMate</span>
+                </a>
+                <nav class="hidden md:flex items-center gap-8 text-[14px] font-medium text-wa-text">
+                    <a href="index.html" class="hover:text-wa-brand transition-colors">トップへ戻る</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-24 px-6">
+        <div class="max-w-[700px] mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-wa-accent font-bold text-sm tracking-widest uppercase mb-3 block">Contact</span>
+                <h1 class="text-3xl md:text-4xl font-serif font-bold text-wa-text mb-6">無料相談・お問い合わせ</h1>
+                <p class="text-wa-gray leading-relaxed">
+                    導入のご相談、お見積もり、その他ご不明な点など<br>
+                    お気軽にお問い合わせください。
+                </p>
+            </div>
+
+            <div class="bg-white p-8 md:p-12 rounded-wa shadow-soft border border-wa-border">
+                <form id="contactForm" class="space-y-8">
+                    
+                    <div>
+                        <label for="company" class="block text-sm font-bold text-wa-text mb-2">貴社名 <span class="text-wa-gray font-normal text-xs ml-2">（個人の方は「個人」とご記入ください）</span></label>
+                        <input type="text" id="company" name="company" placeholder="例）株式会社〇〇工務店" class="form-input w-full bg-wa-input border border-wa-border rounded-md px-4 py-3 text-wa-text placeholder-wa-gray/50 transition-colors">
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-bold text-wa-text mb-2">お名前 <span class="text-wa-accent text-xs ml-1">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="例）建築 太郎" class="form-input w-full bg-wa-input border border-wa-border rounded-md px-4 py-3 text-wa-text placeholder-wa-gray/50 transition-colors">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-bold text-wa-text mb-2">メールアドレス <span class="text-wa-accent text-xs ml-1">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="example@buildmate.jp" class="form-input w-full bg-wa-input border border-wa-border rounded-md px-4 py-3 text-wa-text placeholder-wa-gray/50 transition-colors">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-wa-text mb-4">ご相談内容（複数選択可）</label>
+                        <div class="space-y-3">
+                            <label class="flex items-center p-3 border border-wa-border rounded-md cursor-pointer hover:bg-wa-bg transition-colors">
+                                <input type="checkbox" name="category" value="efficiency" class="w-4 h-4 text-wa-brand border-gray-300 focus:ring-wa-brand accent-wa-brand">
+                                <span class="ml-3 text-sm text-wa-text">事務作業・日報の効率化について</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-wa-border rounded-md cursor-pointer hover:bg-wa-bg transition-colors">
+                                <input type="checkbox" name="category" value="marketing" class="w-4 h-4 text-wa-brand border-gray-300 focus:ring-wa-brand accent-wa-brand">
+                                <span class="ml-3 text-sm text-wa-text">SNS集客・ブログ自動化について</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-wa-border rounded-md cursor-pointer hover:bg-wa-bg transition-colors">
+                                <input type="checkbox" name="category" value="plan" class="w-4 h-4 text-wa-brand border-gray-300 focus:ring-wa-brand accent-wa-brand">
+                                <span class="ml-3 text-sm text-wa-text">料金プラン・導入費用について</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-wa-border rounded-md cursor-pointer hover:bg-wa-bg transition-colors">
+                                <input type="checkbox" name="category" value="other" class="w-4 h-4 text-wa-brand border-gray-300 focus:ring-wa-brand accent-wa-brand">
+                                <span class="ml-3 text-sm text-wa-text">その他</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-bold text-wa-text mb-2">詳細・ご質問など <span class="text-wa-gray font-normal text-xs ml-2">（任意）</span></label>
+                        <textarea id="message" name="message" rows="5" placeholder="現在のお悩みや、導入したい時期などがございましたらご記入ください。" class="form-input w-full bg-wa-input border border-wa-border rounded-md px-4 py-3 text-wa-text placeholder-wa-gray/50 transition-colors"></textarea>
+                    </div>
+
+                    <div class="text-center pt-2">
+                        <label class="flex items-center justify-center gap-2 cursor-pointer group">
+                            <input type="checkbox" required class="w-4 h-4 text-wa-brand border-gray-300 rounded focus:ring-wa-brand accent-wa-brand">
+                            <span class="text-sm text-wa-gray group-hover:text-wa-text transition-colors">
+                                <a href="privacy.html" target="_blank" class="underline hover:text-wa-brand">プライバシーポリシー</a> に同意する
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" id="submitButton" class="w-full md:w-auto px-12 py-4 bg-wa-accent hover:bg-wa-accentHover text-white font-bold rounded-md shadow-lg transform hover:scale-[1.02] transition-all duration-200 flex items-center justify-center gap-2 mx-auto disabled:opacity-50 disabled:cursor-not-allowed">
+                            <span id="btnText">この内容で送信する</span>
+                            <div id="btnSpinner" class="spinner hidden"></div>
+                            <i data-lucide="send" id="btnIcon" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+            
+            <div class="mt-12 text-center text-wa-gray text-sm">
+                <p class="mb-2">お電話でのお問い合わせ</p>
+                <p class="text-2xl font-serif font-bold text-wa-text tracking-widest">090-0000-0000</p>
+                <p class="mt-1 text-xs">（受付時間：平日 9:00〜18:00）</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-wa-text text-white/80 border-t border-wa-text py-12 text-[13px] text-center">
+        <div class="max-w-[980px] mx-auto px-6">
+            <p class="mb-4 text-white/60">Copyright © 2025 BuildMate. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // GASのURL（元のファイルに入っていたあなたのURL）
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyqSGGkmblxxyqcbfViaeTpVKTsfIv5Rkl3-xeBXjOwQ0_9KRURXBUWLKC0_ONAbD2e/exec'; 
+
+        const form = document.getElementById('contactForm');
+        const submitButton = document.getElementById('submitButton');
+        const btnText = document.getElementById('btnText');
+        const btnSpinner = document.getElementById('btnSpinner');
+        const btnIcon = document.getElementById('btnIcon');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault(); 
+
+            submitButton.disabled = true;
+            btnText.textContent = '送信中...';
+            btnSpinner.classList.remove('hidden');
+            btnIcon.classList.add('hidden');
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
+                .then(response => {
+                    window.location.href = 'thanks.html';
+                })
+                .catch(error => {
+                    alert('送信に失敗しました。時間をおいて再度お試しください。');
+                    console.error('Error!', error.message);
+                    submitButton.disabled = false;
+                    btnText.textContent = 'この内容で送信する';
+                    btnSpinner.classList.add('hidden');
+                    btnIcon.classList.remove('hidden');
+                });
+        });
+    </script>
+</body>
+</html>

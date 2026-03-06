@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用規約 | BuildMate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        serif: ['"Noto Serif JP"', 'serif'],
+                    },
+                    colors: {
+                        wa: {
+                            bg: '#f4f0e6', paper: '#ffffff', text: '#3b342f', gray: '#7a7067',
+                            brand: '#2f5d50', brandHover: '#24473d', accent: '#c75d2c', border: '#e6e0d4',
+                        }
+                    },
+                    borderRadius: { 'wa': '12px' }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-wa-bg text-wa-text antialiased">
+    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-wa-border">
+        <div class="max-w-[980px] mx-auto px-6 h-[64px] flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-1 font-bold text-[15px] text-wa-brand hover:underline">
+                <i data-lucide="chevron-left" class="w-5 h-5"></i> トップに戻る
+            </a>
+            <span class="font-serif font-bold text-lg text-wa-text">BuildMate</span>
+            <div class="w-20"></div>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-24 px-6 max-w-[800px] mx-auto">
+        <h1 class="text-3xl font-serif font-bold mb-10 text-wa-text border-b-2 border-wa-accent inline-block pb-2">利用規約</h1>
+        
+        <div class="bg-white p-8 md:p-12 rounded-wa shadow-sm border border-wa-border leading-relaxed space-y-10">
+            <p class="text-sm text-wa-gray">この利用規約（以下、「本規約」といいます。）は、BuildMate（以下、「当社」といいます。）が提供するAI活用コンサルティング及び関連サービス（以下、「本サービス」といいます。）の利用条件を定めるものです。登録ユーザーの皆さま（以下、「ユーザー」といいます。）には、本規約に従って、本サービスをご利用いただきます。</p>
+
+            <section>
+                <h2 class="text-xl font-bold mb-4 text-wa-brand flex items-center gap-2">
+                    <span class="inline-block w-1 h-6 bg-wa-brand rounded-full"></span> 第1条（適用）
+                </h2>
+                <ol class="list-decimal pl-5 space-y-2 text-sm md:text-base">
+                    <li>本規約は、ユーザーと当社との間の本サービスの利用に関わる一切の関係に適用されるものとします。</li>
+                    <li>当社は本サービスに関し、本規約のほか、ご利用にあたってのルール等、各種の定め（以下、「個別規定」といいます。）をすることがあります。これら個別規定はその名称のいかんに関わらず、本規約の一部を構成するものとします。</li>
+                    <li>本規約の規定が前項の個別規定の規定と矛盾する場合には、個別規定において特段の定めなき限り、個別規定の規定が優先されるものとします。</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold mb-4 text-wa-brand flex items-center gap-2">
+                    <span class="inline-block w-1 h-6 bg-wa-brand rounded-full"></span> 第2条（AIサービスの特性と免責）
+                </h2>
+                <div class="bg-wa-bg/50 p-5 rounded-lg border border-wa-brand/20">
+                    <p class="font-bold text-wa-accent mb-2 text-sm"><i data-lucide="alert-triangle" class="w-4 h-4 inline mr-1"></i> 重要事項</p>
+                    <ol class="list-decimal pl-5 space-y-3 text-sm md:text-base">
+                        <li>本サービスにおいて提供される成果物（AI診断結果、プロンプト生成物、コンサルティングレポート等を含みますがこれらに限りません）は、人工知能技術（AI）を用いて生成されたものが含まれます。</li>
+                        <li>当社は、本サービスによる生成物の正確性、完全性、最新性、合法性、特定の目的への適合性について、いかなる保証も行いません。<strong>特に、建築基準法その他の法令適合性や、生成された文章の事実確認については、必ずユーザー自身の責任において最終確認を行うものとします。</strong></li>
+                        <li>本サービスの利用により、ユーザーまたは第三者に損害（AIの誤回答に起因する業務上の損失、信用毀損等を含む）が生じた場合であっても、当社は、故意または重過失がある場合を除き、一切の責任を負わないものとします。</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold mb-4 text-wa-brand flex items-center gap-2">
+                    <span class="inline-block w-1 h-6 bg-wa-brand rounded-full"></span> 第3条（知的財産権の帰属）
+                </h2>
+                <ol class="list-decimal pl-5 space-y-2 text-sm md:text-base">
+                    <li>本サービスにおいて当社が提供するプロンプト（指示文）、テンプレート、ノウハウ、学習データ等に関する著作権その他一切の知的財産権は、当社または当社にライセンスを許諾している者に帰属します。</li>
+                    <li>ユーザーは、本サービスを通じて得られたプロンプトやノウハウを、<strong>自社の業務遂行の範囲内でのみ</strong>利用することができます。</li>
+                    <li><strong>ユーザーが、当社の書面による承諾なく、提供されたプロンプトやノウハウを第三者に販売、譲渡、公開（ブログやSNSへの転載を含む）、再配布することは、有償・無償を問わず固く禁じます。</strong></li>
+                </ol>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold mb-4 text-wa-brand flex items-center gap-2">
+                    <span class="inline-block w-1 h-6 bg-wa-brand rounded-full"></span> 第4条（禁止事項）
+                </h2>
+                <p>ユーザーは、本サービスの利用にあたり、以下の行為をしてはなりません。</p>
+                <ul class="list-disc pl-5 mt-4 space-y-2 text-sm md:text-base bg-wa-bg p-5 rounded-lg">
+                    <li>法令または公序良俗に違反する行為</li>
+                    <li>当社のサービスの運営を妨害するおそれのある行為</li>
+                    <li>本サービスにかかるサーバーやネットワークの機能を破壊したり、妨害したりする行為</li>
+                    <li>本サービスによって得られた情報を商業的に利用する行為（当社の競合となるサービスの開発・提供を含む）</li>
+                    <li>当社のサービスの他のユーザーまたは第三者に不利益、損害、不快感を与える行為</li>
+                    <li>他社または第三者の著作権、商標権、プライバシー権等を侵害する、またはそのおそれのあるデータをAIに入力する行為</li>
+                    <li>反社会的勢力に対して直接または間接に利益を供与する行為</li>
+                    <li>その他、当社が不適切と判断する行為</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold mb-4 text-wa-brand flex items-center gap-2">
+                    <span class="inline-block w-1 h-6 bg-wa-brand rounded-full"></span> 第5条（利用料金および支払方法）
+                </h2>
+                <ol class="list-decimal pl-5 space-y-2 text-sm md:text-base">
+                    <li>ユーザーは、本サービスの有料部分の対価として、当社が別途定め、本ウェブサイトに表示する利用料金を、当社が指定する方法により支払うものとします。</li>
+                    <li>ユーザーが利用料金の支払を遅滞した場合には、ユーザーは年14.6％の割合による遅延損害金を支払うものとします。</li>
+                    <li>本サービス（コンサルティング、デジタルコンテンツ提供等）の性質上、<strong>サービス提供開始後または納品後の返金はいかなる理由があっても応じられません。</strong></li>
+                </ol>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold mb-4 text-wa-brand flex items-center gap-2">
+                    <span class="inline-block w-1 h-6 bg-wa-brand rounded-full"></span> 第6条（サービス提供の停止等）
+                </h2>
+                <p>当社は、以下のいずれかの事由があると判断した場合、ユーザーに事前に通知することなく本サービスの全部または一部の提供を停止または中断することができるものとします。</p>
+                <ul class="list-disc pl-5 mt-4 space-y-1 text-sm md:text-base">
+                    <li>本サービスにかかるコンピュータシステムの保守点検または更新を行う場合</li>
+                    <li>地震、落雷、火災、停電または天災などの不可抗力により、本サービスの提供が困難となった場合</li>
+                    <li>コンピュータまたは通信回線等が事故により停止した場合</li>
+                    <li>外部のAIサービス（OpenAI等）の仕様変更、停止、終了に伴い、本サービスの継続が困難となった場合</li>
+                    <li>その他、当社が本サービスの提供が困難と判断した場合</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold mb-4 text-wa-brand flex items-center gap-2">
+                    <span class="inline-block w-1 h-6 bg-wa-brand rounded-full"></span> 第7条（準拠法・裁判管轄）
+                </h2>
+                <p>本規約の解釈にあたっては、日本法を準拠法とします。本サービスに関して紛争が生じた場合には、当社の所在地を管轄する地方裁判所を専属的合意管轄とします。</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-wa-text text-white/80 border-t border-wa-text py-12 text-center text-xs">
+        Copyright © 2025 BuildMate. All rights reserved.
+    </footer>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

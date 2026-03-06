@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【工務店専用】実務特化型AIプロンプト集 | BuildMate</title>
+    <meta name="description" content="現場を知るプロが設計した、工務店業務専用のChatGPTプロンプト集。コピーして使うだけで業務効率化と集客力アップを実現します。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        serif: ['"Noto Serif JP"', 'serif'],
+                    },
+                    colors: {
+                        wa: {
+                            bg: '#f4f0e6',      /* 生成り色 */
+                            paper: '#ffffff',   /* 白 */
+                            text: '#3b342f',    /* 焦げ茶 */
+                            gray: '#595048',    /* 灰茶 */
+                            brand: '#2f5d50',   /* 鉄色（深緑） */
+                            brandHover: '#24473d',
+                            accent: '#c75d2c',  /* 柿渋色 */
+                            accentHover: '#ad4e22',
+                            border: '#e6e0d4',  /* 薄ベージュ */
+                            highlight: '#fff9c4', /* 黄色マーカー */
+                            code: '#2d2d2d',    /* コード背景色 */
+                        }
+                    },
+                    borderRadius: { 'wa': '12px' }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background-color: #f4f0e6; color: #3b342f; -webkit-font-smoothing: antialiased; letter-spacing: 0.03em; }
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        /* コピー完了時のアニメーション */
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .btn-clicked { animation: pop 0.2s ease; background-color: #2f5d50 !important; border-color: #2f5d50 !important; color: white !important; }
+        /* プロンプトエリアのスクロールバー */
+        pre::-webkit-scrollbar { height: 8px; }
+        pre::-webkit-scrollbar-track { background: #4b5563; border-radius: 4px; }
+        pre::-webkit-scrollbar-thumb { background: #9ca3af; border-radius: 4px; }
+        pre::-webkit-scrollbar-thumb:hover { background: #d1d5db; }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-[1024px] mx-auto px-6">
+            <div class="flex justify-between items-center h-[72px]">
+                <a href="index.html" class="flex items-center gap-3 group z-50 hover:opacity-80 transition-opacity">
+                    <div class="bg-wa-brand text-white w-8 h-8 flex items-center justify-center rounded font-serif font-bold">B</div>
+                    <span class="text-lg font-serif font-bold tracking-wide text-wa-brand">BuildMate</span>
+                </a>
+                
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-wa-text">
+                    <a href="index.html" class="hover:text-wa-brand transition-colors">ホーム</a>
+                    <a href="services.html" class="hover:text-wa-brand transition-colors">サービス・効果</a>
+                    
+                    <a href="diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1 font-bold">
+                        <i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断
+                    </a>
+
+                    <a href="gift.html" class="text-wa-brand border-b-2 border-wa-brand transition-colors">特典プレゼント</a>
+                    <a href="contact.html" class="bg-wa-brand text-white px-5 py-2.5 rounded-md hover:bg-wa-brandHover transition-colors shadow-sm">無料相談</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-36 pb-24 px-6">
+        <section class="text-center mb-20">
+            <span class="inline-block px-4 py-1.5 rounded-full text-wa-accent text-xs font-bold mb-6 border border-wa-accent/30 tracking-widest bg-white shadow-sm">SPECIAL GIFT</span>
+            <h1 class="text-3xl md:text-5xl font-serif font-bold text-wa-text mb-8 leading-tight">
+                工務店業務を劇的に変える<br>
+                「超・実践型」AIプロンプト集
+            </h1>
+            <p class="text-wa-gray max-w-2xl mx-auto leading-loose text-base md:text-lg">
+                AIはただの「検索ツール」ではありません。<br class="hidden md:inline">
+                正しい指示（プロンプト）を与えれば、あなたの最高の<strong>「相（AI）棒」</strong>になります。<br>
+                <br>
+                BuildMateが実際の現場で使用している<br class="hidden md:inline">
+                <strong>「成果に直結する設計図」</strong>を特別に公開します。
+            </p>
+        </section>
+
+        <div class="max-w-[800px] mx-auto space-y-16">
+
+            <div class="bg-white p-8 md:p-10 rounded-wa shadow-lg border border-wa-border relative">
+                <div class="flex items-center gap-4 mb-6 border-b border-wa-border pb-4">
+                    <div class="w-12 h-12 bg-wa-bg rounded-xl flex items-center justify-center text-wa-brand shadow-inner">
+                        <i data-lucide="pen-tool" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-wa-accent tracking-wider">SEO × 共感</span>
+                        <h2 class="text-2xl font-bold text-wa-text font-serif">01. ペルソナ共鳴型ブログ記事</h2>
+                    </div>
+                </div>
+
+                <div class="bg-wa-highlight/30 p-5 rounded-lg border border-yellow-200 mb-6">
+                    <p class="text-sm text-wa-text leading-relaxed">
+                        <strong class="text-wa-brand block mb-2 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> プロの視点</strong>
+                        単なる現場報告では集客できません。「30代・子育て中」などの<strong>ターゲット（ペルソナ）の不安</strong>をAIに憑依させ、それを解消する構成にすることで、読者の共感と信頼を勝ち取ります。
+                    </p>
+                </div>
+                
+                <div class="bg-wa-code text-gray-100 p-5 rounded-lg border border-wa-border mb-4 shadow-inner relative group">
+                    <span class="absolute top-2 right-2 text-xs text-gray-500 font-mono">Prompt</span>
+                    <pre class="whitespace-pre-wrap text-sm font-mono overflow-x-auto leading-relaxed" id="prompt-1"># 命令書
+あなたは「地域で愛される工務店のベテラン広報担当」かつ「Webマーケティングのプロ」です。
+以下の【現場情報】と【ターゲット設定】を元に、読者の感情を揺さぶり、問い合わせに繋がるブログ記事を作成してください。
+
+# 入力情報
+【現場情報】
+・場所：[ 大阪府〇〇市 ]
+・工程：[ 上棟式 ]
+・天気：[ 雲ひとつない晴天 ]
+・出来事：[ お施主様のご主人が柱に『家族が笑顔で過ごせますように』と筆入れをした ]
+・技術的アピール：[ 耐震等級3＋制震ダンパーを採用し、地震への不安を払拭 ]
+
+【ターゲット設定（ペルソナ）】
+・属性：[ 30代後半、子育て世代、共働き ]
+・悩み：[ 「家を建てたいが、地震や災害が怖い」「ローンの支払いが不安」 ]
+・求めているもの：[ 豪華な設備よりも、家族を守れる安心感と、作り手の顔が見える信頼感 ]
+
+# 制約条件
+・トーン＆マナー：親しみやすく、かつ専門家としての頼りがいがある口調。絵文字は適度に使用（✨🏠😊など）。
+・構成案：
+  1. 【導入】：季節の挨拶＋現場の情景描写（五感に訴える表現で）。
+  2. 【共感】：家づくり中の読者が抱える「不安」への寄り添い。
+  3. 【解決】：今回の現場（耐震等級3など）がいかにその不安を解消するか、専門用語を使わずに解説。
+  4. 【感動】：お施主様の筆入れエピソードを、ストーリーテリングの手法でドラマチックに描写。
+  5. 【結び】：見学会への自然な誘導。
+
+# 出力形式
+タイトル：クリックしたくなる30文字以内の魅力的なタイトル
+本文：見出し（H2, H3）を適切に使い、読みやすく構成</pre>
+                </div>
+                <button onclick="copyToClipboard('prompt-1', this)" class="w-full py-4 border-2 border-wa-brand text-wa-brand font-bold rounded-md hover:bg-wa-brand hover:text-white transition-all flex items-center justify-center gap-2 shadow-sm">
+                    <i data-lucide="copy" class="w-5 h-5"></i> このプロンプトをコピーする
+                </button>
+            </div>
+
+            <div class="bg-white p-8 md:p-10 rounded-wa shadow-lg border border-wa-border relative">
+                <div class="flex items-center gap-4 mb-6 border-b border-wa-border pb-4">
+                    <div class="w-12 h-12 bg-wa-bg rounded-xl flex items-center justify-center text-wa-brand shadow-inner">
+                        <i data-lucide="instagram" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-wa-accent tracking-wider">保存数UP</span>
+                        <h2 class="text-2xl font-bold text-wa-text font-serif">02. 心理学的キャプション生成</h2>
+                    </div>
+                </div>
+
+                <div class="bg-wa-highlight/30 p-5 rounded-lg border border-yellow-200 mb-6">
+                    <p class="text-sm text-wa-text leading-relaxed">
+                        <strong class="text-wa-brand block mb-2 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> プロの視点</strong>
+                        綺麗な写真だけでは、今のインスタは伸びません。ユーザーが「後で見返したい」と思う<strong>有益情報（Tips）</strong>を盛り込み、アルゴリズムに評価される投稿文を作ります。
+                    </p>
+                </div>
+                
+                <div class="bg-wa-code text-gray-100 p-5 rounded-lg border border-wa-border mb-4 shadow-inner relative">
+                    <span class="absolute top-2 right-2 text-xs text-gray-500 font-mono">Prompt</span>
+                    <pre class="whitespace-pre-wrap text-sm font-mono overflow-x-auto leading-relaxed" id="prompt-2"># 命令書
+あなたは「住宅系Instagramのカリスマインフルエンサー」です。
+以下の【写真内容】から、ユーザーが思わず「保存」したくなる、有益で情緒的なキャプション（投稿文）を作成してください。
+
+# 入力情報
+【写真内容】
+[ 無垢材（オーク）の床、吹き抜けのあるリビング、鉄骨階段、シーリングファン ]
+
+【訴求ポイント】
+[ 「冬でも裸足で暖かい」という機能性と、「カフェのような空間」というデザイン性の両立 ]
+
+# 作成ルール
+1. **フック（1行目）**：
+   画像を見なくても続きが読みたくなる、問いかけや衝撃的な一言（例：「冬の朝、布団から出るのが楽しみになりました」など）。
+2. **ボディ（本文）**：
+   単なる説明ではなく、「この家に住んだらどんな暮らしができるか」というライフスタイルを提案。
+3. **お役立ち情報（Tips）**：
+   「無垢床のお手入れ方法」や「シーリングファンの節電効果」など、プロならではの豆知識を箇条書きで追加。
+4. **ハッシュタグ選定**：
+   投稿ボリュームが「10万件以上」「1万〜10万件」「1万件未満」のものをそれぞれ5個ずつ、計15個提案。
+
+# 出力例
+【キャプション】
+（ここにフックと本文）
+.
+💡プロが教える！家づくり豆知識
+（ここにTips）
+.
+【ハッシュタグ】
+#（ハッシュタグリスト）</pre>
+                </div>
+                <button onclick="copyToClipboard('prompt-2', this)" class="w-full py-4 border-2 border-wa-brand text-wa-brand font-bold rounded-md hover:bg-wa-brand hover:text-white transition-all flex items-center justify-center gap-2 shadow-sm">
+                    <i data-lucide="copy" class="w-5 h-5"></i> このプロンプトをコピーする
+                </button>
+            </div>
+
+            <div class="bg-white p-8 md:p-10 rounded-wa shadow-lg border border-wa-border relative">
+                <div class="flex items-center gap-4 mb-6 border-b border-wa-border pb-4">
+                    <div class="w-12 h-12 bg-wa-bg rounded-xl flex items-center justify-center text-wa-brand shadow-inner">
+                        <i data-lucide="mail-check" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-wa-accent tracking-wider">成約率向上</span>
+                        <h2 class="text-2xl font-bold text-wa-text font-serif">03. 顧客心理に基づく追客メール</h2>
+                    </div>
+                </div>
+
+                <div class="bg-wa-highlight/30 p-5 rounded-lg border border-yellow-200 mb-6">
+                    <p class="text-sm text-wa-text leading-relaxed">
+                        <strong class="text-wa-brand block mb-2 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> プロの視点</strong>
+                        定型文のメールは読まれません。会話の中からお客様の<strong>「ホットボタン（最も関心のある悩み）」</strong>を特定し、そこにピンポイントで価値提供することで、返信率を劇的に高めます。
+                    </p>
+                </div>
+                
+                <div class="bg-wa-code text-gray-100 p-5 rounded-lg border border-wa-border mb-4 shadow-inner relative">
+                    <span class="absolute top-2 right-2 text-xs text-gray-500 font-mono">Prompt</span>
+                    <pre class="whitespace-pre-wrap text-sm font-mono overflow-x-auto leading-relaxed" id="prompt-3"># 命令書
+あなたは「成約率No.1の住宅営業マン」です。
+完成見学会に来場されたお客様へ、その日のうちに送る「熱量が高まるお礼メール」を作成してください。
+
+# 入力情報
+【お客様名】
+[ 〇〇様 ]
+
+【会話のログ（ホットボタン）】
+[ 「今の賃貸は収納が少なくて散らかる」と嘆いていた。「家事動線が良い家に住みたい」と何度も言っていた。土地はまだ決まっていない。 ]
+
+【次回アポイントのゴール】
+[ 来週開催の「間取り・収納セミナー」への参加誘導、または無料の土地探し相談 ]
+
+# 構成のポイント
+1. **個別化**：定型文ではなく、会話の内容（収納の悩み）に具体的に触れ、「私の話を聞いてくれていた」と感じさせる。
+2. **共感と肯定**：「散らかってしまうのは家のせいです」と肯定し、お客様の罪悪感を払拭する。
+3. **価値提供（ギブ）**：売り込みではなく、「収納計画の失敗事例集（PDF）」などの特典を渡すフリをして、セミナーの有益性を伝える。
+4. **限定性**：「〇〇様のために席を確保しておきたい」というニュアンスで、特別感を演出する。
+
+# 出力トーン
+礼儀正しいが、堅苦しすぎない「良き相談相手」の距離感。</pre>
+                </div>
+                <button onclick="copyToClipboard('prompt-3', this)" class="w-full py-4 border-2 border-wa-brand text-wa-brand font-bold rounded-md hover:bg-wa-brand hover:text-white transition-all flex items-center justify-center gap-2 shadow-sm">
+                    <i data-lucide="copy" class="w-5 h-5"></i> このプロンプトをコピーする
+                </button>
+            </div>
+
+            <div class="bg-white p-8 md:p-10 rounded-wa shadow-lg border border-wa-border relative">
+                <div class="flex items-center gap-4 mb-6 border-b border-wa-border pb-4">
+                    <div class="w-12 h-12 bg-wa-bg rounded-xl flex items-center justify-center text-wa-brand shadow-inner">
+                        <i data-lucide="clipboard-list" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-wa-accent tracking-wider">リスク管理</span>
+                        <h2 class="text-2xl font-bold text-wa-text font-serif">04. リスク予知付き工事日報</h2>
+                    </div>
+                </div>
+
+                <div class="bg-wa-highlight/30 p-5 rounded-lg border border-yellow-200 mb-6">
+                    <p class="text-sm text-wa-text leading-relaxed">
+                        <strong class="text-wa-brand block mb-2 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> プロの視点</strong>
+                        日報は記録ではなく「トラブル防止」のためにあります。乱雑なメモを整えるだけでなく、施工管理の視点で<strong>「明日起こりうるリスク」</strong>をAIに予言させ、先手を打てるようにします。
+                    </p>
+                </div>
+                
+                <div class="bg-wa-code text-gray-100 p-5 rounded-lg border border-wa-border mb-4 shadow-inner relative">
+                    <span class="absolute top-2 right-2 text-xs text-gray-500 font-mono">Prompt</span>
+                    <pre class="whitespace-pre-wrap text-sm font-mono overflow-x-auto leading-relaxed" id="prompt-4"># 命令書
+以下の【乱雑なメモ】を整理し、社内共有用の「工事日報」を作成してください。
+さらに、あなたは「熟練の現場監督」として、この報告内容から想定される【潜在的リスク】と【明日の対策】をアドバイスしてください。
+
+# 入力情報（乱雑なメモ）
+[ A邸のクロス貼り終わった。明日はクリーニング入る予定。B邸は材料（フローリング）が届かなくて大工さん半日待機になっちゃった、メーカーに電話したら明日朝一で届くらしい。あとC邸の近隣のおばあちゃんから「工事車両が邪魔で通れない」って言われたから謝っておいた。 ]
+
+# 出力フォーマット
+--------------------------------------------------
+【工事日報】
+■ 日付：{今日の日付}
+■ 現場進捗まとめ
+（現場ごとに整理して記述）
+
+■ 発生したトラブル・クレーム
+（事実関係を明確に記述）
+--------------------------------------------------
+【⚠️ AI現場監督からのリスク予知・アドバイス】
+1. **工程管理リスク**：
+   （B邸の材料遅延による今後の工程への影響と、挽回策の提案）
+2. **近隣対応リスク**：
+   （C邸のクレームに対する、単なる謝罪以上の恒久対策と、全現場への周知事項の提案）
+--------------------------------------------------</pre>
+                </div>
+                <button onclick="copyToClipboard('prompt-4', this)" class="w-full py-4 border-2 border-wa-brand text-wa-brand font-bold rounded-md hover:bg-wa-brand hover:text-white transition-all flex items-center justify-center gap-2 shadow-sm">
+                    <i data-lucide="copy" class="w-5 h-5"></i> このプロンプトをコピーする
+                </button>
+            </div>
+
+            <div class="bg-white p-8 md:p-10 rounded-wa shadow-lg border border-wa-border relative">
+                <div class="flex items-center gap-4 mb-6 border-b border-wa-border pb-4">
+                    <div class="w-12 h-12 bg-wa-bg rounded-xl flex items-center justify-center text-wa-brand shadow-inner">
+                        <i data-lucide="megaphone" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-wa-accent tracking-wider">GDTの法則</span>
+                        <h2 class="text-2xl font-bold text-wa-text font-serif">05. 心理トリガーキャッチコピー</h2>
+                    </div>
+                </div>
+
+                <div class="bg-wa-highlight/30 p-5 rounded-lg border border-yellow-200 mb-6">
+                    <p class="text-sm text-wa-text leading-relaxed">
+                        <strong class="text-wa-brand block mb-2 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> プロの視点</strong>
+                        感覚で言葉を選んでいては反響は取れません。コピーライティングの鉄則<strong>「GDTの法則（Goal, Desire, Teaser）」</strong>をAIに強制し、人間の本能を論理的に刺激する言葉を生み出します。
+                    </p>
+                </div>
+                
+                <div class="bg-wa-code text-gray-100 p-5 rounded-lg border border-wa-border mb-4 shadow-inner relative">
+                    <span class="absolute top-2 right-2 text-xs text-gray-500 font-mono">Prompt</span>
+                    <pre class="whitespace-pre-wrap text-sm font-mono overflow-x-auto leading-relaxed" id="prompt-5"># 命令書
+あなたは「伝説のセールスコピーライター」です。
+以下の【物件の特徴】と【ターゲット】に対し、以下の3つの心理トリガーを用いたキャッチコピーを計6案（各2案）作成してください。
+
+# 入力情報
+【物件の特徴】
+[ 30坪の平屋、コの字型の中庭がありカーテン不要、家事動線が10歩以内で完結する ]
+
+【ターゲット】
+[ 子供が独立し、これからの人生を夫婦でゆったり楽しみたい50代夫婦。掃除や階段の上り下りが億劫になってきた層。 ]
+
+# 心理トリガー（作成ルール）
+1. **G (Goal：目標)**：「老後の不安がなくなる」「家事が劇的に楽になる」という理想未来を提示。
+2. **D (Desire：欲望)**：「人から羨ましがられたい」「センスが良いと思われたい」という本音を刺激。
+3. **T (Teaser：焦らし)**：「平屋は高いと思っていませんか？」「実は、2階建てより〇〇です」と常識を覆して興味を惹く。
+
+# 出力形式
+それぞれのコピーに対し、「なぜこの言葉が50代に刺さるのか」という【解説】を一言添えてください。</pre>
+                </div>
+                <button onclick="copyToClipboard('prompt-5', this)" class="w-full py-4 border-2 border-wa-brand text-wa-brand font-bold rounded-md hover:bg-wa-brand hover:text-white transition-all flex items-center justify-center gap-2 shadow-sm">
+                    <i data-lucide="copy" class="w-5 h-5"></i> このプロンプトをコピーする
+                </button>
+            </div>
+
+        </div>
+
+        <div class="max-w-[800px] mx-auto mt-24 bg-white p-10 md:p-14 rounded-wa shadow-xl border-t-4 border-wa-brand text-center relative overflow-hidden">
+            <div class="relative z-10">
+                <h3 class="text-2xl font-serif font-bold text-wa-text mb-6">
+                    「すごい…でも、使いこなせるか不安」<br class="hidden md:inline">
+                    と思いませんでしたか？
+                </h3>
+                <p class="text-wa-gray mb-8 leading-loose text-justify md:text-center text-lg">
+                    このプロンプトは、私たちが数千回のテストを経て作成した「基本の型」です。<br>
+                    実際の業務で100%の成果を出すためには、<br class="hidden md:inline">
+                    <strong>貴社の「強み」や「過去の施工事例」をAIに追加学習させる</strong>必要があります。
+                </p>
+                <div class="space-y-4">
+                    <p class="font-bold text-wa-brand">
+                        「もっとウチの会社用にカスタマイズしたい」<br>
+                        「毎回コピペするのも面倒だから、自動化したい」
+                    </p>
+                    <p class="text-sm text-wa-gray">
+                        そう思われた方は、ぜひBuildMateの無料相談をご利用ください。<br>
+                        あなたの会社だけの「専属AI広報・AI現場監督」を構築します。
+                    </p>
+                </div>
+                <div class="mt-10">
+                    <a href="contact.html" class="inline-flex items-center justify-center px-12 py-5 bg-wa-accent hover:bg-wa-accentHover text-white rounded-md font-bold text-xl transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1 gap-3">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                        無料相談でAI構築について聞く
+                    </a>
+                </div>
+            </div>
+            
+            <div class="absolute top-0 right-0 w-64 h-64 bg-wa-brand/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-wa-accent/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+        </div>
+
+    </main>
+
+    <footer class="bg-wa-text text-white/80 border-t border-wa-text py-16 text-sm text-center">
+        <div class="max-w-[980px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-white/60">
+                    Copyright © 2025 BuildMate. All rights reserved.
+                </div>
+                <div class="flex gap-8 text-white">
+                    <a href="privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                    <a href="terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                    <a href="law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function copyToClipboard(elementId, btnElement) {
+            // テキストを取得
+            const textToCopy = document.getElementById(elementId).innerText;
+            
+            // クリップボードに書き込み
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                // ボタンの見た目を変更
+                const originalContent = btnElement.innerHTML;
+                btnElement.innerHTML = '<i data-lucide="check" class="w-5 h-5"></i> コピーしました！';
+                btnElement.classList.add('btn-clicked');
+                lucide.createIcons();
+
+                // 2秒後に元に戻す
+                setTimeout(() => {
+                    btnElement.innerHTML = originalContent;
+                    btnElement.classList.remove('btn-clicked');
+                    lucide.createIcons();
+                }, 2000);
+            }).catch(err => {
+                console.error('コピーに失敗しました', err);
+                alert('コピーに失敗しました。手動でコピーしてください。');
+            });
+        }
+    </script>
+</body>
+</html>

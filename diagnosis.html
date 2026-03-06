@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工務店AI経営診断 | BuildMate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Noto Sans JP"', 'sans-serif'], serif: ['"Noto Serif JP"', 'serif'] },
+                    colors: { wa: { bg: '#f4f0e6', paper: '#ffffff', text: '#3b342f', gray: '#7a7067', brand: '#2f5d50', brandHover: '#24473d', accent: '#c75d2c', border: '#e6e0d4' } },
+                    borderRadius: { 'wa': '12px' }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+    <style>iframe { width: 100%; min-height: 2400px; border: none; }</style>
+</head>
+<body class="bg-wa-bg text-wa-text font-sans antialiased">
+    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-wa-border">
+        <div class="max-w-[1024px] mx-auto px-6 h-[64px] flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-wa-brand font-serif font-bold text-xl"><div class="bg-wa-brand text-white p-1 rounded">B</div>BuildMate</a>
+            <nav class="hidden md:flex items-center gap-8 font-medium">
+                <a href="index.html" class="hover:text-wa-brand">ホーム</a>
+                <a href="services.html" class="hover:text-wa-brand">サービス・効果</a>
+                <a href="diagnosis.html" class="text-wa-brand border-b-2 border-wa-brand flex items-center gap-1 font-bold"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+                <a href="gift.html" class="hover:text-wa-brand">特典プレゼント</a>
+                <a href="contact.html" class="px-5 py-2 bg-wa-brand text-white rounded-md hover:bg-wa-brandHover">無料相談</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-24 px-6">
+        <section class="text-center mb-12">
+            <span class="inline-block px-3 py-1 rounded text-wa-brand text-xs font-bold mb-4 border border-wa-brand tracking-widest bg-white">FREE DIAGNOSIS</span>
+            <h1 class="text-3xl font-serif font-bold mb-6">工務店経営 AI活用ポテンシャル診断</h1>
+            <p class="text-wa-gray">20の質問に答えるだけで、御社の「隠れ損失額」を算出します。</p>
+        </section>
+        <div class="max-w-[800px] mx-auto bg-white rounded-wa shadow-lg overflow-hidden border border-wa-border">
+            <div class="h-2 bg-wa-brand w-full"></div>
+            <div class="p-0 md:p-4">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe8eUVoFx8V6PplqW2OqD7PLIrmHB-xXyfwSEtlWgwA03BXdQ/viewform?embedded=true" width="100%" height="2400" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-wa-text text-white/80 border-t border-wa-text py-12 text-[13px] text-center">
+        Copyright © 2025 BuildMate. All rights reserved.
+    </footer>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

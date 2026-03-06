@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>工務店専門のAI活用・業務効率化コンサルティング | BuildMate</title>
+    <meta name="description" content="元・施工管理の代表が、中小工務店の業務効率化を支援。AIによる実務特化型DXコンサルティング。">
+    <meta name="robots" content="index, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        serif: ['"Noto Serif JP"', 'serif'],
+                    },
+                    colors: {
+                        wa: {
+                            bg: '#f4f0e6',      /* 生成り色 */
+                            paper: '#ffffff',   /* 白 */
+                            text: '#3b342f',    /* 焦げ茶 */
+                            gray: '#595048',    /* 灰茶 */
+                            brand: '#2f5d50',   /* 鉄色（深緑） */
+                            brandHover: '#24473d',
+                            accent: '#c75d2c',  /* 柿渋色 */
+                            accentHover: '#ad4e24',
+                            border: '#e6e0d4',
+                        }
+                    },
+                    borderRadius: { 'wa': '12px' }
+                }
+            }
+        }
+    </script>
+    <style>
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        /* アコーディオンのアニメーション */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary ~ * {
+            animation: sweep .3s ease-in-out;
+        }
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
+        }
+    </style>
+</head>
+<body class="bg-wa-bg text-wa-text font-sans antialiased flex flex-col min-h-screen text-base md:text-lg">
+
+    <header class="fixed w-full z-50 bg-wa-bg/95 backdrop-blur-sm border-b border-wa-border transition-all duration-300" id="header">
+        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+                <a href="index.html" class="text-wa-brand border-b-2 border-wa-brand">ホーム</a>
+                <a href="services.html" class="hover:text-wa-brand transition-colors">サービス・効果</a>
+                
+                <a href="diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1 font-bold">
+                    <i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断
+                </a>
+
+                <a href="gift.html" class="hover:text-wa-brand transition-colors">特典プレゼント</a>
+                <a href="contact.html" class="px-6 py-3 bg-wa-brand text-white rounded-wa hover:bg-wa-brandHover transition-colors shadow-md">無料相談</a>
+            </nav>
+
+            <button class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-20">
+        <section class="relative w-full py-24 md:py-40 overflow-hidden">
+            <div class="max-w-[1080px] mx-auto px-6 relative z-10">
+                <div class="text-center md:text-left max-w-3xl">
+                    <p class="text-wa-brand font-bold tracking-widest mb-6 animate-pulse text-lg">
+                        AI × 工務店 × アフターメンテナンス
+                    </p>
+                    <h1 class="text-4xl md:text-7xl font-serif font-bold text-wa-text leading-tight mb-8">
+                        事務作業はAIへ。<br>
+                        愛は、お施主様へ。
+                    </h1>
+                    <p class="text-xl md:text-2xl text-wa-gray mb-12 leading-relaxed font-medium">
+                        「売りっぱなし」からの脱却。<br>
+                        AIで創出した時間は、すべてアフターメンテナンスのために。
+                    </p>
+                    
+                    <div class="flex flex-col md:flex-row gap-5">
+                        <a href="diagnosis.html" class="inline-flex items-center justify-center px-10 py-5 bg-wa-brand hover:bg-wa-brandHover text-white text-xl font-bold rounded-wa shadow-lg transition-all transform hover:scale-105 gap-2">
+                            <span>AI活用度を診断する</span>
+                            <i data-lucide="clipboard-check" class="w-6 h-6"></i>
+                        </a>
+                        
+                        <a href="gift.html" class="inline-flex items-center justify-center px-10 py-5 bg-white border-2 border-wa-brand text-wa-brand hover:bg-wa-bg text-xl font-bold rounded-wa shadow-sm transition-all gap-2">
+                            <span>プロンプト集をもらう</span>
+                            <i data-lucide="gift" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="absolute top-0 right-0 w-full md:w-1/2 h-full bg-gradient-to-l from-wa-border/30 to-transparent -z-10"></div>
+            <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-wa-accent/10 rounded-full blur-3xl -z-10"></div>
+        </section>
+
+        <section class="py-24 bg-white">
+            <div class="max-w-[1080px] mx-auto px-6">
+                <div class="text-center mb-20">
+                    <span class="text-wa-accent font-bold tracking-widest text-base">Why BuildMate?</span>
+                    <h2 class="text-4xl font-serif font-bold text-wa-text mt-3 mb-5">選ばれる3つの理由</h2>
+                    <div class="w-20 h-1.5 bg-wa-brand mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-10">
+                    <div class="p-10 bg-wa-bg rounded-wa text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-wa-border">
+                        <div class="w-20 h-20 bg-white text-wa-brand rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm">
+                            <i data-lucide="clock" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="font-bold text-2xl mb-4">圧倒的な時短</h3>
+                        <p class="text-wa-gray text-base leading-loose">ブログも資料も数分で完成。<br>浮いた時間で現場に行けます。</p>
+                    </div>
+                    <div class="p-10 bg-wa-bg rounded-wa text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-wa-border">
+                        <div class="w-20 h-20 bg-white text-wa-brand rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm">
+                            <i data-lucide="heart-handshake" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="font-bold text-2xl mb-4">アフター強化</h3>
+                        <p class="text-wa-gray text-base leading-loose">手書き風の手紙もAIでサポート。<br>お客様との絆を深めます。</p>
+                    </div>
+                    <div class="p-10 bg-wa-bg rounded-wa text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-wa-border">
+                        <div class="w-20 h-20 bg-white text-wa-brand rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm">
+                            <i data-lucide="shield-check" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="font-bold text-2xl mb-4">実務特化型</h3>
+                        <p class="text-wa-gray text-base leading-loose">元施工管理だからわかる、<br>現場のリアルな悩みを解決します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-wa-bg relative overflow-hidden">
+            <div class="max-w-[980px] mx-auto px-6 relative z-10">
+                <div class="bg-white rounded-wa p-10 md:p-14 shadow-xl border border-wa-border flex flex-col md:flex-row gap-12 items-center">
+                    <div class="w-56 h-56 md:w-72 md:h-72 flex-shrink-0 relative">
+                        <div class="w-full h-full bg-wa-gray rounded-full overflow-hidden border-4 border-wa-bg shadow-inner flex items-center justify-center text-white">
+                            <i data-lucide="user" class="w-24 h-24 opacity-50"></i>
+                        </div>
+                        <div class="absolute bottom-0 right-0 bg-wa-brand text-white text-sm font-bold px-6 py-3 rounded-full shadow-lg">
+                            元・現場監督
+                        </div>
+                    </div>
+                    
+                    <div class="flex-1 text-center md:text-left">
+                        <h2 class="text-2xl md:text-3xl font-serif font-bold text-wa-text mb-6 leading-snug">
+                            現場の「汗」と、システムの「論理」。<br class="hidden md:block">
+                            両方を知る私だから、提案できる答えがある。
+                        </h2>
+                        <p class="text-wa-brand font-bold mb-8 text-lg">BuildMate 代表 / AI活用コンサルタント</p>
+                        
+                        <div class="space-y-6 text-wa-text text-base md:text-lg leading-relaxed text-left">
+                            <p>
+                                長年、施工管理として現場を走り回り、夜は事務所で書類作成に追われる日々を過ごしました。お客様への連絡がおろそかになり、信頼を損なう悔しさも痛いほど知っています。
+                            </p>
+                            <p>
+                                その後、<strong>業務効率化システムの販売・導入支援</strong>の現場にも立ちました。そこで目の当たりにしたのは、「高機能なシステムほど、忙しい現場では定着しない」という現実です。
+                            </p>
+                            <p>
+                                現場の苦労、システムの限界。その両方を知り尽くした私がたどり着いたのが、誰でも直感的に使える「AI」でした。
+                            </p>
+                            <p class="font-medium text-wa-brand">
+                                パソコンに向かう時間を減らし、本来向き合うべき「お客様の笑顔」のために時間を使ってほしい。それが私の使命です。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute top-0 left-0 w-80 h-80 bg-wa-brand/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-wa-accent/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+        </section>
+
+        <section class="py-24 bg-white">
+            <div class="max-w-[1080px] mx-auto px-6">
+                <div class="flex items-center justify-between mb-16">
+                    <h2 class="text-4xl font-serif font-bold text-wa-text">最新情報・コラム</h2>
+                    <a href="news.html" class="text-wa-brand font-bold text-lg hover:underline flex items-center gap-2">
+                        一覧を見る <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-10">
+                    <article class="bg-wa-bg rounded-wa overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer group border border-wa-border" onclick="openModal('1')">
+                        <div class="h-56 bg-gray-200 overflow-hidden relative">
+                            <img src="images/ai.jpg" alt="AI活用" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+                            <span class="absolute top-4 left-4 bg-wa-accent text-white text-sm font-bold px-4 py-1.5 rounded-full z-10">AI活用</span>
+                        </div>
+                        <div class="p-8">
+                            <time class="text-sm text-wa-gray block mb-3 font-medium">2025.01.15</time>
+                            <h3 class="font-bold text-xl mb-3 group-hover:text-wa-brand transition-colors line-clamp-2 leading-snug">
+                                月8万円の削減！工務店がAI導入で最初にやるべき3つのこと
+                            </h3>
+                            <p class="text-base text-wa-gray line-clamp-2 leading-relaxed">
+                                無料のAIツールだけで事務作業の時間は半分以下にできます...
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="bg-wa-bg rounded-wa overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer group border border-wa-border" onclick="openModal('2')">
+                        <div class="h-56 bg-gray-200 overflow-hidden relative">
+                            <img src="images/after.jpg" alt="アフター" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+                            <span class="absolute top-4 left-4 bg-wa-brand text-white text-sm font-bold px-4 py-1.5 rounded-full z-10">アフター</span>
+                        </div>
+                        <div class="p-8">
+                            <time class="text-sm text-wa-gray block mb-3 font-medium">2025.01.10</time>
+                            <h3 class="font-bold text-xl mb-3 group-hover:text-wa-brand transition-colors line-clamp-2 leading-snug">
+                                「売りっぱなし」と言わせない。AIで書く"心"のこもった手紙術
+                            </h3>
+                            <p class="text-base text-wa-gray line-clamp-2 leading-relaxed">
+                                定期点検の案内が事務的になっていませんか？お客様に響く文章作成術...
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="bg-wa-bg rounded-wa overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer group border border-wa-border" onclick="openModal('3')">
+                        <div class="h-56 bg-gray-200 overflow-hidden relative">
+                            <img src="images/case.jpg" alt="事例" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+                            <span class="absolute top-4 left-4 bg-gray-600 text-white text-sm font-bold px-4 py-1.5 rounded-full z-10">事例</span>
+                        </div>
+                        <div class="p-8">
+                            <time class="text-sm text-wa-gray block mb-3 font-medium">2024.12.28</time>
+                            <h3 class="font-bold text-xl mb-3 group-hover:text-wa-brand transition-colors line-clamp-2 leading-snug">
+                                【事例】商談時間が半分に。即時パース作成で成約率アップ
+                            </h3>
+                            <p class="text-base text-wa-gray line-clamp-2 leading-relaxed">
+                                「イメージが湧かない」による失注を防ぐ。商談中にその場で作成...
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-wa-bg border-t border-wa-border">
+            <div class="max-w-[800px] mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span class="text-wa-accent font-bold tracking-widest text-base">Q&A</span>
+                    <h2 class="text-4xl font-serif font-bold text-wa-text mt-3">よくあるご質問</h2>
+                </div>
+
+                <div class="space-y-6">
+                    <details class="group bg-white rounded-wa shadow-sm border border-wa-border open:shadow-md transition-all">
+                        <summary class="flex items-center justify-between p-8 cursor-pointer font-bold text-wa-text text-lg md:text-xl">
+                            <span>Q. 従業員3名の小さな工務店でも効果はありますか？</span>
+                            <span class="transform group-open:rotate-180 transition-transform">
+                                <i data-lucide="chevron-down" class="w-6 h-6 text-wa-brand"></i>
+                            </span>
+                        </summary>
+                        <div class="px-8 pb-8 text-wa-text text-base md:text-lg leading-loose border-t border-wa-border/50 pt-6">
+                            はい、もちろんです。むしろ少人数精鋭の工務店様こそ、事務作業をAIに任せる効果は絶大です。「事務員を一人雇うコスト」をかけずに、バックオフィス業務を自動化できます。
+                        </div>
+                    </details>
+
+                    <details class="group bg-white rounded-wa shadow-sm border border-wa-border open:shadow-md transition-all">
+                        <summary class="flex items-center justify-between p-8 cursor-pointer font-bold text-wa-text text-lg md:text-xl">
+                            <span>Q. 導入後、どのくらいで成果が出始めますか？</span>
+                            <span class="transform group-open:rotate-180 transition-transform">
+                                <i data-lucide="chevron-down" class="w-6 h-6 text-wa-brand"></i>
+                            </span>
+                        </summary>
+                        <div class="px-8 pb-8 text-wa-text text-base md:text-lg leading-loose border-t border-wa-border/50 pt-6">
+                            早ければ導入したその日から「ブログ作成時間が1時間から5分になった」といった効果を実感いただけます。会社全体の業務フロー改善には、通常1〜3ヶ月ほどかけて定着させていくケースが多いです。
+                        </div>
+                    </details>
+
+                    <details class="group bg-white rounded-wa shadow-sm border border-wa-border open:shadow-md transition-all">
+                        <summary class="flex items-center justify-between p-8 cursor-pointer font-bold text-wa-text text-lg md:text-xl">
+                            <span>Q. リフォーム専門ですが、新築向けとは内容が違いますか？</span>
+                            <span class="transform group-open:rotate-180 transition-transform">
+                                <i data-lucide="chevron-down" class="w-6 h-6 text-wa-brand"></i>
+                            </span>
+                        </summary>
+                        <div class="px-8 pb-8 text-wa-text text-base md:text-lg leading-loose border-t border-wa-border/50 pt-6">
+                            基本的なAI活用（議事録、メール返信、日報）は共通ですが、リフォーム特有の「現調報告書作成」や「ビフォーアフターの提案文」など、業態に合わせた特化型の活用術をご提案いたします。
+                        </div>
+                    </details>
+
+                    <details class="group bg-white rounded-wa shadow-sm border border-wa-border open:shadow-md transition-all">
+                        <summary class="flex items-center justify-between p-8 cursor-pointer font-bold text-wa-text text-lg md:text-xl">
+                            <span>Q. 60代以上の年配の職人が多いですが、使いこなせるでしょうか？</span>
+                            <span class="transform group-open:rotate-180 transition-transform">
+                                <i data-lucide="chevron-down" class="w-6 h-6 text-wa-brand"></i>
+                            </span>
+                        </summary>
+                        <div class="px-8 pb-8 text-wa-text text-base md:text-lg leading-loose border-t border-wa-border/50 pt-6">
+                            ご安心ください。現場の職人さんは、使い慣れた「LINE」で写真や音声を送るだけで大丈夫な仕組みを作ります。新しいアプリの操作を覚える必要がないため、スムーズに導入いただけます。
+                        </div>
+                    </details>
+
+                    <details class="group bg-white rounded-wa shadow-sm border border-wa-border open:shadow-md transition-all">
+                        <summary class="flex items-center justify-between p-8 cursor-pointer font-bold text-wa-text text-lg md:text-xl">
+                            <span>Q. 高性能なパソコンや新しいソフトを買い揃える必要はありますか？</span>
+                            <span class="transform group-open:rotate-180 transition-transform">
+                                <i data-lucide="chevron-down" class="w-6 h-6 text-wa-brand"></i>
+                            </span>
+                        </summary>
+                        <div class="px-8 pb-8 text-wa-text text-base md:text-lg leading-loose border-t border-wa-border/50 pt-6">
+                            いいえ、必要ありません。現在お使いのパソコンやスマートフォンで十分です。使用するAIツールも、ブラウザ上で動くものや無料から始められるものを中心に選定いたします。
+                        </div>
+                    </details>
+
+                    <details class="group bg-white rounded-wa shadow-sm border border-wa-border open:shadow-md transition-all">
+                        <summary class="flex items-center justify-between p-8 cursor-pointer font-bold text-wa-text text-lg md:text-xl">
+                            <span>Q. 契約期間の縛りはありますか？</span>
+                            <span class="transform group-open:rotate-180 transition-transform">
+                                <i data-lucide="chevron-down" class="w-6 h-6 text-wa-brand"></i>
+                            </span>
+                        </summary>
+                        <div class="px-8 pb-8 text-wa-text text-base md:text-lg leading-loose border-t border-wa-border/50 pt-6">
+                            ございません。単発のスポットコンサルティングも可能ですし、継続サポートの場合も「まずは3ヶ月」といった短期から承っております。成果にご納得いただいた上で継続をご判断ください。
+                        </div>
+                    </details>
+
+                    <details class="group bg-white rounded-wa shadow-sm border border-wa-border open:shadow-md transition-all">
+                        <summary class="flex items-center justify-between p-8 cursor-pointer font-bold text-wa-text text-lg md:text-xl">
+                            <span>Q. AIツール自体の利用料は毎月いくらかかりますか？</span>
+                            <span class="transform group-open:rotate-180 transition-transform">
+                                <i data-lucide="chevron-down" class="w-6 h-6 text-wa-brand"></i>
+                            </span>
+                        </summary>
+                        <div class="px-8 pb-8 text-wa-text text-base md:text-lg leading-loose border-t border-wa-border/50 pt-6">
+                            推奨しているのは <strong>ChatGPT、Gemini、Claude</strong> などの有料版（それぞれ月額約3,000円）程度です。数万円〜数百万円するような高額な専用システムの導入は基本的におすすめしておりませんので、ランニングコストを抑えて始められます。
+                        </div>
+                    </details>
+
+                    <details class="group bg-white rounded-wa shadow-sm border border-wa-border open:shadow-md transition-all">
+                        <summary class="flex items-center justify-between p-8 cursor-pointer font-bold text-wa-text text-lg md:text-xl">
+                            <span>Q. オンラインではなく、会社に来て直接指導してもらうことは可能ですか？</span>
+                            <span class="transform group-open:rotate-180 transition-transform">
+                                <i data-lucide="chevron-down" class="w-6 h-6 text-wa-brand"></i>
+                            </span>
+                        </summary>
+                        <div class="px-8 pb-8 text-wa-text text-base md:text-lg leading-loose border-t border-wa-border/50 pt-6">
+                            はい、可能です（別途、交通費・出張費を申し受けます）。実際の事務所の配置や現場の様子を拝見することで、より実態に即した改善提案ができる場合もございますので、お気軽にご相談ください。
+                        </div>
+                    </details>
+
+                    <details class="group bg-white rounded-wa shadow-sm border border-wa-border open:shadow-md transition-all">
+                        <summary class="flex items-center justify-between p-8 cursor-pointer font-bold text-wa-text text-lg md:text-xl">
+                            <span>Q. 具体的な依頼内容は決まっていませんが、相談しても良いですか？</span>
+                            <span class="transform group-open:rotate-180 transition-transform">
+                                <i data-lucide="chevron-down" class="w-6 h-6 text-wa-brand"></i>
+                            </span>
+                        </summary>
+                        <div class="px-8 pb-8 text-wa-text text-base md:text-lg leading-loose border-t border-wa-border/50 pt-6">
+                            もちろんです。「何から手をつければいいかわからない」「とにかく忙しいのをなんとかしたい」という段階でのご相談が一番多いです。まずは無料相談で、貴社の現状を整理するところからお手伝いいたします。
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-32 bg-white">
+            <div class="max-w-[800px] mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-wa-text mb-8 leading-tight">
+                    まずは「何ができるか」を<br>知ることから。
+                </h2>
+                <p class="text-xl text-wa-gray mb-12 leading-relaxed">
+                    無理な勧誘はいたしません。<br>
+                    今の業務フローをそのままに、どこまで楽にできるか診断します。
+                </p>
+                <a href="contact.html" class="inline-flex items-center justify-center px-12 py-5 bg-wa-accent hover:bg-wa-accentHover text-white rounded-wa font-bold text-xl transition-all transform hover:scale-105 shadow-xl gap-3">
+                    <span>無料相談に申し込む</span>
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-wa-text text-white/80 border-t border-wa-text py-16 text-base">
+        <div class="max-w-[1080px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-white/60">
+                    Copyright © 2025 BuildMate. All rights reserved.
+                </div>
+                <div class="flex gap-8 text-white">
+                    <a href="privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                    <a href="terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="article-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+        <div id="modal-backdrop" class="absolute inset-0 bg-black/60 transition-opacity duration-300 opacity-0 backdrop-blur-sm"></div>
+        
+        <div id="modal-panel" class="relative bg-white rounded-wa w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl transform scale-95 opacity-0 transition-all duration-300">
+            <button onclick="closeModal()" class="absolute top-4 right-4 p-3 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors z-10 backdrop-blur-md">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <div class="h-64 md:h-80 bg-gray-200 w-full relative">
+                 <img id="modal-image" src="" alt="" class="w-full h-full object-cover">
+                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            </div>
+
+            <div class="p-10 md:p-14">
+                <div class="flex items-center gap-4 mb-4">
+                    <span id="modal-category" class="bg-wa-brand text-white text-sm font-bold px-4 py-1.5 rounded-full"></span>
+                    <span id="modal-date" class="text-base text-wa-gray font-medium"></span>
+                </div>
+                <h3 id="modal-title" class="text-2xl md:text-3xl font-serif font-bold text-wa-text mb-8 leading-snug"></h3>
+                <div id="modal-content" class="prose prose-lg max-w-none text-wa-text leading-loose">
+                </div>
+            </div>
+            
+            <div class="p-8 border-t border-wa-border bg-wa-bg text-center">
+                <button onclick="closeModal()" class="px-10 py-3 bg-wa-brand text-white rounded-md text-base font-bold hover:bg-wa-brandHover transition-colors shadow-md">
+                    閉じる
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // アイコン初期化
+        lucide.createIcons();
+
+        // 記事データ（トップページは固定の3つ）
+        // ※画像ファイル名を適切に設定しています
+        const articles = {
+            '1': {
+                category: 'AI活用',
+                date: '2025.01.15',
+                title: '月8万円の削減！工務店がAI導入で最初にやるべき3つのこと',
+                image: 'images/ai.jpg', 
+                content: `
+                    <p class="mb-6">多くの工務店様から「AIって難しそう」「費用がかかるんでしょ？」という声をいただきます。しかし、実は<strong>無料のChatGPTやGoogleのツールを使うだけで、事務作業の時間は半分以下にできる</strong>のです。</p>
+                    <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">1. ブログ執筆の自動化</h4>
+                    <p class="mb-6">「ネタがない」と悩む必要はありません。AIに「30代の子育て世代に向けた、自然素材の家のメリットを3つ挙げて」と頼むだけで、プロ並みの記事構成が5秒で完成します。</p>
+                    <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">2. 議事録の自動化</h4>
+                    <p class="mb-6">商談の音声を文字起こしし、さらに「決定事項」と「ToDo」だけを抜き出すことも可能です。これで「言った言わない」のトラブルはゼロになります。</p>
+                `
+            },
+            '2': {
+                category: 'アフター',
+                date: '2025.01.10',
+                title: '「売りっぱなし」と言わせない。AIで書く"心"のこもった手紙術',
+                image: 'images/after.jpg',
+                content: `
+                    <p class="mb-6">引き渡し後の定期点検、ハガキ一通で済ませていませんか？AIを使えば、<strong>お客様一人ひとりの家族構成や趣味に合わせた、温かみのある手紙</strong>を数分で作成できます。</p>
+                    <p class="mb-6">「AIが書いた文章なんて冷たい」というのは過去の話。プロンプト（指示出し）次第で、まるで長年の友人が書いたような文章も生成可能です。</p>
+                    <p class="mb-6">この「アナログな温かさ」を「デジタルの効率」で実現することこそが、これからの工務店が生き残るための鍵となります。</p>
+                `
+            },
+            '3': {
+                category: '事例',
+                date: '2024.12.28',
+                title: '【事例】商談時間が半分に。即時パース作成で成約率アップ',
+                image: 'images/case.jpg',
+                content: `
+                    <p class="mb-6">お客様の「なんとなくこんな感じ」をその場で形にできれば、商談は劇的にスムーズになります。画像生成AIを活用した事例をご紹介します。</p>
+                    <p class="mb-6">これまでは設計士に依頼して数日待っていたパース作成も、商談中にヒアリングしながら「こんなイメージですか？」とスマホで見せることが可能です。</p>
+                `
+            }
+        };
+
+        const modal = document.getElementById('article-modal');
+        const backdrop = document.getElementById('modal-backdrop');
+        const panel = document.getElementById('modal-panel');
+        const mImage = document.getElementById('modal-image'); // 画像要素を取得
+
+        function openModal(id) {
+            const data = articles[id];
+            if (!data) return;
+
+            document.getElementById('modal-category').textContent = data.category;
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-date').textContent = data.date;
+            document.getElementById('modal-content').innerHTML = data.content;
+            
+            // ★ モーダルにも画像を表示させる
+            mImage.src = data.image;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0');
+                panel.classList.remove('scale-95', 'opacity-0');
+                panel.classList.add('scale-100', 'opacity-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            backdrop.classList.add('opacity-0');
+            panel.classList.remove('scale-100', 'opacity-100');
+            panel.classList.add('scale-95', 'opacity-0');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal || e.target === backdrop) closeModal();
+        });
+    </script>
+</body>
+</html>

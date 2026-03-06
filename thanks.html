@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>送信完了 | BuildMate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        serif: ['"Noto Serif JP"', 'serif'],
+                    },
+                    colors: {
+                        wa: {
+                            bg: '#f4f0e6',
+                            paper: '#ffffff',
+                            text: '#3b342f',
+                            gray: '#7a7067',
+                            brand: '#2f5d50',
+                            brandHover: '#24473d',
+                            accent: '#c75d2c',
+                            border: '#e6e0d4',
+                        }
+                    },
+                    borderRadius: { 'wa': '12px' },
+                    boxShadow: { 'soft': '0 4px 20px -2px rgba(59, 52, 47, 0.08)' }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background-color: #f4f0e6; color: #3b342f; -webkit-font-smoothing: antialiased; letter-spacing: 0.02em; }
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; opacity: 0; transform: translateY(10px); }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="font-sans antialiased flex flex-col min-h-screen">
+
+    <header class="w-full h-[64px] flex items-center px-6">
+        <div class="max-w-[1024px] w-full mx-auto">
+            <a href="index.html" class="flex items-center gap-2 group w-fit hover:opacity-80 transition-opacity">
+                <div class="bg-wa-brand text-white p-1.5 rounded">
+                    <i data-lucide="home" class="w-4 h-4"></i>
+                </div>
+                <span class="text-[18px] font-serif font-bold tracking-wide text-wa-brand">BuildMate</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center px-6 py-12">
+        <div class="max-w-[600px] w-full bg-white p-10 md:p-16 rounded-wa shadow-soft border border-wa-border text-center fade-in">
+            
+            <div class="w-20 h-20 bg-wa-bg rounded-full flex items-center justify-center mx-auto mb-8 text-wa-brand">
+                <i data-lucide="check" class="w-10 h-10"></i>
+            </div>
+
+            <h1 class="text-2xl md:text-3xl font-serif font-bold text-wa-text mb-6">送信が完了しました</h1>
+            
+            <p class="text-wa-text leading-relaxed mb-8">
+                お問い合わせいただき、ありがとうございます。<br>
+                内容を確認の上、担当者（木村）より<br class="md:hidden">通常2営業日以内にご連絡いたします。
+            </p>
+
+            <div class="p-4 bg-wa-bg rounded-md text-sm text-wa-gray mb-10 text-left md:text-center">
+                <p>※ 自動返信メールをお送りしましたのでご確認ください。<br>届かない場合は、迷惑メールフォルダもご確認いただけますと幸いです。</p>
+            </div>
+
+            <a href="index.html" class="inline-flex items-center justify-center gap-2 px-10 py-4 bg-wa-brand hover:bg-wa-brandHover text-white font-bold rounded-md shadow-lg transform hover:scale-[1.02] transition-all duration-200">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>トップページへ戻る</span>
+            </a>
+
+        </div>
+    </main>
+
+    <footer class="bg-wa-text text-white/80 border-t border-wa-text py-8 text-[12px] text-center">
+        <p class="text-white/60">Copyright © 2025 BuildMate. All rights reserved.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

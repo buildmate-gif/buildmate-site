@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特定商取引法に基づく表記 | BuildMate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        serif: ['"Noto Serif JP"', 'serif'],
+                    },
+                    colors: {
+                        wa: {
+                            bg: '#f4f0e6', paper: '#ffffff', text: '#3b342f', gray: '#7a7067',
+                            brand: '#2f5d50', brandHover: '#24473d', accent: '#c75d2c', border: '#e6e0d4',
+                        }
+                    },
+                    borderRadius: { 'wa': '12px' }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-wa-bg text-wa-text antialiased">
+    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-wa-border">
+        <div class="max-w-[980px] mx-auto px-6 h-[64px] flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-1 font-bold text-[15px] text-wa-brand hover:underline">
+                <i data-lucide="chevron-left" class="w-5 h-5"></i> トップに戻る
+            </a>
+            <span class="font-serif font-bold text-lg text-wa-text">BuildMate</span>
+            <div class="w-20"></div>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-24 px-6 max-w-[800px] mx-auto">
+        <h1 class="text-3xl font-serif font-bold mb-10 text-wa-text border-b-2 border-wa-accent inline-block pb-2">特定商取引法に基づく表記</h1>
+        
+        <div class="bg-white rounded-wa shadow-sm border border-wa-border overflow-hidden">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 border-b border-wa-border last:border-0">
+                <div class="bg-wa-bg/40 p-6 font-bold text-wa-gray flex items-center gap-2 md:col-span-1">
+                    <i data-lucide="building-2" class="w-4 h-4 text-wa-brand"></i> 販売事業者名
+                </div>
+                <div class="p-6 md:col-span-2 font-medium bg-white">
+                    BuildMate（ビルドメイト）
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 border-b border-wa-border last:border-0">
+                <div class="bg-wa-bg/40 p-6 font-bold text-wa-gray flex items-center gap-2 md:col-span-1">
+                    <i data-lucide="user" class="w-4 h-4 text-wa-brand"></i> 運営統括責任者
+                </div>
+                <div class="p-6 md:col-span-2 font-medium bg-white">
+                    木村 拓隆
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 border-b border-wa-border last:border-0">
+                <div class="bg-wa-bg/40 p-6 font-bold text-wa-gray flex items-center gap-2 md:col-span-1">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-wa-brand"></i> 所在地
+                </div>
+                <div class="p-6 md:col-span-2 bg-white">
+                    <p class="mb-3">大阪府大阪市（以下、請求があり次第遅滞なく開示いたします）</p>
+                    <div class="text-xs text-wa-gray leading-relaxed bg-wa-bg p-3 rounded-lg border border-wa-border/50">
+                        ※消費者庁の規定に基づき、個人事業主の住所・電話番号の省略表示を行っております。取引において請求があった場合、遅滞なく開示いたします。
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 border-b border-wa-border last:border-0">
+                <div class="bg-wa-bg/40 p-6 font-bold text-wa-gray flex items-center gap-2 md:col-span-1">
+                    <i data-lucide="mail" class="w-4 h-4 text-wa-brand"></i> 連絡先
+                </div>
+                <div class="p-6 md:col-span-2 bg-white">
+                    <p class="font-bold text-wa-text">info@buildmate.jp</p>
+                    <p class="mt-2 text-sm text-wa-gray">090-0000-0000（請求があり次第遅滞なく開示いたします）</p>
+                    <p class="text-xs text-wa-gray mt-2">※サービスに関するお問い合わせは、記録保持のため原則メールまたはお問い合わせフォームよりお願いいたします。</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 border-b border-wa-border last:border-0">
+                <div class="bg-wa-bg/40 p-6 font-bold text-wa-gray flex items-center gap-2 md:col-span-1">
+                    <i data-lucide="tag" class="w-4 h-4 text-wa-brand"></i> 販売価格
+                </div>
+                <div class="p-6 md:col-span-2 bg-white">
+                    <p>各サービス・プランごとに別途提示いたします。</p>
+                    <p class="text-xs text-wa-gray mt-1">（表示価格は消費税込みとなります）</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 border-b border-wa-border last:border-0">
+                <div class="bg-wa-bg/40 p-6 font-bold text-wa-gray flex items-center gap-2 md:col-span-1">
+                    <i data-lucide="plus-circle" class="w-4 h-4 text-wa-brand"></i> 商品代金以外の<br class="md:hidden">必要料金
+                </div>
+                <div class="p-6 md:col-span-2 bg-white">
+                    <ul class="list-disc pl-5 space-y-1 text-sm text-wa-text">
+                        <li>銀行振込手数料（銀行振込の場合）</li>
+                        <li>インターネット接続料金、通信料金（お客様のご負担となります）</li>
+                        <li>各AIツール（ChatGPT, Midjourney等）の利用料（お客様自身で契約が必要な場合）</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 border-b border-wa-border last:border-0">
+                <div class="bg-wa-bg/40 p-6 font-bold text-wa-gray flex items-center gap-2 md:col-span-1">
+                    <i data-lucide="credit-card" class="w-4 h-4 text-wa-brand"></i> お支払方法
+                </div>
+                <div class="p-6 md:col-span-2 bg-white font-medium">
+                    銀行振込 / クレジットカード決済
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 border-b border-wa-border last:border-0">
+                <div class="bg-wa-bg/40 p-6 font-bold text-wa-gray flex items-center gap-2 md:col-span-1">
+                    <i data-lucide="clock" class="w-4 h-4 text-wa-brand"></i> お支払時期
+                </div>
+                <div class="p-6 md:col-span-2 bg-white">
+                    <div class="mb-2">
+                        <span class="text-xs font-bold bg-wa-gray text-white px-2 py-0.5 rounded mr-2">銀行振込</span>
+                        <span class="text-sm">請求書発行後、指定期日までにお支払い（原則前払い）</span>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold bg-wa-gray text-white px-2 py-0.5 rounded mr-2">カード</span>
+                        <span class="text-sm">各カード会社の引き落とし日となります</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 border-b border-wa-border last:border-0">
+                <div class="bg-wa-bg/40 p-6 font-bold text-wa-gray flex items-center gap-2 md:col-span-1">
+                    <i data-lucide="package-check" class="w-4 h-4 text-wa-brand"></i> 引渡時期
+                </div>
+                <div class="p-6 md:col-span-2 bg-white">
+                    <div class="mb-2">
+                        <span class="text-xs font-bold bg-wa-brand text-white px-2 py-0.5 rounded mr-2">デジタル</span>
+                        <span class="text-sm">決済完了後、即時または3営業日以内に提供</span>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold bg-wa-brand text-white px-2 py-0.5 rounded mr-2">コンサル</span>
+                        <span class="text-sm">別途合意した開始日より提供</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 border-b border-wa-border last:border-0">
+                <div class="bg-wa-accent/5 p-6 font-bold text-wa-accent flex items-center gap-2 md:col-span-1">
+                    <i data-lucide="ban" class="w-4 h-4"></i> 返品・キャンセル
+                </div>
+                <div class="p-6 md:col-span-2 bg-white">
+                    <p class="font-bold text-wa-text mb-2 text-sm">【デジタルコンテンツ・コンサルティング共通】</p>
+                    <p class="text-sm leading-relaxed mb-4 text-wa-text">
+                        商品及びサービスの性質上、<strong>決済完了後またはサービス提供開始後の、お客様都合による返品・交換・キャンセル・返金はお受けできません。</strong>
+                    </p>
+                    <p class="font-bold text-wa-text mb-2 text-sm">【中途解約について】</p>
+                    <p class="text-sm leading-relaxed text-wa-text">
+                        月額顧問契約等、継続的なサービス契約の中途解約については、契約書の定めに従います。原則として、解約希望月の前月末日までのお申し出が必要です。
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 border-b border-wa-border last:border-0">
+                <div class="bg-wa-bg/40 p-6 font-bold text-wa-gray flex items-center gap-2 md:col-span-1">
+                    <i data-lucide="laptop" class="w-4 h-4 text-wa-brand"></i> 推奨動作環境
+                </div>
+                <div class="p-6 md:col-span-2 bg-white text-sm">
+                    <p>Google Chrome, Safari, Microsoft Edgeの最新版。</p>
+                    <p class="mt-1 text-wa-gray">※その他、各AIツールの推奨環境に準拠します。</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-wa-text text-white/80 border-t border-wa-text py-12 text-center text-xs">
+        Copyright © 2025 BuildMate. All rights reserved.
+    </footer>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
