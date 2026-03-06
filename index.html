@@ -86,11 +86,23 @@
                 <a href="contact.html" class="px-6 py-3 bg-wa-brand text-white rounded-wa hover:bg-wa-brandHover transition-colors shadow-md">無料相談</a>
             </nav>
 
-            <button class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
+            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
                 <i data-lucide="menu" class="w-8 h-8"></i>
             </button>
         </div>
-    </header>
+    
+    <!-- モバイルメニュー -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-black/50" onclick="closeMobileMenu()">
+        <div class="absolute top-0 right-0 w-64 h-full bg-wa-paper shadow-xl flex flex-col p-8 gap-6 text-wa-text font-medium text-base" onclick="event.stopPropagation()">
+            <button onclick="closeMobileMenu()" class="self-end text-wa-gray hover:text-wa-brand">✕ 閉じる</button>
+            <a href="index.html" class="hover:text-wa-brand transition-colors" onclick="closeMobileMenu()">ホーム</a>
+            <a href="services.html" class="hover:text-wa-brand transition-colors" onclick="closeMobileMenu()">サービス</a>
+            <a href="news.html" class="hover:text-wa-brand transition-colors" onclick="closeMobileMenu()">お知らせ</a>
+            <a href="gift.html" class="hover:text-wa-brand transition-colors" onclick="closeMobileMenu()">特典プレゼント</a>
+            <a href="contact.html" class="px-6 py-3 bg-wa-brand text-white rounded-wa hover:bg-wa-brandHover transition-colors shadow-md text-center" onclick="closeMobileMenu()">無料相談</a>
+        </div>
+    </div>
+</header>
 
     <main class="flex-grow pt-20">
         <section class="relative w-full py-24 md:py-40 overflow-hidden">
@@ -531,6 +543,16 @@
         modal.addEventListener('click', (e) => {
             if (e.target === modal || e.target === backdrop) closeModal();
         });
+
+        // モバイルメニュー開閉
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+        function closeMobileMenu() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
     </script>
 </body>
 </html>
