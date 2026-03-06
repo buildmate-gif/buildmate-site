@@ -92,15 +92,13 @@
         </div>
     
     <!-- モバイルメニュー -->
-    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-black/50" onclick="closeMobileMenu()">
-        <div class="absolute top-0 right-0 w-72 h-full bg-white shadow-2xl flex flex-col p-8 gap-6 text-wa-text font-medium text-base" style="background-color:#ffffff;" onclick="event.stopPropagation()">
-            <button onclick="closeMobileMenu()" class="self-end text-wa-gray hover:text-wa-brand">✕ 閉じる</button>
-            <a href="index.html" class="hover:text-wa-brand transition-colors" onclick="closeMobileMenu()">ホーム</a>
-            <a href="services.html" class="hover:text-wa-brand transition-colors" onclick="closeMobileMenu()">サービス</a>
-            <a href="news.html" class="hover:text-wa-brand transition-colors" onclick="closeMobileMenu()">お知らせ</a>
-            <a href="gift.html" class="hover:text-wa-brand transition-colors" onclick="closeMobileMenu()">特典プレゼント</a>
-            <a href="contact.html" class="px-6 py-3 bg-wa-brand text-white rounded-wa hover:bg-wa-brandHover transition-colors shadow-md text-center" onclick="closeMobileMenu()">無料相談</a>
-        </div>
+    <div id="mobile-menu" class="hidden fixed inset-0 z-50 flex flex-col p-8 gap-6 text-wa-text font-medium text-base" style="background-color:#ffffff;">
+        <button onclick="closeMobileMenu()" class="self-end text-wa-gray hover:text-wa-brand text-lg">✕ 閉じる</button>
+        <a href="index.html" class="text-xl py-3 border-b border-gray-100 hover:text-wa-brand transition-colors" onclick="closeMobileMenu()">ホーム</a>
+        <a href="services.html" class="text-xl py-3 border-b border-gray-100 hover:text-wa-brand transition-colors" onclick="closeMobileMenu()">サービス</a>
+        <a href="news.html" class="text-xl py-3 border-b border-gray-100 hover:text-wa-brand transition-colors" onclick="closeMobileMenu()">お知らせ</a>
+        <a href="gift.html" class="text-xl py-3 border-b border-gray-100 hover:text-wa-brand transition-colors" onclick="closeMobileMenu()">特典プレゼント</a>
+        <a href="contact.html" class="mt-4 px-6 py-4 bg-wa-brand text-white rounded-wa hover:bg-wa-brandHover transition-colors shadow-md text-center text-xl" onclick="closeMobileMenu()">無料相談</a>
     </div>
 </header>
 
