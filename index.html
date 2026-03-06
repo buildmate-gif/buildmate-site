@@ -91,16 +91,17 @@
             </button>
         </div>
     
-    <!-- モバイルメニュー -->
-    <div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; background-color:#ffffff; flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500;">
-        <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:#7a7067; background:none; border:none; cursor:pointer;">✕ 閉じる</button>
-        <a href="index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid #e6e0d4; color:#3b342f; text-decoration:none;">ホーム</a>
-        <a href="services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid #e6e0d4; color:#3b342f; text-decoration:none;">サービス</a>
-        <a href="news.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid #e6e0d4; color:#3b342f; text-decoration:none;">お知らせ</a>
-        <a href="gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid #e6e0d4; color:#3b342f; text-decoration:none;">特典プレゼント</a>
-        <a href="contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:#2f5d50; color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
-    </div>
 </header>
+
+<!-- モバイルメニュー（headerの外に独立配置） -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:#ffffff; flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:#7a7067; background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid #e6e0d4; color:#3b342f; text-decoration:none;">ホーム</a>
+    <a href="services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid #e6e0d4; color:#3b342f; text-decoration:none;">サービス</a>
+    <a href="news.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid #e6e0d4; color:#3b342f; text-decoration:none;">お知らせ</a>
+    <a href="gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid #e6e0d4; color:#3b342f; text-decoration:none;">特典プレゼント</a>
+    <a href="contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:#2f5d50; color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
 
     <main class="flex-grow pt-20">
         <section class="relative w-full py-24 md:py-40 overflow-hidden">
