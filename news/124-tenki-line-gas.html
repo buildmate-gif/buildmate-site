@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5ECF52MHF6');</script>
+<meta charset="UTF-8"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../seigaiha.css"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>工務店の現場天気予報をGASで自動取得してLINEに通知する方法 | BuildMate</title>
+<link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/062-tenki-line-gas.html">
+<meta name="description" content="工務店の現場天気予報をGASとOpenWeatherMap APIで自動取得し、毎日LINEへ自動通知する方法を解説。現場エリアの当日・翌日・週間天気を現場監督のLINEへ自動配信して、工程判断と安全管理を効率化した手順を紹介します。">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article"><meta property="og:title" content="工務店の現場天気予報をGASで自動取得してLINEに通知する方法 | BuildMate"><meta property="og:description" content="工務店の現場天気予報をGASとOpenWeatherMap APIで自動取得し、毎日LINEへ自動通知する方法を解説。現場エリアの当日・翌日・週間天気を現場監督のLINEへ自動配信して、工程判断と安全管理を効率化した手順を紹介します。"><meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/062-tenki-line-gas.html"><meta property="og:site_name" content="BuildMate"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="工務店の現場天気予報をGASで自動取得してLINEに通知する方法 | BuildMate"><meta name="twitter:description" content="工務店の現場天気予報をGASとOpenWeatherMap APIで自動取得し、毎日LINEへ自動通知する方法を解説。現場エリアの当日・翌日・週間天気を現場監督のLINEへ自動配信して、工程判断と安全管理を効率化した手順を紹介します。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"工務店の現場天気予報をGASで自動取得してLINEに通知する方法","datePublished":"2025-12-13","dateModified":"2025-12-13","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"工務店の現場天気予報をGASとOpenWeatherMap APIで自動取得し、毎日LINEへ自動通知する方法を解説。現場エリアの当日・翌日・週間天気を現場監督のLINEへ自動配信して、工程判断と安全管理を効率化した手順を紹介します。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/062-tenki-line-gas.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"工務店の現場天気予報をGASで自動取得するにはどんなAPIを使えばいいですか？","acceptedAnswer":{"@type":"Answer","text":"OpenWeatherMap APIが無料で利用でき、GASから現場の緯度経度や都市名を指定して天気・気温・降水確率を自動取得できます。BuildMateの支援実績では、複数現場の天気確認作業がゼロになった工務店があります。"}},{"@type":"Question","name":"現場の天気予報をGASでLINEへ自動通知するにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"GASでOpenWeatherMap APIから天気データを取得し、LINE Messaging APIで現場監督グループへ毎朝自動送信する仕組みを構築できます。BuildMateの支援実績では、設定から翌日に毎朝の自動通知が始まった工務店があります。"}},{"@type":"Question","name":"GASで複数現場の天気を一括取得するにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"スプレッドシートに現場リストを登録し、GASでループ処理して各現場の天気を一括取得できます。BuildMateの支援実績では、5現場分の天気を毎朝一括取得してLINEへ配信する仕組みを1週間で構築した工務店があります。"}}]}
+</script>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<body class="bg-wa-bg text-wa-text font-sans">
+    <header class="bg-white/95 backdrop-blur-md fixed w-full top-0 z-50 border-b border-wa-border transition-all duration-300">
+        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+
+                <a href="../index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
+                <a href="../services.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">サービス・効果</a>
+                <a href="../ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
+                <a href="../diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+                <a href="../gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
+                <a href="../gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
+                <a href="../contact.html" class="px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+<!-- モバイルメニュー -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="../index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
+    <a href="../services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
+    <a href="../ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
+    <a href="../diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
+    <a href="../gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
+    <a href="../gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
+    <a href="../contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
+<main class="max-w-[800px] mx-auto px-6 pt-28 pb-16">
+    <nav class="text-sm text-wa-gray mb-8"><a href="../index.html" class="hover:text-wa-brand">ホーム</a><span class="mx-2">/</span><a href="../news.html" class="hover:text-wa-brand">コラム一覧</a><span class="mx-2">/</span><span>現場天気予報のGAS自動取得・LINE通知</span></nav>
+    <div class="flex items-center gap-2 mb-4">
+        <span class="inline-block bg-wa-brand text-white text-sm font-bold px-4 py-1 rounded-full">業務効率化</span>
+        <span class="inline-block bg-wa-accent text-white text-sm font-bold px-4 py-1 rounded-full">GAS活用</span>
+    </div>
+    <h1 class="break-keep text-balance font-serif text-2xl md:text-3xl font-bold text-wa-text mb-4 leading-snug">工務店の現場天気予報を<br>GASで自動取得してLINEに通知する方法</h1>
+    <div class="flex items-center gap-4 text-sm text-wa-gray mb-8">
+        <span class="flex items-center gap-1"><i data-lucide="user" class="w-4 h-4"></i>木村 拓隆</span>
+    </div>
+    <div class="mb-10 rounded-wa overflow-hidden"><img src="../images/genba_sum.png" alt="工務店の現場天気予報をGASで自動取得してLINEに通知する方法" class="w-full object-cover"></div>
+    <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
+        <p class="font-bold text-xl mb-6 text-wa-brand">現場の天気確認、毎朝スマホでアプリを何個も開いていませんか？</p>
+        <p class="mb-4 text-wa-text leading-relaxed">建設現場では天気予報が工程判断・安全管理・資材搬入計画に直結します。現場監督が毎朝天気アプリを開いて複数の現場エリアの天気を個別に確認する作業は、日々の積み重ねで月に何時間もの時間を消費します。また「確認し忘れた」「予報が変わっていた」というケースで、現場作業に影響が出ることもあります。</p>
+        <p class="mb-8 text-wa-text leading-relaxed">この記事では、OpenWeatherMap APIとGoogle Apps Script（GAS）を連携させて、複数の現場エリアの天気予報を自動取得し、毎日指定時間に現場監督のLINEグループへ自動通知する仕組みの構築方法を解説します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の現場天気確認業務とは</h4>
+        <p class="mb-4">工務店の現場天気確認業務とは、当日・翌日・週間の天気予報を現場エリアごとに把握し、外壁塗装・基礎コンクリート・屋根工事など天候に影響される工程のスケジュールを管理する業務を指します。現場が複数ある工務店では、毎朝複数エリアの天気を個別に確認するだけで10〜20分かかることがあります。</p>
+        <p class="mb-3">具体的には次のような作業が含まれます。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>複数の現場エリアの天気予報アプリによる確認</li><li>天候に影響される工程の当日可否判断</li><li>悪天候時の工程変更・業者連絡</li><li>翌日以降の天候を踏まえた工程計画の調整</li><li>現場監督・職人への天気情報の共有</li></ul>
+        <p class="mb-8">BuildMateの支援実績では、GASで天気予報を自動取得・通知する仕組みを導入した工務店で、毎朝の天気確認作業がゼロになり、工程判断の迅速化と安全管理の向上が実現しています。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">仕組みの全体像：OpenWeatherMap APIとGASをつなぐ</h4><p class="mb-4">Googleスプレッドシートに現場名・現場エリアの緯度経度（または都市名）を登録します。GASのトリガーを毎朝6時30分に設定し、OpenWeatherMap APIから各現場エリアの当日・翌日・3日後の天気・気温・降水確率を自動取得します。取得したデータをGASがLINE Messaging APIで現場監督グループへ自動送信します。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 1: OpenWeatherMap APIの設定</h4><p class="mb-4">OpenWeatherMap（openweathermap.org）で無料アカウントを作成し、APIキーを取得します。無料プランで60回/分のAPIコールが可能なため、複数現場の天気を同時に取得できます。GASからAPIキーを使ってHTTPリクエストを送ると、JSON形式で天気データが返ってきます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 2: 複数現場の天気を一括取得・整形</h4><p class="mb-4">GASがスプレッドシートの現場リストを読み取り、各現場エリアの天気を一括取得します。「〇〇現場（大阪府〇〇市）：今日 晴れ 最高22度 / 明日 曇り 降水確率40% / 明後日 雨 降水確率80%」という形式で見やすく整形します。コンクリート打設・塗装工事など天候に敏感な工程がある現場は赤文字でハイライトする設定も可能です。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 3: LINEグループへの自動通知</h4><p class="mb-4">GASが整形した天気情報を毎朝6時30分に現場監督のLINEグループへ自動送信します。出勤前にLINEを確認するだけで全現場の天気が把握でき、天気アプリを個別に開く必要がなくなります。週末は「来週の週間天気」をまとめて送信する設定にすることで、週次の工程計画立案も効率化できます。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+        <p class="mb-4">BuildMateが建設業・工務店の現場にGASを導入した実績をもとに、削減効果をまとめます。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>毎朝の天気確認：複数アプリを個別確認（10〜20分） → GASが一括取得・自動通知</li><li>現場別の天気把握：手動で各エリア確認 → LINEに全現場分が自動配信</li><li>悪天候への対応判断：確認後に判断 → 朝に通知が届くため判断が早まる</li><li>週次工程計画：天気確認に時間 → 週間天気も自動通知で効率化</li></ul>
+        <p class="mb-8">現場5件を管理する工務店では、月5〜10時間の削減が現実的な目標値です。それ以上に、天候による工程ミス・安全事故のリスクを事前に把握できることの価値が大きく、工程管理の質が向上します。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASでできないことについて</h4>
+        <p class="mb-4">天気予報はあくまでも予測であり、実際の天候と異なる場合があります。外壁塗装の可否・コンクリート打設の決定など最終判断は現場監督が行う必要があります。また、急変する天候への対応は人間のリアルタイム判断が必要です。
+
+しかしGASが毎朝の情報収集を自動化することで、現場監督が判断に集中できる時間が生まれます。</p>
+        <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">現場監督の朝は天気確認から始まります。GASが自動で全現場の天気をLINEに届けてくれれば、その時間が現場確認や安全確認に使えます。小さな自動化ですが、毎日積み重なると大きな差になります。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）</div>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>工務店の複数現場の天気予報はGASとOpenWeatherMap APIで自動取得してLINEへ通知できる</li><li>現場リストをスプレッドシートに登録するだけで全現場分の天気が一括取得される</li><li>毎朝6時30分に現場監督のLINEグループへ当日・翌日・3日後の天気が自動配信される</li><li>毎朝10〜20分かかっていた天気確認がゼロになり、工程判断の迅速化につながる</li><li>導入コストは実質ゼロ（OpenWeatherMap無料プラン・GAS・LINEのみ）</li></ul>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の現場天気予報をGASで自動取得するにはどんなAPIを使えばいいですか？</p><p class="text-wa-text text-base m-0">OpenWeatherMap APIが無料で利用でき、GASから現場の緯度経度や都市名を指定して天気・気温・降水確率を自動取得できます。BuildMateの支援実績では、複数現場の天気確認作業がゼロになった工務店があります。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 現場の天気予報をGASでLINEへ自動通知するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">GASでOpenWeatherMap APIから天気データを取得し、LINE Messaging APIで現場監督グループへ毎朝自動送信する仕組みを構築できます。BuildMateの支援実績では、設定から翌日に毎朝の自動通知が始まった工務店があります。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. GASで複数現場の天気を一括取得するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">スプレッドシートに現場リストを登録し、GASでループ処理して各現場の天気を一括取得できます。BuildMateの支援実績では、5現場分の天気を毎朝一括取得してLINEへ配信する仕組みを1週間で構築した工務店があります。</p></div></div>
+        <div class="mt-10 pt-8 border-t border-wa-border"><p class="font-bold text-wa-brand mb-4">関連記事</p><ul class="space-y-2"><li><a href="119-morning-report-gas.html" class="text-wa-brand hover:underline">工務店の現場モーニングレポートをGASで自動生成してLINEに配信する方法</a></li><li><a href="016-line-deming-gas.html" class="text-wa-brand hover:underline">建設業の出面管理をLINE×GASで自動化する方法</a></li><li><a href="044-genba-kanri-ai.html" class="text-wa-brand hover:underline">工務店の現場管理業務をAI・GASで効率化する方法</a></li></ul></div>
+    </article>
+    <div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5">
+        <div class="w-14 h-14 rounded-full bg-wa-brand flex items-center justify-center flex-shrink-0"><i data-lucide="user" class="w-7 h-7 text-white"></i></div>
+        <div><p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p><p class="text-[15px] md:text-base text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。現場の実態とシステムの限界を知り尽くした立場から、中小工務店向けのAI・GAS導入コンサルティングを提供。関西拠点・全国オンライン対応。</p></div>
+    </div>
+    <div class="mt-8 bg-white rounded-wa p-8 shadow-sm border border-wa-border text-center">
+        <p class="font-bold text-lg text-wa-brand mb-2">「うちでも使えるか」を一緒に確認しましょう</p>
+        <p class="text-wa-gray text-base md:text-lg mb-6 leading-relaxed max-w-2xl mx-auto">BuildMateでは、工務店・建設会社の現状業務を無料でヒアリングし、GASで効率化できる箇所を具体的にご提案しています。元・施工管理の代表が現場目線でお答えします。勧誘・営業は一切行いません。</p>
+        <a href="../contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-wa-accent hover:opacity-90 text-white rounded-wa font-bold transition-colors"><i data-lucide="mail" class="w-4 h-4"></i>無料相談に申し込む</a>
+    </div>
+    <div class="mt-8 text-center"><a href="../news.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-wa-brand text-wa-brand rounded-wa font-bold hover:bg-wa-brand hover:text-white transition-colors">← コラム一覧に戻る</a></div>
+</main>
+        <footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
+        <div class="max-w-[1080px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-white/60 text-sm">
+                    Copyright © 2026 BuildMate. All rights reserved.
+                </div>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
+                    <a href="../privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                    <a href="../terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                    <a href="../law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script>lucide.createIcons();</script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+</body></html>

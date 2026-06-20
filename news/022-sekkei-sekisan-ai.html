@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5ECF52MHF6');
+    </script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../seigaiha.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工務店の設計・積算をAI・GASで効率化する方法｜間取り作成から見積書まで自動化 | BuildMate</title>
+    <link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/022-sekkei-sekisan-ai.html">
+    <meta name="description" content="工務店の設計・積算業務（間取り作成・仕様書・数量拾い出し・見積書など）をAIとGASで自動化する方法を解説。積算作業を丸1日から2時間に短縮した具体的な手順をBuildMate代表が紹介します。">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="工務店の設計・積算をAI・GASで効率化する方法｜間取り作成から見積書まで自動化 | BuildMate">
+    <meta property="og:description" content="工務店の設計・積算業務をAIとGASで自動化する方法を解説。積算作業を丸1日から2時間に短縮した具体的な手順を紹介。">
+    <meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/022-sekkei-sekisan-ai.html">
+    <meta property="og:site_name" content="BuildMate">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="工務店の設計・積算をAI・GASで効率化する方法 | BuildMate">
+    <meta name="twitter:description" content="間取り作成・積算・見積書・確認申請管理をAIとGASで自動化。丸1日→2時間に短縮した具体的な方法を解説。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Noto Sans JP"', 'sans-serif'], serif: ['"Noto Serif JP"', 'serif'] },
+                    colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }
+                }
+            }
+        }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "工務店の設計・積算をAI・GASで効率化する方法｜間取り作成から見積書まで自動化",
+      "datePublished": "2026-03-30",
+      "dateModified": "2026-03-30",
+      "author": {
+        "@type": "Person",
+        "name": "木村 拓隆",
+        "jobTitle": "BuildMate代表・AI活用伴走パートナー",
+        "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "BuildMate（ビルドメイト）",
+        "url": "https://buildmate-gif.github.io/buildmate-site"
+      },
+      "description": "工務店の設計・積算業務（間取り作成・仕様書・数量拾い出し・見積書など）をAIとGASで自動化する方法を解説。積算作業を丸1日から2時間に短縮した具体的な手順をBuildMate代表が紹介します。",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://buildmate-gif.github.io/buildmate-site/news/037-sekkei-sekisan-ai.html"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "工務店の積算・数量拾い出しにAIを使うとどのくらい時間が短縮できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BuildMateの支援実績では、丸1日かかっていた積算・数量拾い出し作業が約2時間に短縮されます。積算AIツールを活用して図面から数量を自動抽出・集計する仕組みを導入するためです。積算外注費の削減と見積精度の向上という追加効果も生まれます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "工務店の見積書作成はGASで自動化できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、自動化できます。GASで原価データベースを参照して見積書を自動生成し、AIで利益率の最適化提案まで行う仕組みが構築できます。BuildMateの支援実績では、3時間かかっていた見積書作成が約30分に短縮され、粗利の改善にもつながった工務店があります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "工務店の設計・積算業務でAI・GASに任せられない業務はありますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "最終的な設計判断・意匠の創造、構造計算・省エネ計算の専門家確認は、専門的な技術判断が必要なためAIには任せられません。しかしAIが叩き台の生成・数量計算を担うことで、工務店の設計担当者が創造的な設計作業という本来業務に集中できる時間が月20時間以上生まれます。"
+          }
+        }
+      ]
+    }
+    </script>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<body class="bg-wa-bg text-wa-text font-sans antialiased">
+
+        <header class="bg-white/95 backdrop-blur-md fixed w-full top-0 z-50 border-b border-wa-border transition-all duration-300">
+        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+
+                <a href="../index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
+                <a href="../services.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">サービス・効果</a>
+                <a href="../ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
+                <a href="../diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+                <a href="../gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
+                <a href="../gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
+                <a href="../contact.html" class="px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+<!-- モバイルメニュー -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="../index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
+    <a href="../services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
+    <a href="../ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
+    <a href="../diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
+    <a href="../gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
+    <a href="../gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
+    <a href="../contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
+
+    <main class="pt-32 pb-24 px-6">
+        <div class="max-w-[800px] mx-auto">
+
+            <nav class="text-sm text-wa-gray mb-8">
+                <a href="../index.html" class="hover:text-wa-brand">ホーム</a>
+                <span class="mx-2">/</span>
+                <a href="../news.html" class="hover:text-wa-brand">コラム一覧</a>
+                <span class="mx-2">/</span>
+                <span>工務店の設計・積算をAI・GASで効率化する方法</span>
+            </nav>
+
+            <div class="mb-10">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="inline-block bg-wa-brand text-white text-sm font-bold px-4 py-1 rounded-full">業務効率化</span>
+                    <span class="inline-block bg-wa-accent text-white text-sm font-bold px-4 py-1 rounded-full">AI活用</span>
+                </div>
+                <h1 class="break-keep text-balance text-2xl md:text-4xl font-serif font-bold text-wa-text leading-tight mb-4">工務店の設計・<wbr>積算を<wbr><br>AI・<wbr>GASで<wbr>効率化する方法</h1>
+            </div>
+
+            <div class="mb-10">
+            </div>
+
+            <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
+
+                <p class="font-bold text-xl mb-6 text-wa-brand">積算と見積書の作成に何日もかかって、商談のチャンスを逃していませんか？</p>
+
+                <p>工務店の設計・積算業務では、お客様の要望整理から間取り検討・仕様書作成・数量拾い出し・見積書作成まで、一棟あたり数日から1週間を要することもあります。特に積算は専門知識と時間を要するため、外注に頼るケースも多く、コストと時間の両面でボトルネックになっています。見積提出が遅れると商談機会を失うリスクも高まります。</p>
+                <p>この記事では、工務店の設計・積算に関わる業務について、AI（Claude・ChatGPT）とGoogle Apps Script（GAS）を使って効率化する具体的な方法を解説します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。要望整理から確認申請管理まで、8つの設計・積算業務の効率化手法を紹介します。</p>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の設計・積算業務とは</h4>
+
+                <p>工務店の設計・積算業務とは、お客様の要望・敷地条件をもとに間取り・仕様・仕上げを決定し、必要な材料・数量・金額を算出して見積書に落とし込むまでの業務全般を指します。具体的には次の8項目が代表的です。</p>
+
+                <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg">
+                    <li>要望・敷地情報の整理と設計条件一覧の作成</li>
+                    <li>間取りプラン・外観プランの叩き台生成</li>
+                    <li>仕様書・仕上げ表の作成</li>
+                    <li>数量拾い出し（積算）</li>
+                    <li>原価計算・見積書の作成</li>
+                    <li>図面の修正・バージョン管理</li>
+                    <li>構造計算・省エネ計算の依頼管理</li>
+                    <li>確認申請書類の準備・提出管理</li>
+                </ul>
+
+                <p>これらの業務は専門性が高い反面、定型的な書類作成・計算・管理の部分はAIとGASで大幅に効率化できます。BuildMateの支援実績では、これらの業務をまとめて導入した工務店（社員5名規模）で月20〜25時間の削減を実現しています。</p>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">1. 要望・敷地情報の整理（AIで対応）</h4>
+
+                <p>工務店の要望整理とは、ヒアリングシートや打ち合わせで把握したお客様の希望（部屋数・動線・予算・ライフスタイル）を設計条件として一覧化し、設計業務に引き渡せる形に整理する業務です。メモ書きを整理するだけで1時間程度かかることが一般的です。</p>
+                <p>AIでヒアリングシートの回答を整理・設計条件一覧を自動生成することで、1時間かかっていた要望整理が15分程度に短縮されます。抜け漏れのチェックもAIが行うため、設計段階での確認漏れが減ります。</p>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">2. 数量拾い出し・積算（AIで対応）</h4>
+
+                <p>工務店の積算とは、設計図面をもとに建材・設備・仕上げ材の数量を拾い出し、単価と掛け合わせて原価を算出する業務です。1棟あたり丸1日以上かかることが多く、外注すれば数万円のコストが発生するケースもあります。</p>
+                <p>積算AIツールを活用して図面から数量を自動抽出・集計することで、丸1日かかっていた積算作業が約2時間に短縮されます。積算外注費の削減と見積精度の向上が同時に実現でき、見積提出までのリードタイムも大幅に短縮されます。</p>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">3. 原価計算・見積書の作成（AI＋GASで対応）</h4>
+
+                <p>工務店の見積書作成とは、積算した数量に現在の単価を掛け合わせて原価を算出し、諸経費・利益を加算して施主への見積書を作成する業務です。Excelで毎回ゼロから作成すると3時間以上かかることが多く、利益率の確認も属人化しがちです。</p>
+                <p>GASで原価データベースを参照して見積書を自動生成し、AIで利益率の最適化提案を行うことで、3時間かかっていた見積書作成が30分程度に短縮されます。粗利の可視化と利益管理の精度向上という経営上の効果も同時に得られます。</p>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">4. 確認申請書類の準備・提出管理（AI＋GASで対応）</h4>
+
+                <p>工務店の確認申請管理とは、建築確認申請に必要な書類の準備・チェック・提出・審査対応・確認済証の受取りまでを管理する業務です。提出期限の管理と書類の抜け漏れチェックだけで半日以上かかることがあります。</p>
+                <p>AIで申請書類のチェックリストを自動生成し、GASで進捗管理・期限アラートを自動送信することで、半日かかっていた確認申請管理が2時間程度に短縮されます。書類の抜け漏れによる再申請リスクも大幅に低減されます。</p>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+
+                <p>BuildMateが工務店の設計・積算業務にAI・GASを導入した実績をもとに、削減効果をまとめます。</p>
+
+                <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg">
+                    <li>要望整理・設計条件一覧：1時間 → 約15分（1案件あたり）</li>
+                    <li>間取りプラン叩き台：半日 → 約1時間</li>
+                    <li>積算・数量拾い出し：丸1日 → 約2時間（1棟あたり）</li>
+                    <li>原価計算・見積書作成：3時間 → 約30分（1案件あたり）</li>
+                    <li>確認申請書類・進捗管理：半日 → 約2時間</li>
+                </ul>
+
+                <p>社員数5名規模の工務店でこれらを組み合わせた場合、月20〜25時間の削減が現実的な目標値です。時給換算（2,000円）で月4〜5万円相当のコスト削減になります。AIツールの月額費用（約3,000円）と比較すると、13倍以上の費用対効果が見込める計算です。</p>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIに任せない業務について</h4>
+
+                <p>最終的な設計判断・意匠の創造、構造計算・省エネ計算の専門家確認——これらはAIが生成した叩き台を人間が確認・修正する必要があり、完全に任せることはできません。しかしAIが数量計算・書類作成の叩き台を担うからこそ、工務店の設計担当者がお客様の要望を形にするという創造的な業務に集中できる時間が生まれます。</p>
+
+                <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">
+                    積算に丸1日かかっているうちは、見積提出スピードで他社に負けます。AIで積算の叩き台を出してから人間が確認する流れに変えるだけで、商談のスピードが劇的に変わります。—— BuildMate代表・木村拓隆（元・施工管理1,200件以上）
+                </div>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+
+                <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg">
+                    <li>工務店の設計・積算業務は8項目あり、そのほぼすべてがAI・GASで効率化できる</li>
+                    <li>積算はAIで丸1日→2時間、見積書はGAS+AIで3時間→30分に短縮</li>
+                    <li>社員5名規模の工務店で月20〜25時間・4〜5万円相当のコスト削減が見込める</li>
+                    <li>意匠設計・専門家確認など「人にしかできない仕事」への集中時間を生み出すことが最大の目的</li>
+                    <li>導入に必要なのは月3,000円程度のAIツールとGoogleの無料ツールだけ</li>
+                </ul>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+
+                <div class="space-y-6">
+                    <div class="bg-wa-bg p-5 rounded-lg">
+                        <p class="font-bold text-wa-brand mb-2">Q. 工務店の積算・数量拾い出しにAIを使うとどのくらい時間が短縮できますか？</p>
+                        <p class="text-wa-text text-base m-0">BuildMateの支援実績では、丸1日かかっていた積算・数量拾い出し作業が約2時間に短縮されます。積算AIツールを活用して図面から数量を自動抽出・集計する仕組みを導入するためです。積算外注費の削減と見積精度の向上という追加効果も生まれます。</p>
+                    </div>
+                    <div class="bg-wa-bg p-5 rounded-lg">
+                        <p class="font-bold text-wa-brand mb-2">Q. 工務店の見積書作成はGASで自動化できますか？</p>
+                        <p class="text-wa-text text-base m-0">はい、自動化できます。GASで原価データベースを参照して見積書を自動生成し、AIで利益率の最適化提案まで行う仕組みが構築できます。BuildMateの支援実績では、3時間かかっていた見積書作成が約30分に短縮され、粗利の改善にもつながった工務店があります。</p>
+                    </div>
+                    <div class="bg-wa-bg p-5 rounded-lg">
+                        <p class="font-bold text-wa-brand mb-2">Q. 工務店の設計・積算業務でAI・GASに任せられない業務はありますか？</p>
+                        <p class="text-wa-text text-base m-0">最終的な設計判断・意匠の創造、構造計算・省エネ計算の専門家確認は、専門的な技術判断が必要なためAIには任せられません。しかしAIが叩き台の生成・数量計算を担うことで、工務店の設計担当者が創造的な設計作業という本来業務に集中できる時間が月20時間以上生まれます。</p>
+                    </div>
+                </div>
+
+                <div class="mt-10 pt-8 border-t border-wa-border">
+                    <p class="font-bold text-wa-brand mb-4">関連記事</p>
+                    <ul class="space-y-2">
+                        <li><a href="038-gyosha-taiou-ai.html" class="text-wa-brand hover:underline">工務店の業者対応をAI・GASで効率化する方法</a></li>
+                        <li><a href="029-zaimu-kaikei-ai.html" class="text-wa-brand hover:underline">工務店の財務・会計をAI・GASで効率化する方法</a></li>
+                        <li><a href="051-customer-taiou-ai.html" class="text-wa-brand hover:underline">工務店のお客様対応をAI・GASで効率化する方法</a></li>
+                    </ul>
+                </div>
+
+            </article>
+
+            <!-- 著者プロフィール -->
+            <div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5">
+                <div class="w-14 h-14 rounded-full bg-wa-brand flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="user" class="w-7 h-7 text-white"></i>
+                </div>
+                <div>
+                    <p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p>
+                    <p class="text-[15px] md:text-base text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。現場の実態とシステムの限界を知り尽くした立場から、中小工務店向けのAI・GAS導入コンサルティングを提供。関西拠点・全国オンライン対応。</p>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-8 bg-white rounded-wa p-8 shadow-sm border border-wa-border text-center">
+                <p class="font-bold text-lg text-wa-brand mb-2">「うちでも使えるか」を一緒に確認しましょう</p>
+                <p class="text-wa-gray text-base md:text-lg mb-6 leading-relaxed max-w-2xl mx-auto">BuildMateでは、工務店の現状業務を無料でヒアリングし、AI・GASで効率化できる箇所を具体的にご提案しています。元・施工管理の代表が現場目線でお答えします。勧誘・営業は一切行いません。</p>
+                <a href="../contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-wa-accent hover:opacity-90 text-white rounded-wa font-bold transition-colors">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    無料相談に申し込む
+                </a>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="../news.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-wa-brand text-wa-brand rounded-wa font-bold hover:bg-wa-brand hover:text-white transition-colors">
+                    ← コラム一覧に戻る
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+            <footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
+        <div class="max-w-[1080px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-white/60 text-sm">
+                    Copyright © 2026 BuildMate. All rights reserved.
+                </div>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
+                    <a href="../privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                    <a href="../terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                    <a href="../law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+</body>
+</html>

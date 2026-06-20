@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5ECF52MHF6');
+    </script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="seigaiha.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI研修 | 初心者にも実務者にもわかりやすく | BuildMate</title>
+    <link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/training.html">
+    <meta name="description" content="治療家、介護福祉、営業支援会社など幅広い業種向けのAI研修。初心者向け講習から実務者向け講習、安全なAI活用ルールまで、現場で使える形に整理します。">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AI研修 | 初心者にも実務者にもわかりやすく | BuildMate">
+    <meta property="og:description" content="初心者向け講習から実務者向け講習、安全なAI活用ルールまで。現場で使えるAI研修をBuildMateが伴走します。">
+    <meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/training.html">
+    <meta property="og:site_name" content="BuildMate">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI研修 | 初心者にも実務者にもわかりやすく | BuildMate">
+    <meta name="twitter:description" content="初心者向け講習から実務者向け講習、安全なAI活用ルールまで。現場で使えるAI研修をBuildMateが伴走します。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        serif: ['"Noto Serif JP"', 'serif'],
+                    },
+                    colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745' } },
+                    borderRadius: { 'wa': '12px' }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav { background: rgba(247, 242, 234, 0.92); backdrop-filter: blur(10px); }
+        :root { --accent: #24324A; }
+        .btn-accent {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), box-shadow 0.28s cubic-bezier(0.22,1,0.36,1), background-color 0.2s ease;
+        }
+        .btn-accent::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -72%;
+            width: 44%;
+            background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.08) 38%, rgba(255,255,255,0.3) 50%, transparent 62%);
+            transform: skewX(-18deg);
+            transition: left 0.55s ease;
+            pointer-events: none;
+        }
+        .btn-accent:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 18px 34px -18px rgba(31,41,51,0.42);
+        }
+        .btn-accent:hover::before { left: 128%; }
+        @media (prefers-reduced-motion: reduce) {
+            .btn-accent, .btn-accent::before { transition: none !important; animation: none !important; }
+            .btn-accent::before { display: none !important; }
+            .btn-accent:hover { transform: none !important; }
+        }
+    </style>
+</head>
+<body class="bg-wa-bg text-wa-text font-sans antialiased">
+    <header class="border-wa-border border-b fixed w-full top-0 glass-nav z-50">
+        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+                <a href="index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
+                <a href="services.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">サービス・効果</a>
+                <a href="ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
+                <a href="diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+                <a href="gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
+                <a href="gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
+                <a href="contact.html" class="px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
+            </nav>
+            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- モバイルメニュー -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
+    <a href="services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
+    <a href="ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
+    <a href="diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
+    <a href="gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
+    <a href="gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
+    <a href="contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
+
+    <main class="pt-28 pb-24">
+        <section class="py-18 md:py-24 bg-white border-b border-wa-border">
+            <div class="max-w-[980px] mx-auto px-6 text-center">
+                <span class="inline-block text-wa-gold font-bold tracking-[0.25em] text-sm mb-5">AI TRAINING</span>
+                <h1 class="text-4xl md:text-5xl font-serif font-bold text-wa-text leading-tight mb-6">
+                    <span class="block md:whitespace-nowrap">現場で使えるAI研修を、</span>
+                    <span class="block md:whitespace-nowrap">初心者にもわかりやすく。</span>
+                </h1>
+                <p class="text-wa-gray text-base md:text-lg leading-loose max-w-4xl mx-auto">
+                    <span class="block">治療家、介護福祉、営業支援会社など、さまざまな業種の現場に合わせて、</span>
+                    <span class="block mt-2">AIの基本から実務活用、安全な使い方まで、わかりやすく整理してお伝えします。</span>
+                </p>
+            </div>
+        </section>
+
+        <section class="py-16 bg-wa-bg border-b border-wa-border">
+            <div class="max-w-[980px] mx-auto px-6">
+                <div class="grid md:grid-cols-3 gap-6 items-start">
+                    <div class="bg-white rounded-wa border border-wa-border p-6">
+                        <h2 class="text-lg font-bold text-wa-brand mb-3">研修で目指すこと</h2>
+                        <p class="text-wa-gray leading-relaxed">
+                            知識だけで終わらせず、明日から試せる使い方まで、参加者の中でつながる研修を目指しています。
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-wa border border-wa-border p-6">
+                        <h2 class="text-lg font-bold text-wa-brand mb-3">こんな業種に対応</h2>
+                        <p class="text-wa-gray leading-relaxed">
+                            治療家、介護福祉、営業支援会社など、少人数でも現場でAIを定着させたい組織向けです。
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-wa border border-wa-border p-6">
+                        <h2 class="text-lg font-bold text-wa-brand mb-3">研修後の進め方</h2>
+                        <p class="text-wa-gray leading-relaxed">
+                            研修だけで止めることも、必要に応じて業務構築支援へ段階的に進むこともできます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="max-w-[980px] mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-serif font-bold text-wa-text mb-4">
+                        <span class="block">AIを知るだけで終わらせない、</span>
+                        <span class="block">実務につながる研修です。</span>
+                    </h2>
+                    <p class="text-wa-gray text-base md:text-lg leading-loose max-w-4xl mx-auto">
+                        BuildMateの研修では、生成AIの機能説明だけでなく、実際の業務にどう置き換えるかまで扱います。
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-wa-bg rounded-wa border border-wa-border p-7">
+                        <p class="text-sm font-bold tracking-widest text-wa-gold mb-3">BEGINNER</p>
+                        <h3 class="text-2xl font-serif font-bold text-wa-text mb-4">初心者向け講習</h3>
+                        <p class="text-wa-gray leading-loose mb-5">
+                            <span class="block">AIが初めての方向けに、基本操作、</span>
+                            <span class="block">できること、日々の業務での使いどころを</span>
+                            <span class="block">やさしく整理します。</span>
+                        </p>
+                        <ul class="space-y-3 text-wa-text">
+                            <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-wa-accent flex-shrink-0 mt-0.5"></i><span>ChatGPT・生成AIの基本</span></li>
+                            <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-wa-accent flex-shrink-0 mt-0.5"></i><span>まず試しやすい業務の見つけ方</span></li>
+                            <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-wa-accent flex-shrink-0 mt-0.5"></i><span>社内共有のための入り口整理</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-wa-bg rounded-wa border border-wa-border p-7">
+                        <p class="text-sm font-bold tracking-widest text-wa-gold mb-3">PRACTICAL</p>
+                        <h3 class="text-2xl font-serif font-bold text-wa-text mb-4">中級者向け講習</h3>
+                        <p class="text-wa-gray leading-loose mb-5">
+                            <span class="block">基本を理解している方向けに、</span>
+                            <span class="block">業務別活用、プロンプト設計、社内運用まで</span>
+                            <span class="block">踏み込んで扱います。</span>
+                        </p>
+                        <ul class="space-y-3 text-wa-text">
+                            <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-wa-accent flex-shrink-0 mt-0.5"></i><span>文章作成・要約・提案資料づくり</span></li>
+                            <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-wa-accent flex-shrink-0 mt-0.5"></i><span>業務に合わせたプロンプト設計</span></li>
+                            <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-wa-accent flex-shrink-0 mt-0.5"></i><span>チームで使うときの整理方法</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-wa-bg border-y border-wa-border">
+            <div class="max-w-[980px] mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-serif font-bold text-wa-text mb-4">
+                        <span class="block">安全なAI活用も、</span>
+                        <span class="block">研修の中で必ず扱います。</span>
+                    </h2>
+                    <p class="text-wa-gray text-base md:text-lg leading-loose max-w-4xl mx-auto">
+                        <span class="block">便利だからこそ、使ってよい情報と使わない情報の線引き、</span>
+                        <span class="block">人の最終確認、社内ルールの整備が欠かせません。</span>
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white rounded-wa border border-wa-border p-6">
+                        <h3 class="text-xl font-bold text-wa-brand mb-3">個人情報・機密情報の扱い</h3>
+                        <p class="text-wa-gray leading-relaxed">氏名や連絡先などは直接入れず、匿名化や<br>伏せ字を前提に安全な使い方を整理します。</p>
+                    </div>
+                    <div class="bg-white rounded-wa border border-wa-border p-6">
+                        <h3 class="text-xl font-bold text-wa-brand mb-3">AI出力の確認ルール</h3>
+                        <p class="text-wa-gray leading-relaxed">AI出力はそのまま使わず、事実確認と人の<br>最終確認を通す前提で活用します。</p>
+                    </div>
+                    <div class="bg-white rounded-wa border border-wa-border p-6">
+                        <h3 class="text-xl font-bold text-wa-brand mb-3">社内で使ってよい情報の線引き</h3>
+                        <p class="text-wa-gray leading-loose">どの情報は使えるか、どの情報は社外AIに入れないかを、職種や業務に合わせて整理します。</p>
+                    </div>
+                    <div class="bg-white rounded-wa border border-wa-border p-6">
+                        <h3 class="text-xl font-bold text-wa-brand mb-3">社内ルールと確認フロー</h3>
+                        <p class="text-wa-gray leading-loose">担当者ごとの判断に任せきりにせず、確認フローや共有ルールまで含めて定着しやすい形を考えます。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="max-w-[980px] mx-auto px-6">
+                <div class="bg-wa-brand text-white rounded-wa p-8 md:p-10">
+                    <div class="grid lg:grid-cols-[1.4fr_1fr] gap-8 items-center">
+                        <div>
+                            <p class="text-sm font-bold tracking-widest text-white/70 mb-3">NEXT STEP</p>
+                            <h2 class="text-3xl font-serif font-bold mb-4">
+                                <span class="block md:whitespace-nowrap">研修のあと、必要に応じて</span>
+                                <span class="block md:whitespace-nowrap">業務構築支援へ進むこともできます。</span>
+                            </h2>
+                            <p class="text-white/85 leading-loose">
+                                研修だけで止めることも、負荷業務のヒアリングからAIやGASを活用した仕組みづくりへ進むことも可能です。
+                            </p>
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <a href="implementation.html" class="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white text-wa-brand rounded-wa font-bold hover:bg-wa-bg transition-colors">
+                                業務構築支援を見る
+                                <i data-lucide="settings-2" class="w-4 h-4"></i>
+                            </a>
+                            <a href="contact.html" class="inline-flex items-center justify-center gap-2 px-6 py-4 border border-white/50 text-white rounded-wa font-bold hover:bg-white/10 transition-colors">
+                                研修について相談する
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
+        <div class="max-w-[1080px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-white/60 text-sm">Copyright © 2026 BuildMate. All rights reserved.</div>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
+                    <a href="privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                    <a href="terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                    <a href="law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        function closeMobileMenu() {
+            const m = document.getElementById('mobile-menu');
+            m.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const m = document.getElementById('mobile-menu');
+            m.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+    </script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5ECF52MHF6');</script>
+<meta charset="UTF-8"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../seigaiha.css"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>工務店のクレーム・不具合受付をAI・GASで自動化する方法｜30分→5分で対応速度を改善 | BuildMate</title>
+<link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/025-claim-gas.html">
+<meta name="description" content="引渡し後にお客様から「雨漏りがしている」「建具の建てつけが悪い」という連絡が来たとき、担当者が現場に出ていて連絡に気づくのが数時間後——。この初動の遅さがお客様の不満を大きくしてしまうことがあります。クレームは対応の速さと誠実さで、最終的なBuildMate代表が紹介します。">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article"><meta property="og:title" content="工務店のクレーム・不具合受付をAI・GASで自動化する方法｜30分→5分で対応速度を改善 | BuildMate"><meta property="og:description" content="引渡し後にお客様から「雨漏りがしている」「建具の建てつけが悪い」という連絡が来たとき、担当者が現場に出ていて連絡に気づくのが数時間後——。この初動の遅さがお客様"><meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/025-claim-gas.html"><meta property="og:site_name" content="BuildMate"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="工務店のクレーム・不具合受付をAI・GASで自動化する方法｜30分→5分で対応速度を改善 | BuildMate"><meta name="twitter:description" content="引渡し後にお客様から「雨漏りがしている」「建具の建てつけが悪い」という連絡が来たとき、担当者が現場に出ていて連絡に気づくのが数時間後——。この初動の遅さがお客様">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"工務店のクレーム・不具合受付をAI・GASで自動化する方法｜30分→5分で対応速度を改善","datePublished":"2026-03-08","dateModified":"2026-03-08","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/049-claim-gas.html"}}</script>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<body class="bg-wa-bg text-wa-text font-sans antialiased">
+    <header class="bg-white/95 backdrop-blur-md fixed w-full top-0 z-50 border-b border-wa-border transition-all duration-300">
+        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+
+                <a href="../index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
+                <a href="../services.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">サービス・効果</a>
+                <a href="../ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
+                <a href="../diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+                <a href="../gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
+                <a href="../gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
+                <a href="../contact.html" class="px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+<!-- モバイルメニュー -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="../index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
+    <a href="../services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
+    <a href="../ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
+    <a href="../diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
+    <a href="../gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
+    <a href="../gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
+    <a href="../contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
+<main class="pt-32 pb-24 px-6"><div class="max-w-[800px] mx-auto">
+<nav class="text-sm text-wa-gray mb-8"><a href="../index.html" class="hover:text-wa-brand">ホーム</a><span class="mx-2">/</span><a href="../news.html" class="hover:text-wa-brand">コラム一覧</a><span class="mx-2">/</span><span>工務店のクレーム・不具合受付業務</span></nav>
+<div class="mb-10"><div class="flex items-center gap-2 mb-4"><span class="inline-block bg-wa-brand text-white text-sm font-bold px-4 py-1 rounded-full">業務効率化</span><span class="inline-block bg-wa-accent text-white text-sm font-bold px-4 py-1 rounded-full">AI活用</span></div>
+<h1 class="break-keep text-balance text-2xl md:text-4xl font-serif font-bold text-wa-text leading-tight mb-4">工務店のクレーム・<wbr>不具合受付を<wbr>AI・<wbr>GASで<wbr>自動化する方法</h1></div>
+<div class="mb-10"><img src="../images/gas_sum.png" alt="工務店のクレーム・不具合受付業務のイメージ" class="w-full rounded-wa object-cover" onerror="this.style.display='none'"></div>
+<article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
+<p class="font-bold text-xl mb-6 text-wa-brand">クレームへの初動が遅れると、小さな不満が大きな問題になります。</p>
+<p>引渡し後にお客様から「雨漏りがしている」「建具の建てつけが悪い」という連絡が来たとき、担当者が現場に出ていて連絡に気づくのが数時間後——。この初動の遅さがお客様の不満を大きくしてしまうことがあります。クレームは対応の速さと誠実さで、最終的な信頼を取り戻すチャンスになります。</p><p>この記事では、工務店の不具合・クレームの受付・記録業務を、AI（Claude・ChatGPT）とGoogle Apps Script（GAS）を組み合わせて自動化する具体的な方法を解説します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。</p>
+<h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店のクレーム・不具合受付業務とは</h4>
+<p>工務店のクレーム・不具合受付業務とは、引渡し後にお客様から報告された建物の不具合・修繕要望を受け付け、内容を記録して担当者に共有し、対応方針を決定するまでの一連の業務を指します。初動が30分以上かかっていることが多く、対応速度の改善が信頼維持に直結します。</p><p>具体的には次のような作業が含まれます。</p>
+<ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>お客様からの不具合報告の受付（電話・メール・LINE）</li><li>不具合内容の記録と担当者への共有</li><li>対応方針の初期検討（軽微な補修か専門業者が必要かなど）</li><li>お客様への受付確認・対応予定の連絡</li><li>対応履歴の管理と保証書との照合</li></ul>
+<p>BuildMateの支援実績では、AIとGASを組み合わせた工務店で、30分かかっていたクレーム初期対応が約5分になり、お客様への初動連絡速度が大幅に改善しています。</p>
+<h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASで行う部分：受付フォームと自動通知の仕組み</h4><p>工務店のクレーム受付自動化とは、お客様が報告した不具合内容を自動で記録し、担当者へ即時通知する仕組みです。電話での受付は担当者が不在だと情報が伝わらないリスクがあります。</p><p>Googleフォームを使ったクレーム受付フォームを設置し、お客様がスマホから不具合内容・写真・緊急度を入力するだけで、GASが担当者へSlack・メール・Chatworkで即時通知し、スプレッドシートに自動記録する仕組みを構築できます。「受付しました。〇営業日以内にご連絡いたします」という自動返信もお客様へ即時送付できます。30分かかっていた初期対応が約5分になります。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIで行う部分：対応方針の初期提案</h4><p>工務店のクレーム対応方針検討とは、報告された不具合の内容をもとに、自社で対応できるか・専門業者が必要か・保証の対象かなどを判断する業務です。経験の浅い担当者にとっては判断に時間がかかります。</p><p>AIに不具合の内容・場所・築年数を入力すると、「考えられる原因」「初期対応の優先度」「専門業者が必要かどうか」の初期判断を提案できます。過去のクレーム事例をAIに学習させることで、類似案件の対応履歴を参照した提案も可能です。担当者の初期判断をサポートし、対応の質と速度を両立できます。</p>
+<h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+<p>BuildMateが工務店の業務にAI・GASを導入した実績をもとに、削減効果をまとめます。</p>
+<ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>クレーム初期対応：30分 → 約5分</li><li>お客様への受付確認：手動メール → 即時自動返信</li><li>担当者への通知：電話連絡 → GASで即時通知</li><li>対応履歴の記録：手書き・Excel手入力 → 自動記録</li></ul>
+<p>月5〜10件のクレーム・不具合が発生する工務店では、月2〜5時間の削減が現実的な目標値です。時給換算（2,000円）で月1〜2万円相当のコスト削減に加え、初動の速さによるお客様満足度維持・関係悪化防止という効果が大きい業務です。</p>
+<h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIとGASでできないことについて</h4>
+<p>実際の現地確認・修繕工事の手配・お客様への誠意ある対応は人間が行う必要があります。クレーム対応で最も重要なのは人間の誠実な姿勢と行動です。
+
+しかしAIとGASが受付・記録・通知・初期提案を自動化することで、工務店の担当者が「実際の対応・修繕」に素早く集中できる環境が整います。</p>
+<div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">クレームへの対応速度が信頼を決めます。30分後に気づくのと5分以内に自動通知が届くのでは、その後の関係がまったく変わります。まず受付フォームと自動通知だけでも導入してみてください。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）</div>
+<h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+<ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>工務店のクレーム・不具合受付はAI・GASで30分→5分に短縮できる</li><li>Googleフォームでお客様が報告→GASが担当者に即時通知・自動記録・自動返信を実現</li><li>AIが不具合内容から対応方針の初期提案を行い、担当者の判断をサポートする</li><li>月5〜10件のクレームがある工務店で月2〜5時間削減と対応速度の大幅改善が見込める</li><li>初動の速さがお客様満足度維持・信頼回復につながる</li></ul>
+<h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+<div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店のクレーム受付をGASで自動通知するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">GoogleフォームとGASを組み合わせて、お客様の報告と同時に担当者へ自動通知・自動返信する仕組みを構築できます。BuildMateの支援実績では、30分かかっていた初期対応が約5分になっています。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の不具合対応方針をAIで提案させるにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">不具合の内容・場所・築年数をAIに入力すると、考えられる原因・対応優先度・専門業者の要否を提案できます。BuildMateの支援実績では、若手担当者の初期判断精度が向上した工務店があります。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店のクレーム対応を自動化するとお客様満足度はどのくらい変わりますか？</p><p class="text-wa-text text-base m-0">BuildMateの支援実績では、受付確認の自動返信と担当者への即時通知で、お客様が「きちんと受け付けてくれた」と感じるようになり、クレームが関係悪化に発展するケースが大幅に減った工務店があります。</p></div></div>
+<div class="mt-10 pt-8 border-t border-wa-border"><p class="font-bold text-wa-brand mb-4">関連記事</p><ul class="space-y-2"><li><a href="018-after-hosho-ai.html" class="text-wa-brand hover:underline">工務店のアフター対応業務をAI・GASで効率化する方法</a></li><li><a href="027-ob-dm-gas.html" class="text-wa-brand hover:underline">工務店のOB客向けDM・ニュースレターをAI・GASで自動化する方法</a></li><li><a href="031-shinchoku-gas.html" class="text-wa-brand hover:underline">工務店の工事進捗報告をAI・GASで自動化する方法</a></li></ul></div>
+</article>
+<div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5"><div class="w-14 h-14 rounded-full bg-wa-brand flex items-center justify-center flex-shrink-0"><i data-lucide="user" class="w-7 h-7 text-white"></i></div><div><p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p><p class="text-[15px] md:text-base text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。現場の実態とシステムの限界を知り尽くした立場から、中小工務店向けのAI・GAS導入コンサルティングを提供。関西拠点・全国オンライン対応。</p></div></div>
+<div class="mt-8 bg-white rounded-wa p-8 shadow-sm border border-wa-border text-center"><p class="font-bold text-lg text-wa-brand mb-2">「うちでも使えるか」を一緒に確認しましょう</p><p class="text-wa-gray text-base md:text-lg mb-6 leading-relaxed max-w-2xl mx-auto">BuildMateでは、工務店の現状業務を無料でヒアリングし、AI・GASで効率化できる箇所を具体的にご提案しています。元・施工管理の代表が現場目線でお答えします。勧誘・営業は一切行いません。</p><a href="../contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-wa-accent hover:opacity-90 text-white rounded-wa font-bold transition-colors"><i data-lucide="mail" class="w-4 h-4"></i>無料相談に申し込む</a></div>
+<div class="mt-8 text-center"><a href="../news.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-wa-brand text-wa-brand rounded-wa font-bold hover:bg-wa-brand hover:text-white transition-colors">← コラム一覧に戻る</a></div>
+</div></main>
+        <footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
+        <div class="max-w-[1080px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-white/60 text-sm">
+                    Copyright © 2026 BuildMate. All rights reserved.
+                </div>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
+                    <a href="../privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                    <a href="../terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                    <a href="../law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script>lucide.createIcons();</script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+</body></html>

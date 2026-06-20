@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5ECF52MHF6');</script>
+<meta charset="UTF-8"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../seigaiha.css"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>工務店のSNS投稿ネタをGemini APIとGASで毎朝自動提案する方法 | BuildMate</title>
+<link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/061-sns-gemini-gas.html">
+<meta name="description" content="工務店のInstagram・X（Twitter）投稿ネタが切れる問題を解決。Gemini APIとGASで毎朝投稿アイデアを自動生成してChatwork・LINEへ配信する方法を解説。SNSの継続投稿を仕組み化した手順をBuildMate代表が紹介します。">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article"><meta property="og:title" content="工務店のSNS投稿ネタをGemini APIとGASで毎朝自動提案する方法 | BuildMate"><meta property="og:description" content="工務店のInstagram・X（Twitter）投稿ネタが切れる問題を解決。Gemini APIとGASで毎朝投稿アイデアを自動生成してChatwork・LINEへ配信する方法を解説。SNSの継続投稿を仕組み化した手順をBuildMate代表が紹介します。"><meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/061-sns-gemini-gas.html"><meta property="og:site_name" content="BuildMate"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="工務店のSNS投稿ネタをGemini APIとGASで毎朝自動提案する方法 | BuildMate"><meta name="twitter:description" content="工務店のInstagram・X（Twitter）投稿ネタが切れる問題を解決。Gemini APIとGASで毎朝投稿アイデアを自動生成してChatwork・LINEへ配信する方法を解説。SNSの継続投稿を仕組み化した手順をBuildMate代表が紹介します。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"工務店のSNS投稿ネタをGemini APIとGASで毎朝自動提案する方法","datePublished":"2026-03-22","dateModified":"2026-03-22","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"工務店のInstagram・X（Twitter）投稿ネタが切れる問題を解決。Gemini APIとGASで毎朝投稿アイデアを自動生成してChatwork・LINEへ配信する方法を解説。SNSの継続投稿を仕組み化した手順をBuildMate代表が紹介します。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/061-sns-gemini-gas.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"工務店のSNS投稿ネタをGemini APIで自動生成するにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"GASからGemini API（Google AI Studio）を呼び出し、投稿ネタ生成のプロンプトを送信することで工務店向けSNS投稿アイデアを自動生成できます。BuildMateの支援実績では、毎朝のネタ考案時間がゼロになった工務店があります。"}},{"@type":"Question","name":"工務店のSNS投稿ネタ提案をChatwork・LINEに自動配信するにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"GASでGemini APIの回答を受け取り、Chatwork APIまたはLINE Messaging APIで担当者へ自動配信できます。BuildMateの支援実績では、導入後にSNSの投稿継続率が改善した工務店があります。"}},{"@type":"Question","name":"GeminiとGASで生成した投稿ネタはそのまま使えますか？","acceptedAnswer":{"@type":"Answer","text":"キャプション文例として活用できますが、工務店固有の情報（施工事例・スタッフ・地域）を加えることで投稿の質が上がります。BuildMateの支援実績では、Geminiの提案をベースに数分で投稿を完成させている工務店があります。"}}]}
+</script>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<body class="bg-wa-bg text-wa-text font-sans">
+    <header class="bg-white/95 backdrop-blur-md fixed w-full top-0 z-50 border-b border-wa-border transition-all duration-300">
+        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+
+                <a href="../index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
+                <a href="../services.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">サービス・効果</a>
+                <a href="../ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
+                <a href="../diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+                <a href="../gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
+                <a href="../gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
+                <a href="../contact.html" class="px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+<!-- モバイルメニュー -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="../index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
+    <a href="../services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
+    <a href="../ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
+    <a href="../diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
+    <a href="../gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
+    <a href="../gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
+    <a href="../contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
+<main class="max-w-[800px] mx-auto px-6 pt-28 pb-16">
+    <nav class="text-sm text-wa-gray mb-8"><a href="../index.html" class="hover:text-wa-brand">ホーム</a><span class="mx-2">/</span><a href="../news.html" class="hover:text-wa-brand">コラム一覧</a><span class="mx-2">/</span><span>SNS投稿ネタのGemini API自動提案</span></nav>
+    <div class="flex items-center gap-2 mb-4">
+        <span class="inline-block bg-wa-brand text-white text-sm font-bold px-4 py-1 rounded-full">業務効率化</span>
+        <span class="inline-block bg-wa-accent text-white text-sm font-bold px-4 py-1 rounded-full">AI活用</span>
+    </div>
+    <h1 class="break-keep text-balance font-serif text-2xl md:text-3xl font-bold text-wa-text mb-4 leading-snug">工務店のSNS投稿ネタを<br>Gemini APIとGASで毎朝自動提案する方法</h1>
+    <div class="flex items-center gap-4 text-sm text-wa-gray mb-8">
+        <span class="flex items-center gap-1"><i data-lucide="user" class="w-4 h-4"></i>木村 拓隆</span>
+    </div>
+    <div class="mb-10 rounded-wa overflow-hidden"><img src="../images/gyoumu_sum.png" alt="工務店のSNS投稿ネタをGemini APIとGASで毎朝自動提案する方法" class="w-full object-cover"></div>
+    <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
+        <p class="font-bold text-xl mb-6 text-wa-brand">「今日は何を投稿しよう？」と毎朝悩んでいませんか？</p>
+        <p class="mb-4 text-wa-text leading-relaxed">工務店のInstagramやX（Twitter）は、集客・採用・ブランディングに効果的なツールですが、「ネタが切れる」「毎日投稿が続かない」という悩みをほとんどの工務店が抱えています。投稿ネタを考えるだけで20〜30分かかることもあり、忙しい日には結局投稿できずに終わる、というサイクルに陥りがちです。</p>
+        <p class="mb-8 text-wa-text leading-relaxed">この記事では、Gemini API（Google AI Studio）とGoogle Apps Script（GAS）を組み合わせて、工務店のSNS投稿ネタを毎朝自動生成しChatworkまたはLINEへ自動配信する仕組みの構築方法を解説します。届いた提案を確認して気に入ったものを投稿するだけで、SNS継続投稿が仕組み化できます。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店のSNS投稿ネタ考案・管理業務とは</h4>
+        <p class="mb-4">工務店のSNS投稿ネタ考案業務とは、Instagram・X・FacebookなどのSNSに継続的に投稿するためのコンテンツテーマを企画し、文章・画像・タイミングを決定する業務を指します。毎日考え続けることが難しく、担当者の負担になりやすい業務です。</p>
+        <p class="mb-3">具体的には次のような作業が含まれます。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>今日の投稿テーマ・ネタの選定</li><li>投稿文章の作成・校正</li><li>使用する写真・画像の選定</li><li>投稿時間の決定・予約投稿の設定</li><li>反応（いいね・コメント）の確認・返信</li></ul>
+        <p class="mb-8">BuildMateの支援実績では、GeminiとGASで投稿ネタを自動提案する仕組みを導入した工務店で、ネタ考案にかかっていた毎朝20〜30分の時間がゼロになり、SNSの継続投稿率が大幅に改善しています。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">仕組みの全体像：GeminiとGASをつなぐ</h4><p class="mb-4">GASのトリガーを毎朝7時に設定し、Gemini API（Google AI Studio）へ「今日の工務店向けSNS投稿ネタを3案提案してください」というプロンプトを自動送信します。Geminiが生成した投稿ネタ案をGASがChatwork APIまたはLINE Messaging APIで担当者へ自動配信します。担当者は届いた提案から気に入ったものを選んで投稿するだけです。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 1: プロンプトの設計とカスタマイズ</h4><p class="mb-4">Googleスプレッドシートに投稿ネタ生成のプロンプトを登録します。「季節・イベント・建材情報・施工事例・スタッフ紹介・お役立ち情報」などカテゴリを指定することで、バリエーション豊かな提案が届くようになります。「今日のネタ」だけでなく「今週のネタ5案」を週頭に一括生成する設定も可能です。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 2: Gemini APIで投稿ネタを自動生成</h4><p class="mb-4">GASがGemini APIを呼び出し「工務店のInstagram向けに、〇〇（季節・テーマ）に関連した投稿アイデアをキャプション文例込みで3案提案してください」と指示します。Geminiが工務店らしいハッシュタグ・文章表現・写真撮影のヒントまで含めた提案を自動生成します。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 3: Chatwork・LINEへの自動配信</h4><p class="mb-4">GASがGeminiの回答をChatwork APIまたはLINE Messaging APIで担当者へ自動配信します。「【本日のSNS投稿ネタ提案】①〇〇 ②〇〇 ③〇〇」という形式で届くため、読んで選ぶだけで投稿準備が完了します。気に入ったネタをそのまま使うも良し、アレンジするも良し、選択肢があることでSNS投稿のハードルが大幅に下がります。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+        <p class="mb-4">BuildMateが建設業・工務店の現場にGASを導入した実績をもとに、削減効果をまとめます。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>投稿ネタ考案：毎朝20〜30分 → ゼロ（Geminiが自動提案）</li><li>SNS継続投稿率：ネタ切れで途切れがち → 毎朝3案が自動提供</li><li>投稿文章の作成：30分 → Geminiの文例をベースに数分で完成</li><li>担当者の負担：毎日のプレッシャー → 提案から選ぶだけ</li></ul>
+        <p class="mb-8">SNSの継続投稿がブランディング・集客・採用に与える効果を考えると、毎朝30分の削減以上の価値があります。投稿が続くことで工務店のオンライン認知が高まり、問い合わせ・採用応募の増加につながります。導入コストはGAS（無料）とGemini API（無料枠あり）のみです。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASでできないことについて</h4>
+        <p class="mb-4">GeminiのSNS投稿ネタ提案はあくまでも「たたき台」です。工務店固有の施工事例・スタッフの個性・地域情報などはAIが自動生成できないため、担当者が自社らしさを加える編集が必要です。また、写真の撮影・選定は人間が行う必要があります。
+
+しかしGeminiが毎朝3案の選択肢を提供することで、「何を書こうか」という最大の障壁がなくなります。</p>
+        <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">SNS投稿で一番大事なのは「続けること」です。ネタ提案を自動化すれば、忙しい日でも投稿のきっかけが毎朝届きます。Geminiのアイデアに現場の写真を添えるだけで、十分な投稿になります。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）</div>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>工務店のSNS投稿ネタはGemini APIとGASで毎朝3案自動生成してChatwork・LINEへ配信できる</li><li>スプレッドシートにプロンプトを登録するだけでカテゴリ・季節に合わせた提案が届く</li><li>毎朝20〜30分かかっていたネタ考案がゼロになり、SNS継続投稿率が改善する</li><li>キャプション文例・ハッシュタグ提案まで含まれるため、投稿準備の時間が大幅短縮になる</li><li>導入コストはGAS（無料）とGemini API（無料枠あり）のみ</li></ul>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店のSNS投稿ネタをGemini APIで自動生成するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">GASからGemini API（Google AI Studio）を呼び出し、投稿ネタ生成のプロンプトを送信することで工務店向けSNS投稿アイデアを自動生成できます。BuildMateの支援実績では、毎朝のネタ考案時間がゼロになった工務店があります。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店のSNS投稿ネタ提案をChatwork・LINEに自動配信するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">GASでGemini APIの回答を受け取り、Chatwork APIまたはLINE Messaging APIで担当者へ自動配信できます。BuildMateの支援実績では、導入後にSNSの投稿継続率が改善した工務店があります。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. GeminiとGASで生成した投稿ネタはそのまま使えますか？</p><p class="text-wa-text text-base m-0">キャプション文例として活用できますが、工務店固有の情報（施工事例・スタッフ・地域）を加えることで投稿の質が上がります。BuildMateの支援実績では、Geminiの提案をベースに数分で投稿を完成させている工務店があります。</p></div></div>
+        <div class="mt-10 pt-8 border-t border-wa-border"><p class="font-bold text-wa-brand mb-4">関連記事</p><ul class="space-y-2"><li><a href="122-news-chatwork-gas.html" class="text-wa-brand hover:underline">住宅業界ニュースをGASで自動収集してChatworkに毎朝配信する方法</a></li><li><a href="053-eigyo-shukyaku-ai.html" class="text-wa-brand hover:underline">工務店の営業・集客業務をAI・GASで効率化する方法</a></li><li><a href="027-ob-dm-gas.html" class="text-wa-brand hover:underline">工務店のOB客向けDM・ニュースレターをAI・GASで自動化する方法</a></li></ul></div>
+    </article>
+    <div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5">
+        <div class="w-14 h-14 rounded-full bg-wa-brand flex items-center justify-center flex-shrink-0"><i data-lucide="user" class="w-7 h-7 text-white"></i></div>
+        <div><p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p><p class="text-[15px] md:text-base text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。現場の実態とシステムの限界を知り尽くした立場から、中小工務店向けのAI・GAS導入コンサルティングを提供。関西拠点・全国オンライン対応。</p></div>
+    </div>
+    <div class="mt-8 bg-white rounded-wa p-8 shadow-sm border border-wa-border text-center">
+        <p class="font-bold text-lg text-wa-brand mb-2">「うちでも使えるか」を一緒に確認しましょう</p>
+        <p class="text-wa-gray text-base md:text-lg mb-6 leading-relaxed max-w-2xl mx-auto">BuildMateでは、工務店・建設会社の現状業務を無料でヒアリングし、GASで効率化できる箇所を具体的にご提案しています。元・施工管理の代表が現場目線でお答えします。勧誘・営業は一切行いません。</p>
+        <a href="../contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-wa-accent hover:opacity-90 text-white rounded-wa font-bold transition-colors"><i data-lucide="mail" class="w-4 h-4"></i>無料相談に申し込む</a>
+    </div>
+    <div class="mt-8 text-center"><a href="../news.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-wa-brand text-wa-brand rounded-wa font-bold hover:bg-wa-brand hover:text-white transition-colors">← コラム一覧に戻る</a></div>
+</main>
+        <footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
+        <div class="max-w-[1080px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-white/60 text-sm">
+                    Copyright © 2026 BuildMate. All rights reserved.
+                </div>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
+                    <a href="../privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                    <a href="../terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                    <a href="../law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script>lucide.createIcons();</script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+</body></html>

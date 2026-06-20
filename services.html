@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5ECF52MHF6');
+    </script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="seigaiha.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工務店のためのAI伴走支援・社長の右腕プラン | BuildMate</title>
+    <link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/services.html">
+    <meta name="description" content="工務店・リフォーム会社・専門工事会社向けのAI伴走支援。提案資料、現場記録、アフター連絡、Google自動化まで、社長の右腕になる実務改善メニューをご紹介します。">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="工務店のためのAI伴走支援・社長の右腕プラン | BuildMate">
+    <meta property="og:description" content="提案資料、現場記録、アフター連絡、Google自動化まで。工務店の実務に寄り添うAI伴走支援をご紹介します。">
+    <meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/services.html">
+    <meta property="og:site_name" content="BuildMate">
+    <meta property="og:locale" content="ja_JP">
+
+    <!-- Schema.org：Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "工務店向けAI業務効率化コンサルティング",
+      "description": "中小工務店の日報・見積・ブログ・営業資料などの事務作業をAIで支援し、社長やスタッフの時間を取り戻すコンサルティングサービス。",
+      "provider": {
+        "@type": "Organization",
+        "name": "BuildMate（ビルドメイト）",
+        "url": "https://buildmate-gif.github.io/buildmate-site"
+      },
+      "areaServed": "日本全国",
+      "serviceType": "AI業務効率化コンサルティング",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "AI活用シナリオ",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "営業成約率・最大化セット"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "現場監督・働き方改革セット"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "広報・ブランディング自動化セット"}}
+        ]
+      }
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        serif: ['"Noto Serif JP"', 'serif'],
+                    },
+                    colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }
+                }
+            }
+        }
+    </script>
+    <style>
+        .btn-accent {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), box-shadow 0.28s cubic-bezier(0.22,1,0.36,1), background-color 0.2s ease;
+            will-change: transform, box-shadow;
+        }
+        .btn-accent::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -72%;
+            width: 44%;
+            background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.08) 38%, rgba(255,255,255,0.3) 50%, transparent 62%);
+            transform: skewX(-18deg);
+            transition: left 0.55s ease;
+            pointer-events: none;
+        }
+        .btn-accent:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 18px 34px -18px rgba(31,41,51,0.42);
+        }
+        .btn-accent:hover::before { left: 128%; }
+        .btn-accent i { transition: transform 0.28s cubic-bezier(0.22,1,0.36,1); }
+        .btn-accent:hover i { transform: translateX(4px); }
+        @media (prefers-reduced-motion: reduce) {
+            .btn-accent, .btn-accent::before { transition: none !important; animation: none !important; }
+            .btn-accent::before { display: none !important; }
+            .btn-accent:hover, .btn-accent:hover i { transform: none !important; }
+        }
+    </style>
+</head>
+<body class="bg-wa-bg text-wa-text font-sans antialiased flex flex-col min-h-screen">
+
+            <header class="border-wa-border transition-all border-b fixed w-full backdrop-blur-sm top-0 z-50 bg-wa-bg/90 duration-300 transition-all duration-300">
+        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+
+                <a href="index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
+                <a href="services.html" class="text-wa-brand border-b-2 border-wa-brand font-bold flex items-center gap-1">サービス・効果</a>
+                <a href="ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
+                <a href="diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+                <a href="gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
+                <a href="gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
+                <a href="contact.html" class="btn-accent px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+<!-- モバイルメニュー -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
+    <a href="services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-active); font-weight:700; text-decoration:none;">サービス・効果</a>
+    <a href="ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
+    <a href="diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
+    <a href="gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
+    <a href="gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
+    <a href="contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
+
+    <main class="flex-grow pt-20">
+        <section class="bg-wa-brand text-white py-16 text-center">
+            <h1 class="text-3xl md:text-4xl font-serif font-bold mb-4">社長の右腕になるAI伴走支援</h1>
+            <p class="text-white/85 text-base md:text-xl max-w-4xl mx-auto leading-loose">
+                <span class="block">提案資料、現場記録、顧客対応、アフター連絡まで。</span>
+                <span class="block mt-2">今の業務にそのまま乗せやすい形で、工務店のAI活用を定着まで支援します。</span>
+            </p>
+        </section>
+
+        <section class="py-16 bg-wa-bg border-b border-wa-border">
+            <div class="max-w-[980px] mx-auto px-6">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-wa border border-wa-border p-6">
+                        <h2 class="text-lg font-bold text-wa-brand mb-3">何を提供するか</h2>
+                        <p class="text-base text-wa-gray leading-loose">AI導入支援、業務設計、プロンプト整備、Googleツールの自動化、定着までの伴走をまとめて支援します。</p>
+                    </div>
+                    <div class="bg-white rounded-wa border border-wa-border p-6">
+                        <h2 class="text-lg font-bold text-wa-brand mb-3">何が起きるか</h2>
+                        <p class="text-base text-wa-gray leading-loose">事務作業が軽くなり、提案の初速が上がり、アフターや顧客対応に使える時間が少しずつ戻ってきます。</p>
+                    </div>
+                    <div class="bg-white rounded-wa border border-wa-border p-6">
+                        <h2 class="text-lg font-bold text-wa-brand mb-3">どう進めるか</h2>
+                        <p class="text-base text-wa-gray leading-loose">高機能な仕組みを一気に入れるのではなく、今の現場に合う小さな改善から始めて、使える形に育てます。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="max-w-[980px] mx-auto px-6">
+                <h2 class="text-3xl font-serif font-bold text-wa-text mb-12 text-center">
+                    <span class="border-b-4 border-wa-gold pb-2">実務がどう変わるか</span>
+                </h2>
+                <p class="text-center text-wa-gray text-base md:text-lg mb-12 max-w-4xl mx-auto leading-loose">
+                    <span class="block">以下は、社長やスタッフの時間を取り戻すための具体例です。</span>
+                    <span class="block mt-2">コスト削減だけでなく、顧客対応とアフターを続ける余白をつくることを重視しています。</span>
+                </p>
+
+                <div class="mb-16">
+                    <h3 class="text-xl font-bold text-wa-brand flex items-center gap-3 mb-6">
+                        <span class="w-8 h-8 rounded-full bg-wa-brand text-white flex items-center justify-center text-sm">A</span>
+                        集客・広報：センス不要で自動運転
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
+                            <div class="font-bold text-wa-text mb-2 text-lg">ブログ記事作成</div>
+                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">ネタがなく、書くのが苦痛で更新が止まる…</p>
+                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
+                                <span class="text-xs font-bold text-gray-400">2時間</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
+                                <span class="text-lg font-bold" style="color:#A64B3C">10分</span>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
+                            <div class="font-bold text-wa-text mb-2 text-lg">SNS投稿作成</div>
+                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">画像選びやタグ選定に時間が溶ける…</p>
+                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
+                                <span class="text-xs font-bold text-gray-400">30分</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
+                                <span class="text-lg font-bold" style="color:#A64B3C">3分</span>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
+                            <div class="font-bold text-wa-text mb-2 text-lg">動画サムネイル</div>
+                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">デザインセンスがなく魅力的に見せられない…</p>
+                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
+                                <span class="text-xs font-bold text-gray-400">1時間</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
+                                <span class="text-lg font-bold" style="color:#A64B3C">5分</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <h3 class="text-xl font-bold text-wa-brand flex items-center gap-3 mb-6">
+                        <span class="w-8 h-8 rounded-full bg-wa-brand text-white flex items-center justify-center text-sm">B</span>
+                        営業・提案：「待たせない」が最強の武器
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
+                            <div class="font-bold text-wa-text mb-2 text-lg">即時フォロー資料</div>
+                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">商談後の作成が遅れ、お客様の熱が冷める。</p>
+                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
+                                <span class="text-xs text-gray-400">3時間</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
+                                <span class="text-lg font-bold" style="color:#A64B3C">30分</span>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
+                            <div class="font-bold text-wa-text mb-2 text-lg">AIパース（画像化）</div>
+                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">「ふんわりした要望」が掴めず手戻りが多い。</p>
+                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
+                                <span class="text-xs text-gray-400">数日</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
+                                <span class="text-lg font-bold" style="color:#A64B3C">1分</span>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
+                            <div class="font-bold text-wa-text mb-2 text-lg">リフォーム合成写真</div>
+                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">Afterイメージの作成に手間がかかる。</p>
+                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
+                                <span class="text-xs text-gray-400">2時間</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
+                                <span class="text-lg font-bold" style="color:#A64B3C">10分</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <h3 class="text-xl font-bold text-wa-brand flex items-center gap-3 mb-6">
+                        <span class="w-8 h-8 rounded-full bg-wa-brand text-white flex items-center justify-center text-sm">C</span>
+                        現場管理・施工記録：現場監督の「書類地獄」を解消
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
+                            <div class="font-bold text-wa-text mb-2 text-lg">日報・施工記録作成</div>
+                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">毎日の記録が面倒で後回しになり、抜け漏れが出る…</p>
+                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
+                                <span class="text-xs font-bold text-gray-400">60分</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
+                                <span class="text-lg font-bold" style="color:#A64B3C">10分</span>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
+                            <div class="font-bold text-wa-text mb-2 text-lg">近隣挨拶文・工事案内</div>
+                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">現場ごとに一から作り直す手間がバカにならない…</p>
+                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
+                                <span class="text-xs font-bold text-gray-400">90分</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
+                                <span class="text-lg font-bold" style="color:#A64B3C">5分</span>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
+                            <div class="font-bold text-wa-text mb-2 text-lg">安全書類・作業手順書</div>
+                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">書式が多く更新が追いつかない。作成に半日かかる…</p>
+                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
+                                <span class="text-xs font-bold text-gray-400">半日</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
+                                <span class="text-lg font-bold" style="color:#A64B3C">20分</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <h3 class="text-xl font-bold text-wa-brand flex items-center gap-3 mb-6">
+                        <span class="w-8 h-8 rounded-full bg-wa-brand text-white flex items-center justify-center text-sm">D</span>
+                        経理・原価管理：「完工後に赤字」を未然に防ぐ
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
+                            <div class="font-bold text-wa-text mb-2 text-lg">見積書・発注書作成</div>
+                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">拾い出しの転記ミスが怖く、確認に時間がかかる…</p>
+                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
+                                <span class="text-xs font-bold text-gray-400">3時間</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
+                                <span class="text-lg font-bold" style="color:#A64B3C">30分</span>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
+                            <div class="font-bold text-wa-text mb-2 text-lg">原価・粗利チェック</div>
+                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">月次でまとめて確認するため、完工後に赤字と気づく…</p>
+                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
+                                <span class="text-xs font-bold text-gray-400">月次のみ</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
+                                <span class="text-lg font-bold" style="color:#A64B3C">随時確認</span>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
+                            <div class="font-bold text-wa-text mb-2 text-lg">請求書・支払管理</div>
+                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">協力会社への支払い漏れや二重払いが不安…</p>
+                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
+                                <span class="text-xs font-bold text-gray-400">2時間</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
+                                <span class="text-lg font-bold" style="color:#A64B3C">15分</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <h3 class="text-xl font-bold text-wa-brand flex items-center gap-3 mb-6">
+                        <span class="w-8 h-8 rounded-full bg-wa-brand text-white flex items-center justify-center text-sm">E</span>
+                        アフターメンテナンス・定期点検：完工後も「選ばれ続ける」仕組み
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
+                            <div class="font-bold text-wa-text mb-2 text-lg">定期点検ご案内文</div>
+                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">完工後の連絡が後手に回り、OB客との関係が薄れる…</p>
+                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
+                                <span class="text-xs font-bold text-gray-400">60分/件</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
+                                <span class="text-lg font-bold" style="color:#A64B3C">3分</span>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
+                            <div class="font-bold text-wa-text mb-2 text-lg">点検報告書・写真整理</div>
+                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">報告書作成が面倒で後回しになり、お客様の信頼を損なう…</p>
+                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
+                                <span class="text-xs font-bold text-gray-400">半日</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
+                                <span class="text-lg font-bold" style="color:#A64B3C">20分</span>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
+                            <div class="font-bold text-wa-text mb-2 text-lg">OB客ニュースレター</div>
+                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">ネタ切れ・文章力の壁で発信が止まり、紹介受注が途絶える…</p>
+                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
+                                <span class="text-xs font-bold text-gray-400">丸1日</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
+                                <span class="text-lg font-bold" style="color:#A64B3C">30分</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="py-20 bg-wa-bg border-t border-wa-border">
+            <div class="max-w-[1080px] mx-auto px-6">
+                <h2 class="text-3xl font-serif font-bold text-wa-text mb-6 text-center">
+                    <span class="block md:whitespace-nowrap">経営スタイルに合わせた</span>
+                    <span class="block">5つのAI活用シナリオ</span>
+                </h2>
+                <p class="text-center text-wa-gray text-base md:text-lg mb-12 max-w-4xl mx-auto leading-loose">
+                    <span class="block">AI導入は単なる効率化ではありません。</span>
+                    <span class="block mt-2">浮いた時間を「お施主様への誠実さ」と「社長の判断時間」に戻すための投資です。</span>
+                </p>
+
+                <div class="grid gap-12">
+                    
+                    <div class="bg-white rounded-wa shadow-lg overflow-hidden border border-wa-border">
+                        <div class="p-8">
+                            <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-wa-brand">【CASE 01】 営業成約率・最大化セット</h3>
+                                    <p class="text-[15px] md:text-base text-wa-gray mt-1 leading-relaxed">課題：資料作成が追いつかず、お客様の検討熱が冷めてしまう。</p>
+                                </div>
+                                <div class="px-4 py-2 bg-wa-accent/10 text-wa-accent font-bold rounded-full text-sm">商談スピード重視</div>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left border-collapse min-w-[600px]">
+                                    <thead>
+                                        <tr class="border-b-2 border-wa-bg text-wa-gray text-sm">
+                                            <th class="py-3 px-4 w-1/3">削減項目</th>
+                                            <th class="py-3 px-4 w-1/3">従来のコスト（外注・残業代）</th>
+                                            <th class="py-3 px-4 w-1/3 font-bold text-wa-brand">AI活用コスト</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-wa-text">
+                                        <tr class="border-b border-wa-bg">
+                                            <td class="py-4 px-4 font-medium">即時フォロー資料 (月10件)</td>
+                                            <td class="py-4 px-4">150,000円</td>
+                                            <td class="py-4 px-4 font-bold">25,000円</td>
+                                        </tr>
+                                        <tr class="border-b border-wa-bg">
+                                            <td class="py-4 px-4 font-medium">AIパース・イメージ生成 (月10件)</td>
+                                            <td class="py-4 px-4">500,000円</td>
+                                            <td class="py-4 px-4 font-bold">1,000円</td>
+                                        </tr>
+                                        <tr class="bg-wa-brand/5">
+                                            <td class="py-4 px-4 font-bold text-wa-brand">月間合計メリット</td>
+                                            <td class="py-4 px-4 text-wa-gray line-through">650,000円</td>
+                                            <td class="py-4 px-4 text-2xl font-bold" style="color:#A64B3C">約 62万円 削減</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-wa shadow-lg overflow-hidden border border-wa-border">
+                        <div class="p-8">
+                            <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-wa-brand">【CASE 02】 現場監督・働き方改革セット</h3>
+                                    <p class="text-[15px] md:text-base text-wa-gray mt-1 leading-relaxed">課題：事務作業で残業が常態化。現場チェックに集中できない。</p>
+                                </div>
+                                <div class="px-4 py-2 bg-wa-accent/10 text-wa-accent font-bold rounded-full text-sm">施工品質・安全重視</div>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left border-collapse min-w-[600px]">
+                                    <thead>
+                                        <tr class="border-b-2 border-wa-bg text-wa-gray text-sm">
+                                            <th class="py-3 px-4 w-1/3">削減項目</th>
+                                            <th class="py-3 px-4 w-1/3">従来のコスト（残業代等）</th>
+                                            <th class="py-3 px-4 w-1/3 font-bold text-wa-brand">AI活用コスト</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-wa-text">
+                                        <tr class="border-b border-wa-bg">
+                                            <td class="py-4 px-4 font-medium">近隣挨拶文・社内マニュアル作成</td>
+                                            <td class="py-4 px-4">100,000円</td>
+                                            <td class="py-4 px-4 font-bold">8,000円</td>
+                                        </tr>
+                                        <tr class="border-b border-wa-bg">
+                                            <td class="py-4 px-4 font-medium">定期点検報告・手紙作成</td>
+                                            <td class="py-4 px-4">25,000円</td>
+                                            <td class="py-4 px-4 font-bold">1,500円</td>
+                                        </tr>
+                                        <tr class="bg-wa-brand/5">
+                                            <td class="py-4 px-4 font-bold text-wa-brand">月間合計メリット</td>
+                                            <td class="py-4 px-4 text-wa-gray line-through">125,000円</td>
+                                            <td class="py-4 px-4 text-2xl font-bold" style="color:#A64B3C">約 11万円 削減</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-wa shadow-lg overflow-hidden border border-wa-border">
+                        <div class="p-8">
+                            <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-wa-brand">【CASE 03】 広報・ブランディング自動化セット</h3>
+                                    <p class="text-[15px] md:text-base text-wa-gray mt-1 leading-relaxed">課題：ネタ切れやセンスの壁。外注費が高騰している。</p>
+                                </div>
+                                <div class="px-4 py-2 bg-wa-accent/10 text-wa-accent font-bold rounded-full text-sm">集客力・認知重視</div>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left border-collapse min-w-[600px]">
+                                    <thead>
+                                        <tr class="border-b-2 border-wa-bg text-wa-gray text-sm">
+                                            <th class="py-3 px-4 w-1/3">削減項目</th>
+                                            <th class="py-3 px-4 w-1/3">従来のコスト（外注・人件費）</th>
+                                            <th class="py-3 px-4 w-1/3 font-bold text-wa-brand">AI活用コスト</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-wa-text">
+                                        <tr class="border-b border-wa-bg">
+                                            <td class="py-4 px-4 font-medium">ブログ記事作成 (月4本)</td>
+                                            <td class="py-4 px-4">80,000円</td>
+                                            <td class="py-4 px-4 font-bold">400円</td>
+                                        </tr>
+                                        <tr class="border-b border-wa-bg">
+                                            <td class="py-4 px-4 font-medium">SNS投稿・サムネイル作成 (月20回)</td>
+                                            <td class="py-4 px-4">250,000円</td>
+                                            <td class="py-4 px-4 font-bold">11,000円</td>
+                                        </tr>
+                                        <tr class="bg-wa-brand/5">
+                                            <td class="py-4 px-4 font-bold text-wa-brand">月間合計メリット</td>
+                                            <td class="py-4 px-4 text-wa-gray line-through">330,000円</td>
+                                            <td class="py-4 px-4 text-2xl font-bold" style="color:#A64B3C">約 32万円 削減</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-wa shadow-lg overflow-hidden border border-wa-border">
+                        <div class="p-8">
+                            <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-wa-brand">【CASE 04】 アフター・紹介受注特化セット</h3>
+                                    <p class="text-[15px] md:text-base text-wa-gray mt-1 leading-relaxed">課題：完工後のフォローが疎かになり、紹介が生まれない。</p>
+                                </div>
+                                <div class="px-4 py-2 bg-wa-accent/10 text-wa-accent font-bold rounded-full text-sm">顧客信頼・LTV重視</div>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left border-collapse min-w-[600px]">
+                                    <thead>
+                                        <tr class="border-b-2 border-wa-bg text-wa-gray text-sm">
+                                            <th class="py-3 px-4 w-1/3">削減項目</th>
+                                            <th class="py-3 px-4 w-1/3">従来のコスト（工数）</th>
+                                            <th class="py-3 px-4 w-1/3 font-bold text-wa-brand">AI活用コスト</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-wa-text">
+                                        <tr class="border-b border-wa-bg">
+                                            <td class="py-4 px-4 font-medium">個別メッセージ・案内状作成</td>
+                                            <td class="py-4 px-4">125,000円</td>
+                                            <td class="py-4 px-4 font-bold">7,500円</td>
+                                        </tr>
+                                        <tr class="border-b border-wa-bg">
+                                            <td class="py-4 px-4 font-medium">ニュースレター・ネタ出し</td>
+                                            <td class="py-4 px-4">50,000円</td>
+                                            <td class="py-4 px-4 font-bold">2,500円</td>
+                                        </tr>
+                                        <tr class="bg-wa-brand/5">
+                                            <td class="py-4 px-4 font-bold text-wa-brand">月間合計メリット</td>
+                                            <td class="py-4 px-4 text-wa-gray line-through">175,000円</td>
+                                            <td class="py-4 px-4 text-2xl font-bold" style="color:#A64B3C">約 16万円 削減</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-wa shadow-lg overflow-hidden border border-wa-border">
+                        <div class="p-8">
+                            <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-wa-brand">【CASE 05】 少数精鋭・社長の右腕セット</h3>
+                                    <p class="text-[15px] md:text-base text-wa-gray mt-1 leading-relaxed">課題：社長が多忙を極め、経営判断の時間が取れない。</p>
+                                </div>
+                                <div class="px-4 py-2 bg-wa-accent/10 text-wa-accent font-bold rounded-full text-sm">経営効率重視</div>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left border-collapse min-w-[600px]">
+                                    <thead>
+                                        <tr class="border-b-2 border-wa-bg text-wa-gray text-sm">
+                                            <th class="py-3 px-4 w-1/3">削減項目</th>
+                                            <th class="py-3 px-4 w-1/3">従来のコスト（時給換算）</th>
+                                            <th class="py-3 px-4 w-1/3 font-bold text-wa-brand">AI活用コスト</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-wa-text">
+                                        <tr class="border-b border-wa-bg">
+                                            <td class="py-4 px-4 font-medium">営業・広報・総務の事務全般</td>
+                                            <td class="py-4 px-4">180,000円</td>
+                                            <td class="py-4 px-4 font-bold">14,400円</td>
+                                        </tr>
+                                        <tr class="bg-wa-brand/5">
+                                            <td class="py-4 px-4 font-bold text-wa-brand">月間合計メリット</td>
+                                            <td class="py-4 px-4 text-wa-gray line-through">180,000円</td>
+                                            <td class="py-4 px-4 text-2xl font-bold" style="color:#A64B3C">約 16万円 削減</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="text-center mt-16">
+                    <p class="text-lg font-bold text-wa-text mb-6">
+                        まずは、今の業務のどこに「社長の右腕」が必要か診断しませんか？
+                    </p>
+                    <div class="flex flex-col md:flex-row gap-4 justify-center">
+                        <a href="diagnosis.html" class="btn-accent inline-flex items-center justify-center px-10 py-4 bg-wa-accent hover:bg-wa-accentHover text-white text-lg font-bold rounded-wa shadow-lg transition-all">
+                            AI活用ポテンシャル診断を受ける
+                        </a>
+                        <a href="contact.html" class="inline-flex items-center justify-center px-10 py-4 border-2 border-wa-brand text-wa-brand text-lg font-bold rounded-wa hover:bg-wa-brand hover:text-white transition-all">
+                            無料相談する
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+            <footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
+        <div class="max-w-[1080px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-white/60 text-sm">
+                    Copyright © 2026 BuildMate. All rights reserved.
+                </div>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
+                    <a href="privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                    <a href="terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                    <a href="law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+</body>
+</html>

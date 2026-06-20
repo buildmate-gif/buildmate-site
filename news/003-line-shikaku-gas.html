@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5ECF52MHF6');</script>
+<meta charset="UTF-8">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../seigaiha.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>建設業の資格・免許更新期限をLINE×GASで自動アラートする方法｜法的リスクをゼロに | BuildMate</title>
+<link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/003-line-shikaku-gas.html">
+<meta name="description" content="建設業では、玉掛け技能者・クレーン運転士・足場組立作業主任者など多くの資格が法的に必要です。しかし職人が増えるほど全員の資格更新期限を把握するのが難しくなり、気づいたら資格が失効していた——というケースが実際に起きています。無資格者が作業すると法令違反となり、BuildMate代表が解説します。">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="建設業の資格・免許更新期限をLINE×GASで自動アラートする方法｜法的リスクをゼロに | BuildMate">
+<meta property="og:description" content="建設業では、玉掛け技能者・クレーン運転士・足場組立作業主任者など多くの資格が法的に必要です。しかし職人が増えるほど全員の資格更新期限を把握するのが難しくなり、気">
+<meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/003-line-shikaku-gas.html">
+<meta property="og:site_name" content="BuildMate">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="建設業の資格・免許更新期限をLINE×GASで自動アラートする方法｜法的リスクをゼロに | BuildMate">
+<meta name="twitter:description" content="建設業では、玉掛け技能者・クレーン運転士・足場組立作業主任者など多くの資格が法的に必要です。しかし職人が増えるほど全員の資格更新期限を把握するのが難しくなり、気">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"建設業の資格・免許更新期限をLINE×GASで自動アラートする方法｜法的リスクをゼロに","datePublished":"2025-12-21","dateModified":"2025-12-21","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"建設業では、玉掛け技能者・クレーン運転士・足場組立作業主任者など多くの資格が法的に必要です。しかし職人が増えるほど全員の資格更新期限を把握するのが難しくなり、気づいたら資格が失効していた——というケースが実際に起きています。無資格者が作業す","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/055-line-shikaku-gas.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"建設業の資格更新期限をLINEで自動アラートするにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"Googleスプレッドシートに資格情報を登録し、GASで毎朝期限チェックを実行してLINE Notifyで本人へ自動通知する仕組みを構築できます。BuildMateの支援実績では、月3時間かかっていた資格管理業務がほぼ自動化されています。"}},{"@type":"Question","name":"建設会社の資格管理をGASで自動化するにはどんな準備が必要ですか？","acceptedAnswer":{"@type":"Answer","text":"Googleスプレッドシートへの資格情報の入力とGASの設定、LINE NotifyのトークンのみでOKです。BuildMateの支援実績では、初期設定から運用開始まで最短3日で完了しています。"}},{"@type":"Question","name":"建設業の資格失効リスクをLINE×GASでゼロにできますか？","acceptedAnswer":{"@type":"Answer","text":"できます。3ヶ月前・1ヶ月前・2週間前の多段階アラートに加え、期限当日に緊急アラートを設定することで、失効リスクを事実上ゼロにできます。BuildMateの支援実績では、この仕組み導入後に資格失効が一件もなくなった建設会社があります。"}}]}
+</script>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<body class="bg-wa-bg text-wa-text font-sans antialiased">
+    <header class="bg-white/95 backdrop-blur-md fixed w-full top-0 z-50 border-b border-wa-border transition-all duration-300">
+        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+
+                <a href="../index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
+                <a href="../services.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">サービス・効果</a>
+                <a href="../ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
+                <a href="../diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+                <a href="../gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
+                <a href="../gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
+                <a href="../contact.html" class="px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+<!-- モバイルメニュー -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="../index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
+    <a href="../services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
+    <a href="../ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
+    <a href="../diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
+    <a href="../gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
+    <a href="../gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
+    <a href="../contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
+<main class="pt-32 pb-24 px-6">
+  <div class="max-w-[800px] mx-auto">
+    <nav class="text-sm text-wa-gray mb-8">
+      <a href="../index.html" class="hover:text-wa-brand">ホーム</a><span class="mx-2">/</span>
+      <a href="../news.html" class="hover:text-wa-brand">コラム一覧</a><span class="mx-2">/</span>
+      <span>建設業の資格・免許更新管理業務</span>
+    </nav>
+    <div class="mb-10">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="inline-block bg-wa-brand text-white text-sm font-bold px-4 py-1 rounded-full">業務効率化</span>
+        <span class="inline-block bg-wa-accent text-white text-sm font-bold px-4 py-1 rounded-full">GAS活用</span>
+      </div>
+      <h1 class="break-keep text-balance text-2xl md:text-4xl font-serif font-bold text-wa-text leading-tight mb-4">建設業の資格・<wbr>免許更新期限を<wbr><br>LINE×<wbr>GASで<wbr>自動アラートする方法</h1>
+    </div>
+    <div class="mb-10">
+      <img src="../images/gas_sum.png" alt="建設業の資格・免許更新管理業務のイメージ" class="w-full rounded-wa object-cover" onerror="this.style.display='none'">
+    </div>
+    <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
+      <p class="font-bold text-xl mb-6 text-wa-brand">現場で働く職人の資格、更新期限を把握できていますか？</p>
+      <p>建設業では、玉掛け技能者・クレーン運転士・足場組立作業主任者など多くの資格が法的に必要です。しかし職人が増えるほど全員の資格更新期限を把握するのが難しくなり、気づいたら資格が失効していた——というケースが実際に起きています。無資格者が作業すると法令違反となり、重大なリスクにつながります。</p>
+      <p>この記事では、建設業の社員・職人の資格・免許更新期限を、LINEとGoogle Apps Script（GAS）を連携させて自動アラートする仕組みの構築方法を解説します。更新期限の3ヶ月前・1ヶ月前・2週間前に本人のLINEへ自動通知できます。BuildMateが実際に建設会社へ導入支援した事例をもとにした内容です。</p>
+      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">建設業の資格・免許更新管理業務とは</h4>
+      <p>建設業の資格・免許更新管理業務とは、社員・職人が保有する資格・免許の更新期限を一元管理し、失効前に本人・会社が確実に更新手続きを完了できるようにする業務を指します。職人30名規模の建設会社では、資格管理だけで担当者が月数時間を費やすケースがあります。</p>
+      <p>具体的には次のような作業が含まれます。</p>
+      <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>社員・職人全員の資格・免許情報の収集・記録</li><li>更新期限の確認と期限が近い資格のリストアップ</li><li>本人・現場監督への更新期限の通知</li><li>更新講習の申し込みサポート</li><li>更新完了後の新しい資格情報への更新</li></ul>
+      <p>BuildMateの支援実績では、LINE×GASで資格管理を自動化した建設会社（職人30名規模）で、月3時間かかっていた資格管理業務がほぼ自動化され、資格失効のリスクがゼロになっています。</p>
+      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">仕組みの全体像：LINEとGASをつなぐ方法</h4><p>Googleスプレッドシートに社員・職人の資格名・有効期限・LINE IDを登録します。GASが毎朝自動実行され、更新期限まで90日・30日・14日の対象者を抽出します。GASがLINE Notifyで本人のLINEへ「〇〇の更新期限が〇日です」と自動通知します。同時に管理者のLINEにも一覧で通知されるため、会社全体の資格状況をリアルタイムで把握できます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 1: 資格管理スプレッドシートの整備</h4><p>Googleスプレッドシートに「氏名・LINE ID・資格名・取得日・有効期限・更新状況」の列を設けます。既存の台帳（Excel・紙）をこのシートに転記するのが最初の作業です。一度整備すれば以降はGASが自動管理するため、転記は最初だけです。資格が更新されたら担当者がシートを更新するだけでアラートの基準日が自動で変わります。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 2: GASで期限チェックと自動アラート送信</h4><p>GASのトリガーを毎朝8時に設定すると、スプレッドシートの有効期限列を全件チェックし、90日・30日・14日前の対象者を自動抽出します。該当する職人のLINEへ「〇〇（玉掛け技能者）の更新期限が〇月〇日（〇日後）です。更新講習のご確認をお願いします」と自動通知します。通知済みフラグを自動更新するため、同じ通知が重複して送られることもありません。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 3: 管理者への一覧通知と期限切れアラート</h4><p>GASが毎週月曜日に管理者のLINEへ「今週中に期限が切れる資格：〇件、来月中に期限が切れる資格：〇件」という一覧を自動送信します。更新期限を1日でも過ぎた資格が検知された場合は、緊急アラートとして管理者へ即時通知します。法令違反のリスクを事前に排除できます。</p>
+      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+      <p>BuildMateが建築・建設業の現場にLINE×GASを導入した実績をもとに、削減効果をまとめます。</p>
+      <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>資格期限の定期確認：月3時間 → GASが毎日自動チェック</li><li>職人への通知：手動メール・電話 → LINE自動通知（3ヶ月前・1ヶ月前・2週間前）</li><li>資格失効リスク：多段階アラートでゼロに</li><li>管理者の状況把握：週次で自動一覧通知</li></ul>
+      <p>職人30名規模の建設会社では、月3時間の削減が現実的な目標値です。時給換算（2,000円）で月6,000円相当のコスト削減に見えますが、資格失効による法令違反リスクの排除という観点では、数百万円規模のリスク回避に相当します。</p>
+      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">LINEとGASでできないことについて</h4>
+      <p>更新講習の申し込み・受講・費用負担の調整は人間が行う必要があります。また、資格取得の推薦・判断や人材育成計画は管理者が行うべきです。
+
+しかしLINE×GASが「期限管理と通知」を自動化することで、管理者が本来すべき人材育成・技術指導に集中できる環境が整います。</p>
+      <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">資格の失効は「うっかり」では済まされません。建設業法上の重大なリスクです。GASで毎日自動チェック・LINEで本人に直接通知する仕組みを作れば、30名の資格管理も漏れなく回せます。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）</div>
+      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+      <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>建設業の資格・免許更新期限はLINE×GASで3ヶ月前・1ヶ月前・2週間前に自動アラートできる</li><li>Googleスプレッドシートで資格情報を一元管理し、GASが毎朝自動チェックして該当者のLINEへ通知する</li><li>管理者のLINEへも週次で一覧通知・失効当日は緊急アラートが届く</li><li>職人30名規模で月3時間削減と資格失効リスクゼロを実現できる</li><li>導入費用は実質ゼロで、Googleスプレッドシート（無料）とLINE Notify（無料）だけで構築できる</li></ul>
+      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+      <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 建設業の資格更新期限をLINEで自動アラートするにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">Googleスプレッドシートに資格情報を登録し、GASで毎朝期限チェックを実行してLINE Notifyで本人へ自動通知する仕組みを構築できます。BuildMateの支援実績では、月3時間かかっていた資格管理業務がほぼ自動化されています。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 建設会社の資格管理をGASで自動化するにはどんな準備が必要ですか？</p><p class="text-wa-text text-base m-0">Googleスプレッドシートへの資格情報の入力とGASの設定、LINE NotifyのトークンのみでOKです。BuildMateの支援実績では、初期設定から運用開始まで最短3日で完了しています。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 建設業の資格失効リスクをLINE×GASでゼロにできますか？</p><p class="text-wa-text text-base m-0">できます。3ヶ月前・1ヶ月前・2週間前の多段階アラートに加え、期限当日に緊急アラートを設定することで、失効リスクを事実上ゼロにできます。BuildMateの支援実績では、この仕組み導入後に資格失効が一件もなくなった建設会社があります。</p></div></div>
+      <div class="mt-10 pt-8 border-t border-wa-border">
+        <p class="font-bold text-wa-brand mb-4">関連記事</p>
+        <ul class="space-y-2"><li><a href="055-shakunai-kanri-ai.html" class="text-wa-brand hover:underline">工務店の社内管理業務をAI・GASで効率化する方法</a></li><li><a href="016-line-deming-gas.html" class="text-wa-brand hover:underline">建設業の出面管理をLINE×GASで自動化する方法</a></li><li><a href="005-hourei-shinsei-ai.html" class="text-wa-brand hover:underline">工務店の法令・申請業務をAI・GASで効率化する方法</a></li></ul>
+      </div>
+    </article>
+    <div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5">
+      <div class="w-14 h-14 rounded-full bg-wa-brand flex items-center justify-center flex-shrink-0"><i data-lucide="user" class="w-7 h-7 text-white"></i></div>
+      <div>
+        <p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p>
+        <p class="text-[15px] md:text-base text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。現場の実態とシステムの限界を知り尽くした立場から、中小工務店向けのAI・GAS導入コンサルティングを提供。関西拠点・全国オンライン対応。</p>
+      </div>
+    </div>
+    <div class="mt-8 bg-white rounded-wa p-8 shadow-sm border border-wa-border text-center">
+      <p class="font-bold text-lg text-wa-brand mb-2">「うちでも使えるか」を一緒に確認しましょう</p>
+      <p class="text-wa-gray text-base md:text-lg mb-6 leading-relaxed max-w-2xl mx-auto">BuildMateでは、工務店・建設会社の現状業務を無料でヒアリングし、LINE×GASで効率化できる箇所を具体的にご提案しています。元・施工管理の代表が現場目線でお答えします。勧誘・営業は一切行いません。</p>
+      <a href="../contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-wa-accent hover:opacity-90 text-white rounded-wa font-bold transition-colors">
+        <i data-lucide="mail" class="w-4 h-4"></i>無料相談に申し込む
+      </a>
+    </div>
+    <div class="mt-8 text-center">
+      <a href="../news.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-wa-brand text-wa-brand rounded-wa font-bold hover:bg-wa-brand hover:text-white transition-colors">← コラム一覧に戻る</a>
+    </div>
+  </div>
+</main>
+        <footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
+        <div class="max-w-[1080px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-white/60 text-sm">
+                    Copyright © 2026 BuildMate. All rights reserved.
+                </div>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
+                    <a href="../privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                    <a href="../terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                    <a href="../law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script>lucide.createIcons();</script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+</body>
+</html>

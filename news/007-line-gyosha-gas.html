@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5ECF52MHF6');</script>
+<meta charset="UTF-8">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../seigaiha.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>工務店の業者への工程変更・発注内容をLINE×GASで自動通知する方法 | BuildMate</title>
+<link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/007-line-gyosha-gas.html">
+<meta name="description" content="工程変更が決まっても業者への連絡が漏れ、当日になって「知らなかった」と言われる——建設現場のトラブルで最も多いパターンの一つです。電話・FAX・メールを使い分けながら複数業者へ個別に連絡する作業は、工程変更のたびに30分〜1時間かかることがあります。BuildMate代表が解説します。">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="工務店の業者への工程変更・発注内容をLINE×GASで自動通知する方法 | BuildMate">
+<meta property="og:description" content="工程変更が決まっても業者への連絡が漏れ、当日になって「知らなかった」と言われる——建設現場のトラブルで最も多いパターンの一つです。電話・FAX・メールを使い分け">
+<meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/007-line-gyosha-gas.html">
+<meta property="og:site_name" content="BuildMate">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="工務店の業者への工程変更・発注内容をLINE×GASで自動通知する方法 | BuildMate">
+<meta name="twitter:description" content="工程変更が決まっても業者への連絡が漏れ、当日になって「知らなかった」と言われる——建設現場のトラブルで最も多いパターンの一つです。電話・FAX・メールを使い分け">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"工務店の業者への工程変更・発注内容をLINE×GASで自動通知する方法","datePublished":"2026-01-24","dateModified":"2026-01-24","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"工程変更が決まっても業者への連絡が漏れ、当日になって「知らなかった」と言われる——建設現場のトラブルで最も多いパターンの一つです。電話・FAX・メールを使い分けながら複数業者へ個別に連絡する作業は、工程変更のたびに30分〜1時間かかることが","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/054-line-gyosha-gas.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"工務店の業者への工程変更をLINEで自動通知するにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"GASでGoogleスプレッドシートの更新を検知し、LINE Messaging APIで該当業者へ自動送信する仕組みを構築できます。BuildMateの支援実績では、1時間かかっていた連絡業務が5分に短縮されています。"}},{"@type":"Question","name":"複数の業者へLINEで一斉通知するにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"GASで業者リストのLINEユーザーIDを管理し、ループ処理で全業者へ個別送信できます。LINE Notifyを使う場合はグループへの一括送信が可能です。BuildMateが設定をサポートします。"}},{"@type":"Question","name":"業者がLINEで確認返信したことをGASで自動集計するにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"LINE公式アカウントのWebhookでGASが業者の返信を受け取り、スプレッドシートの確認状況を自動更新できます。BuildMateの支援実績では、この仕組みで連絡漏れの把握が即時になった建設会社があります。"}}]}
+</script>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<body class="bg-wa-bg text-wa-text font-sans antialiased">
+    <header class="bg-white/95 backdrop-blur-md fixed w-full top-0 z-50 border-b border-wa-border transition-all duration-300">
+        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+
+                <a href="../index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
+                <a href="../services.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">サービス・効果</a>
+                <a href="../ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
+                <a href="../diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+                <a href="../gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
+                <a href="../gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
+                <a href="../contact.html" class="px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+<!-- モバイルメニュー -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="../index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
+    <a href="../services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
+    <a href="../ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
+    <a href="../diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
+    <a href="../gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
+    <a href="../gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
+    <a href="../contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
+<main class="pt-32 pb-24 px-6">
+  <div class="max-w-[800px] mx-auto">
+    <nav class="text-sm text-wa-gray mb-8">
+      <a href="../index.html" class="hover:text-wa-brand">ホーム</a><span class="mx-2">/</span>
+      <a href="../news.html" class="hover:text-wa-brand">コラム一覧</a><span class="mx-2">/</span>
+      <span>工務店の業者への工程変更・発注通知業務</span>
+    </nav>
+    <div class="mb-10">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="inline-block bg-wa-brand text-white text-sm font-bold px-4 py-1 rounded-full">業務効率化</span>
+        <span class="inline-block bg-wa-accent text-white text-sm font-bold px-4 py-1 rounded-full">GAS活用</span>
+      </div>
+      <h1 class="break-keep text-balance text-2xl md:text-4xl font-serif font-bold text-wa-text leading-tight mb-4">工務店の業者への工程変更・<wbr>発注内容を<wbr><br>LINE×<wbr>GASで<wbr>自動通知する方法</h1>
+    </div>
+    <div class="mb-10">
+      <img src="../images/genba_sum.png" alt="工務店の業者への工程変更・発注通知業務のイメージ" class="w-full rounded-wa object-cover" onerror="this.style.display='none'">
+    </div>
+    <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
+      <p class="font-bold text-xl mb-6 text-wa-brand">「聞いていない」「連絡が来ていない」——業者とのすれ違いが現場を止めていませんか？</p>
+      <p>工程変更が決まっても業者への連絡が漏れ、当日になって「知らなかった」と言われる——建設現場のトラブルで最も多いパターンの一つです。電話・FAX・メールを使い分けながら複数業者へ個別に連絡する作業は、工程変更のたびに30分〜1時間かかることがあります。</p>
+      <p>この記事では、工務店・建設会社の業者への工程変更・発注通知を、LINEとGoogle Apps Script（GAS）を連携させて自動化する具体的な方法を解説します。スプレッドシートを更新するだけで、関係する業者のLINEへ一斉自動通知できます。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。</p>
+      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の業者への工程変更・発注通知業務とは</h4>
+      <p>工務店の業者連絡業務とは、工程変更・入場日時の調整・発注内容の伝達を協力業者へ個別に連絡し、全員が最新情報を共有できる状態を維持する業務を指します。業者の数が多いほど連絡漏れのリスクが高まり、工期遅延やトラブルの原因になります。</p>
+      <p>具体的には次のような作業が含まれます。</p>
+      <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>工程変更の内容を各業者へ個別に電話・メールで連絡</li><li>発注内容（品目・数量・搬入日）を業者へ送付</li><li>変更後の入場日時を業者と個別にすり合わせ</li><li>連絡した内容の記録と確認</li><li>業者からの確認返信の管理</li></ul>
+      <p>BuildMateの支援実績では、LINE×GASで業者連絡を自動化した工務店で、工程変更のたびに1時間かかっていた連絡業務が5分に短縮され、連絡漏れがゼロになっています。</p>
+      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">仕組みの全体像：LINEとGASをつなぐ方法</h4><p>Googleスプレッドシートの工程表または発注台帳が更新されたタイミングをGASが自動検知します。GASがLINE Notifyまたは LINE Messaging APIを使って、該当する業者のLINEグループまたは個別LINEへ変更内容・発注内容を自動送信します。業者が「確認しました」と返信するとGASが確認済みフラグを自動更新できます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 1: 業者リストとLINEアカウントの紐付け</h4><p>Googleスプレッドシートに業者名・担当者名・LINEのユーザーID（またはグループID）を登録します。LINE Messaging APIを使えば業者ごとの個別送信が可能です。LINE Notifyを使う場合は業者別のグループを作成してトークンを取得します。初期設定は一度行えば以降は自動です。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 2: スプレッドシートの更新をトリガーに自動通知</h4><p>工程表の変更日や発注台帳の新規入力をGASが検知すると、該当する業者のLINEへ「〇〇現場：〇月〇日の入場が〇月〇日に変更になりました」「〇〇を〇個、〇日搬入お願いします」という形式で自動通知します。連絡文は自動生成されるため、現場監督は工程表を更新するだけで連絡が完了します。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 3: 業者からの確認返信の自動集計</h4><p>業者がLINEで「確認しました」と返信するとGASが受け取り、スプレッドシートの確認状況を自動更新します。未確認の業者が残っている場合、GASが翌朝に担当者へ「〇〇社から確認返信がありません」とアラートを送ります。連絡漏れの見落としがゼロになります。</p>
+      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+      <p>BuildMateが建築・建設業の現場にLINE×GASを導入した実績をもとに、削減効果をまとめます。</p>
+      <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>業者への工程変更連絡：1時間 → 約5分（スプレッドシート更新のみ）</li><li>連絡漏れ：自動一斉送信でゼロに</li><li>確認状況の把握：電話確認 → GASが自動集計</li><li>トラブル発生時の証跡：LINEのやり取りが自動記録</li></ul>
+      <p>10社以上の協力業者を持つ建設会社では、工程変更のたびに月10〜15時間かかっていた連絡業務が1〜2時間に削減できます。時給換算（2,000円）で月2〜3万円相当のコスト削減に加え、連絡漏れによる工期遅延・トラブル防止の効果が大きい施策です。</p>
+      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">LINEとGASでできないことについて</h4>
+      <p>業者との工期や金額の交渉・調整は人間が行う必要があります。また、緊急のトラブル対応や複雑な工程変更の判断は現場監督・管理者が直接対応すべきです。
+
+しかしLINE×GASが定型の連絡・通知・確認集計を自動化することで、管理者が本来すべき交渉・判断業務に集中できる環境が整います。</p>
+      <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">「言った・言わない」のトラブルは、工程変更の連絡をLINE×GASで自動化するだけでほぼゼロになります。スプレッドシートを更新するだけで全業者へ一斉通知——これが現場のコミュニケーションを変えます。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）</div>
+      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+      <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>工務店の業者への工程変更・発注通知はスプレッドシート更新だけで自動一斉送信できる</li><li>GASがスプレッドシートの更新を検知してLINEで該当業者へ自動通知する</li><li>業者の確認返信をGASが自動集計し、未確認業者へのリマインドも自動化できる</li><li>10社以上の協力業者を持つ建設会社で月10〜15時間の削減が見込める</li><li>連絡漏れゼロ化で工期遅延・トラブルを防ぎ、業者との信頼関係が向上する</li></ul>
+      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+      <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の業者への工程変更をLINEで自動通知するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">GASでGoogleスプレッドシートの更新を検知し、LINE Messaging APIで該当業者へ自動送信する仕組みを構築できます。BuildMateの支援実績では、1時間かかっていた連絡業務が5分に短縮されています。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 複数の業者へLINEで一斉通知するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">GASで業者リストのLINEユーザーIDを管理し、ループ処理で全業者へ個別送信できます。LINE Notifyを使う場合はグループへの一括送信が可能です。BuildMateが設定をサポートします。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 業者がLINEで確認返信したことをGASで自動集計するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">LINE公式アカウントのWebhookでGASが業者の返信を受け取り、スプレッドシートの確認状況を自動更新できます。BuildMateの支援実績では、この仕組みで連絡漏れの把握が即時になった建設会社があります。</p></div></div>
+      <div class="mt-10 pt-8 border-t border-wa-border">
+        <p class="font-bold text-wa-brand mb-4">関連記事</p>
+        <ul class="space-y-2"><li><a href="038-gyosha-taiou-ai.html" class="text-wa-brand hover:underline">工務店の業者対応業務をAI・GASで効率化する方法</a></li><li><a href="047-koteihyo-gas.html" class="text-wa-brand hover:underline">工務店の工程表作成・更新・共有をAI・GASで自動化する方法</a></li><li><a href="016-line-deming-gas.html" class="text-wa-brand hover:underline">建設業の出面管理をLINE×GASで自動化する方法</a></li></ul>
+      </div>
+    </article>
+    <div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5">
+      <div class="w-14 h-14 rounded-full bg-wa-brand flex items-center justify-center flex-shrink-0"><i data-lucide="user" class="w-7 h-7 text-white"></i></div>
+      <div>
+        <p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p>
+        <p class="text-[15px] md:text-base text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。現場の実態とシステムの限界を知り尽くした立場から、中小工務店向けのAI・GAS導入コンサルティングを提供。関西拠点・全国オンライン対応。</p>
+      </div>
+    </div>
+    <div class="mt-8 bg-white rounded-wa p-8 shadow-sm border border-wa-border text-center">
+      <p class="font-bold text-lg text-wa-brand mb-2">「うちでも使えるか」を一緒に確認しましょう</p>
+      <p class="text-wa-gray text-base md:text-lg mb-6 leading-relaxed max-w-2xl mx-auto">BuildMateでは、工務店・建設会社の現状業務を無料でヒアリングし、LINE×GASで効率化できる箇所を具体的にご提案しています。元・施工管理の代表が現場目線でお答えします。勧誘・営業は一切行いません。</p>
+      <a href="../contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-wa-accent hover:opacity-90 text-white rounded-wa font-bold transition-colors">
+        <i data-lucide="mail" class="w-4 h-4"></i>無料相談に申し込む
+      </a>
+    </div>
+    <div class="mt-8 text-center">
+      <a href="../news.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-wa-brand text-wa-brand rounded-wa font-bold hover:bg-wa-brand hover:text-white transition-colors">← コラム一覧に戻る</a>
+    </div>
+  </div>
+</main>
+        <footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
+        <div class="max-w-[1080px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-white/60 text-sm">
+                    Copyright © 2026 BuildMate. All rights reserved.
+                </div>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
+                    <a href="../privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                    <a href="../terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                    <a href="../law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script>lucide.createIcons();</script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+</body>
+</html>

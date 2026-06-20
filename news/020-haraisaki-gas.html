@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5ECF52MHF6');</script>
+<meta charset="UTF-8"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../seigaiha.css"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>工務店の業者・外注への支払処理をGASで自動集計する方法｜支払いミスをゼロに | BuildMate</title>
+<link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/020-haraisaki-gas.html">
+<meta name="description" content="複数の協力業者・一人親方への支払いを毎月手作業で集計している工務店は多いです。請求書を1枚ずつ確認してExcelに転記し、合計を計算して振込データを作成する——この作業だけで月末に3時間以上かかるケースも珍しくありません。入力ミスによる支払BuildMate代表が紹介します。">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article"><meta property="og:title" content="工務店の業者・外注への支払処理をGASで自動集計する方法｜支払いミスをゼロに | BuildMate"><meta property="og:description" content="複数の協力業者・一人親方への支払いを毎月手作業で集計している工務店は多いです。請求書を1枚ずつ確認してExcelに転記し、合計を計算して振込データを作成する——"><meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/020-haraisaki-gas.html"><meta property="og:site_name" content="BuildMate"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="工務店の業者・外注への支払処理をGASで自動集計する方法｜支払いミスをゼロに | BuildMate"><meta name="twitter:description" content="複数の協力業者・一人親方への支払いを毎月手作業で集計している工務店は多いです。請求書を1枚ずつ確認してExcelに転記し、合計を計算して振込データを作成する——">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"工務店の業者・外注への支払処理をGASで自動集計する方法｜支払いミスをゼロに","datePublished":"2026-03-17","dateModified":"2026-03-17","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/050-haraisaki-gas.html"}}</script>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<body class="bg-wa-bg text-wa-text font-sans antialiased">
+    <header class="bg-white/95 backdrop-blur-md fixed w-full top-0 z-50 border-b border-wa-border transition-all duration-300">
+        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+
+                <a href="../index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
+                <a href="../services.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">サービス・効果</a>
+                <a href="../ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
+                <a href="../diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+                <a href="../gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
+                <a href="../gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
+                <a href="../contact.html" class="px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+<!-- モバイルメニュー -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="../index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
+    <a href="../services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
+    <a href="../ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
+    <a href="../diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
+    <a href="../gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
+    <a href="../gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
+    <a href="../contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
+<main class="pt-32 pb-24 px-6"><div class="max-w-[800px] mx-auto">
+<nav class="text-sm text-wa-gray mb-8"><a href="../index.html" class="hover:text-wa-brand">ホーム</a><span class="mx-2">/</span><a href="../news.html" class="hover:text-wa-brand">コラム一覧</a><span class="mx-2">/</span><span>工務店の業者・外注への支払処理業務</span></nav>
+<div class="mb-10"><div class="flex items-center gap-2 mb-4"><span class="inline-block bg-wa-brand text-white text-sm font-bold px-4 py-1 rounded-full">業務効率化</span><span class="inline-block bg-wa-accent text-white text-sm font-bold px-4 py-1 rounded-full">GAS活用</span></div>
+<h1 class="break-keep text-balance text-2xl md:text-4xl font-serif font-bold text-wa-text leading-tight mb-4">工務店の業者・<wbr>外注への支払処理を<wbr>GASで<wbr>自動集計する方法</h1></div>
+<div class="mb-10"><img src="../images/keiri_sum.png" alt="工務店の業者・外注への支払処理業務のイメージ" class="w-full rounded-wa object-cover" onerror="this.style.display='none'"></div>
+<article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
+<p class="font-bold text-xl mb-6 text-wa-brand">月末の支払い処理、何時間かかっていますか？</p>
+<p>複数の協力業者・一人親方への支払いを毎月手作業で集計している工務店は多いです。請求書を1枚ずつ確認してExcelに転記し、合計を計算して振込データを作成する——この作業だけで月末に3時間以上かかるケースも珍しくありません。入力ミスによる支払い誤りも、業者との信頼関係に影響します。</p><p>この記事では、工務店の業者・外注への支払処理業務を、Google Apps Script（GAS）を使って自動集計する具体的な方法を解説します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。</p>
+<h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の業者・外注への支払処理業務とは</h4>
+<p>工務店の支払処理業務とは、協力業者・一人親方・外注先から受け取った請求書を確認・集計し、銀行振込用データを作成して支払いを実行する業務を指します。手動処理では月3時間以上かかることがあり、ミスが起きると業者との信頼関係に影響します。</p><p>具体的には次のような作業が含まれます。</p>
+<ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>協力業者・外注先からの請求書の受取・内容確認</li><li>案件別・業者別の支払い金額をExcelに手動転記</li><li>合計支払い金額の計算と資金繰りの確認</li><li>銀行のインターネットバンキングへの振込データ入力</li><li>支払い完了後の台帳への記録と業者への支払い通知</li></ul>
+<p>BuildMateの支援実績では、GASで自動化した工務店（月20〜30件の支払いがある規模）で、月3時間かかっていた支払い処理が30分に短縮され、支払いミスがゼロになっています。</p>
+<h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 1: 請求書データをスプレッドシートへ自動集計</h4><p>工務店の請求書集計とは、各業者から受け取った請求書の金額・案件名・支払い期日をまとめて管理する業務です。手動転記では入力ミスと時間がかかるという問題が常につきまといます。</p><p>GASを使えば、業者がGoogleフォームで請求内容を入力するだけで、スプレッドシートの支払い台帳へ自動転記される仕組みを構築できます。または、GmailやGoogleドライブに届いた請求書PDFからAI-OCRでデータを読み取って自動集計することも可能です。手動転記がゼロになり、入力ミスが防げます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 2: 支払一覧の自動集計とFBデータ出力</h4><p>工務店の振込データ作成とは、銀行のインターネットバンキングにアップロードする全銀フォーマット（FBデータ）を作成する業務です。業者ごとの口座情報・金額を手動で入力していると時間がかかりミスのリスクもあります。</p><p>GASを使えば、スプレッドシートに集計された支払い情報から、全銀フォーマットのCSVファイルを自動生成できます。業者の口座情報はマスタデータとして管理し、金額と紐付けて自動出力します。月3時間かかっていた振込データ作成が30分に短縮されます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 3: 支払い完了通知の自動送信</h4><p>工務店の支払い通知とは、振込完了後に業者へ「〇月分の請求書、〇〇円を本日振込しました」と連絡する業務です。毎回手動でメールを作成・送付している工務店では、漏れが起きやすい作業です。</p><p>GASを使えば、振込完了後に支払い台帳のステータスを「支払済」に更新するだけで、該当業者へ支払い完了通知メールを自動送信できます。業者からの「振込確認できましたか？」という問い合わせも減少します。</p>
+<h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+<p>BuildMateが工務店の業務にAI・GASを導入した実績をもとに、削減効果をまとめます。</p>
+<ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>支払い集計・台帳転記：月3時間 → 約30分</li><li>振込データ（FBデータ）作成：1〜2時間 → 自動生成</li><li>支払いミス・入力ミス：自動集計でゼロに</li><li>業者への支払い通知：手動メール → GASで自動送信</li></ul>
+<p>月20〜30件の支払いがある工務店では、月2.5〜3時間の削減が現実的な目標値です。時給換算（2,000円）で月5,000〜6,000円相当のコスト削減に加え、支払いミスによる業者との関係悪化リスクの排除という効果が大きい業務です。</p>
+<h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIとGASでできないことについて</h4>
+<p>請求内容に疑問がある場合の業者との交渉・確認や、支払い条件の変更対応は人間が行う必要があります。また、最終的な支払い実行（銀行振込の承認）は経営者・担当者が確認する必要があります。
+
+しかしGASが集計・データ作成・通知を自動化することで、工務店の経理担当者が「確認・承認」だけに集中できる環境が整います。</p>
+<div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">支払い処理のミスは業者との信頼関係を一瞬で壊します。GASで自動集計・自動通知の仕組みを作れば、月末の夜遅い作業もなくなります。まずスプレッドシートへの自動集計だけでも導入してみてください。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）</div>
+<h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+<ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>工務店の業者・外注への支払処理はGASの自動集計で月3時間→30分に短縮できる</li><li>業者からの請求入力をGoogleフォームで受け付け、支払い台帳へ自動転記できる</li><li>GASが全銀フォーマット（FBデータ）のCSVを自動生成し、振込データ作成の手間がなくなる</li><li>支払い完了後にGASが業者へ自動通知し、問い合わせ対応の手間もなくなる</li><li>月20〜30件規模の工務店で月2.5〜3時間削減と支払いミスゼロを実現できる</li></ul>
+<h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+<div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の支払い集計をGASで自動化するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">業者がGoogleフォームで請求内容を入力するだけでスプレッドシートに自動集計する仕組みを構築できます。BuildMateの支援実績では、月3時間かかっていた支払い集計が30分に短縮されています。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の振込データ（FBデータ）をGASで自動生成するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">GASでスプレッドシートの支払い情報から全銀フォーマットのCSVを自動生成できます。BuildMateの支援実績では、この自動生成で振込データ作成の手間がほぼゼロになった工務店があります。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の支払いミスをGASで防ぐにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">GASで集計・照合・データ出力を自動化することで、手動転記による入力ミスをゼロにできます。BuildMateの支援実績では、GAS導入後に支払いミスが完全になくなった工務店があります。</p></div></div>
+<div class="mt-10 pt-8 border-t border-wa-border"><p class="font-bold text-wa-brand mb-4">関連記事</p><ul class="space-y-2"><li><a href="029-zaimu-kaikei-ai.html" class="text-wa-brand hover:underline">工務店の財務・会計業務をAI・GASで効率化する方法</a></li><li><a href="042-seikyu-gas.html" class="text-wa-brand hover:underline">工務店の見積書確認・請求書発行をAI・GASで自動化する方法</a></li><li><a href="040-nyukin-gas.html" class="text-wa-brand hover:underline">工務店の入金確認・管理台帳をGASで自動更新する方法</a></li></ul></div>
+</article>
+<div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5"><div class="w-14 h-14 rounded-full bg-wa-brand flex items-center justify-center flex-shrink-0"><i data-lucide="user" class="w-7 h-7 text-white"></i></div><div><p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p><p class="text-[15px] md:text-base text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。現場の実態とシステムの限界を知り尽くした立場から、中小工務店向けのAI・GAS導入コンサルティングを提供。関西拠点・全国オンライン対応。</p></div></div>
+<div class="mt-8 bg-white rounded-wa p-8 shadow-sm border border-wa-border text-center"><p class="font-bold text-lg text-wa-brand mb-2">「うちでも使えるか」を一緒に確認しましょう</p><p class="text-wa-gray text-base md:text-lg mb-6 leading-relaxed max-w-2xl mx-auto">BuildMateでは、工務店の現状業務を無料でヒアリングし、AI・GASで効率化できる箇所を具体的にご提案しています。元・施工管理の代表が現場目線でお答えします。勧誘・営業は一切行いません。</p><a href="../contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-wa-accent hover:opacity-90 text-white rounded-wa font-bold transition-colors"><i data-lucide="mail" class="w-4 h-4"></i>無料相談に申し込む</a></div>
+<div class="mt-8 text-center"><a href="../news.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-wa-brand text-wa-brand rounded-wa font-bold hover:bg-wa-brand hover:text-white transition-colors">← コラム一覧に戻る</a></div>
+</div></main>
+        <footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
+        <div class="max-w-[1080px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-white/60 text-sm">
+                    Copyright © 2026 BuildMate. All rights reserved.
+                </div>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
+                    <a href="../privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                    <a href="../terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                    <a href="../law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script>lucide.createIcons();</script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+</body></html>

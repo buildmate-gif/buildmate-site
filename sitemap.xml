@@ -1,0 +1,932 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ===== メインページ ===== -->
+  <!-- トップページ -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/index.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- サービスページ -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/services.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- AI診断ページ -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/diagnosis.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- 特典プレゼントページ -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/gift.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- GAS活用事例ページ -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/gas.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- コラム・最新情報一覧 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- 無料相談・お問い合わせ -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/contact.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ===== ニュース・コラム 記事ページ（全125件）===== -->
+  <!-- 工務店の竣工書類・完成写真の整理をAI・GASで自動化する方法｜2時間→20分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/079-syunko-gas.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店のスケジュール・シフト管理をGASで自動化する方法｜30分→5分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/068-shift-gas.html</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の採用・外注業務をAI・GASで効率化する方法【完全まとめ】 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/114-saiyo-gaichuu-matome.html</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の産業廃棄物マニフェスト管理をGASで自動化する方法｜月3時間→自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/110-manifest-gas.html</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の引渡し後満足度アンケート送付をGASで自動化する方法｜毎回30分→自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/066-anketo2-gas.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の来場アンケート集計・分析をAI・GASで自動化する方法｜3時間→20分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/059-anketo-gas.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- ニュースレター作成時間を3日から30分に短縮する技 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/023-newsletter-30min.html</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の勤怠管理をAI・GASで自動化する方法｜月4時間→30分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/069-kintai-gas.html</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の定期点検スケジュール管理をGASで自動化する方法｜月2時間→自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/099-tenken-gas.html</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の品質チェック・社内検査をAIで効率化する方法｜1時間→30分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/077-hinshitsu-ai.html</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店のGAS（Google Apps Script）活用完全ガイド【2026年版】 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/117-gas-guide.html</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の応募者の選考・面接調整をGASで自動化する方法｜毎回1時間→15分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/104-boshu-gas.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 「売りっぱなし」と言わせない。AIで書く心のこもった手紙術 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/002-afterservice-letter.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の未対応タスクリマインドをGASで自動化してChatwork・LINEに通知する方法 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/120-task-reminder-gas.html</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 現場の清掃状況を画像解析でスコアリングしてみた -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/046-cleaning-scoring.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店のアフター対応業務をAI・GASで効率化する方法【完全まとめ】 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/113-after-matome.html</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の設計・積算をAI・GASで効率化する方法｜間取り作成から見積書まで自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/022-sekkei-sekisan-ai.html</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の社内マニュアル・手順書の整備をAIで効率化する方法｜半日→1時間に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/071-manual-ai.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の現場管理をAI・GASで効率化する方法｜工程表・施工写真・品質管理を自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/044-genba-kanri-ai.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の週次経営サマリーをGASで自動生成してChatworkに配信する方法 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/125-weekly-summary-gas.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店のOB客向けDM・ニュースレターをAI・GASで自動化する方法｜月4時間→30分を実現 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/027-ob-dm-gas.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- OB訪問の予定調整をAIカレンダーで自動化する -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/045-ob-visit-calendar.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 会議時間を半分に。ファシリテーターとしてのAI活用 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/048-meeting-ai.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店のSNS投稿ネタをGemini APIとGASで毎朝自動提案する方法 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/123-sns-gemini-gas.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 2026年問題に備える。建設DXの最初の一歩とは -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/010-construction-dx-2026.html</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 建設現場の施工写真をLINE×GASでGoogleドライブに自動整理する方法 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/014-line-shashin-gas.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店のAI・GAS導入完全ガイド｜業務効率化76本まとめ【2026年版】 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/116-koumutenai-guide.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の業者・外注への支払処理をGASで自動集計する方法｜支払いミスをゼロに -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/020-haraisaki-gas.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の備品・消耗品の発注・在庫管理をGASで自動化する方法｜週1時間→自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/072-bihin-gas.html</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の住宅ローン・補助金案内をAIで効率化する方法｜1時間→15分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/064-loan-ai.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の競合調査・市場リサーチをAIで自動化する方法｜半日→1時間に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/060-kyogyo-ai.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 紙の日報はもう古い？音声入力で終わらせる現場報告 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/013-voice-daily-report.html</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店のチラシ・DM作成をAIで効率化する方法｜半日の作業を2時間に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/057-chirashi-ai.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 在庫管理の適正化！現場の余り材を無駄にしない方法 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/043-inventory-management.html</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の設計・積算業務をAI・GASで効率化する方法【完全まとめ】 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/112-sekkei-sekisan-matome.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店のクレーム・不具合受付をAI・GASで自動化する方法｜30分→5分で対応速度を改善 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/025-claim-gas.html</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の社内管理をAI・GASで効率化する方法｜日報・勤怠・会議録を自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/055-shakunai-kanri-ai.html</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の確認申請書類の準備・提出管理をAI・GASで自動化する方法｜半日→2時間に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/098-kakunin-gas.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 協力業者とのFAXやり取りを卒業するステップ -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/052-fax-to-digital.html</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の業者選定・見積依頼をAIで効率化する方法｜2時間→30分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/080-gyosha-sentei-ai.html</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 【対談】アナログ一筋だった社長がDXに目覚めたきっかけ -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/039-analog-ceo-dx.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 「施主様向けLINE」で満足度を高める進捗報告のコツ -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/028-line-progress-report.html</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 補助金申請の書類作成をChatGPTで半自動化する方法 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/015-subsidy-chatgpt.html</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店のHP問い合わせ対応をAI・GASで24時間自動化する方法｜機会損失をゼロに -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/036-toiawase-gas.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の請求書の受取・内容確認をAIで自動化する方法｜月4時間→30分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/084-seikyu-uketo-ai.html</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の工事進捗をLINE×GASで施主へ自動報告する方法｜毎日5分で信頼を積む -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/011-line-shinchoku-gas.html</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の新人・中途社員の研修・教育をAIで効率化する方法｜研修準備半日→2時間に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/105-kensyu-ai.html</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の法令・申請業務をAI・GASで効率化する方法【完全まとめ】 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/115-hourei-matome.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の名刺・書類の管理をAIで効率化する方法｜月2時間→30分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/074-meishi-ai.html</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- BuildMateが考える、10年後の工務店の姿 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/054-buildmate-future.html</loc>
+    <lastmod>2026-02-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の要望・敷地情報の整理をAIで自動化する方法｜1時間→15分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/091-yobou-ai.html</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の見積書確認・請求書発行をAI・GASで自動化する方法｜請求漏れをゼロに -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/042-seikyu-gas.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の工程表作成・更新・共有をAI・GASで自動化する方法｜3時間→30分を実現 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/047-koteihyo-gas.html</loc>
+    <lastmod>2026-02-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の原価計算・見積書の作成をAI・GASで自動化する方法｜3時間→30分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/095-genka-gas.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店のお客様対応をAI・GASで効率化する方法｜引渡し後フォローまで自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/051-customer-taiou-ai.html</loc>
+    <lastmod>2026-02-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の職人・業者の入場管理をGASで自動化する方法｜毎日15分→自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/075-nyujo-gas.html</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の建設業法に基づく帳簿・書類保管をGASで自動化する方法｜月2時間→自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/109-chobo-gas.html</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の保証書の発行・管理をGASで自動化する方法｜毎回1時間→自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/100-hosho-gas.html</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店ホームページのSEO対策、AIならここまでできる -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/035-seo-for-koumuten.html</loc>
+    <lastmod>2026-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の外注費の単価管理・契約書整備をAI・GASで自動化する方法｜月2時間→30分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/106-gaichuu-gas.html</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の社内連絡・通達をGASで自動化する方法｜30分→3分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/073-renraku-gas.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 【失敗談】高いシステムを導入しても現場が使ってくれない理由 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/019-system-failure-case.html</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の採用・外注をAI・GASで効率化する方法｜求人票から研修・単価管理まで自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/009-saiyo-gaichuu-ai.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の引渡し書類の準備・説明をAI・GASで効率化する方法｜2時間→30分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/065-hikiwatashi-gas.html</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の材料の搬入・納期確認をGASで自動化する方法｜毎日30分→自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/076-zairyo-gas.html</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 経理担当が泣いて喜ぶ！レシート読み取りと仕訳の自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/037-receipt-automation.html</loc>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の要望整理・プラン提案をAIで自動化する方法｜2時間→30分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/062-plan-ai.html</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の確認申請・完了検査の申請管理をGASで自動化する方法｜月2時間→自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/108-kakunin-shinsei-gas.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店のアフター対応をAI・GASで効率化する方法｜点検・クレーム・OB客管理を自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/018-after-hosho-ai.html</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の法令・申請をAI・GASで効率化する方法｜建設業許可から廃棄物管理まで自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/005-hourei-shinsei-ai.html</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の顧客対応放置を防ぐフォローアラートをGASで自動化する方法 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/121-followup-gas.html</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の施工内容・図面の共有をGASで自動化する方法｜毎回15分→自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/083-zumen-gas.html</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 若手社員が育つ！AIを使ったロールプレイング研修 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/041-roleplay-training.html</loc>
+    <lastmod>2026-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の間取りプラン・外観プランの作成をAIで効率化する方法｜半日→1時間に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/092-madori-ai.html</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の安全管理（KY活動・ヒヤリハット）をAI・GASで自動化する方法｜30分→10分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/078-safety-gas.html</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 月8万円の削減！工務店がAI導入で最初にやるべき3つのこと -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/001-ai-cost-reduction.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の業者への工程変更・発注内容をLINE×GASで自動通知する方法 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/007-line-gyosha-gas.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の工事進捗報告をAI・GASで自動化する方法｜30分/件→5分を実現 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/031-shinchoku-gas.html</loc>
+    <lastmod>2026-01-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の社内会議の議事録作成をAIで自動化する方法｜45分→5分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/070-gijiroku-ai.html</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- リフォーム営業の成約率を上げる「即レス」の仕組みづくり -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/017-quick-reply-sales.html</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の売上・利益の月次集計をGASで自動化する方法｜月4時間→自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/087-uriage-gas.html</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の業者対応をAI・GASで効率化する方法｜発注書・工程調整・請求確認を自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/038-gyosha-taiou-ai.html</loc>
+    <lastmod>2026-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の求人票の作成・媒体掲載をAIで効率化する方法｜3時間→30分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/103-kyujin-ai.html</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の仕様書・仕上げ表の作成をAI・GASで自動化する方法｜2時間→30分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/093-shiyosho-gas.html</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の入金確認・管理台帳をGASで自動更新する方法｜未入金アラートで入金遅延を防ぐ -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/040-nyukin-gas.html</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- VR内覧会で遠方のお客様ともスムーズに商談する -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/050-vr-showcase.html</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の施工写真整理・報告書作成をAI・GASで自動化する方法｜1時間→10分を実現 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/049-koji-shashin-gas.html</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の図面の修正・バージョン管理をGASで自動化する方法｜毎回30分→自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/096-zumen-ver-gas.html</loc>
+    <lastmod>2026-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Z世代の職人を採用するためのSNS活用メソッド -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/012-sns-recruitment-genz.html</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の完成見学会の企画・告知をAI・GASで自動化する方法｜4時間→1時間に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/058-kenngakukai-gas.html</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の工程調整・入場日時のすり合わせをGASで自動化する方法｜1時間→15分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/082-schedule-gas.html</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の経費精算・領収書の整理をAIで自動化する方法｜月5時間→1時間に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/086-keihi-ai.html</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の発注書の作成・送付・確認をAI・GASで自動化する方法｜30分→5分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/081-chuhmon-gas.html</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の補助金・助成金の申請書類をAIで効率化する方法｜丸1日→半日に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/090-hojokin-ai.html</loc>
+    <lastmod>2026-01-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の営業・集客をAI・GASで効率化する方法｜問い合わせ対応から追客まで自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/053-eigyo-shukyaku-ai.html</loc>
+    <lastmod>2026-01-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の点検報告書の作成・送付をAI・GASで自動化する方法｜1時間→10分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/101-hokoku-gas.html</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の数量拾い出し（積算）をAIで自動化する方法｜丸1日→2時間に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/094-sekisan-ai.html</loc>
+    <lastmod>2026-01-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の税理士への資料提出をAI・GASで効率化する方法｜月3時間→1時間に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/088-zeirishi-gas.html</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の追客・フォローアップ管理をAI・GASで自動化する方法｜週2時間→30分を実現 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/033-okukyaku-gas.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の紹介客へのお礼・関係維持をAI・GASで自動化する方法｜月2時間→自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/061-syoukai-gas.html</loc>
+    <lastmod>2025-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の日報・週報作成をAIで自動化する方法｜60分→10分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/067-nippo-ai.html</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 住宅業界ニュースをGASで自動収集してChatworkに毎朝配信する方法 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/122-news-chatwork-gas.html</loc>
+    <lastmod>2025-12-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店のリフォーム再受注活動をAI・GASで自動化する方法｜月4時間→自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/102-reform-gas.html</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店のHP・SNS更新をAIで自動化する方法｜3時間の作業を30分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/056-sns-ai.html</loc>
+    <lastmod>2025-12-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の建設業許可の更新・変更届をAIで効率化する方法｜丸1日→半日に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/107-kensetsu-kyoka-ai.html</loc>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 電子契約の導入で印紙代と郵送コストをゼロにする -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/030-electronic-contract.html</loc>
+    <lastmod>2025-12-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の財務・会計をAI・GASで効率化する方法｜請求発行・入金管理・経費精算を自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/029-zaimu-kaikei-ai.html</loc>
+    <lastmod>2025-12-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の契約書の準備・説明・締結をAIで効率化する方法｜2時間→30分に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/063-keiyaku-ai.html</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 建設業の資格・免許更新期限をLINE×GASで自動アラートする方法｜法的リスクをゼロに -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/003-line-shikaku-gas.html</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 現場監督の「言ったつもり」をなくすタスク管理術 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/021-task-management.html</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- キャッチコピーひとつで反響が変わる！AIコピーライティング術 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/032-ai-copywriting.html</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の融資関連書類対応をAIで効率化する方法｜半日→2時間に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/089-yushi-ai.html</loc>
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 現場の「ヒヤリハット」情報を共有し安全意識を高める仕組み -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/034-near-miss-safety.html</loc>
+    <lastmod>2025-12-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店向け補助金・助成金の新着情報をGASで自動監視してLINE・Chatworkに通知する方法 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/118-hojokin-gas.html</loc>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の個人情報保護・情報管理体制をAIで整備する方法｜半日→1時間に短縮 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/111-privacy-ai.html</loc>
+    <lastmod>2025-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の現場天気予報をGASで自動取得してLINEに通知する方法 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/124-tenki-line-gas.html</loc>
+    <lastmod>2025-12-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の業者ごとの評価・実績管理をAI・GASで自動化する方法｜月2時間→自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/085-hyoka-gas.html</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 見積書作成のミスをAIチェックで防ぐ方法 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/024-estimate-ai-check.html</loc>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Googleマップ活用で現場へのルート作成を完全自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/026-google-maps-route.html</loc>
+    <lastmod>2025-12-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 職人の移動時間を30%削減する「出面管理アプリ」の作り方 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/006-field-attendance-app.html</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の構造計算・省エネ計算の依頼管理をGASで自動化する方法｜月2時間→自動化 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/097-kozo-gas.html</loc>
+    <lastmod>2025-12-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 【事例】商談時間が半分に。即時パース作成で成約率アップ -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/004-estimate-presentation.html</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 工務店の現場モーニングレポートをGASで自動生成してLINEに配信する方法 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/119-morning-report-gas.html</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- 建設業の出面管理をLINE×GASで自動化する方法｜打刻から集計まで完全自動 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/016-line-deming-gas.html</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- クレームを資産に変える！アフターメンテナンスの自動化戦略 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/news/008-claim-to-asset.html</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

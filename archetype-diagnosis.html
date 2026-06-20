@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ブランドアーキタイプ診断</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%2324324A'/><circle cx='16' cy='16' r='14' fill='none' stroke='%23B99745' stroke-width='.7' opacity='.5'/><line x1='16' y1='3' x2='16' y2='7' stroke='%23B99745' stroke-width='1.5' stroke-linecap='round'/><line x1='29' y1='16' x2='25' y2='16' stroke='%23B99745' stroke-width='1' stroke-linecap='round' opacity='.35'/><line x1='16' y1='29' x2='16' y2='25' stroke='%23B99745' stroke-width='1' stroke-linecap='round' opacity='.35'/><line x1='3' y1='16' x2='7' y2='16' stroke='%23B99745' stroke-width='1' stroke-linecap='round' opacity='.35'/><path d='M16,7 L18.5,16 L16,14 L13.5,16 Z' fill='%23B99745'/><path d='M16,25 L18.5,16 L16,18 L13.5,16 Z' fill='rgba(255,255,255,.18)'/><circle cx='16' cy='16' r='2' fill='%23B99745'/><circle cx='16' cy='16' r='1' fill='%2324324A'/></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600&family=Shippori+Mincho+B1:wght@500;700&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ===== ROOT TOKENS ===== */
+:root {
+  --hiro-bg:        #FCFBF7;
+  --hiro-paper:     #FFFFFF;
+  --hiro-navy:      #24324A;
+  --hiro-gold:      #B99745;
+  --hiro-goldHover: #A0823A;
+  --hiro-sub:       #6B7280;
+  --hiro-border:    #E7E2D6;
+  --hiro-highlight: #FFF6D9;
+}
+
+/* ===== RESET ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+button { cursor: pointer; font-family: inherit; }
+
+/* ===== BASE ===== */
+body {
+  background: var(--hiro-bg);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  color: var(--hiro-navy);
+  line-height: 1.8;
+}
+
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 28px;
+  width: 100%;
+}
+
+/* ===== SCREENS ===== */
+.screen { display: none; }
+.screen.active { display: flex; flex-direction: column; min-height: 100vh; }
+
+/* ===== START SCREEN ===== */
+#screen-start {
+  align-items: center;
+  justify-content: center;
+  padding: 48px 28px;
+  background: var(--hiro-bg);
+}
+
+.start-card {
+  background: var(--hiro-paper);
+  border: 1px solid var(--hiro-border);
+  border-radius: 12px;
+  padding: 52px 44px;
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--hiro-gold);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.start-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+
+.start-desc {
+  font-size: 15px;
+  color: var(--hiro-sub);
+  line-height: 1.95;
+  margin-bottom: 28px;
+}
+
+.start-meta {
+  background: var(--hiro-highlight);
+  border-radius: 6px;
+  padding: 13px 20px;
+  font-size: 14px;
+  line-height: 1.75;
+  margin-bottom: 36px;
+  color: var(--hiro-navy);
+}
+
+.start-meta small {
+  display: block;
+  color: var(--hiro-sub);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.btn-primary {
+  background: var(--hiro-navy);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 14px 0;
+  border: none;
+  border-radius: 7px;
+  letter-spacing: 0.06em;
+  width: 100%;
+  max-width: 260px;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: #1a2637; }
+
+/* ===== QUESTION SCREEN ===== */
+#screen-question { background: var(--hiro-bg); }
+
+.progress-wrap {
+  background: var(--hiro-border);
+  height: 3px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-shrink: 0;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--hiro-gold);
+  transition: width 0.35s ease;
+}
+
+.q-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.q-header {
+  padding: 22px 0 0;
+  text-align: right;
+}
+.q-counter {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--hiro-sub);
+  letter-spacing: 0.05em;
+}
+.q-counter strong { color: var(--hiro-navy); }
+
+.q-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 28px 0 20px;
+}
+
+.q-text {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.75;
+  margin-bottom: 40px;
+}
+
+.likert-wrap { display: flex; flex-direction: column; gap: 10px; }
+
+.likert-edge-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--hiro-sub);
+  padding: 0 2px;
+}
+
+.likert-btns {
+  display: flex;
+  gap: 10px;
+}
+
+.likert-btn {
+  flex: 1;
+  height: 58px;
+  background: var(--hiro-paper);
+  border: 1.5px solid var(--hiro-border);
+  border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--hiro-sub);
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.likert-btn:hover {
+  border-color: var(--hiro-navy);
+  color: var(--hiro-navy);
+  background: #f3f0ea;
+}
+.likert-btn.selected {
+  background: var(--hiro-navy);
+  border-color: var(--hiro-navy);
+  color: #fff;
+}
+
+.q-footer {
+  padding: 20px 0 44px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.btn-back {
+  background: transparent;
+  border: 1.5px solid var(--hiro-border);
+  color: var(--hiro-sub);
+  font-size: 14px;
+  padding: 9px 20px;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+.btn-back:hover:not(:disabled) { border-color: var(--hiro-navy); color: var(--hiro-navy); }
+.btn-back:disabled { opacity: 0.3; cursor: default; }
+
+.auto-hint {
+  font-size: 13px;
+  color: var(--hiro-sub);
+  margin-left: auto;
+}
+
+/* ===== RESULT SCREEN ===== */
+#screen-result { min-height: 100vh; }
+
+/* Hero */
+.result-hero {
+  background: var(--hiro-navy);
+  padding: 60px 28px 52px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.result-eyebrow {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--hiro-gold);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.result-main-name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 38px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+.result-catch {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.72);
+  letter-spacing: 0.04em;
+}
+
+/* Sections */
+.rs { padding: 52px 0; }
+.rs-light { background: var(--hiro-bg); }
+.rs-white { background: var(--hiro-paper); }
+
+.rs-eyebrow {
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--hiro-gold);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.rs-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+/* Radar */
+.radar-container {
+  max-width: 340px;
+  width: 100%;
+  margin: 0 auto 36px;
+}
+
+/* Sub types */
+.sub-types { display: flex; gap: 14px; margin-top: 8px; }
+.sub-card {
+  flex: 1;
+  background: var(--hiro-paper);
+  border: 1px solid var(--hiro-border);
+  border-radius: 8px;
+  padding: 18px;
+}
+.sub-rank {
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--hiro-gold);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.sub-name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.sub-catch { font-size: 13px; color: var(--hiro-sub); line-height: 1.6; }
+
+/* Feature */
+.feature-text { font-size: 16px; line-height: 1.95; margin-bottom: 28px; }
+
+.tag-group-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--hiro-navy);
+  margin-bottom: 10px;
+}
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.tag {
+  background: var(--hiro-highlight);
+  border: 1px solid var(--hiro-border);
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 4px 13px;
+  color: var(--hiro-navy);
+  line-height: 1.6;
+}
+.tag.warn { background: #FFF0F0; border-color: #EAD0D0; }
+
+/* Design direction */
+.design-card {
+  background: var(--hiro-paper);
+  border: 1px solid var(--hiro-border);
+  border-radius: 10px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+}
+.design-row {
+  display: flex;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--hiro-border);
+}
+.design-row:last-child { border-bottom: none; padding-bottom: 0; }
+.design-key {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--hiro-gold);
+  min-width: 96px;
+  flex-shrink: 0;
+  padding-top: 2px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.design-val { font-size: 14px; color: var(--hiro-navy); line-height: 1.75; }
+
+.content-dir { font-size: 15px; color: var(--hiro-sub); line-height: 1.9; }
+
+/* Messages */
+.msg-list { display: flex; flex-direction: column; gap: 12px; }
+.msg-item {
+  background: var(--hiro-paper);
+  border-left: 3px solid var(--hiro-navy);
+  padding: 15px 20px;
+  border-radius: 0 8px 8px 0;
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--hiro-navy);
+}
+
+/* Next steps */
+.btn-reset {
+  display: block;
+  margin: 0 auto;
+  background: transparent;
+  border: 1.5px solid var(--hiro-navy);
+  color: var(--hiro-navy);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 40px;
+  border-radius: 7px;
+  letter-spacing: 0.04em;
+  transition: all 0.2s;
+}
+.btn-reset:hover { background: var(--hiro-navy); color: #fff; }
+
+/* ===== PALETTE & TYPOGRAPHY SPEC ===== */
+.spec-block { margin-top: 28px; }
+.spec-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--hiro-navy);
+  margin-bottom: 12px;
+}
+.palette-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.swatch-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.swatch-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 7px;
+  border: 1px solid rgba(0,0,0,0.08);
+  flex-shrink: 0;
+}
+.swatch-role {
+  font-size: 11px;
+  color: var(--hiro-sub);
+  line-height: 1.3;
+  text-align: center;
+}
+.swatch-hex {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--hiro-navy);
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+.typo-card {
+  background: var(--hiro-paper);
+  border: 1px solid var(--hiro-border);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 8px;
+}
+.typo-row {
+  display: flex;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--hiro-border);
+  align-items: baseline;
+}
+.typo-row:last-child { border-bottom: none; padding-bottom: 0; }
+.typo-role {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--hiro-gold);
+  min-width: 48px;
+  flex-shrink: 0;
+}
+.typo-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--hiro-navy);
+}
+.spec-note { font-size: 13px; color: var(--hiro-sub); line-height: 1.75; margin-top: 6px; }
+
+/* Download button */
+.btn-download {
+  display: block;
+  margin: 0 auto 14px;
+  background: var(--hiro-gold);
+  color: #fff;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 13px 0;
+  border: none;
+  border-radius: 7px;
+  width: 100%;
+  max-width: 320px;
+  letter-spacing: 0.04em;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.btn-download:hover { background: var(--hiro-goldHover); }
+
+/* ===== COPY BUTTON ===== */
+.swatch-hex-row { display: flex; align-items: center; gap: 5px; }
+.copy-btn {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--hiro-sub);
+  background: var(--hiro-border);
+  border: none;
+  border-radius: 3px;
+  padding: 3px 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+  flex-shrink: 0;
+  white-space: nowrap;
+  line-height: 1.6;
+}
+.copy-btn:hover { background: var(--hiro-navy); color: #fff; }
+.copy-btn.copied { background: var(--hiro-navy); color: #fff; }
+
+/* ===== SCORE LIST ===== */
+.score-list { margin-bottom: 32px; }
+.score-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--hiro-border);
+}
+.score-row:last-child { border-bottom: none; }
+.score-label {
+  font-size: 14px;
+  min-width: 58px;
+  flex-shrink: 0;
+  color: var(--hiro-navy);
+  line-height: 1;
+}
+.score-bar-wrap {
+  flex: 1;
+  height: 7px;
+  background: var(--hiro-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.score-bar-fill {
+  height: 100%;
+  background: var(--hiro-navy);
+  border-radius: 4px;
+  opacity: 0.4;
+  transition: width 0.5s ease 0.1s;
+}
+.score-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--hiro-sub);
+  min-width: 40px;
+  text-align: right;
+}
+.score-row.rank1 .score-label { font-weight: 700; color: var(--hiro-navy); }
+.score-row.rank1 .score-bar-fill { background: var(--hiro-gold); opacity: 1; }
+.score-row.rank1 .score-num { color: var(--hiro-gold); }
+.score-row.rank2 .score-bar-fill,
+.score-row.rank3 .score-bar-fill { opacity: 0.75; }
+.score-row.rank2 .score-label,
+.score-row.rank3 .score-label { font-weight: 500; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .start-card { padding: 36px 24px; }
+  .start-title { font-size: 22px; }
+  .q-text { font-size: 18px; }
+  .likert-btn { height: 52px; font-size: 16px; }
+  .result-main-name { font-size: 30px; }
+  .sub-types { flex-direction: column; }
+  .msg-item { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== START ==================== -->
+<div id="screen-start" class="screen active">
+  <div class="start-card">
+    <div class="eyebrow">Brand Archetype</div>
+    <h1 class="start-title">ブランドアーキタイプ診断</h1>
+    <p class="start-desc">
+      36の質問に答えるだけで、あなたの事業が持つ本来のブランド人格が分かります。
+      診断結果から色・フォント・言葉のトーンまで、HP・LP制作の方向性が見えてきます。
+    </p>
+    <div class="start-meta">
+      全36問・所要時間 約3分<br>
+      <small>この診断は占いではありません。ブランド設計の「出発点」としてご活用ください。</small>
+    </div>
+    <button class="btn-primary" onclick="startDiagnosis()">診断をはじめる</button>
+  </div>
+</div>
+
+<!-- ==================== QUESTION ==================== -->
+<div id="screen-question" class="screen">
+  <div class="progress-wrap">
+    <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+  </div>
+  <div class="container q-inner">
+    <div class="q-header">
+      <span class="q-counter"><strong id="q-cur">1</strong> / 36</span>
+    </div>
+    <div class="q-body">
+      <p class="q-text" id="q-text"></p>
+      <div class="likert-wrap">
+        <div class="likert-edge-labels">
+          <span>まったく当てはまらない</span>
+          <span>とても当てはまる</span>
+        </div>
+        <div class="likert-btns" id="likert-btns">
+          <button class="likert-btn" data-val="1" onclick="pick(1)">1</button>
+          <button class="likert-btn" data-val="2" onclick="pick(2)">2</button>
+          <button class="likert-btn" data-val="3" onclick="pick(3)">3</button>
+          <button class="likert-btn" data-val="4" onclick="pick(4)">4</button>
+          <button class="likert-btn" data-val="5" onclick="pick(5)">5</button>
+        </div>
+      </div>
+    </div>
+    <div class="q-footer">
+      <button class="btn-back" id="btn-back" onclick="prevQ()" disabled>前の問へ</button>
+      <span class="auto-hint">選択すると自動で次へ進みます</span>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== RESULT ==================== -->
+<div id="screen-result" class="screen">
+
+  <!-- Hero -->
+  <div class="result-hero">
+    <div class="result-eyebrow">あなたのブランドタイプ</div>
+    <div class="result-main-name" id="r-name"></div>
+    <div class="result-catch" id="r-catch"></div>
+  </div>
+
+  <!-- Radar + Sub types -->
+  <div class="rs rs-light">
+    <div class="container">
+      <div class="rs-eyebrow">Score Overview</div>
+      <div class="rs-title">12タイプのバランス</div>
+      <div class="radar-container">
+        <div id="radar"></div>
+      </div>
+
+      <div class="rs-eyebrow" style="margin-top:28px;margin-bottom:12px;">All Scores</div>
+      <div id="r-scores"></div>
+
+      <div class="rs-eyebrow" style="margin-top:8px;">Sub Types</div>
+      <div class="sub-types" id="r-sub"></div>
+    </div>
+  </div>
+
+  <!-- Feature / Strengths / Cautions -->
+  <div class="rs rs-white">
+    <div class="container">
+      <div class="rs-eyebrow">Brand Profile</div>
+      <div class="rs-title">ブランドの特徴・強み・注意点</div>
+      <p class="feature-text" id="r-feature"></p>
+      <div class="tag-group-label">強み</div>
+      <div class="tag-row" id="r-strengths"></div>
+      <div class="tag-group-label">注意点</div>
+      <div class="tag-row" id="r-cautions"></div>
+    </div>
+  </div>
+
+  <!-- Expression / Design -->
+  <div class="rs rs-light">
+    <div class="container">
+      <div class="rs-eyebrow">Expression</div>
+      <div class="rs-title">表現・デザインの方向性</div>
+      <div class="design-card" id="r-design"></div>
+      <div class="tag-group-label">コンテンツ発信の方向性</div>
+      <p class="content-dir" id="r-content"></p>
+
+      <!-- Palette Swatches -->
+      <div class="spec-block">
+        <div class="spec-label">カラーパレット提案</div>
+        <div class="palette-row" id="r-palette"></div>
+      </div>
+
+      <!-- Typography -->
+      <div class="spec-block">
+        <div class="spec-label">タイポグラフィ提案</div>
+        <div class="typo-card" id="r-typo"></div>
+        <p class="spec-note" id="r-typo-note"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Messages -->
+  <div class="rs rs-white">
+    <div class="container">
+      <div class="rs-eyebrow">Brand Message</div>
+      <div class="rs-title">ブランドメッセージ例</div>
+      <div class="msg-list" id="r-msgs"></div>
+    </div>
+  </div>
+
+  <!-- Footer buttons -->
+  <div style="background:var(--hiro-paper);padding:44px 28px 60px;text-align:center;">
+    <button class="btn-download" onclick="downloadMD()">結果をMarkdownでダウンロード (.md)</button>
+    <button class="btn-reset" onclick="resetAll()">もう一度診断する</button>
+  </div>
+
+</div><!-- /screen-result -->
+
+<script>
+/* ============================================================
+   DATA
+============================================================ */
+const AO = ['innocent','explorer','sage','hero','outlaw','magician',
+            'regular','lover','jester','caregiver','creator','ruler'];
+
+const AT = {
+  innocent:{
+    ja:'無垢者', en:'Innocent',
+    catch:'シンプルに、まっすぐに。',
+    feature:'飾らず誠実であることを大切にし、シンプルな安心感を届けるブランドです。複雑さを排し、分かりやすく正直であることが最大の強みです。',
+    strengths:['信頼感と親しみやすさ','裏表のない誠実さ','分かりやすさの徹底'],
+    cautions:['深みに欠けると見られることがある','シンプルすぎて差別化が弱まるリスク'],
+    tone:'明るく素直で前向きな言葉。難しい言葉を避け、やさしく語りかける。',
+    designMood:'白・アイボリー基調、やわらかいフォント、余白多め、素朴で温かみのある写真',
+    typo:'やわらかめのゴシック。細いウェイトで優しい印象に。',
+    layout:'余白多め・1カラム・読みやすさ最優先',
+    content:'安心・信頼・分かりやすさを伝える発信。「難しくない・怖くない」を示す事例やQ&A。',
+    msgs:['むずかしくしない、ただ正直に。','あなたの安心のそばに。','飾らないことが、いちばんの誠実さ。'],
+  },
+  explorer:{
+    ja:'探求者', en:'Explorer',
+    catch:'枠の外に、本物がある。',
+    feature:'業界の「ふつう」に染まらず、独自の道と新しい体験を追求するブランドです。自由・冒険・本物志向が核にあります。',
+    strengths:['強い個性と先進性','体験・ライフスタイルの提案力','横並びにない差別化'],
+    cautions:['方向感がないと「落ち着かない」印象に','一貫性の維持に努力が必要'],
+    tone:'開放的で挑戦的、自然体。「体験」「発見」を主語にした言葉。',
+    designMood:'自然・広大な風景、動感のある写真、余白と力強さを両立',
+    typo:'ゴシックと明朝の組み合わせ。読みごたえのある見出し。',
+    layout:'余白と力強さのバランス・横長ビジュアル活用',
+    content:'「やってみた」「行ってみた」系の体験記事、常識への問いかけ、独自の取り組み紹介。',
+    msgs:['まだ見ぬ場所へ、踏み出そう。','正解を疑うことが、はじまりだ。','あなたらしい道は、まだ地図にない。'],
+  },
+  sage:{
+    ja:'賢者', en:'Sage',
+    catch:'信頼は、根拠から生まれる。',
+    feature:'真実と知識を提供し、お客様を賢くするブランドです。正確さ・客観性・専門性が核にあり、信頼性の高い情報発信で支持を得ます。',
+    strengths:['圧倒的な信頼性と権威性','教育コンテンツとの高い相性','根拠ある訴求力'],
+    cautions:['理屈っぽく冷たい印象になりやすい','感情訴求が弱く行動喚起が難しい場面も'],
+    tone:'冷静で論理的、誠実。データ・事例・根拠を示しながら語る。',
+    designMood:'落ち着いた配色、図解・データビジュアル多用、構造の明確さ',
+    typo:'明朝体を読み物として活用。本文は読みやすいゴシック。',
+    layout:'構造的・情報密度の高さ・余白で可読性を確保',
+    content:'解説記事・比較記事・事例研究・FAQ。「なぜ？」に答えるコンテンツ。',
+    msgs:['データが、答えを出す。','分かることが、最大の安心。','正しい知識が、正しい選択をつくる。'],
+  },
+  hero:{
+    ja:'英雄', en:'Hero',
+    catch:'やるか、やらないか。',
+    feature:'努力と勇気で困難を乗り越え、お客様の達成を支援するブランドです。鼓舞力・実行力・結果への訴求が核にあります。',
+    strengths:['強力な行動喚起力','結果志向の説得力','挑戦するお客様との共鳴'],
+    cautions:['押しが強すぎると上から目線に','競争一辺倒で疲れを生むリスク'],
+    tone:'力強く鼓舞する直球。行動を促す動詞を多用する。',
+    designMood:'力強いビジュアル、高コントラスト、before/after構成、実績数値の積極活用',
+    typo:'ゴシックの太いウェイト。力強い見出しで印象を残す。',
+    layout:'余白より力強さ・実績やビフォーアフターを軸に構成',
+    content:'成功事例・課題克服ストーリー・「行動してみた結果」系。お客様の達成を主役に。',
+    msgs:['困難は、越えるためにある。','あなたの挑戦に、全力で応える。','結果で、証明しよう。'],
+  },
+  outlaw:{
+    ja:'無法者', en:'Outlaw',
+    catch:'常識を、壊せ。',
+    feature:'業界の慣習や常識に挑戦し、革命と解放をもたらすブランドです。反骨・大胆・変革志向が核にあります。',
+    strengths:['圧倒的な差別化力','熱狂的な支持者を生む力','ニッチ市場での強さ'],
+    cautions:['攻撃的すぎると敵を作りやすい','万人向けではなく対象が絞られる'],
+    tone:'反骨的で大胆、時に挑発的。「〜なんていらない」「〜をぶち壊す」。',
+    designMood:'高コントラスト、ダークカラー基調、強い文字、余白より密度',
+    typo:'インパクト重視のゴシック。エディトリアル系の強い組み版。',
+    layout:'余白より密度感・強いグラフィックや文字を活用',
+    content:'業界への独自視点・「なぜ〇〇はおかしいのか」系の主張型コンテンツ。',
+    msgs:['古い常識は、置いていけ。','同じでいることに、飽き飽きした人へ。','壊すから、新しくなる。'],
+  },
+  magician:{
+    ja:'魔法使い', en:'Magician',
+    catch:'想像を、現実に変える。',
+    feature:'体験を変容させ、夢を現実にするブランドです。ビジョン・変化・驚きの体験設計が核にあります。',
+    strengths:['先進性と驚きの提供','劇的なビフォーアフター訴求','ビジョンへの共感獲得'],
+    cautions:['過大な期待を生みやすい','現実との乖離で信頼を損ねるリスク'],
+    tone:'神秘的で先進的、高揚感のある言葉。「変わる」「生まれ変わる」「可能にする」。',
+    designMood:'変化・光・未来感のビジュアル、先進的なUI、動きの演出',
+    typo:'先進的な印象のゴシック。細めとボールドの対比を活かす。',
+    layout:'先進的・動的な印象・ビジョンを想起させる構成',
+    content:'ビフォーアフター事例・ビジョン発信・「こんな未来が来る」系の先進コンテンツ。',
+    msgs:['想像した未来に、たどり着ける。','今日が、変化の始まりになる。','不可能を、可能にする技術がある。'],
+  },
+  regular:{
+    ja:'普通の人', en:'Regular',
+    catch:'みんなの、ふつうに寄り添う。',
+    feature:'飾らず誰でも受け入れる、等身大の親しみやすさを持つブランドです。公平・身近・コミュニティ性が核にあります。',
+    strengths:['高い共感と親近感','敷居の低さによる集客力','コミュニティ形成力'],
+    cautions:['没個性で印象に残りにくい','「ふつう」を強調しすぎると特別感がなくなる'],
+    tone:'フレンドリーで等身大。口語的で親しみやすい言葉。',
+    designMood:'素朴で温かみのある写真・カラー、整然としたシンプルなレイアウト',
+    typo:'やわらかめのゴシック。口語的な表現と合わせやすい。',
+    layout:'シンプル・親しみやすさ・情報の詰め込みすぎない',
+    content:'身近な悩みへの回答・よくある質問・みんなの声・コミュニティ紹介。',
+    msgs:['特別じゃなくていい、ふつうの毎日を支える。','誰でも、気軽にどうぞ。','あなたの隣にいる、相談相手。'],
+  },
+  lover:{
+    ja:'恋人', en:'Lover',
+    catch:'あなたのための、特別を。',
+    feature:'親密さ・美・感情のつながりを大切にするブランドです。感性・上質・特別感が核にあります。',
+    strengths:['深い感情的共鳴','ブランドへの強い愛着','美意識による高単価受容'],
+    cautions:['中身より雰囲気先行に見られることがある','対象が限られやすい'],
+    tone:'情緒的で上質、親密。「あなただけ」「特別な」「大切にしたい」。',
+    designMood:'美しい質感・素材感のある写真、上質な余白、洗練されたタイポグラフィ',
+    typo:'明朝体とゴシックの美しい組み合わせ。繊細なウェイト対比。',
+    layout:'上質な余白・美しいグリッド・感情に訴えるビジュアル主体',
+    content:'感情に響くストーリー・こだわりの背景・「なぜ美しさにこだわるか」。',
+    msgs:['大切なものは、ていねいに選ぶ。','あなたへの、想いを込めて。','特別な体験を、あなたと。'],
+  },
+  jester:{
+    ja:'道化師', en:'Jester',
+    catch:'笑いがあれば、なんとかなる。',
+    feature:'楽しさとユーモアで今を軽やかにするブランドです。遊び心・気軽さ・親近感が核にあります。',
+    strengths:['強い親近感と拡散力','堅い業界での意外性による差別化','記憶に残りやすさ'],
+    cautions:['軽薄に見えて信頼性を損ねるリスク','笑いだけでは深い関係を作りにくい'],
+    tone:'陽気で遊び心があり軽快。ユーモア・意外性を活かした言葉。',
+    designMood:'明るい色・ポップな要素、テンポのいいレイアウト、遊び心のあるビジュアル',
+    typo:'ポップなゴシック。読んで楽しい組み版。',
+    layout:'軽快なテンポ感・余白を使いながらも動きのある構成',
+    content:'ユーモラスな事例・業界あるある・「やってみた」系。読んで笑えるコンテンツ。',
+    msgs:['むずかしい話は、抜き。','笑える仕事が、いい仕事。','気軽にいこう、まず話そう。'],
+  },
+  caregiver:{
+    ja:'世話人', en:'Caregiver',
+    catch:'あなたを、ひとりにしない。',
+    feature:'他者を守り支え、安心を与えるブランドです。思いやり・献身・寄り添いが核にあります。',
+    strengths:['深い信頼と長期的な関係性','安心の提供による継続率の高さ','口コミ・紹介の発生しやすさ'],
+    cautions:['受け身になりすぎると主体性が薄れる','押し付けがましい印象になる場合も'],
+    tone:'温かく献身的で安心感のある言葉。「守る」「支える」「寄り添う」。',
+    designMood:'温かみのある色、やわらかい写真、安心感のある余白とフォント',
+    typo:'やわらかくあたたかみのある書体。ゆとりのある組み版。',
+    layout:'温かみ・安心感・詰め込まず読みやすい構成',
+    content:'支援事例・「こんな時どうする」系・お客様の声・困った時のQ&A。',
+    msgs:['困った時に、思い出してほしい。','そばにいることが、私たちの仕事。','ひとりで抱えないで、一緒に考えよう。'],
+  },
+  creator:{
+    ja:'創造者', en:'Creator',
+    catch:'ゼロから、本物をつくる。',
+    feature:'永続的な価値を創り出すことに情熱を注ぐブランドです。独自性・美的完成度・本物志向が核にあります。',
+    strengths:['圧倒的な独創性','完成度による高い評価と信頼','作り手としての誇りとこだわり'],
+    cautions:['完璧主義によるスピード低下','自己満足に陥り顧客視点を失うリスク'],
+    tone:'創造的で美的なこだわりを感じる言葉。「つくる」「表現する」「形にする」。',
+    designMood:'作品・プロセスのビジュアル、美しい構成、こだわりを感じるタイポグラフィ',
+    typo:'明朝体の美しさを活かした見出し。和欧混植の美意識。',
+    layout:'美しいグリッド・作品を主役にした構成・余白の美学',
+    content:'こだわりの制作過程・「なぜこの形にしたか」・完成物の背景ストーリー。',
+    msgs:['妥協しない、それが誠実さ。','世界にひとつを、あなたのために。','つくることが、存在の証明。'],
+  },
+  ruler:{
+    ja:'支配者', en:'Ruler',
+    catch:'最高基準を、当たり前に。',
+    feature:'秩序・品質・卓越でリーダーの地位を保つブランドです。権威・責任・高品質が核にあります。',
+    strengths:['高品質とプレミアム感による信頼','リーダーシップによる安心感','長期的なブランド価値の蓄積'],
+    cautions:['高圧的で近寄りがたい印象になりやすい','変化への柔軟性が低く見られることがある'],
+    tone:'威厳があり堂々とした洗練された言葉。「最高」「基準」「リード」。',
+    designMood:'洗練された配色・余白、格を感じるタイポグラフィ、高品質素材感',
+    typo:'ウェイトの効いたセリフまたはゴシック。格調ある組み版。',
+    layout:'洗練された余白・品格を感じる構成・情報の厳選',
+    content:'実績・受賞・認定情報・業界へのメッセージ・「私たちが基準になる理由」。',
+    msgs:['基準を高くするから、信頼が生まれる。','最高品質を、普通のことにする。','選ばれる理由は、妥協しないことだ。'],
+  },
+};
+
+const QS = [
+  {id:1,  text:'飾らず、正直であることを何より大事にしたい。',              arc:'innocent'},
+  {id:2,  text:'複雑さより、シンプルで分かりやすいことに価値を感じる。',    arc:'innocent'},
+  {id:3,  text:'お客様に「安心できる」と思ってもらえることを目指している。', arc:'innocent'},
+  {id:4,  text:'横並びや業界の「ふつう」には染まりたくない。',              arc:'explorer'},
+  {id:5,  text:'新しい体験や未知への挑戦にワクワクする。',                  arc:'explorer'},
+  {id:6,  text:'自分らしい独自の道を進むことを重視する。',                  arc:'explorer'},
+  {id:7,  text:'感情より、根拠やデータで語りたい。',                        arc:'sage'},
+  {id:8,  text:'お客様を「賢く・詳しく」することに価値を感じる。',          arc:'sage'},
+  {id:9,  text:'正確さ・客観性を何より大切にしている。',                    arc:'sage'},
+  {id:10, text:'お客様を鼓舞し、行動を後押ししたい。',                      arc:'hero'},
+  {id:11, text:'努力と成果で価値を証明することに燃える。',                  arc:'hero'},
+  {id:12, text:'「困難を乗り越える力」を提供したい。',                      arc:'hero'},
+  {id:13, text:'業界の古い慣習を壊したいと思っている。',                    arc:'outlaw'},
+  {id:14, text:'「みんなと同じ」より、堂々と異端でありたい。',              arc:'outlaw'},
+  {id:15, text:'大胆さ・反骨が自分の武器だと思う。',                        arc:'outlaw'},
+  {id:16, text:'お客様に「劇的な変化（ビフォーアフター）」を届けたい。',    arc:'magician'},
+  {id:17, text:'ビジョンや未来像を語ることに惹かれる。',                    arc:'magician'},
+  {id:18, text:'「不可能を可能にする」体験を売りにしたい。',                arc:'magician'},
+  {id:19, text:'特別さより、身近で親しみやすいことを大事にしたい。',        arc:'regular'},
+  {id:20, text:'誰でも気軽に来られる雰囲気を大切にしている。',              arc:'regular'},
+  {id:21, text:'公平で、等身大であることに価値を感じる。',                  arc:'regular'},
+  {id:22, text:'美しさや上質さに強くこだわる。',                            arc:'lover'},
+  {id:23, text:'お客様との親密な関係・感情のつながりを重視する。',          arc:'lover'},
+  {id:24, text:'「特別なあなたのために」という訴求が自分に合う。',          arc:'lover'},
+  {id:25, text:'ユーモアや遊び心で人を惹きつけたい。',                      arc:'jester'},
+  {id:26, text:'堅苦しさより、楽しさ・気軽さを大事にしたい。',              arc:'jester'},
+  {id:27, text:'「むずかしい話を、軽やかに」が自分のスタイルだ。',          arc:'jester'},
+  {id:28, text:'お客様を守り、支えることにやりがいを感じる。',              arc:'caregiver'},
+  {id:29, text:'安心して頼ってもらえる存在でありたい。',                    arc:'caregiver'},
+  {id:30, text:'困っている人に寄り添うことを最優先したい。',                arc:'caregiver'},
+  {id:31, text:'ゼロから何かを創り出すこと自体が好きだ。',                  arc:'creator'},
+  {id:32, text:'独自性・オリジナリティに強くこだわる。',                    arc:'creator'},
+  {id:33, text:'美しく完成度の高いものを作りたい。',                        arc:'creator'},
+  {id:34, text:'品質と基準の高さで信頼を得たい。',                          arc:'ruler'},
+  {id:35, text:'業界をリードする存在でありたい。',                          arc:'ruler'},
+  {id:36, text:'秩序・管理・きちんとしていることを大事にする。',            arc:'ruler'},
+];
+
+/* ============================================================
+   DESIGN SPECS（カラー・タイポグラフィ提案）
+============================================================ */
+const AT_DESIGN = {
+  innocent:{
+    palette:[{role:'背景',hex:'#FAFAF5'},{role:'メイン',hex:'#5C8A7A'},{role:'アクセント',hex:'#E8C87D'},{role:'テキスト',hex:'#2D4A42'}],
+    headFont:'M PLUS Rounded 1c', bodyFont:'Noto Sans JP',
+    fontNote:'やわらかな丸ゴシックで「親しみやすさ」を演出。太さの差は最小限に抑え、全体を優しいトーンで統一。',
+  },
+  explorer:{
+    palette:[{role:'背景',hex:'#F5F0E8'},{role:'メイン',hex:'#2D5A1B'},{role:'アクセント',hex:'#C47A2A'},{role:'テキスト',hex:'#2D3A20'}],
+    headFont:'Zen Kaku Gothic New', bodyFont:'Noto Sans JP',
+    fontNote:'力強いゴシックの見出しで「独自性」を表現。余白とのコントラストで冒険感と躍動感を演出。',
+  },
+  sage:{
+    palette:[{role:'背景',hex:'#F0F4F8'},{role:'メイン',hex:'#1E3A5F'},{role:'アクセント',hex:'#4A7FA5'},{role:'テキスト',hex:'#1E2D3A'}],
+    headFont:'Noto Serif JP', bodyFont:'Noto Sans JP',
+    fontNote:'明朝体の見出しで「知性と信頼」を表現。クールブルー系のパレットが客観性と権威性を補強。',
+  },
+  hero:{
+    palette:[{role:'背景',hex:'#F5F0ED'},{role:'メイン',hex:'#1A2B4A'},{role:'アクセント',hex:'#C0392B'},{role:'テキスト',hex:'#1A1A1A'}],
+    headFont:'Zen Kaku Gothic New', bodyFont:'Noto Sans JP',
+    fontNote:'太ウェイトのゴシックで「力強さと実行力」を演出。ディープネイビー×レッドの高コントラスト配色。',
+  },
+  outlaw:{
+    palette:[{role:'背景',hex:'#F0ECE8'},{role:'メイン',hex:'#1A1A1A'},{role:'アクセント',hex:'#E63946'},{role:'テキスト',hex:'#1A1A1A'}],
+    headFont:'Zen Kaku Gothic New', bodyFont:'Noto Sans JP',
+    fontNote:'ニアブラック×シャープレッドの対比で「反骨と大胆さ」を表現。余白より密度感と圧を優先。',
+  },
+  magician:{
+    palette:[{role:'背景',hex:'#F5F0F8'},{role:'メイン',hex:'#3D1A6E'},{role:'アクセント',hex:'#C9A646'},{role:'テキスト',hex:'#1A1A2E'}],
+    headFont:'Kaisei HarunoUmi', bodyFont:'Noto Sans JP',
+    fontNote:'幻想的な明朝系フォントで「変容と驚き」を演出。ディープパープル×ゴールドで特別感と神秘性を。',
+  },
+  regular:{
+    palette:[{role:'背景',hex:'#FBF8F3'},{role:'メイン',hex:'#5C4A2A'},{role:'アクセント',hex:'#D4A853'},{role:'テキスト',hex:'#3A2E1A'}],
+    headFont:'M PLUS Rounded 1c', bodyFont:'Noto Sans JP',
+    fontNote:'丸ゴシックで「親近感と気軽さ」を演出。ウォームブラウン系の配色で安心感と包容力を表現。',
+  },
+  lover:{
+    palette:[{role:'背景',hex:'#FBF0F3'},{role:'メイン',hex:'#6B2D42'},{role:'アクセント',hex:'#C47A8A'},{role:'テキスト',hex:'#2D1A20'}],
+    headFont:'Shippori Mincho', bodyFont:'Noto Sans JP',
+    fontNote:'エレガントな明朝体で「美と親密さ」を表現。ローズ系パレットで感情的つながりと上質さを演出。',
+  },
+  jester:{
+    palette:[{role:'背景',hex:'#FFFBF0'},{role:'メイン',hex:'#C47A00'},{role:'アクセント',hex:'#3498DB'},{role:'テキスト',hex:'#1A1A1A'}],
+    headFont:'M PLUS Rounded 1c', bodyFont:'Noto Sans JP',
+    fontNote:'ポップな丸ゴシックで「楽しさと遊び心」を演出。アンバー×ブルーの補色コントラストで個性を。',
+  },
+  caregiver:{
+    palette:[{role:'背景',hex:'#F3F9F4'},{role:'メイン',hex:'#2E6B4A'},{role:'アクセント',hex:'#5FA878'},{role:'テキスト',hex:'#1A2E20'}],
+    headFont:'Kosugi Maru', bodyFont:'Noto Sans JP',
+    fontNote:'やわらかな丸ゴシックで「温かさと寄り添い」を演出。グリーン系パレットで安心感と信頼を表現。',
+  },
+  creator:{
+    palette:[{role:'背景',hex:'#F8F5F0'},{role:'メイン',hex:'#1B5E6B'},{role:'アクセント',hex:'#C49B45'},{role:'テキスト',hex:'#1A2E2A'}],
+    headFont:'Shippori Mincho B1', bodyFont:'Noto Serif JP',
+    fontNote:'クラフト感のある明朝系で「独創性と美意識」を表現。ディープティール×ゴールドで作り手の格を。',
+  },
+  ruler:{
+    palette:[{role:'背景',hex:'#F8F7F5'},{role:'メイン',hex:'#1F2A44'},{role:'アクセント',hex:'#B99745'},{role:'テキスト',hex:'#1A1A2A'}],
+    headFont:'Noto Serif JP', bodyFont:'Noto Sans JP',
+    fontNote:'格調ある明朝体の見出しで「権威と信頼」を演出。ネイビー×ゴールドの王道プレミアム配色。',
+  },
+};
+
+/* ============================================================
+   STATE
+============================================================ */
+let questions = [];
+let answers   = {};
+let idx       = 0;
+let timer     = null;
+let currentResult = null;
+
+/* ============================================================
+   HELPERS
+============================================================ */
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function show(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+/* ============================================================
+   DIAGNOSIS FLOW
+============================================================ */
+function startDiagnosis() {
+  questions = shuffle(QS);
+  answers   = {};
+  idx       = 0;
+  show('screen-question');
+  renderQ();
+}
+
+function renderQ() {
+  const q   = questions[idx];
+  const tot = questions.length;
+
+  document.getElementById('q-text').textContent = q.text;
+  document.getElementById('q-cur').textContent  = idx + 1;
+  document.getElementById('progress-fill').style.width = ((idx + 1) / tot * 100) + '%';
+  document.getElementById('btn-back').disabled = idx === 0;
+
+  const sel = answers[q.id];
+  document.querySelectorAll('.likert-btn').forEach(btn => {
+    btn.classList.toggle('selected', parseInt(btn.dataset.val) === sel);
+  });
+}
+
+function pick(val) {
+  clearTimeout(timer);
+  const q = questions[idx];
+  answers[q.id] = val;
+
+  document.querySelectorAll('.likert-btn').forEach(btn => {
+    btn.classList.toggle('selected', parseInt(btn.dataset.val) === val);
+  });
+
+  timer = setTimeout(() => {
+    if (idx < questions.length - 1) { idx++; renderQ(); }
+    else { showResult(); }
+  }, 400);
+}
+
+function prevQ() {
+  clearTimeout(timer);
+  if (idx > 0) { idx--; renderQ(); }
+}
+
+function resetAll() {
+  show('screen-start');
+}
+
+/* ============================================================
+   SCORING
+============================================================ */
+function calcScores() {
+  const s = {};
+  AO.forEach(k => s[k] = 0);
+  QS.forEach(q => { if (answers[q.id]) s[q.arc] += answers[q.id]; });
+  return s;
+}
+
+function top3(scores) {
+  return [...AO]
+    .sort((a, b) => scores[b] - scores[a] || AO.indexOf(a) - AO.indexOf(b))
+    .slice(0, 3);
+}
+
+/* ============================================================
+   RADAR CHART
+============================================================ */
+function drawRadar(scores) {
+  const S = 340, cx = 170, cy = 170, R = 120, LR = 150, MAX = 15, N = 12;
+  const rad = d => d * Math.PI / 180;
+  const angle = i => rad(-90 + i * 30);
+  const pt = (i, r) => ({ x: cx + r * Math.cos(angle(i)), y: cy + r * Math.sin(angle(i)) });
+  const fmt = n => n.toFixed(1);
+
+  let s = `<svg viewBox="0 0 ${S} ${S}" overflow="visible" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;margin:0 auto;">`;
+
+  // Grid rings
+  [0.33, 0.67, 1].forEach(lv => {
+    const pts = AO.map((_, i) => { const p = pt(i, R * lv); return `${fmt(p.x)},${fmt(p.y)}`; }).join(' ');
+    s += `<polygon points="${pts}" fill="none" stroke="#E7E2D6" stroke-width="1"/>`;
+  });
+
+  // Axes
+  for (let i = 0; i < N; i++) {
+    const p = pt(i, R);
+    s += `<line x1="${fmt(cx)}" y1="${fmt(cy)}" x2="${fmt(p.x)}" y2="${fmt(p.y)}" stroke="#E7E2D6" stroke-width="1"/>`;
+  }
+
+  // Data polygon
+  const dpts = AO.map((k, i) => {
+    const r = (Math.min(scores[k] || 0, MAX) / MAX) * R;
+    const p = pt(i, r); return `${fmt(p.x)},${fmt(p.y)}`;
+  }).join(' ');
+  s += `<polygon points="${dpts}" fill="rgba(36,50,74,0.13)" stroke="#24324A" stroke-width="2"/>`;
+
+  // Dots
+  AO.forEach((k, i) => {
+    const r = (Math.min(scores[k] || 0, MAX) / MAX) * R;
+    const p = pt(i, r);
+    s += `<circle cx="${fmt(p.x)}" cy="${fmt(p.y)}" r="3.5" fill="#24324A"/>`;
+  });
+
+  // Labels
+  for (let i = 0; i < N; i++) {
+    const p  = pt(i, LR);
+    const ca = Math.cos(angle(i));
+    const anchor = ca > 0.25 ? 'start' : ca < -0.25 ? 'end' : 'middle';
+    s += `<text x="${fmt(p.x)}" y="${fmt(p.y)}" font-family="'Noto Sans JP',sans-serif" font-size="10" fill="#6B7280" text-anchor="${anchor}" dominant-baseline="middle">${AT[AO[i]].ja}</text>`;
+  }
+
+  s += '</svg>';
+  document.getElementById('radar').innerHTML = s;
+}
+
+/* ============================================================
+   RESULT RENDERING
+============================================================ */
+function showResult() {
+  const scores = calcScores();
+  const [p1, p2, p3] = top3(scores);
+  const pri = AT[p1];
+
+  // Hero
+  document.getElementById('r-name').textContent  = `「${pri.ja}」型`;
+  document.getElementById('r-catch').textContent = pri.catch;
+
+  show('screen-result');
+  setTimeout(() => drawRadar(scores), 60);
+
+  // Sub types
+  document.getElementById('r-sub').innerHTML = [[p2,'2nd'],[p3,'3rd']].map(([k,rank]) => `
+    <div class="sub-card">
+      <div class="sub-rank">${rank}</div>
+      <div class="sub-name">${AT[k].ja}</div>
+      <div class="sub-catch">${AT[k].catch}</div>
+    </div>`).join('');
+
+  // Feature
+  document.getElementById('r-feature').textContent = pri.feature;
+
+  // Strengths / Cautions
+  document.getElementById('r-strengths').innerHTML =
+    pri.strengths.map(t => `<span class="tag">${t}</span>`).join('');
+  document.getElementById('r-cautions').innerHTML =
+    pri.cautions.map(t => `<span class="tag warn">${t}</span>`).join('');
+
+  // Design direction
+  document.getElementById('r-design').innerHTML = `
+    <div class="design-row"><div class="design-key">表現トーン</div><div class="design-val">${pri.tone}</div></div>
+    <div class="design-row"><div class="design-key">デザインの雰囲気</div><div class="design-val">${pri.designMood}</div></div>
+    <div class="design-row"><div class="design-key">タイポグラフィ</div><div class="design-val">${pri.typo}</div></div>
+    <div class="design-row"><div class="design-key">レイアウト</div><div class="design-val">${pri.layout}</div></div>`;
+
+  // Content dir
+  document.getElementById('r-content').textContent = pri.content;
+
+  // Messages
+  document.getElementById('r-msgs').innerHTML =
+    pri.msgs.map(m => `<div class="msg-item">${m}</div>`).join('');
+
+  // Store for download
+  currentResult = { scores, p1, p2, p3 };
+
+  // Option A: タイプ別ヒーローカラー
+  const heroEl = document.querySelector('.result-hero');
+  heroEl.style.background = AT_DESIGN[p1].palette[1].hex;
+  document.querySelector('.result-eyebrow').style.color = 'rgba(255,255,255,0.75)';
+
+  // Score list（スコア降順）
+  const sorted = [...AO].sort((a, b) => scores[b] - scores[a]);
+  document.getElementById('r-scores').innerHTML =
+    '<div class="score-list">' +
+    sorted.map((k, i) => {
+      const s  = scores[k] || 0;
+      const cls = i === 0 ? 'rank1' : i === 1 ? 'rank2' : i === 2 ? 'rank3' : '';
+      const pct = (s / 15 * 100).toFixed(0);
+      return `<div class="score-row ${cls}">
+        <div class="score-label">${AT[k].ja}</div>
+        <div class="score-bar-wrap"><div class="score-bar-fill" style="width:${pct}%"></div></div>
+        <div class="score-num">${s}<span style="font-weight:400;color:var(--hiro-border)">/15</span></div>
+      </div>`;
+    }).join('') +
+    '</div>';
+
+  // Palette & typography specs
+  renderSpec(p1);
+}
+
+/* ============================================================
+   PALETTE & TYPOGRAPHY RENDERING
+============================================================ */
+function renderSpec(key) {
+  const d = AT_DESIGN[key];
+
+  // Color swatches with copy buttons
+  document.getElementById('r-palette').innerHTML = d.palette.map(c => `
+    <div class="swatch-item">
+      <div class="swatch-box" style="background:${c.hex}"></div>
+      <div class="swatch-role">${c.role}</div>
+      <div class="swatch-hex-row">
+        <div class="swatch-hex">${c.hex}</div>
+        <button class="copy-btn" onclick="copyText('${c.hex}',this)">コピー</button>
+      </div>
+    </div>`).join('');
+
+  // Typography with copy buttons
+  document.getElementById('r-typo').innerHTML = `
+    <div class="typo-row">
+      <div class="typo-role">見出し</div>
+      <div class="typo-name">${d.headFont}</div>
+      <button class="copy-btn" onclick="copyText('${d.headFont}',this)">コピー</button>
+    </div>
+    <div class="typo-row">
+      <div class="typo-role">本文</div>
+      <div class="typo-name">${d.bodyFont}</div>
+      <button class="copy-btn" onclick="copyText('${d.bodyFont}',this)">コピー</button>
+    </div>`;
+  document.getElementById('r-typo-note').textContent = d.fontNote;
+}
+
+/* ============================================================
+   COPY TO CLIPBOARD
+============================================================ */
+function copyText(text, btn) {
+  const apply = () => {
+    const orig = btn.textContent;
+    btn.textContent = 'コピーした';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+  };
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(apply).catch(() => fallbackCopy(text, apply));
+  } else {
+    fallbackCopy(text, apply);
+  }
+}
+function fallbackCopy(text, cb) {
+  const ta = Object.assign(document.createElement('textarea'), {
+    value: text, style: 'position:fixed;opacity:0'
+  });
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); } catch(e) {}
+  document.body.removeChild(ta);
+  cb();
+}
+
+/* ============================================================
+   MARKDOWN DOWNLOAD
+============================================================ */
+function downloadMD() {
+  if (!currentResult) return;
+  const { scores, p1, p2, p3 } = currentResult;
+  const pri = AT[p1];
+  const d   = AT_DESIGN[p1];
+  const date = new Date().toLocaleDateString('ja-JP', { year:'numeric', month:'2-digit', day:'2-digit' });
+
+  const bar = s => '▓'.repeat(Math.min(s, 15)) + '░'.repeat(Math.max(15 - s, 0));
+
+  let md = `# ブランドアーキタイプ診断結果\n\n`;
+  md += `診断日：${date}\n\n`;
+  md += `---\n\n`;
+  md += `## あなたのブランドタイプ：「${pri.ja}」型\n\n`;
+  md += `> ${pri.catch}\n\n`;
+  md += `**サブタイプ：** ${AT[p2].ja}（2位）・${AT[p3].ja}（3位）\n\n`;
+
+  md += `---\n\n## スコア一覧（全12タイプ）\n\n`;
+  md += `| タイプ | スコア | グラフ |\n|------|------:|:------|\n`;
+  [...AO].sort((a, b) => scores[b] - scores[a]).forEach(k => {
+    const s = scores[k] || 0;
+    md += `| ${AT[k].ja} | ${s} / 15 | ${bar(s)} |\n`;
+  });
+
+  md += `\n---\n\n## ブランドの特徴\n\n${pri.feature}\n\n`;
+  md += `## 強み\n\n${pri.strengths.map(s => `- ${s}`).join('\n')}\n\n`;
+  md += `## 注意点\n\n${pri.cautions.map(s => `- ${s}`).join('\n')}\n\n`;
+
+  md += `---\n\n## 表現・デザインの方向性\n\n`;
+  md += `**表現トーン：** ${pri.tone}\n\n`;
+  md += `**デザインの雰囲気：** ${pri.designMood}\n\n`;
+  md += `**タイポグラフィの傾向：** ${pri.typo}\n\n`;
+  md += `**レイアウト：** ${pri.layout}\n\n`;
+
+  md += `---\n\n## カラーパレット提案\n\n`;
+  md += `| 用途 | HEXコード |\n|-----|----------|\n`;
+  d.palette.forEach(c => { md += `| ${c.role} | \`${c.hex}\` |\n`; });
+
+  md += `\n## タイポグラフィ提案\n\n`;
+  md += `| 用途 | フォント |\n|-----|----------|\n`;
+  md += `| 見出し | ${d.headFont} |\n`;
+  md += `| 本文 | ${d.bodyFont} |\n\n`;
+  md += `> ${d.fontNote}\n\n`;
+
+  md += `---\n\n## コンテンツ発信の方向性\n\n${pri.content}\n\n`;
+
+  md += `## ブランドメッセージ例\n\n`;
+  pri.msgs.forEach((m, i) => { md += `${i + 1}. ${m}\n`; });
+
+  md += `\n---\n\n*Generated by ブランドアーキタイプ診断*\n`;
+
+  const blob = new Blob([md], { type: 'text/markdown; charset=utf-8' });
+  const url  = URL.createObjectURL(blob);
+  const a    = Object.assign(document.createElement('a'), {
+    href: url, download: `brand-archetype-${p1}.md`
+  });
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5ECF52MHF6');</script>
+<meta charset="UTF-8">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../seigaiha.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>工務店向け補助金・助成金の新着情報をGASで自動監視してLINE・Chatworkに通知する方法 | BuildMate</title>
+<link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/056-hojokin-gas.html">
+<meta name="description" content="工務店向け補助金・助成金の新着情報をGASで自動監視し、LINEやChatworkに自動通知する方法を解説。中小企業庁・国土交通省のページを定期クロールして新着補助金を見逃さない仕組みをBuildMate代表が紹介します。">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="工務店向け補助金・助成金の新着情報をGASで自動監視してLINE・Chatworkに通知する方法 | BuildMate">
+<meta property="og:description" content="工務店向け補助金・助成金の新着情報をGASで自動監視し、LINEやChatworkに自動通知する方法を解説。中小企業庁・国土交通省のページを定期クロールして新着補助金を見逃さない仕組みをBuildMate代表が紹介します。">
+<meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/056-hojokin-gas.html">
+<meta property="og:site_name" content="BuildMate">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="工務店向け補助金・助成金の新着情報をGASで自動監視してLINE・Chatworkに通知する方法 | BuildMate">
+<meta name="twitter:description" content="工務店向け補助金・助成金の新着情報をGASで自動監視し、LINEやChatworkに自動通知する方法を解説。中小企業庁・国土交通省のページを定期クロールして新着補助金を見逃さない仕組みをBuildMate代表が紹介します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"工務店向け補助金・助成金の新着情報をGASで自動監視してLINE・Chatworkに通知する方法","datePublished":"2025-12-15","dateModified":"2025-12-15","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"工務店向け補助金・助成金の新着情報をGASで自動監視し、LINEやChatworkに自動通知する方法を解説。中小企業庁・国土交通省のページを定期クロールして新着補助金を見逃さない仕組みをBuildMate代表が紹介します。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/056-hojokin-gas.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"工務店向けの補助金情報をGASで自動収集するにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"GASのUrlFetchAppで対象ページを定期取得し、前回との差分を検出してLINE・Chatworkへ自動通知する仕組みを構築できます。BuildMateの支援実績では、週数時間の情報収集作業がゼロになった工務店があります。"}},{"@type":"Question","name":"補助金の新着情報をLINEで自動通知するにはどのツールが必要ですか？","acceptedAnswer":{"@type":"Answer","text":"GAS（無料）とLINE Notify（無料）またはChatwork API（無料プランあり）の組み合わせで構築できます。BuildMateの支援実績では、導入から1週間以内に新着通知の運用を開始した工務店があります。"}},{"@type":"Question","name":"GASで監視できる補助金情報の対象サイトはどこですか？","acceptedAnswer":{"@type":"Answer","text":"中小企業庁・国土交通省・各都道府県の公式サイト・J-Net21など、テキスト形式で公開されているWebページであれば監視対象にできます。BuildMateがサイトリストの選定もサポートしています。"}}]}
+</script>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<body class="bg-wa-bg text-wa-text font-sans">
+    <header class="bg-white/95 backdrop-blur-md fixed w-full top-0 z-50 border-b border-wa-border transition-all duration-300">
+        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+
+                <a href="../index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
+                <a href="../services.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">サービス・効果</a>
+                <a href="../ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
+                <a href="../diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+                <a href="../gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
+                <a href="../gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
+                <a href="../contact.html" class="px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+<!-- モバイルメニュー -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="../index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
+    <a href="../services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
+    <a href="../ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
+    <a href="../diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
+    <a href="../gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
+    <a href="../gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
+    <a href="../contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
+<main class="max-w-[800px] mx-auto px-6 pt-28 pb-16">
+    <nav class="text-sm text-wa-gray mb-8">
+        <a href="../index.html" class="hover:text-wa-brand">ホーム</a><span class="mx-2">/</span>
+        <a href="../news.html" class="hover:text-wa-brand">コラム一覧</a><span class="mx-2">/</span>
+        <span>補助金・助成金新着情報のGAS自動監視</span>
+    </nav>
+    <div class="flex items-center gap-2 mb-4">
+        <span class="inline-block bg-wa-brand text-white text-sm font-bold px-4 py-1 rounded-full">業務効率化</span>
+        <span class="inline-block bg-wa-accent text-white text-sm font-bold px-4 py-1 rounded-full">GAS活用</span>
+    </div>
+    <h1 class="break-keep text-balance font-serif text-2xl md:text-3xl font-bold text-wa-text mb-4 leading-snug">工務店向け補助金・助成金の新着情報を<br>GASで自動監視してLINE・Chatworkに通知する方法</h1>
+    <div class="flex items-center gap-4 text-sm text-wa-gray mb-8">
+        <span class="flex items-center gap-1"><i data-lucide="user" class="w-4 h-4"></i>木村 拓隆</span>
+    </div>
+    <div class="mb-10 rounded-wa overflow-hidden">
+        <img src="../images/keiri_sum.png" alt="工務店向け補助金・助成金の新着情報を
+GASで自動監視してLINE・Chatworkに通知する方法" class="w-full object-cover">
+    </div>
+    <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
+        <p class="font-bold text-xl mb-6 text-wa-brand">使えるはずの補助金を、知らずに申請期限が過ぎていたことはありませんか？</p>
+        <p class="mb-4 text-wa-text leading-relaxed">IT導入補助金・小規模事業者持続化補助金・省エネ改修補助金など、工務店が活用できる補助金・助成金は毎年多数公募されます。しかし「どこをチェックすればいいかわからない」「気づいたら締め切りが過ぎていた」という声を工務店の経営者から頻繁に聞きます。補助金の見逃しは、そのまま数十万〜数百万円の機会損失につながります。</p>
+        <p class="mb-8 text-wa-text leading-relaxed">この記事では、中小企業庁・国土交通省・各都道府県のWebページをGoogle Apps Script（GAS）で定期的に自動クロールし、新着補助金情報をLINEやChatworkへ自動通知する仕組みの構築方法を解説します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の補助金・助成金情報収集業務とは</h4>
+        <p class="mb-4">工務店の補助金情報収集業務とは、事業に活用できる補助金・助成金の公募情報を定期的に確認し、申請要件・締切日・補助額を把握して適切なタイミングで申請する業務を指します。情報源が国・都道府県・市区町村など多岐にわたるため、手動での確認作業が煩雑になりがちです。</p>
+        <p class="mb-3">具体的には次のような作業が含まれます。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>中小企業庁・国土交通省等のWebページの定期確認</li><li>都道府県・市区町村の補助金情報のチェック</li><li>申請要件・補助額・締切日の整理</li><li>申請書類の準備・スケジュール管理</li><li>補助金申請状況の社内共有</li></ul>
+        <p class="mb-8">BuildMateの支援実績では、GASで補助金情報を自動監視する仕組みを導入した工務店で、毎週数時間かかっていた情報収集作業がゼロになり、新着補助金の見逃しがなくなっています。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">仕組みの全体像：GASとAPIをつなぐ方法</h4><p class="mb-4">GASのトリガーを毎日朝8時に設定し、監視対象のWebページを自動取得します。前回取得時のコンテンツとの差分を検出し、変更があった場合にLINE NotifyまたはChatwork APIを使って担当者へ自動通知します。通知内容には補助金名・概要・URLが含まれるため、クリックするだけで詳細を確認できます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 1: 監視対象URLとキーワードの設定</h4><p class="mb-4">Googleスプレッドシートに監視対象のURL（中小企業庁・国土交通省・都道府県サイト等）と検知キーワード（「補助金」「助成金」「公募」「工務店」等）を登録します。キーワードに一致する新着情報が検出されたときだけ通知する設定にすることで、不要な通知を防げます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 2: GASによる自動クロールと差分検出</h4><p class="mb-4">GASのUrlFetchAppで対象ページのHTMLを取得し、前回取得内容と比較します。新しいテキストが追加されていた場合を「新着あり」と判断し、その差分テキストを通知内容として抽出します。スプレッドシートに通知履歴を自動記録するため、過去の情報も一覧で確認できます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 3: LINE・Chatworkへの自動通知</h4><p class="mb-4">新着情報が検出されるとGASがLINE NotifyまたはChatwork APIを呼び出し、「【補助金新着】〇〇補助金の公募が開始されました。詳細：〇〇URL」という形式で自動通知します。LINEグループまたはChatworkの専用チャンネルへ送信することで、経営者・事務担当者が即座に確認できます。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+        <p class="mb-4">BuildMateが建設業・工務店の現場にGASを導入した実績をもとに、削減効果をまとめます。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>補助金情報収集：週数時間 → GASが毎日自動監視</li><li>新着検知：手動確認 → 差分検出で自動通知</li><li>申請機会の損失：見逃しゼロで大幅削減</li><li>情報収集の属人化：URLリスト管理で標準化</li></ul>
+        <p class="mb-8">補助金1件の採択で数十万〜数百万円の収入になるケースがある工務店では、この仕組みの費用対効果は非常に高いです。導入コストはGoogleスプレッドシート（無料）とLINE Notify（無料）のみで、実質ゼロです。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASでできないことについて</h4>
+        <p class="mb-4">GASが検知できるのはWebページのテキスト変化であり、PDF・画像形式の補助金情報は自動検知が難しい場合があります。また、申請要件への適合判断・申請書類の作成は人間が行う必要があります。新着通知はあくまでも「見逃し防止」のツールです。</p>
+        <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">補助金は「知っているかどうか」で申請できるかが決まります。GASで自動監視する仕組みを作れば、忙しい現場でも情報を取り逃すことがなくなります。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）</div>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>工務店向け補助金・助成金の新着情報はGASで毎日自動監視してLINE・Chatworkに通知できる</li><li>監視対象URLとキーワードをスプレッドシートに登録するだけで設定が完了する</li><li>新着検知時に補助金名・概要・URLを含む通知が自動送信される</li><li>導入コストはゼロで、補助金1件の採択で費用対効果が一気に高まる</li><li>申請機会の見逃しをなくし、工務店の資金調達力が向上する</li></ul>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店向けの補助金情報をGASで自動収集するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">GASのUrlFetchAppで対象ページを定期取得し、前回との差分を検出してLINE・Chatworkへ自動通知する仕組みを構築できます。BuildMateの支援実績では、週数時間の情報収集作業がゼロになった工務店があります。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 補助金の新着情報をLINEで自動通知するにはどのツールが必要ですか？</p><p class="text-wa-text text-base m-0">GAS（無料）とLINE Notify（無料）またはChatwork API（無料プランあり）の組み合わせで構築できます。BuildMateの支援実績では、導入から1週間以内に新着通知の運用を開始した工務店があります。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. GASで監視できる補助金情報の対象サイトはどこですか？</p><p class="text-wa-text text-base m-0">中小企業庁・国土交通省・各都道府県の公式サイト・J-Net21など、テキスト形式で公開されているWebページであれば監視対象にできます。BuildMateがサイトリストの選定もサポートしています。</p></div></div>
+        <div class="mt-10 pt-8 border-t border-wa-border">
+            <p class="font-bold text-wa-brand mb-4">関連記事</p>
+            <ul class="space-y-2"><li><a href="029-zaimu-kaikei-ai.html" class="text-wa-brand hover:underline">工務店の財務・会計業務をAI・GASで効率化する方法</a></li><li><a href="005-hourei-shinsei-ai.html" class="text-wa-brand hover:underline">工務店の法令・申請業務をAI・GASで効率化する方法</a></li><li><a href="122-news-chatwork-gas.html" class="text-wa-brand hover:underline">住宅業界ニュースをGASで自動収集してChatworkに毎朝配信する方法</a></li></ul>
+        </div>
+    </article>
+    <div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5">
+        <div class="w-14 h-14 rounded-full bg-wa-brand flex items-center justify-center flex-shrink-0"><i data-lucide="user" class="w-7 h-7 text-white"></i></div>
+        <div>
+            <p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p>
+            <p class="text-[15px] md:text-base text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。現場の実態とシステムの限界を知り尽くした立場から、中小工務店向けのAI・GAS導入コンサルティングを提供。関西拠点・全国オンライン対応。</p>
+        </div>
+    </div>
+    <div class="mt-8 bg-white rounded-wa p-8 shadow-sm border border-wa-border text-center">
+        <p class="font-bold text-lg text-wa-brand mb-2">「うちでも使えるか」を一緒に確認しましょう</p>
+        <p class="text-wa-gray text-base md:text-lg mb-6 leading-relaxed max-w-2xl mx-auto">BuildMateでは、工務店・建設会社の現状業務を無料でヒアリングし、GASで効率化できる箇所を具体的にご提案しています。元・施工管理の代表が現場目線でお答えします。勧誘・営業は一切行いません。</p>
+        <a href="../contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-wa-accent hover:opacity-90 text-white rounded-wa font-bold transition-colors">
+            <i data-lucide="mail" class="w-4 h-4"></i>無料相談に申し込む
+        </a>
+    </div>
+    <div class="mt-8 text-center">
+        <a href="../news.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-wa-brand text-wa-brand rounded-wa font-bold hover:bg-wa-brand hover:text-white transition-colors">← コラム一覧に戻る</a>
+    </div>
+</main>
+        <footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
+        <div class="max-w-[1080px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-white/60 text-sm">
+                    Copyright © 2026 BuildMate. All rights reserved.
+                </div>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
+                    <a href="../privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                    <a href="../terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                    <a href="../law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script>lucide.createIcons();</script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+</body>
+</html>

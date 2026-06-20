@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5ECF52MHF6');</script>
+<meta charset="UTF-8"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../seigaiha.css"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIへの「いい質問」の仕方、初めてのプロンプト作成入門 | BuildMate</title>
+<link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/ai-19-prompt.html">
+<meta name="description" content="ChatGPTへの指示文（プロンプト）の作り方を初心者向けに解説。役割・背景・指示・条件の4要素で構成するプロンプトの基本と、出力が変わる具体的な例文を紹介します。">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article"><meta property="og:title" content="AIへの「いい質問」の仕方、初めてのプロンプト作成入門 | BuildMate"><meta property="og:description" content="ChatGPTへの指示文（プロンプト）の作り方を初心者向けに解説。役割・背景・指示・条件の4要素で構成するプロンプトの基本と、出力が変わる具体的な例文を紹介します。"><meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/ai-19-prompt.html"><meta property="og:site_name" content="BuildMate"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="AIへの「いい質問」の仕方、初めてのプロンプト作成入門 | BuildMate"><meta name="twitter:description" content="ChatGPTへの指示文（プロンプト）の作り方を初心者向けに解説。役割・背景・指示・条件の4要素で構成するプロンプトの基本と、出力が変わる具体的な例文を紹介します。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:[['"Noto Sans JP"','sans-serif']],serif:[['"Noto Serif JP"','serif']]},colors:{wa:{bg:'#F7F2EA',paper:'#ffffff',text:'#1F2933',gray:'#6B7280',brand:'#24324A',brandHover:'#1A2838',accent:'#24324A',accentHover:'#1A2838',border:'#D4CAB8',gold:'#B99745',purple:'#5C3B8A',cyan:'#38BDF8'}},borderRadius:{wa:'12px'}}}}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"AIへの「いい質問」の仕方、初めてのプロンプト作成入門","datePublished":"2026-05-07","dateModified":"2026-05-16","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AIコンシェルジュ","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経てAI活用支援を提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"ChatGPTへの指示文（プロンプト）の作り方を初心者向けに解説。役割・背景・指示・条件の4要素で構成するプロンプトの基本と、出力が変わる具体的な例文を紹介します。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/ai-19-prompt.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "プロンプトは何語で書くべきですか？", "acceptedAnswer": {"@type": "Answer", "text": "日本語でOKです。ChatGPTは日本語のプロンプトを十分に理解できます。英語の方が高品質という説もありますが、業務での使いやすさを考えると日本語のプロンプトで十分な精度が得られます。"}}, {"@type": "Question", "name": "プロンプトはどのくらいの長さが適切ですか？", "acceptedAnswer": {"@type": "Answer", "text": "依頼内容によって異なりますが、50〜200文字程度を目安にしてください。長すぎると重要な指示が埋もれます。「短く・明確に・具体的に」を意識して書くと、短いプロンプトで高品質な出力が得られます。"}}, {"@type": "Question", "name": "よく使うプロンプトを保存して再利用する方法はありますか？", "acceptedAnswer": {"@type": "Answer", "text": "メモ帳・Notionなどのツールにプロンプトを保存しておくことをおすすめします。また、Custom Instructions を使うと、よく使う前提条件を保存できます。Webやデスクトップでは Settings → Personalization から設定できます。"}}]}
+</script>
+<style>.text-balance{text-wrap:balance}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<body class="bg-wa-bg text-wa-text font-sans">
+<header class="bg-white/95 backdrop-blur-md fixed w-full top-0 z-50 border-b border-wa-border transition-all duration-300">
+    <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="../index.html" class="flex items-center gap-3 group">
+            <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+            <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+            <a href="../index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
+            <a href="../services.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">サービス・効果</a>
+            <a href="../ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
+            <a href="../diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+            <a href="../gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
+            <a href="../gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
+            <a href="../contact.html" class="px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
+        </nav>
+        <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2"><i data-lucide="menu" class="w-8 h-8"></i></button>
+    </div>
+</header>
+<!-- モバイルメニュー -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="../index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
+    <a href="../services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
+    <a href="../ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
+    <a href="../diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
+    <a href="../gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
+    <a href="../gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
+    <a href="../contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
+<main class="max-w-[800px] mx-auto px-6 pt-28 pb-16">
+    <nav class="text-sm text-wa-gray mb-8">
+        <a href="../index.html" class="hover:text-wa-brand">ホーム</a><span class="mx-2">/</span>
+        <a href="../ai-guide.html" class="hover:text-wa-brand">AI活用入門ガイド</a><span class="mx-2">/</span>
+        <span>AIへの「いい質問」の仕方、初めてのプロンプト作成入門</span>
+    </nav>
+    <div class="flex items-center gap-2 mb-4">
+        <span class="inline-block bg-wa-brand text-white text-sm font-bold px-4 py-1 rounded-full">AI実践活用</span>
+        <span class="inline-block bg-wa-gold text-white text-sm font-bold px-4 py-1 rounded-full">AI入門</span>
+    </div>
+    <h1 class="break-keep text-balance font-serif text-2xl md:text-3xl font-bold text-wa-text mb-4 leading-snug">AIへの「いい質問」の仕方、初めてのプロンプト作成入門</h1>
+    <div class="flex items-center gap-4 text-sm text-wa-gray mb-8">
+        <span class="flex items-center gap-1"><i data-lucide="user" class="w-4 h-4"></i>木村 拓隆</span>
+        <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-4 h-4"></i>2026-05-07</span>
+    </div>
+    <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
+        <p class="font-bold text-xl mb-6 text-wa-brand">「ChatGPTに何を入力すればいいか分からない」と感じる方の多くは、プロンプト（AIへの指示文）の書き方を知らないだけです。基本の4要素を覚えるだけで、出力の質が大きく変わります。</p>
+        <div class="bg-wa-bg border-l-4 border-wa-brand p-5 rounded-r-lg mb-8">
+            <p class="text-wa-text leading-relaxed m-0">プロンプトとは、ChatGPTに与える指示文のことです。料理のレシピのように、材料（情報）と作り方（指示）を正確に伝えるほど、期待通りの料理（出力）が完成します。漠然とした指示では漠然とした出力になります。</p>
+        </div>
+        
+        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">プロンプトの4つの要素</h4>
+        <p class="mb-4 leading-relaxed">良いプロンプトには4つの要素が含まれます。①役割（AIに担ってほしい立場を指定する）、②背景（状況や前提条件を伝える）、③指示（何をしてほしいかを明確に）、④条件（文字数・文体・形式などの制約）。全ての要素が必須ではありませんが、4つを含めるほど出力が使いやすくなります。特に「役割」の指定は出力のトーンと専門性を大きく変えます。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>①役割：「あなたは〇〇の専門家です」</li><li>②背景：「〇〇という状況です。〇〇を目的としています」</li><li>③指示：「〜してください」</li><li>④条件：「200字以内で・箇条書きで・丁寧な文体で」</li></ul>
+        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">悪いプロンプトvs良いプロンプトの例</h4>
+        <p class="mb-4 leading-relaxed">同じ目的でも、プロンプトの書き方で出力が大きく変わります。「メールを書いて」（悪い例）では誰向け・何の内容かが不明なため汎用的な文章しか出ません。「介護施設のスタッフとして、利用者のご家族に向けて、先月の行事報告と来月の予定をお知らせするメールを、温かみのある分かりやすい言葉で200字程度で書いてください」（良い例）では業種・対象者・内容・文体・文字数が指定されており、使える出力が生成されます。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>悪い例：「メールを書いて」→汎用的で使えない出力</li><li>良い例：役割+対象者+内容+文体+文字数を指定→使える出力</li><li>差を生むのは「誰向けに・何を・どんな形で」の3指定</li></ul>
+        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よく使う指示の言葉と効果</h4>
+        <p class="mb-4 leading-relaxed">プロンプトに追加するだけで出力が変わる便利な表現を紹介します。「箇条書きで」（読みやすくなる）、「200字以内で」（長すぎない）、「初心者にも分かる言葉で」（専門用語が減る）、「例を交えて」（具体的になる）、「表形式で」（比較しやすくなる）、「もっと簡潔に」（短くなる）。これらを組み合わせることで、求める出力に近づけられます。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>「箇条書きで」→リスト形式で見やすくなる</li><li>「〇字以内で」→適切な長さに調整される</li><li>「初心者向けに」→専門用語なしの平易な表現になる</li><li>「例を交えて」→具体的で分かりやすくなる</li></ul>
+        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">プロンプトを改善する「追加指示」のコツ</h4>
+        <p class="mb-4 leading-relaxed">最初のプロンプトで完璧な出力が出なくても、追加指示で修正できます。「もっと短く」「丁寧にして」「箇条書きにして」「専門用語を使わないで」——これらを1つずつ試してみてください。追加指示を繰り返すことが、プロンプト作成の実力を高める最も効果的な練習です。3回の対話で出力が大きく変わることを体験すると、AIへの苦手意識が消えていきます。</p>
+        
+        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>良いプロンプトは「役割・背景・指示・条件」の4要素で構成される</li><li>「誰向けに・何を・どんな形で」を指定するだけで出力が大きく変わる</li><li>「箇条書きで・〇字以内・初心者向けに」の指定が出力品質を上げる</li><li>最初から完璧を目指さず追加指示で修正するのが正しい使い方</li><li>追加指示を繰り返す練習がプロンプト作成の実力を高める</li></ul>
+        <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">「AIへの指示が上手になるほど、AIはあなたの優秀なアシスタントになっていきます。プロンプトは一種の技術です。」<span class="block not-italic text-sm mt-3 text-right">BuildMate代表・木村拓隆</span></div>
+        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. プロンプトは何語で書くべきですか？</p><p class="text-wa-text text-base m-0">日本語でOKです。ChatGPTは日本語のプロンプトを十分に理解できます。英語の方が高品質という説もありますが、業務での使いやすさを考えると日本語のプロンプトで十分な精度が得られます。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. プロンプトはどのくらいの長さが適切ですか？</p><p class="text-wa-text text-base m-0">依頼内容によって異なりますが、50〜200文字程度を目安にしてください。長すぎると重要な指示が埋もれます。「短く・明確に・具体的に」を意識して書くと、短いプロンプトで高品質な出力が得られます。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. よく使うプロンプトを保存して再利用する方法はありますか？</p><p class="text-wa-text text-base m-0">メモ帳・Notionなどのツールにプロンプトを保存しておくことをおすすめします。また、Custom Instructions を使うと、よく使う前提条件を保存できます。Webやデスクトップでは Settings → Personalization から設定できます。</p></div></div>
+        <div class="mt-10 pt-8 border-t border-wa-border">
+            <p class="font-bold text-wa-brand mb-4 flex items-center gap-2"><i data-lucide="book-open" class="w-4 h-4"></i>関連記事はこちら▼</p>
+            <ul class="space-y-3"><li><a href="ai-16-gijiroku.html" class="text-wa-brand underline underline-offset-4 decoration-wa-border hover:decoration-wa-brand transition-colors">議事録をChatGPTで5分で作る、コピペで使えるプロンプト集</a></li><li><a href="ai-10-tsumazuku.html" class="text-wa-brand underline underline-offset-4 decoration-wa-border hover:decoration-wa-brand transition-colors">「AIは難しそう」と感じる人が最初につまずく場所</a></li><li><a href="ai-05-3days.html" class="text-wa-brand underline underline-offset-4 decoration-wa-border hover:decoration-wa-brand transition-colors">ChatGPTを無料で始める、最初の3日間でやること</a></li></ul>
+        </div>
+    </article>
+    <div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5">
+        <div class="w-14 h-14 rounded-full bg-wa-brand flex items-center justify-center flex-shrink-0"><i data-lucide="user" class="w-7 h-7 text-white"></i></div>
+        <div><p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p><p class="text-[15px] text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。工務店・異業種を問わず「現場に定着するAI活用」を支援するAI活用コンシェルジュ。関西拠点・全国オンライン対応。</p></div>
+    </div>
+    <div class="mt-8 bg-white rounded-wa p-8 shadow-sm border border-wa-border text-center">
+        <p class="font-bold text-lg text-wa-brand mb-2">「うちでも使えるか」を一緒に確認しましょう</p>
+        <p class="text-wa-gray text-base mb-6 leading-relaxed max-w-2xl mx-auto">AIに詳しくなくても、相談内容が未整理でも大丈夫です。現状のお話を聞いてから、何から始めるかを一緒に整理します。勧誘・営業は一切行いません。</p>
+        <a href="../contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-wa-accent hover:opacity-90 text-white rounded-wa font-bold transition-colors"><i data-lucide="mail" class="w-4 h-4"></i>無料相談に申し込む</a>
+    </div>
+    <div class="mt-8 text-center"><a href="../ai-guide.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-wa-brand text-wa-brand rounded-wa font-bold hover:bg-wa-brand hover:text-white transition-colors">← AI活用入門ガイドに戻る</a></div>
+</main>
+<footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
+    <div class="max-w-[1080px] mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-white/60 text-sm">Copyright © 2026 BuildMate. All rights reserved.</div>
+            <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
+                <a href="../privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                <a href="../terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                <a href="../law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>lucide.createIcons();</script>
+<script>
+function closeMobileMenu(){const m=document.getElementById('mobile-menu');m.style.display='none';document.body.style.overflow='';}
+document.getElementById('mobile-menu-btn').addEventListener('click',function(){const m=document.getElementById('mobile-menu');m.style.display='flex';document.body.style.overflow='hidden';});
+</script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+</body></html>

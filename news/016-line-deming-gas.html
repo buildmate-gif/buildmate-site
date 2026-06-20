@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5ECF52MHF6');</script>
+<meta charset="UTF-8">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../seigaiha.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>建設業の出面管理をLINE×GASで自動化する方法｜打刻から集計まで完全自動 | BuildMate</title>
+<link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/016-line-deming-gas.html">
+<meta name="description" content="建設現場では毎朝「今日は何人入っているか」を電話・口頭で確認する光景が当たり前になっています。紙の出面帳に手書きして、月末に事務所でExcelに転記して集計する——。この作業だけで月に何時間も費やしている工務店・建設会社は少なくありません。職人側も「電話に出らBuildMate代表が解説します。">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="建設業の出面管理をLINE×GASで自動化する方法｜打刻から集計まで完全自動 | BuildMate">
+<meta property="og:description" content="建設現場では毎朝「今日は何人入っているか」を電話・口頭で確認する光景が当たり前になっています。紙の出面帳に手書きして、月末に事務所でExcelに転記して集計する">
+<meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/016-line-deming-gas.html">
+<meta property="og:site_name" content="BuildMate">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="建設業の出面管理をLINE×GASで自動化する方法｜打刻から集計まで完全自動 | BuildMate">
+<meta name="twitter:description" content="建設現場では毎朝「今日は何人入っているか」を電話・口頭で確認する光景が当たり前になっています。紙の出面帳に手書きして、月末に事務所でExcelに転記して集計する">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"建設業の出面管理をLINE×GASで自動化する方法｜打刻から集計まで完全自動","datePublished":"2025-12-02","dateModified":"2025-12-02","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"建設現場では毎朝「今日は何人入っているか」を電話・口頭で確認する光景が当たり前になっています。紙の出面帳に手書きして、月末に事務所でExcelに転記して集計する——。この作業だけで月に何時間も費やしている工務店・建設会社は少なくありません。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/051-line-deming-gas.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"建設業の出面管理をLINEで自動化するにはどんな準備が必要ですか？","acceptedAnswer":{"@type":"Answer","text":"LINE公式アカウント（無料）の作成とGASのWebhook設定、Googleスプレッドシートの準備の3点だけです。BuildMateの支援実績では、準備から運用開始まで最短1週間で完了しています。"}},{"@type":"Question","name":"職人がLINEで出勤を打刻する方法はどのように周知すればいいですか？","acceptedAnswer":{"@type":"Answer","text":"「LINE公式アカウントに友だち追加して、朝は出勤・夜は退勤と送るだけ」とA4一枚で説明できます。BuildMateの支援実績では、60代の職人も翌日から問題なく使い始めています。"}},{"@type":"Question","name":"建設業の出面管理をGASで月次集計するとどのくらい時間が短縮できますか？","acceptedAnswer":{"@type":"Answer","text":"BuildMateの支援実績では、月4〜8時間かかっていた出面集計・転記作業がほぼゼロになっています。GASが自動集計してCSVを出力するため、給与計算ソフトへの取り込みも簡単です。"}}]}
+</script>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<body class="bg-wa-bg text-wa-text font-sans antialiased">
+    <header class="bg-white/95 backdrop-blur-md fixed w-full top-0 z-50 border-b border-wa-border transition-all duration-300">
+        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+
+                <a href="../index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
+                <a href="../services.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">サービス・効果</a>
+                <a href="../ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
+                <a href="../diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+                <a href="../gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
+                <a href="../gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
+                <a href="../contact.html" class="px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+<!-- モバイルメニュー -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="../index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
+    <a href="../services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
+    <a href="../ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
+    <a href="../diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
+    <a href="../gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
+    <a href="../gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
+    <a href="../contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
+<main class="pt-32 pb-24 px-6">
+  <div class="max-w-[800px] mx-auto">
+    <nav class="text-sm text-wa-gray mb-8">
+      <a href="../index.html" class="hover:text-wa-brand">ホーム</a><span class="mx-2">/</span>
+      <a href="../news.html" class="hover:text-wa-brand">コラム一覧</a><span class="mx-2">/</span>
+      <span>建設業の出面管理業務</span>
+    </nav>
+    <div class="mb-10">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="inline-block bg-wa-brand text-white text-sm font-bold px-4 py-1 rounded-full">業務効率化</span>
+        <span class="inline-block bg-wa-accent text-white text-sm font-bold px-4 py-1 rounded-full">GAS活用</span>
+      </div>
+      <h1 class="break-keep text-balance text-2xl md:text-4xl font-serif font-bold text-wa-text leading-tight mb-4">建設業の出面管理を<wbr><br>LINE×<wbr>GASで<wbr>自動化する方法</h1>
+    </div>
+    <div class="mb-10">
+      <img src="../images/gas_sum.png" alt="建設業の出面管理業務のイメージ" class="w-full rounded-wa object-cover" onerror="this.style.display='none'">
+    </div>
+    <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
+      <p class="font-bold text-xl mb-6 text-wa-brand">職人の出勤確認、まだ電話で一人ひとり連絡していますか？</p>
+      <p>建設現場では毎朝「今日は何人入っているか」を電話・口頭で確認する光景が当たり前になっています。紙の出面帳に手書きして、月末に事務所でExcelに転記して集計する——。この作業だけで月に何時間も費やしている工務店・建設会社は少なくありません。職人側も「電話に出られなかった」「紙を失くした」というトラブルが絶えません。</p>
+      <p>この記事では、建設業の出面（出勤）管理業務を、LINEとGoogle Apps Script（GAS）を連携させて完全自動化する具体的な方法を解説します。職人が普段使い慣れているLINEを入り口にすることで、新しいアプリの習得や研修が一切不要です。BuildMateが実際に建設会社へ導入支援した事例をもとにした内容です。</p>
+      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">建設業の出面管理業務とは</h4>
+      <p>建設業の出面管理業務とは、現場に入場した職人・作業員の出勤・退勤時刻を記録し、日別・人別・現場別に集計して給与計算・外注費支払いに活用する業務を指します。現場が複数同時進行する規模になると、手動管理では月末の集計だけで数時間かかります。</p>
+      <p>具体的には次のような作業が含まれます。</p>
+      <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>現場ごとの入場者リストの作成・更新</li><li>職人・作業員の出勤時刻・退勤時刻の記録</li><li>日別・人別の出面集計と月次まとめ</li><li>外注職人への支払い金額の計算</li><li>給与計算ソフトへの転記</li></ul>
+      <p>BuildMateの支援実績では、LINE×GASで出面管理を自動化した建設会社（職人20名規模）で、月8時間かかっていた出面管理業務がほぼ自動化されました。</p>
+      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">仕組みの全体像：LINEとGASをつなぐ方法</h4><p>職人がLINEで「出勤」「退勤」と送信すると、LINE公式アカウントのWebhookがそのメッセージをGASへ転送します。GASがメッセージの送信者・内容・時刻を解析し、Googleスプレッドシートの出面台帳へ自動記録します。職人は普段使いのLINEに一言送るだけで、管理側は自動でデータが蓄積されます。</p><p>LINE公式アカウントは月1,000通まで無料プランで利用可能です。職人20名規模であれば無料枠で十分運用できます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 1: LINE公式アカウントとWebhookの設定</h4><p>LINE公式アカウントを作成し、Webhook URLにGASのデプロイURLを設定します。これにより、職人がLINEにメッセージを送るたびにGASが自動で呼び出される状態になります。設定はLINE Developersの管理画面から無料で行えます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 2: GASで打刻データを自動記録</h4><p>職人が「出勤」と送信するとGASが起動し、送信者のLINE表示名・送信時刻・現場名（事前登録）をスプレッドシートの出面台帳に自動記録します。「退勤」送信時も同様に退勤時刻を記録します。現場が複数ある場合は「〇〇現場 出勤」のように送信するルールにするだけで、現場別の振り分けも自動化できます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 3: 月次集計の自動化と給与計算データの出力</h4><p>GASが月末に自動実行され、出面台帳から人別・現場別の出勤日数・労働時間を自動集計します。集計結果をCSV形式で出力すれば、給与計算ソフトや外注費支払い台帳にそのまま取り込めます。月末に何時間もかけていた集計作業がほぼゼロになります。</p>
+      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+      <p>BuildMateが建築・建設業の現場にLINE×GASを導入した実績をもとに、削減効果をまとめます。</p>
+      <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>出退勤の記録：電話・紙の手書き → LINEに一言送るだけ</li><li>月次集計：月4〜8時間 → GASが自動集計</li><li>給与計算データ作成：手動転記 → CSV自動出力</li><li>記録漏れ・転記ミス：自動記録でほぼゼロに</li></ul>
+      <p>職人20名規模の建設会社では、月8時間以上の削減が現実的な目標値です。時給換算（2,000円）で月1.6万円相当のコスト削減になります。導入コストはLINE公式アカウント（無料）とGoogleスプレッドシート（無料）だけです。</p>
+      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">LINEとGASでできないことについて</h4>
+      <p>現場への入場許可・安全確認は管理者が直接行う必要があります。また、体調不良や急な欠勤への対応は人間が判断すべきです。LINE×GASはあくまで「記録と集計」を自動化するツールです。
+
+しかしこの自動化によって、管理者が本来集中すべき安全管理・現場指揮に専念できる時間が生まれます。</p>
+      <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">LINEは職人が一番慣れているツールです。新しいアプリを覚えさせようとしても現場では定着しません。LINEに一言送るだけで出面が記録される仕組みなら、60代の職人でも翌日から使えます。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）</div>
+      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+      <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>建設業の出面管理はLINE×GASで打刻から月次集計まで完全自動化できる</li><li>職人がLINEに「出勤」「退勤」と送るだけで、GASがスプレッドシートへ自動記録する</li><li>月末にGASが自動集計し、給与計算用CSVを自動出力できる</li><li>職人20名規模で月8時間以上の削減が見込め、導入費用は実質ゼロ</li><li>職人が新しいアプリを覚える必要がなく、翌日から使い始められる</li></ul>
+      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+      <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 建設業の出面管理をLINEで自動化するにはどんな準備が必要ですか？</p><p class="text-wa-text text-base m-0">LINE公式アカウント（無料）の作成とGASのWebhook設定、Googleスプレッドシートの準備の3点だけです。BuildMateの支援実績では、準備から運用開始まで最短1週間で完了しています。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 職人がLINEで出勤を打刻する方法はどのように周知すればいいですか？</p><p class="text-wa-text text-base m-0">「LINE公式アカウントに友だち追加して、朝は出勤・夜は退勤と送るだけ」とA4一枚で説明できます。BuildMateの支援実績では、60代の職人も翌日から問題なく使い始めています。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 建設業の出面管理をGASで月次集計するとどのくらい時間が短縮できますか？</p><p class="text-wa-text text-base m-0">BuildMateの支援実績では、月4〜8時間かかっていた出面集計・転記作業がほぼゼロになっています。GASが自動集計してCSVを出力するため、給与計算ソフトへの取り込みも簡単です。</p></div></div>
+      <div class="mt-10 pt-8 border-t border-wa-border">
+        <p class="font-bold text-wa-brand mb-4">関連記事</p>
+        <ul class="space-y-2"><li><a href="044-genba-kanri-ai.html" class="text-wa-brand hover:underline">工務店の現場管理業務をAI・GASで効率化する方法</a></li><li><a href="014-line-shashin-gas.html" class="text-wa-brand hover:underline">建設現場の施工写真をLINE×GASでGoogleドライブへ自動整理する方法</a></li><li><a href="055-shakunai-kanri-ai.html" class="text-wa-brand hover:underline">工務店の社内管理業務をAI・GASで効率化する方法</a></li></ul>
+      </div>
+    </article>
+    <div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5">
+      <div class="w-14 h-14 rounded-full bg-wa-brand flex items-center justify-center flex-shrink-0"><i data-lucide="user" class="w-7 h-7 text-white"></i></div>
+      <div>
+        <p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p>
+        <p class="text-[15px] md:text-base text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。現場の実態とシステムの限界を知り尽くした立場から、中小工務店向けのAI・GAS導入コンサルティングを提供。関西拠点・全国オンライン対応。</p>
+      </div>
+    </div>
+    <div class="mt-8 bg-white rounded-wa p-8 shadow-sm border border-wa-border text-center">
+      <p class="font-bold text-lg text-wa-brand mb-2">「うちでも使えるか」を一緒に確認しましょう</p>
+      <p class="text-wa-gray text-base md:text-lg mb-6 leading-relaxed max-w-2xl mx-auto">BuildMateでは、工務店・建設会社の現状業務を無料でヒアリングし、LINE×GASで効率化できる箇所を具体的にご提案しています。元・施工管理の代表が現場目線でお答えします。勧誘・営業は一切行いません。</p>
+      <a href="../contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-wa-accent hover:opacity-90 text-white rounded-wa font-bold transition-colors">
+        <i data-lucide="mail" class="w-4 h-4"></i>無料相談に申し込む
+      </a>
+    </div>
+    <div class="mt-8 text-center">
+      <a href="../news.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-wa-brand text-wa-brand rounded-wa font-bold hover:bg-wa-brand hover:text-white transition-colors">← コラム一覧に戻る</a>
+    </div>
+  </div>
+</main>
+        <footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
+        <div class="max-w-[1080px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-white/60 text-sm">
+                    Copyright © 2026 BuildMate. All rights reserved.
+                </div>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
+                    <a href="../privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                    <a href="../terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                    <a href="../law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script>lucide.createIcons();</script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+</body>
+</html>

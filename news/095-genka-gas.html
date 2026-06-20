@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5ECF52MHF6');</script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../seigaiha.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工務店の原価計算・見積書の作成をAI・GASで自動化する方法｜3時間→30分に短縮 | BuildMate</title>
+    <link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/095-genka-gas.html">
+    <meta name="description" content="工務店の原価計算・見積書の作成にAIとGASを活用する方法を解説。GASで原価データベースを参照し見積書を自動生成しAIで利益率の最適化を提案。3時間かかっていた作業を30分に短縮し粗利を改善した手順を解説します。">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="工務店の原価計算・見積書の作成をAI・GASで自動化する方法｜3時間→30分に短縮 | BuildMate">
+    <meta property="og:description" content="工務店の原価計算・見積書の作成にAIとGASを活用する方法を解説。GASで原価データベースを参照し見積書を自動生成しAIで利益率の最適化を提案。3時間かかっていた作業を30分に短縮し粗利を改善した手順を解説します。">
+    <meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/095-genka-gas.html">
+    <meta property="og:site_name" content="BuildMate">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="工務店の原価計算・見積書の作成をAI・GASで自動化する方法｜3時間→30分に短縮 | BuildMate">
+    <meta name="twitter:description" content="工務店の原価計算・見積書の作成にAIとGASを活用する方法を解説。GASで原価データベースを参照し見積書を自動生成しAIで利益率の最適化を提案。3時間かかっていた作業を30分に短縮し粗利を改善した手順を解説します。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"工務店の原価計算・見積書の作成をAI・GASで自動化する方法｜3時間→30分に短縮","datePublished":"2026-02-18","dateModified":"2026-02-18","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"工務店の原価計算・見積書の作成にAIとGASを活用する方法を解説。GASで原価データベースを参照し見積書を自動生成しAIで利益率の最適化を提案。3時間かかっていた作業を30分に短縮し粗利を改善した手順を解説します。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/095-genka-gas.html"}}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"工務店の見積書はGASで自動生成できますか？","acceptedAnswer":{"@type":"Answer","text":"BuildMateの支援実績では、GASで原価データベースを参照し工事種別・数量を入力するだけで見積書を自動生成する仕組みを構築。作成時間を3時間から30分に短縮した工務店があります。"}},{"@type":"Question","name":"工務店の粗利率の改善にAIを活用できますか？","acceptedAnswer":{"@type":"Answer","text":"BuildMateの支援実績では、AIで見積書の数字を分析し粗利率改善のポイントを自動提案することで適正な利益率での受注が増加した工務店があります。"}},{"@type":"Question","name":"工務店の原価管理をGASで効率化するにはどうすればよいですか？","acceptedAnswer":{"@type":"Answer","text":"BuildMateの支援実績では、GASで原価データベースを構築し定期的に更新することで常に最新原価での見積りが可能になり見積書作成時間を3時間から30分に短縮した工務店があります。"}}]}
+    </script>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<body class="bg-wa-bg text-wa-text font-sans">
+    <header class="bg-white/95 backdrop-blur-md fixed w-full top-0 z-50 border-b border-wa-border transition-all duration-300">
+        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+
+                <a href="../index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
+                <a href="../services.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">サービス・効果</a>
+                <a href="../ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
+                <a href="../diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+                <a href="../gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
+                <a href="../gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
+                <a href="../contact.html" class="px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+<!-- モバイルメニュー -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="../index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
+    <a href="../services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
+    <a href="../ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
+    <a href="../diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
+    <a href="../gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
+    <a href="../gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
+    <a href="../contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
+<main class="max-w-[800px] mx-auto px-6 pt-28 pb-16">
+    <nav class="text-sm text-wa-gray mb-8">
+        <a href="../index.html" class="hover:text-wa-brand">ホーム</a><span class="mx-2">/</span>
+        <a href="../news.html" class="hover:text-wa-brand">コラム一覧</a><span class="mx-2">/</span>
+        <span>原価計算・見積書作成のAI・GAS自動化</span>
+    </nav>
+    <div class="flex items-center gap-2 mb-4">
+        <span class="inline-block bg-wa-brand text-white text-sm font-bold px-4 py-1 rounded-full">業務効率化</span>
+        <span class="inline-block bg-wa-accent text-white text-sm font-bold px-4 py-1 rounded-full">AI活用</span>
+    </div>
+    <h1 class="break-keep text-balance font-serif text-2xl md:text-3xl font-bold text-wa-text mb-4 leading-snug">工務店の原価計算・<wbr>見積書の作成を<wbr>AI・<wbr>GASで<wbr>自動化する方法｜<wbr>3時間→30分に<wbr>短縮</h1>
+    <div class="flex items-center gap-4 text-sm text-wa-gray mb-8">
+        <span class="flex items-center gap-1"><i data-lucide="user" class="w-4 h-4"></i>木村 拓隆</span>
+    </div>
+    <div class="mb-10 rounded-wa overflow-hidden">
+        <img src="../images/keiri_sum.png" alt="工務店の原価計算・見積書の作成をAI・GASで自動化する方法" class="w-full object-cover">
+    </div>
+    <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
+        <p class="font-bold text-xl mb-6 text-wa-brand">見積書を作るたびに原価を調べ直して3時間かかっていませんか？</p>
+        <p class="mb-4 text-wa-text leading-relaxed">工務店の見積書作成は適正な原価把握と利益率の設定が必要で時間と専門知識が要求されます。「材料・人工費の相場が変わっていて原価が古い」「毎回一から計算している」「利益率を意識した見積りが作れていない」という課題が多くあります。</p>
+        <p class="mb-8 text-wa-text leading-relaxed">この記事では、GASで原価データベースを参照して見積書を自動生成し、AI（Claude・ChatGPT）で利益率の最適化提案を行う方法をご紹介します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の原価計算・見積書の作成とは</h4>
+        <p class="mb-4">工務店の原価計算・見積書の作成とは、工事に必要な材料費・労務費・外注費・経費を積算して適正な工事価格を算出し、お客様に提示する見積書を作成する業務です。粗利管理の基盤となる最重要業務の一つです。</p>
+        <p class="mb-3">具体的には次のような作業が含まれます。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>材料費・労務費・外注費の原価計算</li><li>経費・現場管理費・利益の加算</li><li>お客様向け見積書の作成</li><li>数量・単価の根拠整理</li><li>見積書の提出・説明</li></ul>
+        <p class="mb-8">BuildMateの支援実績では、GASとAIを活用することで原価計算から見積書完成まで3時間から30分程度に短縮し粗利改善につながった工務店があります。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASで行う部分（原価DB参照・見積書自動生成）</h4><p class="mb-4">GASによる見積書自動生成とは、Googleスプレッドシートの原価データベースをGASが参照し工事の種類・数量を入力するだけで見積書を自動生成する仕組みです。</p><p class="mb-6">スプレッドシートに「工事種別・数量」を入力するとGASが原価DBから単価を自動参照し材料費・労務費・経費を自動計算した見積書を生成します。原価DBを定期的に更新するだけで常に最新の価格で見積りができます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIで行う部分（利益率の最適化提案）</h4><p class="mb-4">AIによる利益率最適化とは、生成した見積書の数字をAIに読み込ませることで利益率の改善ポイントや競合との価格ポジションを自動分析・提案する仕組みです。</p><p class="mb-6">見積書をAIに貼り付けて「粗利率を改善するための見直しポイントを教えて」と指示するだけで原価削減の余地や適正な利益率水準についての提案が返ってきます。根拠のある価格設定ができるようになります。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+        <p class="mb-4">BuildMateが工務店の原価計算・見積書の作成にAIとGASを導入した実績をもとに、削減効果をまとめます。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>原価計算から見積書完成：3時間 → 30分</li><li>原価の陳腐化リスク：DB更新で解消</li><li>粗利率の改善：AIの提案で具体化</li></ul>
+        <p class="mb-8">GASとAIで見積書作成を自動化することで3時間かかっていた作業が30分に短縮されます。根拠のある価格設定と粗利管理の精度向上が工務店の収益改善に直結します。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIとGASでできないことについて</h4>
+        <p class="mb-4">GASによる原価DB参照は原価データベースが最新の状態で管理されていることが前提です。材料費・人件費の変動時は適宜DBを更新する必要があります。</p>
+        <p class="mb-8">しかしDB更新さえ行えば以降は常に最新原価で自動見積りができます。見積書作成の速度と精度が同時に向上します。</p>
+        <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">
+            粗利が低い案件を受け続けると工務店の体力が削られます。AIで利益率を見える化し根拠のある価格設定を習慣にしてください。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）
+        </div>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>工務店の見積書作成はAI・GASで3時間→30分に短縮できる</li><li>GASで原価DBを参照し数量入力だけで見積書が自動生成される</li><li>AIで粗利率の改善ポイントと最適価格を自動提案できる</li><li>常に最新の原価でDB管理することで見積精度が向上する</li><li>粗利改善により工務店の収益性が高まる</li></ul>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <div class="space-y-6">
+            <div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の見積書はGASで自動生成できますか？</p><p class="text-wa-text text-base m-0">BuildMateの支援実績では、GASで原価データベースを参照し工事種別・数量を入力するだけで見積書を自動生成する仕組みを構築。作成時間を3時間から30分に短縮した工務店があります。</p></div>
+            <div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の粗利率の改善にAIを活用できますか？</p><p class="text-wa-text text-base m-0">BuildMateの支援実績では、AIで見積書の数字を分析し粗利率改善のポイントを自動提案することで適正な利益率での受注が増加した工務店があります。</p></div>
+            <div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の原価管理をGASで効率化するにはどうすればよいですか？</p><p class="text-wa-text text-base m-0">BuildMateの支援実績では、GASで原価データベースを構築し定期的に更新することで常に最新原価での見積りが可能になり見積書作成時間を3時間から30分に短縮した工務店があります。</p></div>
+        </div>
+        <div class="mt-10 pt-8 border-t border-wa-border">
+            <p class="font-bold text-wa-brand mb-4">関連記事</p>
+            <ul class="space-y-2"><li><a href="022-sekkei-sekisan-ai.html" class="text-wa-brand hover:underline">工務店の設計・積算業務をAI・GASで効率化する方法</a></li><li><a href="094-sekisan-ai.html" class="text-wa-brand hover:underline">工務店の数量拾い出し（積算）をAIで自動化する方法</a></li><li><a href="087-uriage-gas.html" class="text-wa-brand hover:underline">工務店の売上・利益の月次集計をGASで自動化する方法</a></li></ul>
+        </div>
+    </article>
+    <div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5">
+        <div class="w-14 h-14 rounded-full bg-wa-brand flex items-center justify-center flex-shrink-0"><i data-lucide="user" class="w-7 h-7 text-white"></i></div>
+        <div>
+            <p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p>
+            <p class="text-[15px] md:text-base text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。現場の実態とシステムの限界を知り尽くした立場から、中小工務店向けのAI・GAS導入コンサルティングを提供。関西拠点・全国オンライン対応。</p>
+        </div>
+    </div>
+    <div class="mt-8 bg-white rounded-wa p-8 shadow-sm border border-wa-border text-center">
+        <p class="font-bold text-lg text-wa-brand mb-2">「うちでも使えるか」を一緒に確認しましょう</p>
+        <p class="text-wa-gray text-base md:text-lg mb-6 leading-relaxed max-w-2xl mx-auto">BuildMateでは、工務店の現状業務を無料でヒアリングし、AI・GASで効率化できる箇所を具体的にご提案しています。元・施工管理の代表が現場目線でお答えします。勧誘・営業は一切行いません。</p>
+        <a href="../contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-wa-accent hover:opacity-90 text-white rounded-wa font-bold transition-colors">
+            <i data-lucide="mail" class="w-4 h-4"></i>無料相談に申し込む
+        </a>
+    </div>
+    <div class="mt-8 text-center">
+        <a href="../news.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-wa-brand text-wa-brand rounded-wa font-bold hover:bg-wa-brand hover:text-white transition-colors">← コラム一覧に戻る</a>
+    </div>
+</main>
+        <footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
+        <div class="max-w-[1080px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-white/60 text-sm">
+                    Copyright © 2026 BuildMate. All rights reserved.
+                </div>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
+                    <a href="../privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                    <a href="../terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                    <a href="../law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script>lucide.createIcons();</script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+</body>
+</html>

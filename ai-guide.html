@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5ECF52MHF6');</script>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="seigaiha.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI活用入門ガイド｜現場に定着させる6ステップ | BuildMate</title>
+<link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/ai-guide.html">
+<meta name="description" content="AIを使いたいけど何から始めればいいか分からない方へ。入口の整理から現場への定着まで、6つのステップで順番に解説します。治療家・介護福祉・営業職など異業種の方向け。">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI活用入門ガイド｜現場に定着させる6ステップ | BuildMate">
+<meta property="og:description" content="AIを使いたいけど何から始めればいいか分からない方へ。6つのステップで入口から定着まで順番にお伝えします。">
+<meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/ai-guide.html">
+<meta property="og:site_name" content="BuildMate">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI活用入門ガイド｜現場に定着させる6ステップ | BuildMate">
+<meta name="twitter:description" content="AIを使いたいけど何から始めればいいか分からない方へ。6つのステップで入口から定着まで順番にお伝えします。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors:{wa:{bg:'#F7F2EA',paper:'#ffffff',text:'#1F2933',gray:'#6B7280',brand:'#24324A',brandHover:'#1A2838',accent:'#24324A',accentHover:'#1A2838',border:'#D4CAB8',gold:'#B99745',purple:'#5C3B8A',cyan:'#38BDF8'}},borderRadius:{wa:'12px'}}}}
+</script>
+<style>
+:root { --accent: #24324A; }
+.text-balance { text-wrap: balance; }
+.text-pretty { text-wrap: pretty; }
+.break-keep { word-break: keep-all; line-break: strict; }
+.step-connector {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, #D4CAB8, #B99745);
+    margin-top: -1px;
+}
+</style>
+</head>
+<body class="bg-wa-bg text-wa-text font-sans">
+
+<!-- ヘッダー -->
+<header class="bg-white/95 backdrop-blur-md fixed w-full top-0 z-50 border-b border-wa-border transition-all duration-300">
+    <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3 group">
+            <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+            <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+            <a href="index.html" class="hover:text-wa-brand transition-colors">ホーム</a>
+            <a href="services.html" class="hover:text-wa-brand transition-colors">サービス・効果</a>
+            <a href="ai-guide.html" class="text-wa-brand font-bold transition-colors flex items-center gap-1">
+                <i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門
+            </a>
+            <a href="diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+            <a href="gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
+            <a href="gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
+            <a href="contact.html" class="px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
+        </nav>
+        <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
+            <i data-lucide="menu" class="w-8 h-8"></i>
+        </button>
+    </div>
+</header>
+
+<!-- モバイルメニュー -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
+    <a href="services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
+    <a href="ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-active); font-weight:700; text-decoration:none;">AI活用入門</a>
+    <a href="diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
+    <a href="gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
+    <a href="gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
+    <a href="contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
+
+<main class="pt-28 pb-24">
+
+    <!-- ヒーローセクション -->
+    <section class="py-16 md:py-24 bg-white border-b border-wa-border">
+        <div class="max-w-[860px] mx-auto px-6 text-center">
+            <span class="inline-block text-wa-gold font-bold tracking-[0.25em] text-sm mb-5">AI BEGINNER GUIDE</span>
+            <h1 class="break-keep text-balance font-serif text-3xl md:text-5xl font-bold text-wa-text leading-tight mb-6">
+                AIを現場に定着させる<br>6ステップ学習ガイド
+            </h1>
+            <p class="text-wa-gray text-base md:text-lg leading-loose max-w-2xl mx-auto mb-8">
+                「AIを使ってみたいけど、何から始めればいいか分からない」<br>
+                そんな方のために、入口の整理から研修・定着まで<br>順番にお伝えします。
+            </p>
+            <div class="flex flex-wrap justify-center gap-3 text-sm">
+                <span class="inline-flex items-center gap-1.5 bg-wa-bg border border-wa-border rounded-full px-4 py-1.5 text-wa-gray">
+                    <i data-lucide="stethoscope" class="w-3.5 h-3.5"></i> 治療家・整体院
+                </span>
+                <span class="inline-flex items-center gap-1.5 bg-wa-bg border border-wa-border rounded-full px-4 py-1.5 text-wa-gray">
+                    <i data-lucide="heart-handshake" class="w-3.5 h-3.5"></i> 介護・福祉
+                </span>
+                <span class="inline-flex items-center gap-1.5 bg-wa-bg border border-wa-border rounded-full px-4 py-1.5 text-wa-gray">
+                    <i data-lucide="briefcase" class="w-3.5 h-3.5"></i> 営業・販売職
+                </span>
+                <span class="inline-flex items-center gap-1.5 bg-wa-bg border border-wa-border rounded-full px-4 py-1.5 text-wa-gray">
+                    <i data-lucide="building-2" class="w-3.5 h-3.5"></i> 中小企業全般
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ステップ全体図 -->
+    <section class="py-12 bg-white border-b border-wa-border">
+        <div class="max-w-[860px] mx-auto px-6">
+            <div class="bg-wa-bg border border-wa-border rounded-wa p-6">
+                <p class="text-wa-brand font-bold text-sm mb-5 tracking-wider flex items-center gap-2">
+                    <i data-lucide="layers" class="w-4 h-4 text-wa-gold"></i>6ステップで定着まで
+                </p>
+
+            <!-- デスクトップ：アイコンカード横並び -->
+            <div class="hidden md:flex items-center gap-2">
+                <a href="#step1" class="flex-1 group">
+                    <div class="bg-white border border-wa-border rounded-lg p-4 flex flex-col items-center gap-2 group-hover:border-wa-brand group-hover:shadow-md transition-all min-h-[110px] justify-center">
+                        <div class="w-9 h-9 rounded-full bg-wa-brand text-white flex items-center justify-center font-bold text-sm">1</div>
+                        <i data-lucide="log-in" class="w-6 h-6 text-wa-brand"></i>
+                        <span class="text-xs font-bold text-wa-brand text-center leading-tight">入口<br>きっかけ</span>
+                    </div>
+                </a>
+                <i data-lucide="chevron-right" class="w-5 h-5 text-wa-gold flex-shrink-0"></i>
+                <a href="#step2" class="flex-1 group">
+                    <div class="bg-white border border-wa-border rounded-lg p-4 flex flex-col items-center gap-2 group-hover:border-wa-brand group-hover:shadow-md transition-all min-h-[110px] justify-center">
+                        <div class="w-9 h-9 rounded-full bg-wa-brand text-white flex items-center justify-center font-bold text-sm">2</div>
+                        <i data-lucide="alert-triangle" class="w-6 h-6 text-wa-brand"></i>
+                        <span class="text-xs font-bold text-wa-brand text-center leading-tight">失敗から<br>学ぶ</span>
+                    </div>
+                </a>
+                <i data-lucide="chevron-right" class="w-5 h-5 text-wa-gold flex-shrink-0"></i>
+                <a href="#step3" class="flex-1 group">
+                    <div class="bg-white border border-wa-border rounded-lg p-4 flex flex-col items-center gap-2 group-hover:border-wa-brand group-hover:shadow-md transition-all min-h-[110px] justify-center">
+                        <div class="w-9 h-9 rounded-full bg-wa-brand text-white flex items-center justify-center font-bold text-sm">3</div>
+                        <i data-lucide="shield-check" class="w-6 h-6 text-wa-brand"></i>
+                        <span class="text-xs font-bold text-wa-brand text-center leading-tight">安心・<br>安全</span>
+                    </div>
+                </a>
+                <i data-lucide="chevron-right" class="w-5 h-5 text-wa-gold flex-shrink-0"></i>
+                <a href="#step4" class="flex-1 group">
+                    <div class="bg-white border border-wa-border rounded-lg p-4 flex flex-col items-center gap-2 group-hover:border-wa-brand group-hover:shadow-md transition-all min-h-[110px] justify-center">
+                        <div class="w-9 h-9 rounded-full bg-wa-brand text-white flex items-center justify-center font-bold text-sm">4</div>
+                        <i data-lucide="lightbulb" class="w-6 h-6 text-wa-brand"></i>
+                        <span class="text-xs font-bold text-wa-brand text-center leading-tight">具体的な<br>使い方</span>
+                    </div>
+                </a>
+                <i data-lucide="chevron-right" class="w-5 h-5 text-wa-gold flex-shrink-0"></i>
+                <a href="#step5" class="flex-1 group">
+                    <div class="bg-white border border-wa-border rounded-lg p-4 flex flex-col items-center gap-2 group-hover:border-wa-brand group-hover:shadow-md transition-all min-h-[110px] justify-center">
+                        <div class="w-9 h-9 rounded-full bg-wa-brand text-white flex items-center justify-center font-bold text-sm">5</div>
+                        <i data-lucide="users" class="w-6 h-6 text-wa-brand"></i>
+                        <span class="text-xs font-bold text-wa-brand text-center leading-tight">研修・<br>社内展開</span>
+                    </div>
+                </a>
+                <i data-lucide="chevron-right" class="w-5 h-5 text-wa-gold flex-shrink-0"></i>
+                <a href="#step6" class="flex-1 group">
+                    <div class="bg-white border border-wa-gold rounded-lg p-4 flex flex-col items-center gap-2 group-hover:shadow-md transition-all min-h-[110px] justify-center">
+                        <div class="w-9 h-9 rounded-full bg-wa-gold text-white flex items-center justify-center font-bold text-sm">6</div>
+                        <i data-lucide="globe" class="w-6 h-6 text-wa-gold"></i>
+                        <span class="text-xs font-bold text-wa-gold text-center leading-tight">定着・<br>文化づくり</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- モバイル：3列グリッド -->
+            <div class="grid grid-cols-3 gap-2 md:hidden">
+                <a href="#step1" class="bg-white border border-wa-border rounded-lg p-2.5 flex flex-col items-center gap-1">
+                    <div class="w-6 h-6 rounded-full bg-wa-brand text-white flex items-center justify-center font-bold text-xs">1</div>
+                    <i data-lucide="log-in" class="w-4 h-4 text-wa-brand"></i>
+                    <span class="text-[10px] font-bold text-wa-brand text-center leading-tight">入口</span>
+                </a>
+                <a href="#step2" class="bg-white border border-wa-border rounded-lg p-2.5 flex flex-col items-center gap-1">
+                    <div class="w-6 h-6 rounded-full bg-wa-brand text-white flex items-center justify-center font-bold text-xs">2</div>
+                    <i data-lucide="alert-triangle" class="w-4 h-4 text-wa-brand"></i>
+                    <span class="text-[10px] font-bold text-wa-brand text-center leading-tight">失敗共感</span>
+                </a>
+                <a href="#step3" class="bg-white border border-wa-border rounded-lg p-2.5 flex flex-col items-center gap-1">
+                    <div class="w-6 h-6 rounded-full bg-wa-brand text-white flex items-center justify-center font-bold text-xs">3</div>
+                    <i data-lucide="shield-check" class="w-4 h-4 text-wa-brand"></i>
+                    <span class="text-[10px] font-bold text-wa-brand text-center leading-tight">安心安全</span>
+                </a>
+                <a href="#step4" class="bg-white border border-wa-border rounded-lg p-2.5 flex flex-col items-center gap-1">
+                    <div class="w-6 h-6 rounded-full bg-wa-brand text-white flex items-center justify-center font-bold text-xs">4</div>
+                    <i data-lucide="lightbulb" class="w-4 h-4 text-wa-brand"></i>
+                    <span class="text-[10px] font-bold text-wa-brand text-center leading-tight">使い方</span>
+                </a>
+                <a href="#step5" class="bg-white border border-wa-border rounded-lg p-2.5 flex flex-col items-center gap-1">
+                    <div class="w-6 h-6 rounded-full bg-wa-brand text-white flex items-center justify-center font-bold text-xs">5</div>
+                    <i data-lucide="users" class="w-4 h-4 text-wa-brand"></i>
+                    <span class="text-[10px] font-bold text-wa-brand text-center leading-tight">研修設計</span>
+                </a>
+                <a href="#step6" class="bg-white border border-wa-gold rounded-lg p-2.5 flex flex-col items-center gap-1">
+                    <div class="w-6 h-6 rounded-full bg-wa-gold text-white flex items-center justify-center font-bold text-xs">6</div>
+                    <i data-lucide="globe" class="w-4 h-4 text-wa-gold"></i>
+                    <span class="text-[10px] font-bold text-wa-gold text-center leading-tight">定着</span>
+                </a>
+            </div>
+            </div><!-- /bg-wa-bg container -->
+        </div>
+    </section>
+
+    <!-- STEP 1 -->
+    <section id="step1" class="py-16 bg-white border-b border-wa-border scroll-mt-24">
+        <div class="max-w-[860px] mx-auto px-6">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-14 h-14 rounded-full bg-wa-brand text-white flex items-center justify-center font-bold text-2xl flex-shrink-0">1</div>
+                <div>
+                    <p class="text-wa-gold font-bold text-sm tracking-widest mb-0.5">STEP 1</p>
+                    <h2 class="font-serif text-2xl md:text-3xl font-bold text-wa-text">AI導入の入口・きっかけ</h2>
+                </div>
+            </div>
+            <p class="text-wa-gray leading-relaxed mb-8 ml-0 md:ml-[4.5rem]">
+                「興味はあるけど最初の一歩が踏み出せない」方へ。何を準備すべきか、どこから始めるかを整理します。
+            </p>
+            <div class="space-y-3 ml-0 md:ml-[4.5rem]">
+                <a href="news/ai-01-junbi.html" class="flex items-center justify-between p-4 bg-wa-bg rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">AI導入を始める前に必ずやるべき3つの準備</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-02-dokokara.html" class="flex items-center justify-between p-4 bg-wa-bg rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">「何から始めればいいか分からない」を解決する、AI活用の入口の決め方</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-03-hitotsu.html" class="flex items-center justify-between p-4 bg-wa-bg rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">まず1つの業務だけに絞る、AI活用の最初の一歩</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-04-tanaoroshi.html" class="flex items-center justify-between p-4 bg-wa-bg rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">AIを使う前に整理しておきたい「自社の業務棚卸し」のやり方</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-05-3days.html" class="flex items-center justify-between p-4 bg-wa-bg rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">ChatGPTを無料で始める、最初の3日間でやること</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STEP 2 -->
+    <section id="step2" class="py-16 bg-wa-bg border-b border-wa-border scroll-mt-24">
+        <div class="max-w-[860px] mx-auto px-6">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-14 h-14 rounded-full bg-wa-brand text-white flex items-center justify-center font-bold text-2xl flex-shrink-0">2</div>
+                <div>
+                    <p class="text-wa-gold font-bold text-sm tracking-widest mb-0.5">STEP 2</p>
+                    <h2 class="font-serif text-2xl md:text-3xl font-bold text-wa-text">失敗・つまずきへの共感</h2>
+                </div>
+            </div>
+            <p class="text-wa-gray leading-relaxed mb-8 ml-0 md:ml-[4.5rem]">
+                「試したけど続かなかった」「うまくいかなかった」経験がある方へ。なぜうまくいかないのか、その構造を解説します。
+            </p>
+            <div class="space-y-3 ml-0 md:ml-[4.5rem]">
+                <a href="news/ai-06-kenshu-shippai.html" class="flex items-center justify-between p-4 bg-white rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">AI研修を受けたのに3ヶ月後に誰も使っていない本当の理由</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-07-tsuzukanakatta.html" class="flex items-center justify-between p-4 bg-white rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">「ChatGPTを試したけど続かなかった」あなたへ、原因と対策</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-08-teiko.html" class="flex items-center justify-between p-4 bg-white rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">社員にAIを使わせたいのに抵抗される会社が見落としていること</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-09-shippai-pattern.html" class="flex items-center justify-between p-4 bg-white rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">AI導入に失敗する会社に共通する3つのパターン</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-10-tsumazuku.html" class="flex items-center justify-between p-4 bg-white rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">「AIは難しそう」と感じる人が最初につまずく場所</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STEP 3 -->
+    <section id="step3" class="py-16 bg-white border-b border-wa-border scroll-mt-24">
+        <div class="max-w-[860px] mx-auto px-6">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-14 h-14 rounded-full bg-wa-brand text-white flex items-center justify-center font-bold text-2xl flex-shrink-0">3</div>
+                <div>
+                    <p class="text-wa-gold font-bold text-sm tracking-widest mb-0.5">STEP 3</p>
+                    <h2 class="font-serif text-2xl md:text-3xl font-bold text-wa-text">安心・安全に使う</h2>
+                </div>
+            </div>
+            <p class="text-wa-gray leading-relaxed mb-8 ml-0 md:ml-[4.5rem]">
+                「個人情報を入れても大丈夫か」「AIが間違えたら困る」という不安を解消します。安心して使うための知識と習慣を整理します。
+            </p>
+            <div class="space-y-3 ml-0 md:ml-[4.5rem]">
+                <a href="news/ai-11-kojinjouhou.html" class="flex items-center justify-between p-4 bg-wa-bg rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">個人情報をAIに入力しても大丈夫？現場で使うための安全ルール</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-12-machigai.html" class="flex items-center justify-between p-4 bg-wa-bg rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">AIが間違えることがある、だからこそ必要な確認習慣とは</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-13-gakushu.html" class="flex items-center justify-between p-4 bg-wa-bg rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">ChatGPTは何を学習しているのか、正しく知っておくべきこと</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-14-rule.html" class="flex items-center justify-between p-4 bg-wa-bg rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">社内でAIを安全に使うためのルール設計の基本</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-15-tayori-sugiru.html" class="flex items-center justify-between p-4 bg-wa-bg rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">「AIに頼りすぎる」への正しい向き合い方、人間が判断すべき場面とは</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STEP 4 -->
+    <section id="step4" class="py-16 bg-wa-bg border-b border-wa-border scroll-mt-24">
+        <div class="max-w-[860px] mx-auto px-6">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-14 h-14 rounded-full bg-wa-brand text-white flex items-center justify-center font-bold text-2xl flex-shrink-0">4</div>
+                <div>
+                    <p class="text-wa-gold font-bold text-sm tracking-widest mb-0.5">STEP 4</p>
+                    <h2 class="font-serif text-2xl md:text-3xl font-bold text-wa-text">具体的な使い方</h2>
+                </div>
+            </div>
+            <p class="text-wa-gray leading-relaxed mb-8 ml-0 md:ml-[4.5rem]">
+                実際に業務で試せる使い方を具体的に解説します。プロンプトのテンプレートや手順を含め、すぐに試せる形でお伝えします。
+            </p>
+            <div class="space-y-3 ml-0 md:ml-[4.5rem]">
+                <a href="news/ai-16-gijiroku.html" class="flex items-center justify-between p-4 bg-white rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">議事録をChatGPTで5分で作る、コピペで使えるプロンプト集</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-17-mail.html" class="flex items-center justify-between p-4 bg-white rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">お礼・お断りメールをAIに任せる方法（テンプレート付き）</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-18-renraku.html" class="flex items-center justify-between p-4 bg-white rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">スタッフへの連絡文・お知らせをAIで素早く作る手順</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-19-prompt.html" class="flex items-center justify-between p-4 bg-white rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">AIへの「いい質問」の仕方、初めてのプロンプト作成入門</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-20-kaigi.html" class="flex items-center justify-between p-4 bg-white rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">会議の事前準備・アジェンダ作成をAIにやってもらう方法</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STEP 5 -->
+    <section id="step5" class="py-16 bg-white border-b border-wa-border scroll-mt-24">
+        <div class="max-w-[860px] mx-auto px-6">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-14 h-14 rounded-full bg-wa-brand text-white flex items-center justify-center font-bold text-2xl flex-shrink-0">5</div>
+                <div>
+                    <p class="text-wa-gold font-bold text-sm tracking-widest mb-0.5">STEP 5</p>
+                    <h2 class="font-serif text-2xl md:text-3xl font-bold text-wa-text">研修・社内展開</h2>
+                </div>
+            </div>
+            <p class="text-wa-gray leading-relaxed mb-8 ml-0 md:ml-[4.5rem]">
+                自分だけでなくチーム全体にAIを広げたい方へ。研修の設計から社内フォローアップの方法まで解説します。
+            </p>
+            <div class="space-y-3 ml-0 md:ml-[4.5rem]">
+                <a href="news/ai-21-curriculum.html" class="flex items-center justify-between p-4 bg-wa-bg rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">社内AI研修で失敗しないカリキュラムの作り方</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-22-shokai.html" class="flex items-center justify-between p-4 bg-wa-bg rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">初回AI研修で必ず伝えるべき5つのこと</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-23-followup.html" class="flex items-center justify-between p-4 bg-wa-bg rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">研修後のフォローアップをどう設計するか、3ヶ月で定着させる方法</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-24-jukuredo.html" class="flex items-center justify-between p-4 bg-wa-bg rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">スタッフのAI習熟度を確認する方法と、次のステップの決め方</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-25-kakusa.html" class="flex items-center justify-between p-4 bg-wa-bg rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">「使える人」と「使えない人」に分かれる理由と、格差をなくすアプローチ</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STEP 6 -->
+    <section id="step6" class="py-16 bg-wa-bg border-b border-wa-border scroll-mt-24">
+        <div class="max-w-[860px] mx-auto px-6">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-14 h-14 rounded-full bg-wa-gold text-white flex items-center justify-center font-bold text-2xl flex-shrink-0">6</div>
+                <div>
+                    <p class="text-wa-gold font-bold text-sm tracking-widest mb-0.5">STEP 6</p>
+                    <h2 class="font-serif text-2xl md:text-3xl font-bold text-wa-text">定着・習慣化・文化づくり</h2>
+                </div>
+            </div>
+            <p class="text-wa-gray leading-relaxed mb-8 ml-0 md:ml-[4.5rem]">
+                研修で終わらせず、AIを組織の当たり前にするために。続けられるチームを作るための考え方と実践を紹介します。
+            </p>
+            <div class="space-y-3 ml-0 md:ml-[4.5rem]">
+                <a href="news/ai-26-nichijo.html" class="flex items-center justify-between p-4 bg-white rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">AIを「特別なツール」から「日常業務」に変えるための習慣化のコツ</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-27-shounin.html" class="flex items-center justify-between p-4 bg-white rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">少人数チームでAIを定着させるための現実的なアプローチ</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-28-keieisha.html" class="flex items-center justify-between p-4 bg-white rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">経営者がAI活用を「自分ごと」にするための最初のステップ</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-29-chigai.html" class="flex items-center justify-between p-4 bg-white rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">AIを使い続けるチームと使わなくなるチームの違い</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+                <a href="news/ai-30-mirai.html" class="flex items-center justify-between p-4 bg-white rounded-wa border border-wa-border hover:border-wa-brand hover:shadow-md transition-all group">
+                    <span class="text-wa-text group-hover:text-wa-brand transition-colors leading-snug text-[15px]">AI活用が社内文化に根付いた時に起きること、その先の可能性</span>
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-wa-border group-hover:text-wa-brand flex-shrink-0 ml-3 transition-colors"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- プロフィール -->
+    <section class="py-16 bg-white border-b border-wa-border">
+        <div class="max-w-[860px] mx-auto px-6">
+            <div class="text-center mb-8">
+                <p class="text-wa-brand font-bold tracking-widest text-sm mb-2">ABOUT</p>
+                <h2 class="font-serif text-2xl md:text-3xl font-bold text-wa-text">なぜ私が、AIを教えられるのか</h2>
+            </div>
+
+            <div class="bg-wa-bg rounded-wa p-6 md:p-10 border border-wa-border">
+                <!-- 共感リード -->
+                <div class="border-l-4 border-wa-brand pl-5 mb-8">
+                    <p class="text-wa-text leading-relaxed text-base md:text-lg">
+                        「難しそう」「自分には無理かも」「何から始めればいいか分からない」——<br>
+                        この言葉を、私は<strong>200回以上</strong>、現場で聞いてきました。<br class="hidden md:block">
+                        だから、あなたの気持ちが分かります。
+                    </p>
+                </div>
+
+                <!-- アイコン＋名前 -->
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 rounded-full bg-wa-brand flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="user" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold text-wa-text text-lg">木村 拓隆</p>
+                        <p class="text-wa-gray text-sm">BuildMate代表・AI活用コンシェルジュ</p>
+                    </div>
+                </div>
+
+                <!-- 経歴説明 -->
+                <div class="text-wa-gray leading-relaxed text-[15px] mb-8 space-y-4">
+                    <p>元・施工管理として1,200件以上の現場を経験した後、SaaS企業にて業務効率化ツールの導入支援に従事。200社以上の中小企業に対し、初期設定から社員研修・定着フォローまでを一貫して担当してきました。</p>
+                    <p>その経験の中で気づいたことがあります。<strong class="text-wa-text">「使い方を教えることは、誰にでもできる」</strong>ということです。難しいのは、現場と一緒に壁にぶつかり、試行錯誤しながら乗り越えていく——<strong class="text-wa-text">「伴走」の姿勢</strong>です。それができる人間は、実はそう多くありません。</p>
+                    <p>AIも同じです。理論を語るより、あなたの現場に入り込んで一緒に動かしていく。その<strong class="text-wa-text">伴走の関係</strong>を、BuildMateは大切にしています。</p>
+                </div>
+
+                <!-- 実績バッジ -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-2">
+                    <div class="bg-white rounded-wa p-4 border border-wa-border text-center">
+                        <p class="text-3xl font-serif font-bold text-wa-brand mb-1">200<span class="text-lg">社以上</span></p>
+                        <p class="text-xs text-wa-gray">SaaS導入支援実績<br>（販売・研修・アフターフォロー）</p>
+                    </div>
+                    <div class="bg-white rounded-wa p-4 border border-wa-border text-center">
+                        <p class="text-3xl font-serif font-bold text-wa-brand mb-1">1,200<span class="text-lg">件以上</span></p>
+                        <p class="text-xs text-wa-gray">施工管理の現場経験<br>（現場の実態を熟知）</p>
+                    </div>
+                    <div class="bg-white rounded-wa p-4 border border-wa-border text-center">
+                        <p class="text-3xl font-serif font-bold text-wa-brand mb-1">全国<span class="text-lg">対応</span></p>
+                        <p class="text-xs text-wa-gray">関西拠点・オンライン対応<br>（業種・規模問わず）</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-wa-brand text-white text-center">
+        <div class="max-w-[700px] mx-auto px-6">
+            <p class="text-wa-gold font-bold tracking-widest text-sm mb-4">FREE CONSULTATION</p>
+            <h2 class="font-serif text-2xl md:text-3xl font-bold mb-4 leading-snug">
+                「うちの業種でも使えますか？」<br>まずは気軽にご相談ください
+            </h2>
+            <p class="text-white/80 leading-relaxed mb-8 text-base md:text-lg">
+                AIに詳しくなくても、相談内容が未整理でも大丈夫です。<br>
+                現状のお話を聞いてから、何から始めるかを一緒に整理します。<br>
+                勧誘・営業は一切行いません。
+            </p>
+            <a href="contact.html" class="inline-flex items-center gap-2 px-10 py-4 bg-white text-wa-brand rounded-wa font-bold text-lg hover:opacity-90 transition-all shadow-lg">
+                <i data-lucide="mail" class="w-5 h-5"></i>無料相談に申し込む
+            </a>
+            <p class="mt-4 text-white/50 text-sm">オンライン対応・全国どこからでもOK</p>
+        </div>
+    </section>
+
+</main>
+
+<footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
+    <div class="max-w-[1080px] mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-white/60 text-sm">
+                Copyright © 2026 BuildMate. All rights reserved.
+            </div>
+            <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
+                <a href="privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                <a href="terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                <a href="law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>lucide.createIcons();</script>
+<script>
+function closeMobileMenu() {
+    const m = document.getElementById('mobile-menu');
+    m.style.display = 'none';
+    document.body.style.overflow = '';
+}
+document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+    const m = document.getElementById('mobile-menu');
+    m.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+});
+</script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="seigaiha.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【工務店専用】Google環境で始めるGAS活用事例集 | BuildMate</title>
+    <link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/gas.html">
+    <meta name="description" content="工務店・建設業向けのGAS活用事例集。スプレッドシート、Googleフォーム、Gmailなど今あるGoogle環境を使って、顧客対応やアフター業務を低コストで自動化できます。">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="【工務店専用】Google環境で始めるGAS活用事例集 | BuildMate">
+    <meta property="og:description" content="今あるGoogle環境を使って、顧客対応やアフター業務を低コストで自動化できるGAS活用事例10種を無料公開しています。">
+    <meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/gas.html">
+    <meta property="og:site_name" content="BuildMate">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="【工務店専用】Google環境で始めるGAS活用事例集 | BuildMate">
+    <meta name="twitter:description" content="今あるGoogle環境を使って、顧客対応やアフター業務を低コストで自動化できるGAS活用事例10種を無料公開しています。">
+
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5ECF52MHF6');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        serif: ['"Noto Serif JP"', 'serif'],
+                    },
+                    colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8', code: '#1A2838', highlight: '#B99745' } }, borderRadius: { 'wa': '12px' }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background-color: #F7F2EA; color: #1F2933; -webkit-font-smoothing: antialiased; letter-spacing: 0.03em; }
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .btn-clicked { animation: pop 0.2s ease; background-color: #24324A !important; border-color: #24324A !important; color: white !important; }
+        pre::-webkit-scrollbar { height: 8px; }
+        pre::-webkit-scrollbar-track { background: #4b5563; border-radius: 4px; }
+        pre::-webkit-scrollbar-thumb { background: #9ca3af; border-radius: 4px; }
+        pre::-webkit-scrollbar-thumb:hover { background: #d1d5db; }
+        .level-basic { background-color: #dcfce7; color: #166534; }
+        .level-advanced { background-color: #dbeafe; color: #1e40af; }
+        .level-pro { background-color: #fce7f3; color: #9d174d; }
+        .gift-badge {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.72rem 1.45rem 0.68rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(185, 151, 69, 0.55);
+            background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(247,242,234,0.96));
+            color: #24324A;
+            box-shadow: 0 10px 24px -18px rgba(31,42,68,0.35), inset 0 1px 0 rgba(255,255,255,0.95);
+            letter-spacing: 0.18em;
+        }
+        .gift-badge::before {
+            content: '';
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 9999px;
+            background: #B99745;
+            box-shadow: 0 0 0 4px rgba(185,151,69,0.12);
+        }
+        .feature-cta-card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(247,242,234,0.92));
+            border: 1px solid rgba(212,202,184,0.9);
+            box-shadow: 0 24px 48px -32px rgba(31,41,51,0.28);
+        }
+        .btn-accent {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), box-shadow 0.28s cubic-bezier(0.22,1,0.36,1), background-color 0.2s ease;
+            will-change: transform, box-shadow;
+        }
+        .btn-accent::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -72%;
+            width: 44%;
+            background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.08) 38%, rgba(255,255,255,0.3) 50%, transparent 62%);
+            transform: skewX(-18deg);
+            transition: left 0.55s ease;
+            pointer-events: none;
+        }
+        .btn-accent:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 18px 34px -18px rgba(31,41,51,0.42);
+        }
+        .btn-accent:hover::before { left: 128%; }
+        .btn-accent i { transition: transform 0.28s cubic-bezier(0.22,1,0.36,1); }
+        .btn-accent:hover i { transform: translateX(4px); }
+        @media (prefers-reduced-motion: reduce) {
+            .btn-accent, .btn-accent::before { transition: none !important; animation: none !important; }
+            .btn-accent::before { display: none !important; }
+            .btn-accent:hover, .btn-accent:hover i { transform: none !important; }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+            <header class="border-wa-border transition-all border-b fixed w-full top-0 glass-nav z-50 duration-300 transition-all duration-300">
+        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+
+                <a href="index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
+                <a href="services.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">サービス・効果</a>
+                <a href="ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
+                <a href="diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+                <a href="gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
+                <a href="gas.html" class="text-wa-brand border-b-2 border-wa-brand font-bold flex items-center gap-1">GAS活用事例</a>
+                <a href="contact.html" class="btn-accent px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+<!-- モバイルメニュー -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
+    <a href="services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
+    <a href="ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
+    <a href="diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
+    <a href="gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
+    <a href="gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-active); font-weight:700; text-decoration:none;">GAS活用事例</a>
+    <a href="contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
+
+    <main class="pt-36 pb-24 px-6">
+
+        <!-- ヒーローセクション -->
+        <section class="text-center mb-20">
+            <span class="gift-badge text-xs font-bold mb-6">FREE CODE GIFT</span>
+            <h1 class="text-3xl md:text-5xl font-serif font-bold text-wa-text mb-8 leading-tight md:leading-[1.15]">
+                <span class="block md:whitespace-nowrap">いつものGoogleで、</span>
+                <span class="block md:whitespace-nowrap">仕事が自動で動き出す。</span>
+            </h1>
+            <p class="text-wa-gray max-w-3xl mx-auto leading-loose text-base md:text-lg">
+                <span class="block">難しいシステムの導入は不要です。</span>
+                <span class="block mt-2">スプレッドシート・Googleフォーム・Gmailなど、すでに使っているGoogleツールに</span>
+                <span class="block">コードを貼り付けるだけで、面倒な作業が自動化されます。</span>
+                <span class="block mt-4">工務店・建設業に特化した実務直結の自動化コード10種を無料公開します。</span>
+                <span class="block">低コストで始めやすく、アフターや顧客対応の抜け漏れ防止にもつながります。</span>
+            </p>
+        </section>
+
+        <!-- Google Apps Scriptとは？ -->
+        <section class="max-w-[800px] mx-auto mb-20">
+            <div class="bg-white rounded-wa shadow-lg border border-wa-border p-8 md:p-10">
+                <div class="flex items-center gap-4 mb-6 border-b border-wa-border pb-4">
+                    <div class="w-12 h-12 bg-wa-bg rounded-xl flex items-center justify-center text-wa-brand shadow-inner">
+                        <i data-lucide="info" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-wa-accent tracking-wider">まず知っておきたいこと</span>
+                        <h2 class="text-2xl font-bold text-wa-text font-serif">Google Apps Scriptとは？</h2>
+                    </div>
+                </div>
+
+                <div class="bg-wa-highlight/30 p-5 rounded-lg border border-yellow-200 mb-6">
+                    <p class="text-base text-wa-text leading-relaxed">
+                        <strong class="text-wa-brand block mb-2">一言で言うと：</strong>
+                        <span class="block">Googleスプレッドシートに「自動で動く指示」を書き込めるツールです。</span>
+                        <span class="block mt-2">費用は<strong>完全無料</strong>。必要なものは<strong>Googleアカウントだけ</strong>。コードはコピペするだけでOKです。</span>
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-4 mb-8">
+                    <div class="bg-wa-bg rounded-lg p-4 text-center border border-wa-border">
+                        <i data-lucide="badge-japanese-yen" class="w-8 h-8 text-wa-brand mx-auto mb-2"></i>
+                        <p class="font-bold text-wa-brand text-sm mb-1">費用</p>
+                        <p class="text-wa-text font-bold">完全無料</p>
+                    </div>
+                    <div class="bg-wa-bg rounded-lg p-4 text-center border border-wa-border">
+                        <i data-lucide="clock" class="w-8 h-8 text-wa-brand mx-auto mb-2"></i>
+                        <p class="font-bold text-wa-brand text-sm mb-1">設定時間</p>
+                        <p class="text-wa-text font-bold">約10〜30分</p>
+                    </div>
+                    <div class="bg-wa-bg rounded-lg p-4 text-center border border-wa-border">
+                        <i data-lucide="wrench" class="w-8 h-8 text-wa-brand mx-auto mb-2"></i>
+                        <p class="font-bold text-wa-brand text-sm mb-1">必要なもの</p>
+                        <p class="text-wa-text font-bold">Googleアカウントのみ</p>
+                    </div>
+                </div>
+
+                <p class="text-wa-gray text-base leading-loose mb-6">
+                    <span class="block">例えるなら、毎朝手動でやっている作業をGoogleが代わりにやってくれる仕組みです。</span>
+                    <span class="block mt-2">「お問い合わせが来たら自動でメールを送る」「1年後になったら担当者に通知する」といった</span>
+                    <span class="block"><strong class="text-wa-text">繰り返し作業をすべて自動化</strong>できます。</span>
+                    <span class="block mt-2">AIで文章を整え、GASで動かす組み合わせも相性抜群です。</span>
+                </p>
+
+                <div class="bg-wa-brand/5 border border-wa-brand/20 rounded-lg p-5">
+                    <p class="font-bold text-wa-brand mb-3 text-sm flex items-center gap-2">
+                        <i data-lucide="play-circle" class="w-4 h-4"></i>
+                        基本的な使い方（3ステップ）
+                    </p>
+                    <ol class="space-y-2 text-sm text-wa-text">
+                        <li class="flex items-start gap-3">
+                            <span class="bg-wa-brand text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
+                            <span>Googleスプレッドシートを開き、メニューから「拡張機能」→「Apps Script」をクリック</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-wa-brand text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
+                            <span>下記のコードをコピーして、エディタ画面に貼り付けて保存（💾アイコン）</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-wa-brand text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span>
+                            <span>「トリガー」を設定して自動実行のタイミングを決める（時間・フォーム送信時など）</span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- こんなあるある -->
+        <section class="max-w-[800px] mx-auto mb-20">
+            <div class="bg-wa-accent/5 border border-wa-accent/20 rounded-wa p-8">
+                <h2 class="text-xl font-bold font-serif text-wa-text mb-6 text-center">こんなこと、ありませんか？</h2>
+                <div class="grid md:grid-cols-2 gap-3">
+                    <div class="flex items-start gap-3 bg-white rounded-lg p-3 border border-wa-border">
+                        <span class="text-wa-accent font-bold text-sm flex-shrink-0">□</span>
+                        <p class="text-base text-wa-text leading-relaxed">お問い合わせへの返信が翌日になってしまう</p>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white rounded-lg p-3 border border-wa-border">
+                        <span class="text-wa-accent font-bold text-sm flex-shrink-0">□</span>
+                        <p class="text-base text-wa-text leading-relaxed">引き渡しから1年後の点検連絡を忘れてしまう</p>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white rounded-lg p-3 border border-wa-border">
+                        <span class="text-wa-accent font-bold text-sm flex-shrink-0">□</span>
+                        <p class="text-base text-wa-text leading-relaxed">職人の日報をExcelに手打ちで集計している</p>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white rounded-lg p-3 border border-wa-border">
+                        <span class="text-wa-accent font-bold text-sm flex-shrink-0">□</span>
+                        <p class="text-base text-wa-text leading-relaxed">見積書をPDFにしてメール送信する作業が手間</p>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white rounded-lg p-3 border border-wa-border">
+                        <span class="text-wa-accent font-bold text-sm flex-shrink-0">□</span>
+                        <p class="text-base text-wa-text leading-relaxed">現場ごとの写真がドライブでバラバラになっている</p>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white rounded-lg p-3 border border-wa-border">
+                        <span class="text-wa-accent font-bold text-sm flex-shrink-0">□</span>
+                        <p class="text-base text-wa-text leading-relaxed">月末の経費・領収書整理に半日かかっている</p>
+                    </div>
+                </div>
+                <p class="text-center text-wa-brand font-bold mt-6 text-sm"><i data-lucide="arrow-down" class="w-4 h-4 inline-block mr-1"></i> これらはすべて、GASで自動化できます</p>
+            </div>
+        </section>
+
+        <!-- 難易度凡例 -->
+        <div class="max-w-[800px] mx-auto mb-10 flex flex-wrap gap-3 justify-center">
+            <span class="level-basic text-xs font-bold px-3 py-1.5 rounded-full"><i data-lucide="circle" class="w-3 h-3 fill-green-500 text-green-500 inline-block mr-1"></i> 基本編：設定10〜15分</span>
+            <span class="level-advanced text-xs font-bold px-3 py-1.5 rounded-full"><i data-lucide="circle" class="w-3 h-3 inline-block mr-1" style="fill:#24324A;color:#24324A"></i> 応用編：設定20〜30分</span>
+            <span class="level-pro text-xs font-bold px-3 py-1.5 rounded-full"><i data-lucide="circle" class="w-3 h-3 fill-red-400 text-red-400 inline-block mr-1"></i> 発展編：設定30〜60分</span>
+        </div>
+
+        <!-- 事例集 -->
+        <div class="max-w-[800px] mx-auto space-y-16">
+
+            <!-- GAS-001 -->
+            <div class="bg-white p-8 md:p-10 rounded-wa shadow-lg border border-wa-border">
+                <div class="flex items-center gap-4 mb-6 border-b border-wa-border pb-4">
+                    <div class="w-12 h-12 bg-wa-bg rounded-xl flex items-center justify-center text-wa-brand shadow-inner">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="level-basic text-xs font-bold px-2 py-0.5 rounded-full"><i data-lucide="circle" class="w-3 h-3 fill-green-500 text-green-500 inline-block mr-1"></i> 基本編</span>
+                            <span class="text-xs text-wa-gray">設定時間：約10分</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-wa-text font-serif">GAS-001. お問い合わせ自動お礼メール</h2>
+                    </div>
+                </div>
+                <div class="bg-wa-highlight/30 p-5 rounded-lg border border-yellow-200 mb-6">
+                    <p class="text-sm text-wa-text leading-relaxed">
+                        <strong class="text-wa-brand block mb-2 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> なぜ必要か</strong>
+                        問い合わせへの返信が翌日になるだけで、お客様は別の会社に問い合わせます。このスクリプトを設定すれば、フォーム送信と同時に自動でお礼メールが届き、「すぐに反応してくれる会社」という第一印象を与えられます。
+                    </p>
+                </div>
+                <div class="mb-4">
+                    <p class="text-xs font-bold text-wa-gray mb-2 flex items-center gap-1"><i data-lucide="settings" class="w-3 h-3"></i> カスタマイズ箇所（★マークの部分を変更）</p>
+                    <ul class="text-xs text-wa-gray space-y-1 bg-wa-bg rounded p-3">
+                        <li>・COMPANY_NAME：自社の会社名</li>
+                        <li>・SENDER_NAME：担当者名</li>
+                        <li>・REPLY_EMAIL：返信先のメールアドレス</li>
+                    </ul>
+                </div>
+                <div class="bg-wa-code text-gray-100 p-5 rounded-lg border border-wa-border mb-4 shadow-inner relative">
+                    <span class="absolute top-2 right-2 text-xs text-gray-500 font-mono">Google Apps Script</span>
+                    <pre class="whitespace-pre-wrap text-sm font-mono overflow-x-auto leading-relaxed" id="gas-001">// ★ここを自社情報に変更してください
+const COMPANY_NAME = '株式会社〇〇工務店';
+const SENDER_NAME = '担当者名';
+const REPLY_EMAIL = 'buildmate88@gmail.com';
+
+function sendThankYouMail() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const lastRow = sheet.getLastRow();
+  
+  // 最新の問い合わせを取得（A列：タイムスタンプ、B列：名前、C列：メール）
+  const name = sheet.getRange(lastRow, 2).getValue();
+  const email = sheet.getRange(lastRow, 3).getValue();
+  
+  if (!email) return; // メールアドレスがなければ終了
+  
+  const subject = `【${COMPANY_NAME}】お問い合わせありがとうございます`;
+  const body = `${name} 様
+
+この度は${COMPANY_NAME}へのお問い合わせありがとうございます。
+
+担当の${SENDER_NAME}より、2営業日以内にご連絡差し上げます。
+しばらくお待ちくださいますようお願いいたします。
+
+━━━━━━━━━━━━━━━━━━━━━━
+${COMPANY_NAME}
+担当：${SENDER_NAME}
+メール：${REPLY_EMAIL}
+━━━━━━━━━━━━━━━━━━━━━━`;
+
+  GmailApp.sendEmail(email, subject, body, {
+    replyTo: REPLY_EMAIL,
+    name: COMPANY_NAME
+  });
+  
+  // 送信済みフラグをD列に記録
+  sheet.getRange(lastRow, 4).setValue('送信済み');
+}
+
+// トリガー設定：フォーム送信時にこの関数を実行してください</pre>
+                </div>
+                <button onclick="copyCode('gas-001', this)" class="flex items-center gap-2 px-5 py-2.5 border-2 border-wa-brand text-wa-brand rounded-md text-sm font-bold hover:bg-wa-brand hover:text-white transition-all">
+                    <i data-lucide="copy" class="w-4 h-4"></i> コードをコピー
+                </button>
+            </div>
+
+            <!-- GAS-002 -->
+            <div class="bg-white p-8 md:p-10 rounded-wa shadow-lg border border-wa-border">
+                <div class="flex items-center gap-4 mb-6 border-b border-wa-border pb-4">
+                    <div class="w-12 h-12 bg-wa-bg rounded-xl flex items-center justify-center text-wa-brand shadow-inner">
+                        <i data-lucide="bell" class="w-6 h-6"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="level-basic text-xs font-bold px-2 py-0.5 rounded-full"><i data-lucide="circle" class="w-3 h-3 fill-green-500 text-green-500 inline-block mr-1"></i> 基本編</span>
+                            <span class="text-xs text-wa-gray">設定時間：約15分</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-wa-text font-serif">GAS-002. OB顧客1年点検リマインダー</h2>
+                    </div>
+                </div>
+                <div class="bg-wa-highlight/30 p-5 rounded-lg border border-yellow-200 mb-6">
+                    <p class="text-sm text-wa-text leading-relaxed">
+                        <strong class="text-wa-brand block mb-2 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> なぜ必要か</strong>
+                        引き渡しから1年後・3年後・5年後の点検連絡を忘れることは「売りっぱなし」の典型例です。スプレッドシートに引き渡し日を入力しておくだけで、担当者のGmailに自動通知が届きます。紹介受注の基盤を自動でつくります。
+                    </p>
+                </div>
+                <div class="mb-4">
+                    <p class="text-xs font-bold text-wa-gray mb-2 flex items-center gap-1"><i data-lucide="settings" class="w-3 h-3"></i> スプレッドシートの列構成</p>
+                    <ul class="text-xs text-wa-gray space-y-1 bg-wa-bg rounded p-3">
+                        <li>・A列：顧客名　B列：引き渡し日（例：2024/04/01）　C列：担当者メール</li>
+                    </ul>
+                </div>
+                <div class="bg-wa-code text-gray-100 p-5 rounded-lg border border-wa-border mb-4 shadow-inner relative">
+                    <span class="absolute top-2 right-2 text-xs text-gray-500 font-mono">Google Apps Script</span>
+                    <pre class="whitespace-pre-wrap text-sm font-mono overflow-x-auto leading-relaxed" id="gas-002">// ★ここを自社情報に変更してください
+const COMPANY_NAME_002 = '株式会社〇〇工務店';
+// 通知するタイミング（引き渡しから何年後か）
+const REMIND_YEARS = [1, 3, 5];
+// 何日前から通知するか
+const DAYS_BEFORE = 7;
+
+function checkObReminders() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const lastRow = sheet.getLastRow();
+  const today = new Date();
+  
+  for (let i = 2; i <= lastRow; i++) {
+    const customerName = sheet.getRange(i, 1).getValue();
+    const deliveryDate = new Date(sheet.getRange(i, 2).getValue());
+    const staffEmail = sheet.getRange(i, 3).getValue();
+    
+    if (!customerName || !deliveryDate || !staffEmail) continue;
+    
+    for (const year of REMIND_YEARS) {
+      const targetDate = new Date(deliveryDate);
+      targetDate.setFullYear(targetDate.getFullYear() + year);
+      
+      // 対象日の7日前〜当日に通知
+      const diffDays = Math.floor((targetDate - today) / (1000 * 60 * 60 * 24));
+      
+      if (diffDays >= 0 && diffDays <= DAYS_BEFORE) {
+        const subject = `【${COMPANY_NAME_002}】${customerName}様 引き渡し${year}年点検のご連絡時期です`;
+        const body = `${customerName}様の引き渡しから${year}年が経過します（${targetDate.toLocaleDateString('ja-JP')}）。
+
+点検・フォローのご連絡をお忘れなく。
+
+顧客情報をスプレッドシートで確認してください。`;
+        
+        GmailApp.sendEmail(staffEmail, subject, body);
+      }
+    }
+  }
+}
+
+// トリガー設定：毎日午前8時に実行するよう設定してください</pre>
+                </div>
+                <button onclick="copyCode('gas-002', this)" class="flex items-center gap-2 px-5 py-2.5 border-2 border-wa-brand text-wa-brand rounded-md text-sm font-bold hover:bg-wa-brand hover:text-white transition-all">
+                    <i data-lucide="copy" class="w-4 h-4"></i> コードをコピー
+                </button>
+            </div>
+
+            <!-- GAS-003 -->
+            <div class="bg-white p-8 md:p-10 rounded-wa shadow-lg border border-wa-border">
+                <div class="flex items-center gap-4 mb-6 border-b border-wa-border pb-4">
+                    <div class="w-12 h-12 bg-wa-bg rounded-xl flex items-center justify-center text-wa-brand shadow-inner">
+                        <i data-lucide="clipboard-list" class="w-6 h-6"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="level-basic text-xs font-bold px-2 py-0.5 rounded-full"><i data-lucide="circle" class="w-3 h-3 fill-green-500 text-green-500 inline-block mr-1"></i> 基本編</span>
+                            <span class="text-xs text-wa-gray">設定時間：約15分</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-wa-text font-serif">GAS-003. 職人日報フォーム→自動集計・週次レポート</h2>
+                    </div>
+                </div>
+                <div class="bg-wa-highlight/30 p-5 rounded-lg border border-yellow-200 mb-6">
+                    <p class="text-sm text-wa-text leading-relaxed">
+                        <strong class="text-wa-brand block mb-2 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> なぜ必要か</strong>
+                        職人がGoogleフォームで日報を入力するだけで、スプレッドシートに自動集計され、毎週月曜の朝に週次レポートが届きます。夜中に日報を手打ちする作業がなくなり、現場監督の残業時間が削減されます。
+                    </p>
+                </div>
+                <div class="bg-wa-code text-gray-100 p-5 rounded-lg border border-wa-border mb-4 shadow-inner relative">
+                    <span class="absolute top-2 right-2 text-xs text-gray-500 font-mono">Google Apps Script</span>
+                    <pre class="whitespace-pre-wrap text-sm font-mono overflow-x-auto leading-relaxed" id="gas-003">// ★ここを自社情報に変更してください
+const MANAGER_EMAIL = 'buildmate88@gmail.com';
+const COMPANY_NAME_003 = '株式会社〇〇工務店';
+
+function sendWeeklyReport() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const lastRow = sheet.getLastRow();
+  
+  // 今週の月曜日を取得
+  const today = new Date();
+  const monday = new Date(today);
+  monday.setDate(today.getDate() - today.getDay() + 1);
+  monday.setHours(0, 0, 0, 0);
+  
+  let reportBody = `${COMPANY_NAME_003} 週次作業レポート\n`;
+  reportBody += `対象期間：${monday.toLocaleDateString('ja-JP')} 〜 ${today.toLocaleDateString('ja-JP')}\n`;
+  reportBody += `━━━━━━━━━━━━━━━━━━━━━━\n\n`;
+  
+  let count = 0;
+  for (let i = 2; i <= lastRow; i++) {
+    const timestamp = new Date(sheet.getRange(i, 1).getValue());
+    if (timestamp >= monday) {
+      const worker = sheet.getRange(i, 2).getValue();   // 職人名
+      const site = sheet.getRange(i, 3).getValue();     // 現場名
+      const work = sheet.getRange(i, 4).getValue();     // 作業内容
+      const progress = sheet.getRange(i, 5).getValue(); // 進捗状況
+      
+      reportBody += `【${timestamp.toLocaleDateString('ja-JP')}】\n`;
+      reportBody += `担当：${worker} / 現場：${site}\n`;
+      reportBody += `作業内容：${work}\n`;
+      reportBody += `進捗：${progress}\n\n`;
+      count++;
+    }
+  }
+  
+  reportBody += `━━━━━━━━━━━━━━━━━━━━━━\n`;
+  reportBody += `今週の日報件数：${count}件`;
+  
+  GmailApp.sendEmail(
+    MANAGER_EMAIL,
+    `【${COMPANY_NAME_003}】週次作業レポート`,
+    reportBody
+  );
+}
+
+// トリガー設定：毎週月曜日の午前8時に実行してください</pre>
+                </div>
+                <button onclick="copyCode('gas-003', this)" class="flex items-center gap-2 px-5 py-2.5 border-2 border-wa-brand text-wa-brand rounded-md text-sm font-bold hover:bg-wa-brand hover:text-white transition-all">
+                    <i data-lucide="copy" class="w-4 h-4"></i> コードをコピー
+                </button>
+            </div>
+
+            <!-- GAS-004 -->
+            <div class="bg-white p-8 md:p-10 rounded-wa shadow-lg border border-wa-border">
+                <div class="flex items-center gap-4 mb-6 border-b border-wa-border pb-4">
+                    <div class="w-12 h-12 bg-wa-bg rounded-xl flex items-center justify-center text-wa-brand shadow-inner">
+                        <i data-lucide="file-text" class="w-6 h-6"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="level-advanced text-xs font-bold px-2 py-0.5 rounded-full"><i data-lucide="circle" class="w-3 h-3 inline-block mr-1" style="fill:#24324A;color:#24324A"></i> 応用編</span>
+                            <span class="text-xs text-wa-gray">設定時間：約20分</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-wa-text font-serif">GAS-004. 見積書PDF自動生成・メール送信</h2>
+                    </div>
+                </div>
+                <div class="bg-wa-highlight/30 p-5 rounded-lg border border-yellow-200 mb-6">
+                    <p class="text-sm text-wa-text leading-relaxed">
+                        <strong class="text-wa-brand block mb-2 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> なぜ必要か</strong>
+                        スプレッドシートで作った見積書をボタン1つでPDF化してお客様にメール送信します。製本・郵送の手間と印刷コストをゼロにできます。
+                    </p>
+                </div>
+                <div class="bg-wa-code text-gray-100 p-5 rounded-lg border border-wa-border mb-4 shadow-inner relative">
+                    <span class="absolute top-2 right-2 text-xs text-gray-500 font-mono">Google Apps Script</span>
+                    <pre class="whitespace-pre-wrap text-sm font-mono overflow-x-auto leading-relaxed" id="gas-004">// ★ここを自社情報に変更してください
+const COMPANY_NAME_004 = '株式会社〇〇工務店';
+const SENDER_EMAIL_004 = 'buildmate88@gmail.com';
+const SENDER_NAME_004 = '担当者名';
+
+function sendEstimatePdf() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = ss.getActiveSheet();
+  
+  // ★スプレッドシートのセル位置に合わせて変更してください
+  const customerName = sheet.getRange('B2').getValue(); // 顧客名
+  const customerEmail = sheet.getRange('B3').getValue(); // 顧客メール
+  const estimateNo = sheet.getRange('B4').getValue();    // 見積番号
+  const totalAmount = sheet.getRange('B20').getValue();  // 合計金額
+  
+  if (!customerEmail) {
+    SpreadsheetApp.getUi().alert('顧客のメールアドレスを入力してください。');
+    return;
+  }
+  
+  // スプレッドシート全体をPDF化
+  const url = `https://docs.google.com/spreadsheets/d/${ss.getId()}/export?format=pdf&size=A4&portrait=true&fitw=true`;
+  const token = ScriptApp.getOAuthToken();
+  const response = UrlFetchApp.fetch(url, {
+    headers: { Authorization: `Bearer ${token}` }
+  });
+  const pdfBlob = response.getBlob().setName(`見積書_${estimateNo}.pdf`);
+  
+  const subject = `【${COMPANY_NAME_004}】見積書のご送付（見積番号：${estimateNo}）`;
+  const body = `${customerName} 様
+
+お世話になっております。
+${COMPANY_NAME_004}の${SENDER_NAME_004}です。
+
+ご依頼いただきました件について、見積書をお送りいたします。
+添付PDFをご確認ください。
+
+ご不明な点がございましたら、お気軽にご連絡ください。
+
+━━━━━━━━━━━━━━━━━━━━━━
+${COMPANY_NAME_004}
+担当：${SENDER_NAME_004}
+メール：${SENDER_EMAIL_004}
+━━━━━━━━━━━━━━━━━━━━━━`;
+  
+  GmailApp.sendEmail(customerEmail, subject, body, {
+    attachments: [pdfBlob],
+    name: COMPANY_NAME_004,
+    replyTo: SENDER_EMAIL_004
+  });
+  
+  SpreadsheetApp.getUi().alert(`${customerName}様にPDFを送信しました。`);
+}
+
+// スプレッドシートにボタンを作り、このスクリプトを割り当ててください</pre>
+                </div>
+                <button onclick="copyCode('gas-004', this)" class="flex items-center gap-2 px-5 py-2.5 border-2 border-wa-brand text-wa-brand rounded-md text-sm font-bold hover:bg-wa-brand hover:text-white transition-all">
+                    <i data-lucide="copy" class="w-4 h-4"></i> コードをコピー
+                </button>
+            </div>
+
+            <!-- GAS-005 -->
+            <div class="bg-white p-8 md:p-10 rounded-wa shadow-lg border border-wa-border">
+                <div class="flex items-center gap-4 mb-6 border-b border-wa-border pb-4">
+                    <div class="w-12 h-12 bg-wa-bg rounded-xl flex items-center justify-center text-wa-brand shadow-inner">
+                        <i data-lucide="folder" class="w-6 h-6"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="level-advanced text-xs font-bold px-2 py-0.5 rounded-full"><i data-lucide="circle" class="w-3 h-3 inline-block mr-1" style="fill:#24324A;color:#24324A"></i> 応用編</span>
+                            <span class="text-xs text-wa-gray">設定時間：約20分</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-wa-text font-serif">GAS-005. 現場写真の自動フォルダ振り分け</h2>
+                    </div>
+                </div>
+                <div class="bg-wa-highlight/30 p-5 rounded-lg border border-yellow-200 mb-6">
+                    <p class="text-sm text-wa-text leading-relaxed">
+                        <strong class="text-wa-brand block mb-2 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> なぜ必要か</strong>
+                        Googleドライブの指定フォルダに写真をアップするだけで、現場名・日付ごとのフォルダに自動整理されます。「あの写真どこだっけ？」という時間の無駄をなくします。
+                    </p>
+                </div>
+                <div class="bg-wa-code text-gray-100 p-5 rounded-lg border border-wa-border mb-4 shadow-inner relative">
+                    <span class="absolute top-2 right-2 text-xs text-gray-500 font-mono">Google Apps Script</span>
+                    <pre class="whitespace-pre-wrap text-sm font-mono overflow-x-auto leading-relaxed" id="gas-005">// ★ここを変更してください
+// 写真をアップするメインフォルダのID（DriveのURLの/folders/の後の部分）
+const SOURCE_FOLDER_ID = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+// 整理済みフォルダのID
+const ARCHIVE_FOLDER_ID = 'yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy';
+
+function organizePhotos() {
+  const sourceFolder = DriveApp.getFolderById(SOURCE_FOLDER_ID);
+  const archiveFolder = DriveApp.getFolderById(ARCHIVE_FOLDER_ID);
+  const files = sourceFolder.getFiles();
+  
+  while (files.hasNext()) {
+    const file = files.next();
+    const fileName = file.getName();
+    const createdDate = file.getDateCreated();
+    
+    // 日付フォルダ名を作成（例：2026-04-07）
+    const dateStr = Utilities.formatDate(createdDate, 'Asia/Tokyo', 'yyyy-MM-dd');
+    
+    // ファイル名から現場名を取得（ファイル名の先頭に「現場名_」を付けるルール）
+    // 例：「〇〇邸_外壁.jpg」→「〇〇邸」フォルダに振り分け
+    const siteName = fileName.includes('_') ? fileName.split('_')[0] : '未分類';
+    
+    // 現場名フォルダを作成または取得
+    let siteFolder;
+    const siteFolders = archiveFolder.getFoldersByName(siteName);
+    if (siteFolders.hasNext()) {
+      siteFolder = siteFolders.next();
+    } else {
+      siteFolder = archiveFolder.createFolder(siteName);
+    }
+    
+    // 日付フォルダを作成または取得
+    let dateFolder;
+    const dateFolders = siteFolder.getFoldersByName(dateStr);
+    if (dateFolders.hasNext()) {
+      dateFolder = dateFolders.next();
+    } else {
+      dateFolder = siteFolder.createFolder(dateStr);
+    }
+    
+    // ファイルを移動
+    file.moveTo(dateFolder);
+  }
+  
+  Logger.log('写真の整理が完了しました');
+}
+
+// トリガー設定：毎日深夜に実行するよう設定してください</pre>
+                </div>
+                <button onclick="copyCode('gas-005', this)" class="flex items-center gap-2 px-5 py-2.5 border-2 border-wa-brand text-wa-brand rounded-md text-sm font-bold hover:bg-wa-brand hover:text-white transition-all">
+                    <i data-lucide="copy" class="w-4 h-4"></i> コードをコピー
+                </button>
+            </div>
+
+            <!-- GAS-006 -->
+            <div class="bg-white p-8 md:p-10 rounded-wa shadow-lg border border-wa-border">
+                <div class="flex items-center gap-4 mb-6 border-b border-wa-border pb-4">
+                    <div class="w-12 h-12 bg-wa-bg rounded-xl flex items-center justify-center text-wa-brand shadow-inner">
+                        <i data-lucide="send" class="w-6 h-6"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="level-advanced text-xs font-bold px-2 py-0.5 rounded-full"><i data-lucide="circle" class="w-3 h-3 inline-block mr-1" style="fill:#24324A;color:#24324A"></i> 応用編</span>
+                            <span class="text-xs text-wa-gray">設定時間：約20分</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-wa-text font-serif">GAS-006. 協力業者への発注連絡自動化</h2>
+                    </div>
+                </div>
+                <div class="bg-wa-highlight/30 p-5 rounded-lg border border-yellow-200 mb-6">
+                    <p class="text-sm text-wa-text leading-relaxed">
+                        <strong class="text-wa-brand block mb-2 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> なぜ必要か</strong>
+                        スプレッドシートに発注内容を入力してボタンを押すだけで、協力業者に自動でメール送信されます。FAXとの決別、「言った言わない」の解消につながります。
+                    </p>
+                </div>
+                <div class="bg-wa-code text-gray-100 p-5 rounded-lg border border-wa-border mb-4 shadow-inner relative">
+                    <span class="absolute top-2 right-2 text-xs text-gray-500 font-mono">Google Apps Script</span>
+                    <pre class="whitespace-pre-wrap text-sm font-mono overflow-x-auto leading-relaxed" id="gas-006">// ★ここを自社情報に変更してください
+const COMPANY_NAME_006 = '株式会社〇〇工務店';
+const SENDER_EMAIL_006 = 'buildmate88@gmail.com';
+
+function sendOrderEmail() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  
+  // ★スプレッドシートのセル位置に合わせて変更してください
+  const vendorName = sheet.getRange('B2').getValue();    // 業者名
+  const vendorEmail = sheet.getRange('B3').getValue();   // 業者メール
+  const siteName = sheet.getRange('B4').getValue();      // 現場名
+  const workDate = sheet.getRange('B5').getValue();      // 作業日
+  const workContent = sheet.getRange('B6').getValue();   // 作業内容
+  const workers = sheet.getRange('B7').getValue();       // 人数
+  const notes = sheet.getRange('B8').getValue();         // 備考
+  
+  if (!vendorEmail) {
+    SpreadsheetApp.getUi().alert('業者のメールアドレスを入力してください。');
+    return;
+  }
+  
+  const dateStr = workDate instanceof Date
+    ? Utilities.formatDate(workDate, 'Asia/Tokyo', 'yyyy年MM月dd日')
+    : workDate;
+  
+  const subject = `【${COMPANY_NAME_006}】作業依頼：${siteName}`;
+  const body = `${vendorName} 御中
+
+お世話になっております。
+${COMPANY_NAME_006}です。
+
+下記の通り作業をご依頼申し上げます。
+
+【現場名】${siteName}
+【作業日】${dateStr}
+【作業内容】${workContent}
+【人数】${workers}名
+【備考】${notes || 'なし'}
+
+ご確認の上、ご返信をお願いいたします。
+
+━━━━━━━━━━━━━━━━━━━━━━
+${COMPANY_NAME_006}
+メール：${SENDER_EMAIL_006}
+━━━━━━━━━━━━━━━━━━━━━━`;
+  
+  GmailApp.sendEmail(vendorEmail, subject, body, {
+    name: COMPANY_NAME_006,
+    replyTo: SENDER_EMAIL_006
+  });
+  
+  // 送信履歴を記録
+  sheet.getRange('B9').setValue(`送信済み：${new Date().toLocaleString('ja-JP')}`);
+  SpreadsheetApp.getUi().alert(`${vendorName}様に発注メールを送信しました。`);
+}
+
+// スプレッドシートにボタンを作り、このスクリプトを割り当ててください</pre>
+                </div>
+                <button onclick="copyCode('gas-006', this)" class="flex items-center gap-2 px-5 py-2.5 border-2 border-wa-brand text-wa-brand rounded-md text-sm font-bold hover:bg-wa-brand hover:text-white transition-all">
+                    <i data-lucide="copy" class="w-4 h-4"></i> コードをコピー
+                </button>
+            </div>
+
+            <!-- GAS-007 -->
+            <div class="bg-white p-8 md:p-10 rounded-wa shadow-lg border border-wa-border">
+                <div class="flex items-center gap-4 mb-6 border-b border-wa-border pb-4">
+                    <div class="w-12 h-12 bg-wa-bg rounded-xl flex items-center justify-center text-wa-brand shadow-inner">
+                        <i data-lucide="star" class="w-6 h-6"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="level-advanced text-xs font-bold px-2 py-0.5 rounded-full"><i data-lucide="circle" class="w-3 h-3 inline-block mr-1" style="fill:#24324A;color:#24324A"></i> 応用編</span>
+                            <span class="text-xs text-wa-gray">設定時間：約20分</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-wa-text font-serif">GAS-007. 工事完了アンケート自動送付</h2>
+                    </div>
+                </div>
+                <div class="bg-wa-highlight/30 p-5 rounded-lg border border-yellow-200 mb-6">
+                    <p class="text-sm text-wa-text leading-relaxed">
+                        <strong class="text-wa-brand block mb-2 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> なぜ必要か</strong>
+                        引き渡しから3日後に満足度アンケートを自動送付します。口コミ・紹介の仕組み化と、改善点の早期発見につながります。
+                    </p>
+                </div>
+                <div class="bg-wa-code text-gray-100 p-5 rounded-lg border border-wa-border mb-4 shadow-inner relative">
+                    <span class="absolute top-2 right-2 text-xs text-gray-500 font-mono">Google Apps Script</span>
+                    <pre class="whitespace-pre-wrap text-sm font-mono overflow-x-auto leading-relaxed" id="gas-007">// ★ここを自社情報に変更してください
+const COMPANY_NAME_007 = '株式会社〇〇工務店';
+const SENDER_EMAIL_007 = 'buildmate88@gmail.com';
+// ★GoogleフォームのURL（アンケートフォームを作成して貼り付けてください）
+const SURVEY_URL = 'https://forms.gle/xxxxxxxxxxxx';
+// 引き渡し後何日後に送付するか
+const DAYS_AFTER_DELIVERY = 3;
+
+function sendSurveyEmail() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const lastRow = sheet.getLastRow();
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  
+  for (let i = 2; i <= lastRow; i++) {
+    const customerName = sheet.getRange(i, 1).getValue();
+    const customerEmail = sheet.getRange(i, 2).getValue();
+    const deliveryDate = new Date(sheet.getRange(i, 3).getValue());
+    const surveySent = sheet.getRange(i, 4).getValue();
+    
+    if (!customerName || !customerEmail || surveySent === '送信済み') continue;
+    
+    deliveryDate.setHours(0, 0, 0, 0);
+    const diffDays = Math.floor((today - deliveryDate) / (1000 * 60 * 60 * 24));
+    
+    if (diffDays === DAYS_AFTER_DELIVERY) {
+      const subject = `【${COMPANY_NAME_007}】新居のご感想をお聞かせください`;
+      const body = `${customerName} 様
+
+先日はご引き渡しおめでとうございます。
+${COMPANY_NAME_007}でございます。
+
+新居での生活はいかがでしょうか？
+よりよいサービスのため、ご感想をお聞かせいただけますと幸いです。
+
+▼アンケートはこちら（所要時間：約3分）
+${SURVEY_URL}
+
+今後ともどうぞよろしくお願いいたします。
+
+━━━━━━━━━━━━━━━━━━━━━━
+${COMPANY_NAME_007}
+メール：${SENDER_EMAIL_007}
+━━━━━━━━━━━━━━━━━━━━━━`;
+      
+      GmailApp.sendEmail(customerEmail, subject, body);
+      sheet.getRange(i, 4).setValue('送信済み');
+    }
+  }
+}
+
+// トリガー設定：毎日午前9時に実行してください</pre>
+                </div>
+                <button onclick="copyCode('gas-007', this)" class="flex items-center gap-2 px-5 py-2.5 border-2 border-wa-brand text-wa-brand rounded-md text-sm font-bold hover:bg-wa-brand hover:text-white transition-all">
+                    <i data-lucide="copy" class="w-4 h-4"></i> コードをコピー
+                </button>
+            </div>
+
+            <!-- GAS-008 -->
+            <div class="bg-white p-8 md:p-10 rounded-wa shadow-lg border border-wa-border">
+                <div class="flex items-center gap-4 mb-6 border-b border-wa-border pb-4">
+                    <div class="w-12 h-12 bg-wa-bg rounded-xl flex items-center justify-center text-wa-brand shadow-inner">
+                        <i data-lucide="alert-triangle" class="w-6 h-6"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="level-advanced text-xs font-bold px-2 py-0.5 rounded-full"><i data-lucide="circle" class="w-3 h-3 inline-block mr-1" style="fill:#24324A;color:#24324A"></i> 応用編</span>
+                            <span class="text-xs text-wa-gray">設定時間：約20分</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-wa-text font-serif">GAS-008. 補助金申請期限アラート</h2>
+                    </div>
+                </div>
+                <div class="bg-wa-highlight/30 p-5 rounded-lg border border-yellow-200 mb-6">
+                    <p class="text-sm text-wa-text leading-relaxed">
+                        <strong class="text-wa-brand block mb-2 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> なぜ必要か</strong>
+                        補助金の締め切りを見逃すと、数百万円の機会損失になります。スプレッドシートに補助金情報を登録しておくと、1ヶ月前・1週間前に自動アラートが届きます。
+                    </p>
+                </div>
+                <div class="bg-wa-code text-gray-100 p-5 rounded-lg border border-wa-border mb-4 shadow-inner relative">
+                    <span class="absolute top-2 right-2 text-xs text-gray-500 font-mono">Google Apps Script</span>
+                    <pre class="whitespace-pre-wrap text-sm font-mono overflow-x-auto leading-relaxed" id="gas-008">// ★ここを変更してください
+const ALERT_EMAIL = 'buildmate88@gmail.com';
+const COMPANY_NAME_008 = '株式会社〇〇工務店';
+// 何日前にアラートを送るか（複数設定可能）
+const ALERT_DAYS = [30, 14, 7, 3, 1];
+
+function checkSubsidyDeadlines() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const lastRow = sheet.getLastRow();
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  
+  for (let i = 2; i <= lastRow; i++) {
+    const subsidyName = sheet.getRange(i, 1).getValue(); // 補助金名
+    const deadline = new Date(sheet.getRange(i, 2).getValue()); // 締め切り日
+    const maxAmount = sheet.getRange(i, 3).getValue();   // 最大補助額
+    const status = sheet.getRange(i, 4).getValue();      // ステータス
+    
+    if (!subsidyName || status === '申請済み' || status === '終了') continue;
+    
+    deadline.setHours(0, 0, 0, 0);
+    const diffDays = Math.floor((deadline - today) / (1000 * 60 * 60 * 24));
+    
+    if (ALERT_DAYS.includes(diffDays)) {
+      const subject = `【重要】${subsidyName} 締め切りまであと${diffDays}日`;
+      const body = `${COMPANY_NAME_008} 御中
+
+補助金の申請期限が迫っています。
+
+【補助金名】${subsidyName}
+【締め切り日】${Utilities.formatDate(deadline, 'Asia/Tokyo', 'yyyy年MM月dd日')}
+【残り日数】あと${diffDays}日
+【最大補助額】${maxAmount}
+
+早めの対応をお願いします。
+スプレッドシートで詳細を確認してください。`;
+      
+      GmailApp.sendEmail(ALERT_EMAIL, subject, body);
+    }
+  }
+}
+
+// スプレッドシートのA列：補助金名、B列：締め切り日、C列：最大補助額、D列：ステータス
+// トリガー設定：毎日午前8時に実行してください</pre>
+                </div>
+                <button onclick="copyCode('gas-008', this)" class="flex items-center gap-2 px-5 py-2.5 border-2 border-wa-brand text-wa-brand rounded-md text-sm font-bold hover:bg-wa-brand hover:text-white transition-all">
+                    <i data-lucide="copy" class="w-4 h-4"></i> コードをコピー
+                </button>
+            </div>
+
+            <!-- GAS-009 -->
+            <div class="bg-white p-8 md:p-10 rounded-wa shadow-lg border border-wa-border">
+                <div class="flex items-center gap-4 mb-6 border-b border-wa-border pb-4">
+                    <div class="w-12 h-12 bg-wa-bg rounded-xl flex items-center justify-center text-wa-brand shadow-inner">
+                        <i data-lucide="bar-chart-2" class="w-6 h-6"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="level-pro text-xs font-bold px-2 py-0.5 rounded-full"><i data-lucide="circle" class="w-3 h-3 fill-red-400 text-red-400 inline-block mr-1"></i> 発展編</span>
+                            <span class="text-xs text-wa-gray">設定時間：約30分</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-wa-text font-serif">GAS-009. 月次売上レポート自動生成</h2>
+                    </div>
+                </div>
+                <div class="bg-wa-highlight/30 p-5 rounded-lg border border-yellow-200 mb-6">
+                    <p class="text-sm text-wa-text leading-relaxed">
+                        <strong class="text-wa-brand block mb-2 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> なぜ必要か</strong>
+                        受注データを入力するだけで、月末に売上・粗利・件数をまとめたレポートをGmailで受信します。経営判断に必要な数字を自動で可視化します。
+                    </p>
+                </div>
+                <div class="bg-wa-code text-gray-100 p-5 rounded-lg border border-wa-border mb-4 shadow-inner relative">
+                    <span class="absolute top-2 right-2 text-xs text-gray-500 font-mono">Google Apps Script</span>
+                    <pre class="whitespace-pre-wrap text-sm font-mono overflow-x-auto leading-relaxed" id="gas-009">// ★ここを変更してください
+const REPORT_EMAIL = 'buildmate88@gmail.com';
+const COMPANY_NAME_009 = '株式会社〇〇工務店';
+
+function sendMonthlyReport() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const lastRow = sheet.getLastRow();
+  
+  const today = new Date();
+  const thisMonth = today.getMonth();
+  const thisYear = today.getFullYear();
+  
+  let totalSales = 0;      // 売上合計
+  let totalCost = 0;       // 原価合計
+  let orderCount = 0;      // 件数
+  let orderDetails = '';   // 明細
+  
+  for (let i = 2; i <= lastRow; i++) {
+    const orderDate = new Date(sheet.getRange(i, 1).getValue());
+    if (orderDate.getMonth() !== thisMonth || orderDate.getFullYear() !== thisYear) continue;
+    
+    const projectName = sheet.getRange(i, 2).getValue(); // 工事名
+    const sales = Number(sheet.getRange(i, 3).getValue()); // 売上
+    const cost = Number(sheet.getRange(i, 4).getValue());  // 原価
+    
+    totalSales += sales;
+    totalCost += cost;
+    orderCount++;
+    
+    const grossProfit = sales - cost;
+    const margin = sales > 0 ? Math.round((grossProfit / sales) * 100) : 0;
+    orderDetails += `・${projectName}：¥${sales.toLocaleString()} （粗利率${margin}%）\n`;
+  }
+  
+  const grossProfit = totalSales - totalCost;
+  const grossMargin = totalSales > 0 ? Math.round((grossProfit / totalSales) * 100) : 0;
+  const monthStr = `${thisYear}年${thisMonth + 1}月`;
+  
+  const subject = `【${COMPANY_NAME_009}】${monthStr}度 月次売上レポート`;
+  const body = `${monthStr}度 月次レポート
+
+━━━━━━━━━━━━━━━━━━━━━━
+■ サマリー
+受注件数：${orderCount}件
+売上合計：¥${totalSales.toLocaleString()}
+原価合計：¥${totalCost.toLocaleString()}
+粗利合計：¥${grossProfit.toLocaleString()}
+粗利率　：${grossMargin}%
+━━━━━━━━━━━━━━━━━━━━━━
+
+■ 受注明細
+${orderDetails || 'データなし'}
+
+━━━━━━━━━━━━━━━━━━━━━━
+${COMPANY_NAME_009} 自動レポート`;
+  
+  GmailApp.sendEmail(REPORT_EMAIL, subject, body);
+}
+
+// トリガー設定：毎月1日の午前8時に実行してください（前月分が集計されます）</pre>
+                </div>
+                <button onclick="copyCode('gas-009', this)" class="flex items-center gap-2 px-5 py-2.5 border-2 border-wa-brand text-wa-brand rounded-md text-sm font-bold hover:bg-wa-brand hover:text-white transition-all">
+                    <i data-lucide="copy" class="w-4 h-4"></i> コードをコピー
+                </button>
+            </div>
+
+            <!-- GAS-010 -->
+            <div class="bg-white p-8 md:p-10 rounded-wa shadow-lg border border-wa-border">
+                <div class="flex items-center gap-4 mb-6 border-b border-wa-border pb-4">
+                    <div class="w-12 h-12 bg-wa-bg rounded-xl flex items-center justify-center text-wa-brand shadow-inner">
+                        <i data-lucide="shield-alert" class="w-6 h-6"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="level-pro text-xs font-bold px-2 py-0.5 rounded-full"><i data-lucide="circle" class="w-3 h-3 fill-red-400 text-red-400 inline-block mr-1"></i> 発展編</span>
+                            <span class="text-xs text-wa-gray">設定時間：約30分</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-wa-text font-serif">GAS-010. ヒヤリハット自動集計・安全週報</h2>
+                    </div>
+                </div>
+                <div class="bg-wa-highlight/30 p-5 rounded-lg border border-yellow-200 mb-6">
+                    <p class="text-sm text-wa-text leading-relaxed">
+                        <strong class="text-wa-brand block mb-2 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> なぜ必要か</strong>
+                        Googleフォームで報告されたヒヤリハットをGASが自動集計し、毎週安全管理担当者に週報を送信します。報告のしやすい仕組みが事故ゼロへの第一歩です。
+                    </p>
+                </div>
+                <div class="bg-wa-code text-gray-100 p-5 rounded-lg border border-wa-border mb-4 shadow-inner relative">
+                    <span class="absolute top-2 right-2 text-xs text-gray-500 font-mono">Google Apps Script</span>
+                    <pre class="whitespace-pre-wrap text-sm font-mono overflow-x-auto leading-relaxed" id="gas-010">// ★ここを変更してください
+const SAFETY_EMAIL = 'buildmate88@gmail.com';
+const COMPANY_NAME_010 = '株式会社〇〇工務店';
+
+function sendSafetyWeeklyReport() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const lastRow = sheet.getLastRow();
+  
+  const today = new Date();
+  const monday = new Date(today);
+  monday.setDate(today.getDate() - today.getDay() + 1);
+  monday.setHours(0, 0, 0, 0);
+  
+  // カテゴリ別集計
+  const categories = {};
+  let totalCount = 0;
+  let reportDetails = '';
+  
+  for (let i = 2; i <= lastRow; i++) {
+    const reportDate = new Date(sheet.getRange(i, 1).getValue());
+    if (reportDate < monday) continue;
+    
+    const site = sheet.getRange(i, 2).getValue();       // 現場名
+    const category = sheet.getRange(i, 3).getValue();   // カテゴリ（転倒・落下など）
+    const description = sheet.getRange(i, 4).getValue(); // 状況
+    const action = sheet.getRange(i, 5).getValue();     // 対処内容
+    
+    categories[category] = (categories[category] || 0) + 1;
+    totalCount++;
+    
+    reportDetails += `【${site}】${category}\n`;
+    reportDetails += `状況：${description}\n`;
+    reportDetails += `対処：${action}\n\n`;
+  }
+  
+  // カテゴリ別集計テキスト
+  let categoryText = '';
+  for (const [cat, count] of Object.entries(categories)) {
+    categoryText += `・${cat}：${count}件\n`;
+  }
+  
+  const subject = `【${COMPANY_NAME_010}】今週のヒヤリハット週報（${totalCount}件）`;
+  const body = `${COMPANY_NAME_010} 安全管理担当者 様
+
+今週のヒヤリハット週報をお送りします。
+
+━━━━━━━━━━━━━━━━━━━━━━
+■ 今週の集計
+報告件数：${totalCount}件
+
+■ カテゴリ別
+${categoryText || '報告なし'}
+━━━━━━━━━━━━━━━━━━━━━━
+
+■ 詳細レポート
+${reportDetails || '今週の報告はありませんでした。'}
+
+━━━━━━━━━━━━━━━━━━━━━━
+${COMPANY_NAME_010} 自動安全週報`;
+  
+  GmailApp.sendEmail(SAFETY_EMAIL, subject, body);
+}
+
+// トリガー設定：毎週金曜日の午後5時に実行してください</pre>
+                </div>
+                <button onclick="copyCode('gas-010', this)" class="flex items-center gap-2 px-5 py-2.5 border-2 border-wa-brand text-wa-brand rounded-md text-sm font-bold hover:bg-wa-brand hover:text-white transition-all">
+                    <i data-lucide="copy" class="w-4 h-4"></i> コードをコピー
+                </button>
+            </div>
+
+        </div>
+
+        <!-- CTAセクション -->
+        <section class="py-16 bg-wa-bg">
+            <div class="feature-cta-card max-w-[800px] mx-auto px-6 py-12 md:py-14 rounded-wa text-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-wa-brand/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-wa-accent/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+                <div class="relative z-10">
+                    <h2 class="text-2xl md:text-4xl font-serif font-bold text-wa-text mb-8 leading-tight">
+                        <span class="block">「自社に合わせてカスタマイズしたい」</span>
+                        <span class="block">そんな時はご相談ください。</span>
+                    </h2>
+                    <p class="text-base md:text-lg text-wa-gray mb-12 leading-relaxed">
+                        <span class="block">コードのカスタマイズ・トリガーの設定・スプレッドシートの構築まで、</span>
+                        <span class="block">元・施工管理の代表が工務店の現場に合わせてサポートします。</span>
+                    </p>
+                    <a href="contact.html" class="btn-accent inline-flex items-center justify-center px-12 py-5 bg-wa-accent hover:bg-wa-accentHover text-white rounded-wa font-bold text-xl transition-all shadow-xl gap-3">
+                        <span>無料相談する</span>
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+            <footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
+        <div class="max-w-[1080px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-white/60 text-sm">
+                    Copyright © 2026 BuildMate. All rights reserved.
+                </div>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
+                    <a href="privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                    <a href="terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                    <a href="law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function copyCode(id, btn) {
+            const pre = document.getElementById(id);
+            const text = pre.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const original = btn.innerHTML;
+                btn.innerHTML = '<i data-lucide="check" class="w-4 h-4"></i> コピーしました！';
+                btn.classList.add('btn-clicked');
+                lucide.createIcons();
+                setTimeout(() => {
+                    btn.innerHTML = original;
+                    btn.classList.remove('btn-clicked');
+                    lucide.createIcons();
+                }, 2000);
+            });
+        }
+    </script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+</body>
+</html>

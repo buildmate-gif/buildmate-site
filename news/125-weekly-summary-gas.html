@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5ECF52MHF6');</script>
+<meta charset="UTF-8"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../seigaiha.css"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>工務店の週次経営サマリーをGASで自動生成してChatworkに配信する方法 | BuildMate</title>
+<link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/063-weekly-summary-gas.html">
+<meta name="description" content="工務店の週次経営サマリー（案件数・売上・問い合わせ件数・タスク状況）をGASで自動集計し、毎週月曜朝にChatworkへ自動配信する方法を解説。経営者が数字を確認する手間をゼロにした手順をBuildMate代表が紹介します。">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article"><meta property="og:title" content="工務店の週次経営サマリーをGASで自動生成してChatworkに配信する方法 | BuildMate"><meta property="og:description" content="工務店の週次経営サマリー（案件数・売上・問い合わせ件数・タスク状況）をGASで自動集計し、毎週月曜朝にChatworkへ自動配信する方法を解説。経営者が数字を確認する手間をゼロにした手順をBuildMate代表が紹介します。"><meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/063-weekly-summary-gas.html"><meta property="og:site_name" content="BuildMate"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="工務店の週次経営サマリーをGASで自動生成してChatworkに配信する方法 | BuildMate"><meta name="twitter:description" content="工務店の週次経営サマリー（案件数・売上・問い合わせ件数・タスク状況）をGASで自動集計し、毎週月曜朝にChatworkへ自動配信する方法を解説。経営者が数字を確認する手間をゼロにした手順をBuildMate代表が紹介します。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"工務店の週次経営サマリーをGASで自動生成してChatworkに配信する方法","datePublished":"2026-03-27","dateModified":"2026-03-27","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"工務店の週次経営サマリー（案件数・売上・問い合わせ件数・タスク状況）をGASで自動集計し、毎週月曜朝にChatworkへ自動配信する方法を解説。経営者が数字を確認する手間をゼロにした手順をBuildMate代表が紹介します。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/063-weekly-summary-gas.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"工務店の週次経営サマリーをGASで自動集計するにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"GASで複数のGoogleスプレッドシートから先週分のデータを自動読み取り・集計してChatworkへ自動投稿する仕組みを構築できます。BuildMateの支援実績では、毎週30分以上の集計作業がゼロになった工務店があります。"}},{"@type":"Question","name":"工務店の経営数字をGASとChatworkで自動共有するにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"GASでスプレッドシートの数字を集計し、Chatwork APIで経営者・管理職のチャンネルへ毎週自動投稿できます。BuildMateの支援実績では、経営者が毎週月曜の出社前に数字を把握できるようになった工務店があります。"}},{"@type":"Question","name":"GASの週次サマリーで前週比較を自動計算するにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"GASで先週と先先週の集計値を自動比較し、増減を計算してサマリーに組み込むことができます。BuildMateの支援実績では、前週比較の自動表示で経営の異常値発見が早まった工務店があります。"}}]}
+</script>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<body class="bg-wa-bg text-wa-text font-sans">
+    <header class="bg-white/95 backdrop-blur-md fixed w-full top-0 z-50 border-b border-wa-border transition-all duration-300">
+        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+
+                <a href="../index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
+                <a href="../services.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">サービス・効果</a>
+                <a href="../ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
+                <a href="../diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+                <a href="../gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
+                <a href="../gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
+                <a href="../contact.html" class="px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+<!-- モバイルメニュー -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="../index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
+    <a href="../services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
+    <a href="../ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
+    <a href="../diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
+    <a href="../gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
+    <a href="../gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
+    <a href="../contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
+<main class="max-w-[800px] mx-auto px-6 pt-28 pb-16">
+    <nav class="text-sm text-wa-gray mb-8"><a href="../index.html" class="hover:text-wa-brand">ホーム</a><span class="mx-2">/</span><a href="../news.html" class="hover:text-wa-brand">コラム一覧</a><span class="mx-2">/</span><span>週次経営サマリーのGAS自動生成・Chatwork配信</span></nav>
+    <div class="flex items-center gap-2 mb-4">
+        <span class="inline-block bg-wa-brand text-white text-sm font-bold px-4 py-1 rounded-full">業務効率化</span>
+        <span class="inline-block bg-wa-accent text-white text-sm font-bold px-4 py-1 rounded-full">GAS活用</span>
+    </div>
+    <h1 class="break-keep text-balance font-serif text-2xl md:text-3xl font-bold text-wa-text mb-4 leading-snug">工務店の週次経営サマリーを<br>GASで自動生成してChatworkに配信する方法</h1>
+    <div class="flex items-center gap-4 text-sm text-wa-gray mb-8">
+        <span class="flex items-center gap-1"><i data-lucide="user" class="w-4 h-4"></i>木村 拓隆</span>
+    </div>
+    <div class="mb-10 rounded-wa overflow-hidden"><img src="../images/gas_sum.png" alt="工務店の週次経営サマリーをGASで自動生成してChatworkに配信する方法" class="w-full object-cover"></div>
+    <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
+        <p class="font-bold text-xl mb-6 text-wa-brand">先週の受注件数・問い合わせ数、すぐに答えられますか？</p>
+        <p class="mb-4 text-wa-text leading-relaxed">工務店の経営者は現場・営業・事務を兼任していることが多く、毎週の経営数字を把握するために各スプレッドシートを開いて手動で集計する時間がとれないことがあります。「先週は何件問い合わせがあったか」「今月の売上進捗はどうか」という基本的な数字が即座にわからない状態では、経営判断が遅れてしまいます。</p>
+        <p class="mb-8 text-wa-text leading-relaxed">この記事では、Google Apps Script（GAS）が複数のGoogleスプレッドシートから案件数・売上・問い合わせ件数・未対応タスク数などを自動集計し、毎週月曜朝8時にChatworkへ「週次経営サマリー」として自動配信する仕組みの構築方法を解説します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の週次経営数字確認業務とは</h4>
+        <p class="mb-4">工務店の週次経営数字確認業務とは、先週の案件進捗・売上実績・問い合わせ件数・タスク消化状況などを集計し、経営者・マネージャーが状況を把握して次の一週間の方針を決めるための業務を指します。複数のスプレッドシートから手動集計する場合、毎週30分以上かかることがあります。</p>
+        <p class="mb-3">具体的には次のような作業が含まれます。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>案件管理スプレッドシートの確認・集計</li><li>売上・入金実績の確認</li><li>先週の問い合わせ件数の確認</li><li>タスク消化率・未対応タスクの確認</li><li>集計結果の社内共有・報告</li></ul>
+        <p class="mb-8">BuildMateの支援実績では、GASで週次サマリーを自動生成・配信する仕組みを導入した工務店で、毎週30分以上かかっていた集計作業がゼロになり、経営者が毎週月曜に数字を把握してから1週間をスタートできる環境が整っています。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">仕組みの全体像：複数スプレッドシートをGASで集計</h4><p class="mb-4">GASのトリガーを毎週月曜日8時に設定します。GASが案件管理・売上管理・問い合わせ管理・タスク管理の各スプレッドシートから先週分のデータを自動読み取りし、集計します。集計結果をChatwork APIで経営者・管理職のチャンネルへ「週次経営サマリー」として自動投稿します。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 1: 集計対象データの整備</h4><p class="mb-4">GASが読み取るスプレッドシートに「日付」列が含まれていれば、先週の範囲（月曜〜日曜）を自動計算して集計できます。新規問い合わせ数・商談化件数・成約件数・売上金額・未収金額・未対応タスク件数など、経営者が毎週チェックしたい数字をリストアップして集計対象を決めます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 2: GASによる自動集計と前週比較</h4><p class="mb-4">GASが先週と先先週のデータを自動比較し「先週の新規問い合わせ：8件（前週比+2件）」「成約件数：2件（前週比-1件）」という形式で増減がわかるサマリーを自動生成します。売上の週次推移グラフ（Googleスライドに自動出力）を添付することも可能です。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 3: Chatworkへの自動投稿</h4><p class="mb-4">GASがChatwork APIを使って経営者・管理職の専用チャンネルへ毎週月曜8時に自動投稿します。「【週次経営サマリー】先週（〇月〇日〜〇月〇日）の数字をまとめました。新規問い合わせ：〇件 / 商談化：〇件 / 成約：〇件 / 売上：〇円 / 未対応タスク：〇件」という形式で届くため、出社前に数字の把握が完了します。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+        <p class="mb-4">BuildMateが建設業・工務店の現場にGASを導入した実績をもとに、削減効果をまとめます。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>週次集計作業：毎週30分以上 → ゼロ（GASが自動集計）</li><li>経営数字の把握：各シートを手動確認 → Chatworkに自動配信</li><li>前週比較：手動計算 → GASが自動算出</li><li>経営会議の準備：集計に時間 → サマリーをそのまま活用可</li></ul>
+        <p class="mb-8">月換算で2時間以上の削減が現実的な目標値です。それ以上に、毎週月曜の朝に数字を把握してから1週間をスタートできることで、経営判断のスピードと精度が向上します。問題の早期発見・対応が可能になり、経営品質の改善につながります。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASでできないことについて</h4>
+        <p class="mb-4">集計された数字の解釈・次の施策の決定・スタッフへの指示は経営者・マネージャーが行う必要があります。また、集計対象のスプレッドシートに正確なデータが入力されていることが前提であり、入力の習慣づけは人間の管理が必要です。
+
+しかしGASが集計・配信を自動化することで、経営者が「数字を見る」行動のハードルが大幅に下がります。</p>
+        <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">毎週月曜の朝に数字が届いていると、1週間の意識が変わります。「先週の問い合わせが減っている」「成約率が落ちている」に気づくのが1週間早まるだけで、対応できることが増えます。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）</div>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>工務店の週次経営数字はGASで自動集計してChatworkへ毎週月曜朝に自動配信できる</li><li>案件・売上・問い合わせ・タスクの各スプレッドシートからGASが一括集計する</li><li>前週比較も自動計算され、増減が一目でわかるサマリーが届く</li><li>毎週30分以上かかっていた集計作業がゼロになり、経営判断のスピードが向上する</li><li>導入コストは実質ゼロ（Googleスプレッドシート・GAS・Chatwork APIのみ）</li></ul>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の週次経営サマリーをGASで自動集計するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">GASで複数のGoogleスプレッドシートから先週分のデータを自動読み取り・集計してChatworkへ自動投稿する仕組みを構築できます。BuildMateの支援実績では、毎週30分以上の集計作業がゼロになった工務店があります。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の経営数字をGASとChatworkで自動共有するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">GASでスプレッドシートの数字を集計し、Chatwork APIで経営者・管理職のチャンネルへ毎週自動投稿できます。BuildMateの支援実績では、経営者が毎週月曜の出社前に数字を把握できるようになった工務店があります。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. GASの週次サマリーで前週比較を自動計算するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">GASで先週と先先週の集計値を自動比較し、増減を計算してサマリーに組み込むことができます。BuildMateの支援実績では、前週比較の自動表示で経営の異常値発見が早まった工務店があります。</p></div></div>
+        <div class="mt-10 pt-8 border-t border-wa-border"><p class="font-bold text-wa-brand mb-4">関連記事</p><ul class="space-y-2"><li><a href="122-news-chatwork-gas.html" class="text-wa-brand hover:underline">住宅業界ニュースをGASで自動収集してChatworkに毎朝配信する方法</a></li><li><a href="120-task-reminder-gas.html" class="text-wa-brand hover:underline">工務店の未対応タスクリマインドをGASで自動化する方法</a></li><li><a href="029-zaimu-kaikei-ai.html" class="text-wa-brand hover:underline">工務店の財務・会計業務をAI・GASで効率化する方法</a></li></ul></div>
+    </article>
+    <div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5">
+        <div class="w-14 h-14 rounded-full bg-wa-brand flex items-center justify-center flex-shrink-0"><i data-lucide="user" class="w-7 h-7 text-white"></i></div>
+        <div><p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p><p class="text-[15px] md:text-base text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。現場の実態とシステムの限界を知り尽くした立場から、中小工務店向けのAI・GAS導入コンサルティングを提供。関西拠点・全国オンライン対応。</p></div>
+    </div>
+    <div class="mt-8 bg-white rounded-wa p-8 shadow-sm border border-wa-border text-center">
+        <p class="font-bold text-lg text-wa-brand mb-2">「うちでも使えるか」を一緒に確認しましょう</p>
+        <p class="text-wa-gray text-base md:text-lg mb-6 leading-relaxed max-w-2xl mx-auto">BuildMateでは、工務店・建設会社の現状業務を無料でヒアリングし、GASで効率化できる箇所を具体的にご提案しています。元・施工管理の代表が現場目線でお答えします。勧誘・営業は一切行いません。</p>
+        <a href="../contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-wa-accent hover:opacity-90 text-white rounded-wa font-bold transition-colors"><i data-lucide="mail" class="w-4 h-4"></i>無料相談に申し込む</a>
+    </div>
+    <div class="mt-8 text-center"><a href="../news.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-wa-brand text-wa-brand rounded-wa font-bold hover:bg-wa-brand hover:text-white transition-colors">← コラム一覧に戻る</a></div>
+</main>
+        <footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
+        <div class="max-w-[1080px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-white/60 text-sm">
+                    Copyright © 2026 BuildMate. All rights reserved.
+                </div>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
+                    <a href="../privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                    <a href="../terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                    <a href="../law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script>lucide.createIcons();</script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+</body></html>

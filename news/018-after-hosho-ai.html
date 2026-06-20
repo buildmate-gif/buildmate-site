@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5ECF52MHF6');
+    </script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../seigaiha.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工務店のアフター対応をAI・GASで効率化する方法｜点検・クレーム・OB客管理を自動化 | BuildMate</title>
+    <link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/018-after-hosho-ai.html">
+    <meta name="description" content="工務店のアフター対応業務（定期点検・クレーム受付・OB客へのDM・再受注活動など）をAIとGASで自動化する方法を解説。OB客向けDMを月4時間から30分に短縮した手順をBuildMate代表が紹介します。">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="工務店のアフター対応をAI・GASで効率化する方法｜点検・クレーム・OB客管理を自動化 | BuildMate">
+    <meta property="og:description" content="工務店のアフター対応業務をAIとGASで自動化する方法を解説。OB客向けDMを月4時間から30分に短縮した手順を紹介。">
+    <meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/018-after-hosho-ai.html">
+    <meta property="og:site_name" content="BuildMate">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="工務店のアフター対応をAI・GASで効率化する方法 | BuildMate">
+    <meta name="twitter:description" content="定期点検・クレーム受付・OB客DM・再受注活動をAIとGASで自動化。月4時間→30分に短縮した具体的な方法を解説。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Noto Sans JP"', 'sans-serif'], serif: ['"Noto Serif JP"', 'serif'] },
+                    colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }
+                }
+            }
+        }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "工務店のアフター対応をAI・GASで効率化する方法｜点検・クレーム・OB客管理を自動化",
+      "datePublished": "2026-02-01",
+      "dateModified": "2026-02-01",
+      "author": {
+        "@type": "Person",
+        "name": "木村 拓隆",
+        "jobTitle": "BuildMate代表・AI活用伴走パートナー",
+        "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "BuildMate（ビルドメイト）",
+        "url": "https://buildmate-gif.github.io/buildmate-site"
+      },
+      "description": "工務店のアフター対応業務（定期点検・クレーム受付・OB客へのDM・再受注活動など）をAIとGASで自動化する方法を解説。OB客向けDMを月4時間から30分に短縮した手順をBuildMate代表が紹介します。",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://buildmate-gif.github.io/buildmate-site/news/038-after-hosho-ai.html"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "工務店のOB客へのDM・ニュースレター配信にAIを使うとどのくらい効果がありますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BuildMateの支援実績では、月4時間かかっていたOB客向けDM作成・配信が約30分に短縮されます。AIで季節に合わせた文章を生成し、GASで顧客リストに応じて自動配信する仕組みを構築するためです。再受注・紹介案件の増加という売上への直接効果も生まれます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "工務店の定期点検スケジュール管理はGASで自動化できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、自動化できます。GASで引渡し日から1年・2年・5年後の点検日程を自動計算して登録し、顧客への通知メールを自動送信する仕組みが構築できます。BuildMateの支援実績では、月2時間かかっていた点検スケジュール管理がほぼ自動化され、点検漏れがゼロになった工務店があります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "工務店のアフター対応業務でAI・GASに任せられない業務はありますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "修繕・補修工事の現地確認と職人手配の判断は、現場を見て状況を判断する必要があるためAIには任せられません。しかしAIが点検通知・報告書・DM配信を担うことで、工務店のスタッフが現地訪問・対面フォローという本来業務に集中できる時間が月15時間以上生まれます。"
+          }
+        }
+      ]
+    }
+    </script>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<body class="bg-wa-bg text-wa-text font-sans antialiased">
+
+        <header class="bg-white/95 backdrop-blur-md fixed w-full top-0 z-50 border-b border-wa-border transition-all duration-300">
+        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+
+                <a href="../index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
+                <a href="../services.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">サービス・効果</a>
+                <a href="../ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
+                <a href="../diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+                <a href="../gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
+                <a href="../gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
+                <a href="../contact.html" class="px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+<!-- モバイルメニュー -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="../index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
+    <a href="../services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
+    <a href="../ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
+    <a href="../diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
+    <a href="../gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
+    <a href="../gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
+    <a href="../contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
+
+    <main class="pt-32 pb-24 px-6">
+        <div class="max-w-[800px] mx-auto">
+
+            <nav class="text-sm text-wa-gray mb-8">
+                <a href="../index.html" class="hover:text-wa-brand">ホーム</a>
+                <span class="mx-2">/</span>
+                <a href="../news.html" class="hover:text-wa-brand">コラム一覧</a>
+                <span class="mx-2">/</span>
+                <span>工務店のアフター対応をAI・GASで効率化する方法</span>
+            </nav>
+
+            <div class="mb-10">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="inline-block bg-wa-brand text-white text-sm font-bold px-4 py-1 rounded-full">業務効率化</span>
+                    <span class="inline-block bg-wa-accent text-white text-sm font-bold px-4 py-1 rounded-full">アフター</span>
+                </div>
+                <h1 class="break-keep text-balance text-2xl md:text-4xl font-serif font-bold text-wa-text leading-tight mb-4">工務店のアフター対応を<wbr><br>AI・<wbr>GASで<wbr>効率化する方法</h1>
+            </div>
+
+            <div class="mb-10">
+            </div>
+
+            <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
+
+                <p class="font-bold text-xl mb-6 text-wa-brand">引渡し後のOB客への連絡が「後回し」になり続けていませんか？</p>
+
+                <p>工務店にとってアフター対応は、紹介・再受注という次の受注につながる最重要活動です。しかし実態は、引渡し後に定期点検の連絡が漏れたり、OB客へのDMを送る時間が確保できなかったりと、アフターが「後回し」になっている工務店が少なくありません。引渡して終わりではなく、その後の継続的な関係こそが工務店の安定経営を支えます。</p>
+                <p>この記事では、工務店のアフター対応に関わる業務について、AI（Claude・ChatGPT）とGoogle Apps Script（GAS）を使って効率化する具体的な方法を解説します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。定期点検管理から再受注活動まで、7つのアフター業務の効率化手法を紹介します。</p>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店のアフター対応業務とは</h4>
+
+                <p>工務店のアフター対応業務とは、住宅・建物の引渡し後に施主との継続的な関係を維持し、点検・保証・修繕・再受注につなげるための業務全般を指します。具体的には次の6項目が代表的です。</p>
+
+                <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg">
+                    <li>定期点検スケジュールの管理と通知送付</li>
+                    <li>不具合・クレームの受付・記録・対応方針の決定</li>
+                    <li>保証書の発行・管理・期限管理</li>
+                    <li>OB客へのDM・ニュースレターの作成と配信</li>
+                    <li>点検報告書の作成と送付</li>
+                    <li>リフォーム再受注に向けたアプローチのタイミング管理</li>
+                </ul>
+
+                <p>これらはいずれも工務店の長期的な収益を左右する業務ですが、定型的な通知・書類作成・管理の部分はAIとGASで大幅に効率化できます。BuildMateの支援実績では、これらの業務をまとめて導入した工務店（社員5名規模）で月15〜18時間の削減を実現しています。</p>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">1. 定期点検スケジュール管理・通知（GASで対応）</h4>
+
+                <p>工務店の定期点検管理とは、引渡し後1年・2年・5年・10年の節目に点検を実施するため、各顧客の点検予定日を管理し、時期が来たら連絡する業務です。顧客数が増えるほど「点検漏れ」が発生しやすくなり、トラブルの原因になります。</p>
+                <p>GASで引渡し日から自動計算した点検日程を登録し、顧客への通知メールを自動送信する仕組みを構築することで、月2時間かかっていた点検スケジュール管理がほぼ自動化されます。点検漏れゼロと顧客満足度の向上という追加効果も得られます。</p>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">2. 不具合・クレームの受付・初期対応（AI＋GASで対応）</h4>
+
+                <p>工務店のクレーム受付とは、引渡し後に施主から寄せられる不具合報告・クレームをフォームで受け付け、担当者へ迅速に通知して初期対応の方針を決める業務です。受付から担当者への連絡まで30分以上かかる場合、初動の遅れがクレームの深刻化につながります。</p>
+                <p>GASでフォームからの受付と担当者への自動通知を行い、AIで対応方針の初期提案を生成することで、30分かかっていたクレーム初期対応が5分程度に短縮されます。対応速度の向上がお客様の不満を早期に解消する効果を生みます。</p>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">3. OB客へのDM・ニュースレター配信（AI＋GASで対応）</h4>
+
+                <p>工務店のOB客フォローとは、既存施主に対して季節のメンテナンス情報・リフォーム提案・近況のご挨拶などを定期的に送付し、関係を継続させる業務です。手作業でメールを作成・個別送信している工務店では、月4〜5時間の作業時間が発生します。</p>
+                <p>AIで顧客属性・季節・築年数に合わせた文章を生成し、GASで顧客リストに応じた自動配信を行うことで、月4時間かかっていたDM業務が30分程度に短縮されます。再受注・紹介案件の増加という直接的な売上効果も期待できます。</p>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">4. リフォーム再受注のアプローチ管理（AI＋GASで対応）</h4>
+
+                <p>工務店のリフォーム再受注活動とは、引渡しから一定年数が経過した施主に対して、設備の交換・外壁塗装・水回りリフォームをタイミングよく提案する業務です。提案のタイミングを逃すと、他社に受注を奪われるリスクがあります。</p>
+                <p>GASで築年数・設備の劣化サイクルから最適な提案タイミングを自動計算し、AIで提案文を生成する仕組みを構築することで、月4時間かかっていた再受注アプローチ業務がほぼ自動化されます。再受注率の向上という収益への直接効果も生まれます。</p>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+
+                <p>BuildMateが工務店のアフター対応業務にAI・GASを導入した実績をもとに、削減効果をまとめます。</p>
+
+                <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg">
+                    <li>定期点検スケジュール管理：月2時間 → 自動化</li>
+                    <li>クレーム受付・初期対応：30分 → 約5分（1件あたり）</li>
+                    <li>保証書発行・管理：毎回1時間 → 自動化</li>
+                    <li>OB客へのDM・ニュースレター：月4時間 → 約30分</li>
+                    <li>点検報告書作成・送付：1時間 → 約10分（1件あたり）</li>
+                </ul>
+
+                <p>社員数5名規模の工務店でこれらを組み合わせた場合、月15〜18時間の削減が現実的な目標値です。時給換算（2,000円）で月3〜3.5万円相当のコスト削減になります。AIツールの月額費用（約3,000円）と比較すると、10倍以上の費用対効果が見込める計算です。</p>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIに任せない業務について</h4>
+
+                <p>修繕・補修工事の現地確認と職人手配の判断——これは現場を実際に見て状況を判断する必要があるため、AIで代替できません。また、長年お付き合いのあるOB客への電話一本の声がけも、信頼関係を深める工務店固有の価値です。しかしAIが定型業務を肩代わりするからこそ、工務店のスタッフがこうした「人にしかできない仕事」に集中できる時間が生まれます。</p>
+
+                <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">
+                    アフターで差がつく工務店は、引渡し後も「忘れていない」ことを伝え続けています。GASで自動通知する仕組みを作れば、手間ゼロで継続的なフォローが実現できます。—— BuildMate代表・木村拓隆（元・施工管理1,200件以上）
+                </div>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+
+                <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg">
+                    <li>工務店のアフター対応業務は6項目あり、そのほぼすべてがAI・GASで効率化できる</li>
+                    <li>OB客向けDMはAI+GASで月4時間→30分、点検スケジュール管理はGASで完全自動化</li>
+                    <li>社員5名規模の工務店で月15〜18時間・3〜3.5万円相当のコスト削減が見込める</li>
+                    <li>修繕現地確認・対面フォローなど「人にしかできない仕事」への集中時間を生み出すことが最大の目的</li>
+                    <li>導入に必要なのは月3,000円程度のAIツールとGoogleの無料ツールだけ</li>
+                </ul>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+
+                <div class="space-y-6">
+                    <div class="bg-wa-bg p-5 rounded-lg">
+                        <p class="font-bold text-wa-brand mb-2">Q. 工務店のOB客へのDM・ニュースレター配信にAIを使うとどのくらい効果がありますか？</p>
+                        <p class="text-wa-text text-base m-0">BuildMateの支援実績では、月4時間かかっていたOB客向けDM作成・配信が約30分に短縮されます。AIで季節に合わせた文章を生成し、GASで顧客リストに応じて自動配信する仕組みを構築するためです。再受注・紹介案件の増加という売上への直接効果も生まれます。</p>
+                    </div>
+                    <div class="bg-wa-bg p-5 rounded-lg">
+                        <p class="font-bold text-wa-brand mb-2">Q. 工務店の定期点検スケジュール管理はGASで自動化できますか？</p>
+                        <p class="text-wa-text text-base m-0">はい、自動化できます。GASで引渡し日から1年・2年・5年後の点検日程を自動計算して登録し、顧客への通知メールを自動送信する仕組みが構築できます。BuildMateの支援実績では、月2時間かかっていた点検スケジュール管理がほぼ自動化され、点検漏れがゼロになった工務店があります。</p>
+                    </div>
+                    <div class="bg-wa-bg p-5 rounded-lg">
+                        <p class="font-bold text-wa-brand mb-2">Q. 工務店のアフター対応業務でAI・GASに任せられない業務はありますか？</p>
+                        <p class="text-wa-text text-base m-0">修繕・補修工事の現地確認と職人手配の判断は、現場を見て状況を判断する必要があるためAIには任せられません。しかしAIが点検通知・報告書・DM配信を担うことで、工務店のスタッフが現地訪問・対面フォローという本来業務に集中できる時間が月15時間以上生まれます。</p>
+                    </div>
+                </div>
+
+                <div class="mt-10 pt-8 border-t border-wa-border">
+                    <p class="font-bold text-wa-brand mb-4">関連記事</p>
+                    <ul class="space-y-2">
+                        <li><a href="055-shakunai-kanri-ai.html" class="text-wa-brand hover:underline">工務店の社内管理をAI・GASで効率化する方法</a></li>
+                        <li><a href="053-eigyo-shukyaku-ai.html" class="text-wa-brand hover:underline">工務店の営業・集客をAI・GASで効率化する方法</a></li>
+                        <li><a href="051-customer-taiou-ai.html" class="text-wa-brand hover:underline">工務店のお客様対応をAI・GASで効率化する方法</a></li>
+                    </ul>
+                </div>
+
+            </article>
+
+            <!-- 著者プロフィール -->
+            <div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5">
+                <div class="w-14 h-14 rounded-full bg-wa-brand flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="user" class="w-7 h-7 text-white"></i>
+                </div>
+                <div>
+                    <p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p>
+                    <p class="text-[15px] md:text-base text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。現場の実態とシステムの限界を知り尽くした立場から、中小工務店向けのAI・GAS導入コンサルティングを提供。関西拠点・全国オンライン対応。</p>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-8 bg-white rounded-wa p-8 shadow-sm border border-wa-border text-center">
+                <p class="font-bold text-lg text-wa-brand mb-2">「うちでも使えるか」を一緒に確認しましょう</p>
+                <p class="text-wa-gray text-base md:text-lg mb-6 leading-relaxed max-w-2xl mx-auto">BuildMateでは、工務店の現状業務を無料でヒアリングし、AI・GASで効率化できる箇所を具体的にご提案しています。元・施工管理の代表が現場目線でお答えします。勧誘・営業は一切行いません。</p>
+                <a href="../contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-wa-accent hover:opacity-90 text-white rounded-wa font-bold transition-colors">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    無料相談に申し込む
+                </a>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="../news.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-wa-brand text-wa-brand rounded-wa font-bold hover:bg-wa-brand hover:text-white transition-colors">
+                    ← コラム一覧に戻る
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+            <footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
+        <div class="max-w-[1080px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-white/60 text-sm">
+                    Copyright © 2026 BuildMate. All rights reserved.
+                </div>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
+                    <a href="../privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                    <a href="../terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                    <a href="../law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+</body>
+</html>

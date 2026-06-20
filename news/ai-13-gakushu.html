@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5ECF52MHF6');</script>
+<meta charset="UTF-8"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../seigaiha.css"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatGPTは何を学習しているのか、正しく知っておくべきこと | BuildMate</title>
+<link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/ai-13-gakushu.html">
+<meta name="description" content="ChatGPTが何を学習しているのか、入力したデータは学習されるのか、正確な情報をわかりやすく解説。業務で安心してAIを使うために知っておくべき基本知識をまとめます。">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article"><meta property="og:title" content="ChatGPTは何を学習しているのか、正しく知っておくべきこと | BuildMate"><meta property="og:description" content="ChatGPTが何を学習しているのか、入力したデータは学習されるのか、正確な情報をわかりやすく解説。業務で安心してAIを使うために知っておくべき基本知識をまとめます。"><meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/ai-13-gakushu.html"><meta property="og:site_name" content="BuildMate"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ChatGPTは何を学習しているのか、正しく知っておくべきこと | BuildMate"><meta name="twitter:description" content="ChatGPTが何を学習しているのか、入力したデータは学習されるのか、正確な情報をわかりやすく解説。業務で安心してAIを使うために知っておくべき基本知識をまとめます。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:[['"Noto Sans JP"','sans-serif']],serif:[['"Noto Serif JP"','serif']]},colors:{wa:{bg:'#F7F2EA',paper:'#ffffff',text:'#1F2933',gray:'#6B7280',brand:'#24324A',brandHover:'#1A2838',accent:'#24324A',accentHover:'#1A2838',border:'#D4CAB8',gold:'#B99745',purple:'#5C3B8A',cyan:'#38BDF8'}},borderRadius:{wa:'12px'}}}}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"ChatGPTは何を学習しているのか、正しく知っておくべきこと","datePublished":"2026-03-31","dateModified":"2026-05-16","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AIコンシェルジュ","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経てAI活用支援を提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"ChatGPTが何を学習しているのか、入力したデータは学習されるのか、正確な情報をわかりやすく解説。業務で安心してAIを使うために知っておくべき基本知識をまとめます。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/ai-13-gakushu.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "ChatGPTに入力した文章が第三者に見られる可能性はありますか？", "acceptedAnswer": {"@type": "Answer", "text": "通常の利用では第三者がリアルタイムで閲覧することはできません。ただし、OpenAIのポリシーに基づいて安全確認のため内容を確認する場合があります。個人情報や機密情報は入力しないことが原則です。"}}, {"@type": "Question", "name": "法人での導入はAPI経由が安全ですか？", "acceptedAnswer": {"@type": "Answer", "text": "法人利用では、ChatGPT Business と API のどちらも有力です。ブラウザ中心で使うなら Business、システム連携まで行うなら API という整理が実務的です。どちらも契約条件と管理設定を確認して選ぶのが安全です。"}}, {"@type": "Question", "name": "設定を変更しても、過去の会話データはどうなりますか？", "acceptedAnswer": {"@type": "Answer", "text": "「学習利用をオフ」に変更した時点から新しい会話が対象外になります。過去の会話は自動では消えないため、不要なものは個別に削除します。削除したチャットは通常30日以内にOpenAIのシステムから削除されます。"}}]}
+</script>
+<style>.text-balance{text-wrap:balance}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<body class="bg-wa-bg text-wa-text font-sans">
+<header class="bg-white/95 backdrop-blur-md fixed w-full top-0 z-50 border-b border-wa-border transition-all duration-300">
+    <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="../index.html" class="flex items-center gap-3 group">
+            <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+            <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+            <a href="../index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
+            <a href="../services.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">サービス・効果</a>
+            <a href="../ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
+            <a href="../diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+            <a href="../gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
+            <a href="../gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
+            <a href="../contact.html" class="px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
+        </nav>
+        <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2"><i data-lucide="menu" class="w-8 h-8"></i></button>
+    </div>
+</header>
+<!-- モバイルメニュー -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="../index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
+    <a href="../services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
+    <a href="../ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
+    <a href="../diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
+    <a href="../gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
+    <a href="../gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
+    <a href="../contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
+<main class="max-w-[800px] mx-auto px-6 pt-28 pb-16">
+    <nav class="text-sm text-wa-gray mb-8">
+        <a href="../index.html" class="hover:text-wa-brand">ホーム</a><span class="mx-2">/</span>
+        <a href="../ai-guide.html" class="hover:text-wa-brand">AI活用入門ガイド</a><span class="mx-2">/</span>
+        <span>ChatGPTは何を学習しているのか、正しく知っておくべきこと</span>
+    </nav>
+    <div class="flex items-center gap-2 mb-4">
+        <span class="inline-block bg-wa-brand text-white text-sm font-bold px-4 py-1 rounded-full">安全・安心</span>
+        <span class="inline-block bg-wa-gold text-white text-sm font-bold px-4 py-1 rounded-full">AI入門</span>
+    </div>
+    <h1 class="break-keep text-balance font-serif text-2xl md:text-3xl font-bold text-wa-text mb-4 leading-snug">ChatGPTは何を学習しているのか、正しく知っておくべきこと</h1>
+    <div class="flex items-center gap-4 text-sm text-wa-gray mb-8">
+        <span class="flex items-center gap-1"><i data-lucide="user" class="w-4 h-4"></i>木村 拓隆</span>
+        <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-4 h-4"></i>2026-03-31</span>
+    </div>
+    <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
+        <p class="font-bold text-xl mb-6 text-wa-brand">「ChatGPTに入力した内容は、AIに学習されてしまうのか」——この疑問は、業務でAIを使い始める多くの方が抱きます。正確に知っておくことで、不必要な不安なく安心して使えるようになります。</p>
+        <div class="bg-wa-bg border-l-4 border-wa-brand p-5 rounded-r-lg mb-8">
+            <p class="text-wa-text leading-relaxed m-0">ChatGPTの学習とは、大量のテキストデータを用いてAIモデルが言語パターンを習得することです。重要なのは「学習データ」（モデルの訓練に使われるデータ）と「会話履歴」（一時的に保存される会話）は異なるという点です。</p>
+        </div>
+        
+        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">ChatGPTはどんなデータで学習しているか</h4>
+        <p class="mb-4 leading-relaxed">ChatGPTのモデルは、インターネット上の公開情報や各種データをもとに事前学習されています。大切なのは、今のChatGPTで使われているモデル名そのものよりも、「日々の会話がその場でモデルを作り替えているわけではない」と理解することです。あなたが今日入力した文章が、すぐにモデルの挙動へ反映されるわけではありません。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>ChatGPTのモデルは公開情報などをもとに事前学習されている</li><li>ユーザーの会話がリアルタイムでモデルに反映されることはない</li><li>モデルの更新は別のタイミングで行われる</li></ul>
+        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">入力したデータは学習されるのか</h4>
+        <p class="mb-4 leading-relaxed">個人向けプランでは、設定次第で会話がモデル改善に使われる場合があります。ただし、Settings の Data Controls で「Improve the model for everyone」をオフにすると、新しい会話は学習に使われません。Business や API は個人向けプランと扱いが異なるため、契約条件と管理設定をあわせて確認してから業務利用するのが安全です。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>無料版・Plus：Data Controls で学習利用をオフにできる</li><li>Business・API：契約条件と管理設定を確認する</li><li>設定変更は Settings → Data Controls から行う</li></ul>
+        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">会話履歴の保存と削除</h4>
+        <p class="mb-4 leading-relaxed">ChatGPTは会話履歴を自動的に保存します（サイドバーに表示されます）。この履歴はあなた自身が削除できます。機密性の高い業務でAIを使う場合は、会話終了後に履歴を削除する習慣を持つことをおすすめします。また、Temporary Chat を使うと、その会話は履歴に残らず、モデル学習にも使われません。セキュリティが特に重要な場面では Temporary Chat を活用してください。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>会話履歴は自動保存（サイドバーに表示）</li><li>履歴はいつでも手動削除可能</li><li>Temporary Chat は履歴に残らず、学習にも使われない</li></ul>
+        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">業務利用で安心するための設定チェックリスト</h4>
+        <p class="mb-4 leading-relaxed">業務でChatGPTを使い始める前に確認すべき設定項目をリストアップします。①「Improve the model for everyone」をオフにする、②会話履歴を定期的に削除する習慣を作る、③機密性が高い内容では Temporary Chat を使う、④個人情報は入力しないルールを確認する。この4つを確認するだけで、業務利用の安全性が大幅に向上します。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>「学習利用」をオフに設定する</li><li>会話履歴を定期的に削除する</li><li>機密性が高い内容では Temporary Chat を使う</li><li>個人情報は入力しないルールを確認する</li></ul>
+        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>ChatGPTのモデルは事前学習済みで、会話がリアルタイムに影響することはない</li><li>無料版・Plusは Data Controls で学習利用をオフにできる</li><li>Business や API は契約条件と管理設定を確認する</li><li>Temporary Chat は履歴に残らず、学習にも使われない</li><li>業務利用前に4項目の設定確認を必ず行う</li></ul>
+        <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">「AIの仕組みを正確に知ることで、「怖い」という感覚が「使いこなせる」という感覚に変わります。知識が安心の土台です。」<span class="block not-italic text-sm mt-3 text-right">BuildMate代表・木村拓隆</span></div>
+        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. ChatGPTに入力した文章が第三者に見られる可能性はありますか？</p><p class="text-wa-text text-base m-0">通常の利用では第三者がリアルタイムで閲覧することはできません。ただし、OpenAIのポリシーに基づいて安全確認のため内容を確認する場合があります。個人情報や機密情報は入力しないことが原則です。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 法人での導入はAPI経由が安全ですか？</p><p class="text-wa-text text-base m-0">法人利用では、ChatGPT Business と API のどちらも有力です。ブラウザ中心で使うなら Business、システム連携まで行うなら API という整理が実務的です。どちらも契約条件と管理設定を確認して選ぶのが安全です。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 設定を変更しても、過去の会話データはどうなりますか？</p><p class="text-wa-text text-base m-0">「学習利用をオフ」に変更した時点から新しい会話が対象外になります。過去の会話は自動では消えないため、不要なものは個別に削除します。削除したチャットは通常30日以内にOpenAIのシステムから削除されます。</p></div></div>
+        <div class="mt-10 pt-8 border-t border-wa-border">
+            <p class="font-bold text-wa-brand mb-4 flex items-center gap-2"><i data-lucide="book-open" class="w-4 h-4"></i>関連記事はこちら▼</p>
+            <ul class="space-y-3"><li><a href="ai-11-kojinjouhou.html" class="text-wa-brand underline underline-offset-4 decoration-wa-border hover:decoration-wa-brand transition-colors">個人情報をAIに入力しても大丈夫？現場で使うための安全ルール</a></li><li><a href="ai-14-rule.html" class="text-wa-brand underline underline-offset-4 decoration-wa-border hover:decoration-wa-brand transition-colors">社内でAIを安全に使うためのルール設計の基本</a></li><li><a href="ai-12-machigai.html" class="text-wa-brand underline underline-offset-4 decoration-wa-border hover:decoration-wa-brand transition-colors">AIが間違えることがある、だからこそ必要な確認習慣とは</a></li></ul>
+        </div>
+    </article>
+    <div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5">
+        <div class="w-14 h-14 rounded-full bg-wa-brand flex items-center justify-center flex-shrink-0"><i data-lucide="user" class="w-7 h-7 text-white"></i></div>
+        <div><p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p><p class="text-[15px] text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。工務店・異業種を問わず「現場に定着するAI活用」を支援するAI活用コンシェルジュ。関西拠点・全国オンライン対応。</p></div>
+    </div>
+    <div class="mt-8 bg-white rounded-wa p-8 shadow-sm border border-wa-border text-center">
+        <p class="font-bold text-lg text-wa-brand mb-2">「うちでも使えるか」を一緒に確認しましょう</p>
+        <p class="text-wa-gray text-base mb-6 leading-relaxed max-w-2xl mx-auto">AIに詳しくなくても、相談内容が未整理でも大丈夫です。現状のお話を聞いてから、何から始めるかを一緒に整理します。勧誘・営業は一切行いません。</p>
+        <a href="../contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-wa-accent hover:opacity-90 text-white rounded-wa font-bold transition-colors"><i data-lucide="mail" class="w-4 h-4"></i>無料相談に申し込む</a>
+    </div>
+    <div class="mt-8 text-center"><a href="../ai-guide.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-wa-brand text-wa-brand rounded-wa font-bold hover:bg-wa-brand hover:text-white transition-colors">← AI活用入門ガイドに戻る</a></div>
+</main>
+<footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
+    <div class="max-w-[1080px] mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-white/60 text-sm">Copyright © 2026 BuildMate. All rights reserved.</div>
+            <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
+                <a href="../privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                <a href="../terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                <a href="../law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>lucide.createIcons();</script>
+<script>
+function closeMobileMenu(){const m=document.getElementById('mobile-menu');m.style.display='none';document.body.style.overflow='';}
+document.getElementById('mobile-menu-btn').addEventListener('click',function(){const m=document.getElementById('mobile-menu');m.style.display='flex';document.body.style.overflow='hidden';});
+</script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+</body></html>

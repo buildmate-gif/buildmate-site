@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5ECF52MHF6');
+    </script>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../seigaiha.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工務店の法令・申請をAI・GASで効率化する方法｜建設業許可から廃棄物管理まで自動化 | BuildMate</title>
+    <link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/005-hourei-shinsei-ai.html">
+    <meta name="description" content="工務店の法令・申請業務（建設業許可更新・確認申請・廃棄物マニフェスト・個人情報管理など）をAIとGASで自動化する方法を解説。許可更新書類を丸1日から半日に短縮した手順をBuildMate代表が紹介します。">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="工務店の法令・申請をAI・GASで効率化する方法｜建設業許可から廃棄物管理まで自動化 | BuildMate">
+    <meta property="og:description" content="工務店の法令・申請業務をAIとGASで自動化する方法を解説。許可更新書類を丸1日から半日に短縮した具体的な手順を紹介。">
+    <meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/005-hourei-shinsei-ai.html">
+    <meta property="og:site_name" content="BuildMate">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="工務店の法令・申請をAI・GASで効率化する方法 | BuildMate">
+    <meta name="twitter:description" content="建設業許可更新・確認申請管理・廃棄物マニフェストをAIとGASで自動化。丸1日→半日に短縮した具体的な方法を解説。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Noto Sans JP"', 'sans-serif'], serif: ['"Noto Serif JP"', 'serif'] },
+                    colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }
+                }
+            }
+        }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "工務店の法令・申請をAI・GASで効率化する方法｜建設業許可から廃棄物管理まで自動化",
+      "datePublished": "2026-01-31",
+      "dateModified": "2026-01-31",
+      "author": {
+        "@type": "Person",
+        "name": "木村 拓隆",
+        "jobTitle": "BuildMate代表・AI活用伴走パートナー",
+        "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "BuildMate（ビルドメイト）",
+        "url": "https://buildmate-gif.github.io/buildmate-site"
+      },
+      "description": "工務店の法令・申請業務（建設業許可更新・確認申請・廃棄物マニフェスト・個人情報管理など）をAIとGASで自動化する方法を解説。許可更新書類を丸1日から半日に短縮した手順をBuildMate代表が紹介します。",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://buildmate-gif.github.io/buildmate-site/news/040-hourei-shinsei-ai.html"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "工務店の建設業許可更新にAIを使うとどのくらい時間が短縮できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BuildMateの支援実績では、丸1日かかっていた建設業許可更新の書類準備が約半日に短縮されます。AIで書類チェックリスト・記載内容の下書き生成・要件確認まで行うためです。行政書士への依頼費用の削減という追加効果も生まれ、自社対応できる範囲が広がります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "工務店の廃棄物マニフェスト管理はGASで自動化できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、自動化できます。GASで電子マニフェストの管理・提出期限アラート・年次集計を自動化する仕組みが構築できます。BuildMateの支援実績では、月3時間かかっていた廃棄物管理業務がほぼ自動化され、法令違反リスクの低減につながった工務店があります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "工務店の法令・申請業務でAI・GASに任せられない業務はありますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "労災・雇用保険の最終的な手続き判断は社労士対応・専門判断が必要なためAIには任せられません。しかしAIが許可更新の書類作成・要件確認を担うことで、工務店の経営者が専門家との相談・判断という本来業務に集中できる時間が月10時間以上生まれます。"
+          }
+        }
+      ]
+    }
+    </script>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<body class="bg-wa-bg text-wa-text font-sans antialiased">
+
+        <header class="bg-white/95 backdrop-blur-md fixed w-full top-0 z-50 border-b border-wa-border transition-all duration-300">
+        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+
+                <a href="../index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
+                <a href="../services.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">サービス・効果</a>
+                <a href="../ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
+                <a href="../diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+                <a href="../gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
+                <a href="../gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
+                <a href="../contact.html" class="px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+<!-- モバイルメニュー -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="../index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
+    <a href="../services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
+    <a href="../ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
+    <a href="../diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
+    <a href="../gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
+    <a href="../gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
+    <a href="../contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
+
+    <main class="pt-32 pb-24 px-6">
+        <div class="max-w-[800px] mx-auto">
+
+            <nav class="text-sm text-wa-gray mb-8">
+                <a href="../index.html" class="hover:text-wa-brand">ホーム</a>
+                <span class="mx-2">/</span>
+                <a href="../news.html" class="hover:text-wa-brand">コラム一覧</a>
+                <span class="mx-2">/</span>
+                <span>工務店の法令・申請をAI・GASで効率化する方法</span>
+            </nav>
+
+            <div class="mb-10">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="inline-block bg-wa-brand text-white text-sm font-bold px-4 py-1 rounded-full">業務効率化</span>
+                    <span class="inline-block bg-wa-accent text-white text-sm font-bold px-4 py-1 rounded-full">GAS活用</span>
+                </div>
+                <h1 class="break-keep text-balance text-2xl md:text-4xl font-serif font-bold text-wa-text leading-tight mb-4">工務店の法令・<wbr>申請を<wbr><br>AI・<wbr>GASで<wbr>効率化する方法</h1>
+            </div>
+
+            <div class="mb-10">
+            </div>
+
+            <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
+
+                <p class="font-bold text-xl mb-6 text-wa-brand">建設業許可の更新期限が迫って、慌てて書類をかき集めていませんか？</p>
+
+                <p>工務店の法令・申請業務は、対応が遅れると許可失効や法令違反という深刻なリスクに直結します。建設業許可の更新・変更届、確認申請のスケジュール管理、産業廃棄物マニフェストの提出管理、帳簿の整理——これらを思い出したときにバタバタと対応している工務店は少なくありません。「まだ期限まで時間がある」という感覚が、気づけばギリギリになっているのが法令対応の怖さです。</p>
+                <p>この記事では、工務店の法令・申請に関わる業務について、AI（Claude・ChatGPT）とGoogle Apps Script（GAS）を使って効率化する具体的な方法を解説します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。建設業許可から廃棄物マニフェストまで、6つの法令・申請業務の効率化手法を紹介します。</p>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の法令・申請業務とは</h4>
+
+                <p>工務店の法令・申請業務とは、建設業法・廃棄物処理法・個人情報保護法などの法令を遵守するために必要な申請・届出・帳簿管理・書類保管を行う業務全般を指します。具体的には次の5項目が代表的です。</p>
+
+                <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg">
+                    <li>建設業許可の更新・変更届の準備と提出</li>
+                    <li>確認申請・完了検査の申請スケジュール管理</li>
+                    <li>建設業法に基づく帳簿・書類の保管・整理</li>
+                    <li>産業廃棄物マニフェストの管理・年次集計</li>
+                    <li>個人情報保護・情報管理体制の整備</li>
+                </ul>
+
+                <p>これらの業務は法令遵守という観点から手を抜けない一方、書類作成・スケジュール管理・データ整理の部分はAIとGASで大幅に効率化できます。BuildMateの支援実績では、これらの業務をまとめて導入した工務店（社員5名規模）で月10〜13時間の削減を実現しています。</p>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">1. 建設業許可の更新・変更届（AIで対応）</h4>
+
+                <p>工務店の建設業許可管理とは、5年ごとの更新・経営業務管理責任者変更等の変更届を期限内に提出し、常に有効な許可状態を維持する業務です。書類の種類が多く、記載内容の確認だけで丸1日かかるケースが一般的で、行政書士に依頼すると10〜30万円のコストが発生します。</p>
+                <p>AIで書類チェックリストの生成・記載内容の下書き作成・要件確認まで行うことで、丸1日かかっていた許可更新書類の準備が半日程度に短縮されます。行政書士への依頼費用の削減と、更新漏れリスクの低減という効果も同時に得られます。</p>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">2. 確認申請・完了検査のスケジュール管理（GASで対応）</h4>
+
+                <p>工務店の確認申請管理とは、着工前の建築確認申請・中間検査・完了検査の申請スケジュールを工事進捗と照らし合わせ、期限を守って提出する業務です。複数案件が重なると期限管理が複雑になり、月2〜3時間の管理作業が発生します。</p>
+                <p>GASで申請スケジュール・期限を一元管理し、提出期限が近づくと自動でアラートメールを送信する仕組みを構築することで、月2時間かかっていたスケジュール管理がほぼ自動化されます。検査期限の超過というリスクも事前に防止できます。</p>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">3. 産業廃棄物マニフェスト管理（GASで対応）</h4>
+
+                <p>工務店の廃棄物マニフェスト管理とは、建設工事で発生した産業廃棄物の種類・量・処分業者・処分方法をマニフェスト（管理票）に記録し、法定期限内に提出・年次集計を行う業務です。月次・年次の集計だけで月3時間以上かかる工務店も少なくありません。</p>
+                <p>GASで電子マニフェストの管理・提出期限アラート・年次集計を自動化することで、月3時間かかっていた廃棄物管理業務がほぼ自動化されます。廃棄物処理法違反というリスクの低減と、年次報告書の作成工数削減という効果も得られます。</p>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">4. 帳簿・書類の保管・整理（GASで対応）</h4>
+
+                <p>工務店の帳簿保管とは、建設業法に基づく工事台帳・下請負人に対する書類等を規定年数（5〜10年）保管し、検査時に即座に提出できる状態で管理する業務です。紙ベースで保管している場合、書類の検索・整理だけで月2時間以上かかることがあります。</p>
+                <p>GASでGoogleドライブに書類を自動整理し、命名規則に従って保存・検索可能にする仕組みを構築することで、月2時間かかっていた帳簿整理がほぼ自動化されます。監督官庁の調査にも迅速に対応できる体制が整います。</p>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+
+                <p>BuildMateが工務店の法令・申請業務にAI・GASを導入した実績をもとに、削減効果をまとめます。</p>
+
+                <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg">
+                    <li>建設業許可更新・書類準備：丸1日 → 約半日</li>
+                    <li>確認申請スケジュール管理：月2時間 → 自動化</li>
+                    <li>帳簿・書類の整理・保管：月2時間 → 自動化</li>
+                    <li>廃棄物マニフェスト管理・集計：月3時間 → 自動化</li>
+                    <li>個人情報保護規程・文書整備：半日 → 約1時間</li>
+                </ul>
+
+                <p>社員数5名規模の工務店でこれらを組み合わせた場合、月10〜13時間の削減が現実的な目標値です。時給換算（2,000円）で月2〜2.5万円相当のコスト削減になります。AIツールの月額費用（約3,000円）と比較すると、7倍以上の費用対効果が見込める計算です。</p>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIに任せない業務について</h4>
+
+                <p>労災・雇用保険の最終的な手続き判断、許可申請における経営事項審査の専門的解釈——これらは社労士・行政書士などの専門家の判断が必要であり、AIに完全に任せることはできません。しかしAIが書類の下書き・チェックリスト生成・要件整理を担うことで、工務店の経営者が専門家との打ち合わせという本質的な部分に集中できる時間が生まれます。</p>
+
+                <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">
+                    建設業許可の更新漏れは、その日から違法状態になります。GASで期限アラートを自動化するだけで、この最悪のリスクを防げます。法令対応こそ、後回しにしてはいけないデジタル化の優先課題です。—— BuildMate代表・木村拓隆（元・施工管理1,200件以上）
+                </div>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+
+                <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg">
+                    <li>工務店の法令・申請業務は5項目あり、そのほぼすべてがAI・GASで効率化できる</li>
+                    <li>建設業許可更新はAIで丸1日→半日、廃棄物マニフェスト管理はGASで月3時間→自動化</li>
+                    <li>社員5名規模の工務店で月10〜13時間・2〜2.5万円相当のコスト削減が見込める</li>
+                    <li>労災手続き・専門家判断など「人にしかできない仕事」への集中時間を生み出すことが最大の目的</li>
+                    <li>導入に必要なのは月3,000円程度のAIツールとGoogleの無料ツールだけ</li>
+                </ul>
+
+                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+
+                <div class="space-y-6">
+                    <div class="bg-wa-bg p-5 rounded-lg">
+                        <p class="font-bold text-wa-brand mb-2">Q. 工務店の建設業許可更新にAIを使うとどのくらい時間が短縮できますか？</p>
+                        <p class="text-wa-text text-base m-0">BuildMateの支援実績では、丸1日かかっていた建設業許可更新の書類準備が約半日に短縮されます。AIで書類チェックリスト・記載内容の下書き生成・要件確認まで行うためです。行政書士への依頼費用の削減という追加効果も生まれ、自社対応できる範囲が広がります。</p>
+                    </div>
+                    <div class="bg-wa-bg p-5 rounded-lg">
+                        <p class="font-bold text-wa-brand mb-2">Q. 工務店の廃棄物マニフェスト管理はGASで自動化できますか？</p>
+                        <p class="text-wa-text text-base m-0">はい、自動化できます。GASで電子マニフェストの管理・提出期限アラート・年次集計を自動化する仕組みが構築できます。BuildMateの支援実績では、月3時間かかっていた廃棄物管理業務がほぼ自動化され、法令違反リスクの低減につながった工務店があります。</p>
+                    </div>
+                    <div class="bg-wa-bg p-5 rounded-lg">
+                        <p class="font-bold text-wa-brand mb-2">Q. 工務店の法令・申請業務でAI・GASに任せられない業務はありますか？</p>
+                        <p class="text-wa-text text-base m-0">労災・雇用保険の最終的な手続き判断は社労士対応・専門判断が必要なためAIには任せられません。しかしAIが許可更新の書類作成・要件確認を担うことで、工務店の経営者が専門家との相談・判断という本来業務に集中できる時間が月10時間以上生まれます。</p>
+                    </div>
+                </div>
+
+                <div class="mt-10 pt-8 border-t border-wa-border">
+                    <p class="font-bold text-wa-brand mb-4">関連記事</p>
+                    <ul class="space-y-2">
+                        <li><a href="029-zaimu-kaikei-ai.html" class="text-wa-brand hover:underline">工務店の財務・会計をAI・GASで効率化する方法</a></li>
+                        <li><a href="022-sekkei-sekisan-ai.html" class="text-wa-brand hover:underline">工務店の設計・積算をAI・GASで効率化する方法</a></li>
+                        <li><a href="009-saiyo-gaichuu-ai.html" class="text-wa-brand hover:underline">工務店の採用・外注をAI・GASで効率化する方法</a></li>
+                    </ul>
+                </div>
+
+            </article>
+
+            <!-- 著者プロフィール -->
+            <div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5">
+                <div class="w-14 h-14 rounded-full bg-wa-brand flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="user" class="w-7 h-7 text-white"></i>
+                </div>
+                <div>
+                    <p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p>
+                    <p class="text-[15px] md:text-base text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。現場の実態とシステムの限界を知り尽くした立場から、中小工務店向けのAI・GAS導入コンサルティングを提供。関西拠点・全国オンライン対応。</p>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-8 bg-white rounded-wa p-8 shadow-sm border border-wa-border text-center">
+                <p class="font-bold text-lg text-wa-brand mb-2">「うちでも使えるか」を一緒に確認しましょう</p>
+                <p class="text-wa-gray text-base md:text-lg mb-6 leading-relaxed max-w-2xl mx-auto">BuildMateでは、工務店の現状業務を無料でヒアリングし、AI・GASで効率化できる箇所を具体的にご提案しています。元・施工管理の代表が現場目線でお答えします。勧誘・営業は一切行いません。</p>
+                <a href="../contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-wa-accent hover:opacity-90 text-white rounded-wa font-bold transition-colors">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    無料相談に申し込む
+                </a>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="../news.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-wa-brand text-wa-brand rounded-wa font-bold hover:bg-wa-brand hover:text-white transition-colors">
+                    ← コラム一覧に戻る
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+            <footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
+        <div class="max-w-[1080px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-white/60 text-sm">
+                    Copyright © 2026 BuildMate. All rights reserved.
+                </div>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
+                    <a href="../privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                    <a href="../terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                    <a href="../law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5ECF52MHF6');</script>
+<meta charset="UTF-8"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../seigaiha.css"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>工務店の追客・フォローアップ管理をAI・GASで自動化する方法｜週2時間→30分を実現 | BuildMate</title>
+<link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/033-okukyaku-gas.html">
+<meta name="description" content="現場が忙しくなるほど、先日見学会に来てくれたお客様への追客連絡が後回しになってしまう——。工務店の営業でよく聞く悩みです。「また連絡しようと思っていたら、気づいたら他社で決まっていた」という経験がある方も多いのではないでしょうか。追客管理のBuildMate代表が紹介します。">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article"><meta property="og:title" content="工務店の追客・フォローアップ管理をAI・GASで自動化する方法｜週2時間→30分を実現 | BuildMate"><meta property="og:description" content="現場が忙しくなるほど、先日見学会に来てくれたお客様への追客連絡が後回しになってしまう——。工務店の営業でよく聞く悩みです。「また連絡しようと思っていたら、気づい"><meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/033-okukyaku-gas.html"><meta property="og:site_name" content="BuildMate"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="工務店の追客・フォローアップ管理をAI・GASで自動化する方法｜週2時間→30分を実現 | BuildMate"><meta name="twitter:description" content="現場が忙しくなるほど、先日見学会に来てくれたお客様への追客連絡が後回しになってしまう——。工務店の営業でよく聞く悩みです。「また連絡しようと思っていたら、気づい">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"工務店の追客・フォローアップ管理をAI・GASで自動化する方法｜週2時間→30分を実現","datePublished":"2026-01-01","dateModified":"2026-01-01","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/046-okukyaku-gas.html"}}</script>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<body class="bg-wa-bg text-wa-text font-sans antialiased">
+    <header class="bg-white/95 backdrop-blur-md fixed w-full top-0 z-50 border-b border-wa-border transition-all duration-300">
+        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+
+                <a href="../index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
+                <a href="../services.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">サービス・効果</a>
+                <a href="../ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
+                <a href="../diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+                <a href="../gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
+                <a href="../gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
+                <a href="../contact.html" class="px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+<!-- モバイルメニュー -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="../index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
+    <a href="../services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
+    <a href="../ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
+    <a href="../diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
+    <a href="../gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
+    <a href="../gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
+    <a href="../contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
+<main class="pt-32 pb-24 px-6"><div class="max-w-[800px] mx-auto">
+<nav class="text-sm text-wa-gray mb-8"><a href="../index.html" class="hover:text-wa-brand">ホーム</a><span class="mx-2">/</span><a href="../news.html" class="hover:text-wa-brand">コラム一覧</a><span class="mx-2">/</span><span>工務店の追客・フォローアップ管理業務とは</span></nav>
+<div class="mb-10"><div class="flex items-center gap-2 mb-4"><span class="inline-block bg-wa-brand text-white text-sm font-bold px-4 py-1 rounded-full">業務効率化</span><span class="inline-block bg-wa-accent text-white text-sm font-bold px-4 py-1 rounded-full">AI活用</span></div>
+<h1 class="break-keep text-balance text-2xl md:text-4xl font-serif font-bold text-wa-text leading-tight mb-4">工務店の追客・<wbr>フォローアップ管理を<wbr>AI・<wbr>GASで<wbr>自動化する方法</h1></div>
+<div class="mb-10"><img src="../images/gas_sum.png" alt="工務店の追客・フォローアップ管理業務とはのイメージ" class="w-full rounded-wa object-cover" onerror="this.style.display='none'"></div>
+<article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
+<p class="font-bold text-xl mb-6 text-wa-brand">見込み客への追客、後回しになっていませんか？</p>
+<p>現場が忙しくなるほど、先日見学会に来てくれたお客様への追客連絡が後回しになってしまう——。工務店の営業でよく聞く悩みです。「また連絡しようと思っていたら、気づいたら他社で決まっていた」という経験がある方も多いのではないでしょうか。追客管理の属人化と連絡漏れは、工務店の成約率を大きく下げる原因になっています。</p><p>この記事では、工務店の追客・フォローアップリスト管理業務を、AI（Claude・ChatGPT）とGoogle Apps Script（GAS）を組み合わせて自動化する具体的な方法を解説します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。</p>
+<h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の追客・フォローアップ管理業務とは</h4>
+<p>工務店の追客管理業務とは、見学会来場者・資料請求者・問い合わせ者などの見込み客に対して、適切なタイミングで継続的にアプローチし、商談・成約につなげるための顧客ステータス管理と連絡業務を指します。</p><p>具体的には次のような作業が含まれます。</p>
+<ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>見込み客リストの作成・ステータス管理（初回接触・検討中・商談中など）</li><li>次回連絡予定日の設定と管理</li><li>期日が来たお客様へのメール・電話連絡</li><li>お客様の温度感に合わせた情報提供・提案</li><li>ステータスの更新と上長への報告</li></ul>
+<p>BuildMateの支援実績では、AIとGASを組み合わせた工務店で、週2時間かかっていた追客管理業務が30分に短縮され、連絡漏れがゼロになっています。</p>
+<h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASで行う部分：顧客ステータス管理とリマインダーの自動送信</h4><p>工務店の顧客ステータス管理とは、見込み客の検討状況を一元管理し、次回アプローチのタイミングを逃さないようにする業務です。担当者の記憶や付箋メモに頼った管理では、連絡漏れが必ず起きます。</p><p>GASを使えば、Googleスプレッドシートで管理する見込み客リストの「次回連絡日」列を毎日自動チェックし、当日に連絡すべきお客様を担当者へメール・Chatworkで自動通知する仕組みを構築できます。ステータスの更新をトリガーに次回連絡日を自動セットする設定も可能です。週2時間かかっていた追客管理が30分以内に短縮されます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIで行う部分：フォローアップ文面の自動生成</h4><p>工務店の追客メール作成とは、お客様の状況や検討段階に合わせた文面を作成して送付する業務です。毎回ゼロから文章を考えると時間がかかり、後回しの原因になります。</p><p>AIに「見学会来場から2週間が経過したお客様向けのフォローアップメール」「資料請求から1ヶ月後の温かいリマインドメール」を生成させれば、担当者は確認・微修正だけで送付できます。お客様の個別情報（家族構成・検討エリアなど）を入力することで、パーソナライズされた文面を数分で作成できます。</p>
+<h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+<p>BuildMateが工務店の業務にAI・GASを導入した実績をもとに、削減効果をまとめます。</p>
+<ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>追客管理工数：週2時間 → 約30分</li><li>連絡漏れ：リマインダー自動通知でゼロに</li><li>フォローアップ文面作成：30分 → 数分（AI生成）</li><li>ステータス更新：手動 → 半自動（入力後に次回日付を自動セット）</li></ul>
+<p>月換算で6〜7時間の削減が現実的な目標値です。時給換算（2,000円）で月1〜1.5万円相当のコスト削減に加え、連絡漏れ防止による成約率の改善効果が大きい業務です。</p>
+<h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIとGASでできないことについて</h4>
+<p>商談での提案内容・価格交渉・最終的な決断へのクロージングは人間の営業担当者が行う必要があります。お客様の感情を読み取った対応はAIでは代替できません。
+
+しかしAIとGASが追客の定型業務（リマインド・文面作成・ステータス管理）を自動化することで、工務店の営業担当者が「商談・提案」という本質的な営業活動に集中できる時間が生まれます。</p>
+<div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">追客で差がつくのは「連絡の質」より「連絡の速さと継続性」です。GASのリマインダーで連絡漏れをなくし、AIで文面を作れば、追客の質と量が両立します。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）</div>
+<h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+<ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>工務店の追客・フォローアップ管理はGASのリマインダーとAIの文面生成で週2時間→30分に短縮できる</li><li>GASが次回連絡日を毎日チェックし、当日に担当者へ自動通知する仕組みを構築できる</li><li>AIがお客様の状況に合わせたフォローアップメール文面を数分で生成する</li><li>連絡漏れがゼロになり、成約率の改善につながる</li><li>導入に必要なのはGoogleスプレッドシート（無料）とAIツール月3,000円程度のみ</li></ul>
+<h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+<div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の追客管理をGASで自動リマインドするにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">GASでGoogleスプレッドシートの次回連絡日を毎日チェックし、当日の担当者へメール・Chatwork通知を送る仕組みを構築できます。BuildMateの支援実績では、この自動通知で連絡漏れがゼロになった工務店があります。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の追客メールをAIで作成するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">お客様の状況（見学会来場日・検討内容・家族構成など）をAIに伝えるだけで、自然な追客メール文面が数分で生成されます。BuildMateの支援実績では、文面作成時間が30分から数分に短縮されています。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の追客・フォローアップでAIとGASを組み合わせると成約率は変わりますか？</p><p class="text-wa-text text-base m-0">BuildMateの支援実績では、リマインダーによる連絡漏れゼロ化とAI文面による追客の継続化で、商談化率が改善した工務店があります。連絡の継続性が成約率に直結します。</p></div></div>
+<div class="mt-10 pt-8 border-t border-wa-border"><p class="font-bold text-wa-brand mb-4">関連記事</p><ul class="space-y-2"><li><a href="053-eigyo-shukyaku-ai.html" class="text-wa-brand hover:underline">工務店の営業・集客業務をAI・GASで効率化する方法</a></li><li><a href="036-toiawase-gas.html" class="text-wa-brand hover:underline">工務店のHP問い合わせ対応をAI・GASで24時間自動化する方法</a></li><li><a href="031-shinchoku-gas.html" class="text-wa-brand hover:underline">工務店の工事進捗報告をAI・GASで自動化する方法</a></li></ul></div>
+</article>
+<div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5"><div class="w-14 h-14 rounded-full bg-wa-brand flex items-center justify-center flex-shrink-0"><i data-lucide="user" class="w-7 h-7 text-white"></i></div><div><p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p><p class="text-[15px] md:text-base text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。現場の実態とシステムの限界を知り尽くした立場から、中小工務店向けのAI・GAS導入コンサルティングを提供。関西拠点・全国オンライン対応。</p></div></div>
+<div class="mt-8 bg-white rounded-wa p-8 shadow-sm border border-wa-border text-center"><p class="font-bold text-lg text-wa-brand mb-2">「うちでも使えるか」を一緒に確認しましょう</p><p class="text-wa-gray text-base md:text-lg mb-6 leading-relaxed max-w-2xl mx-auto">BuildMateでは、工務店の現状業務を無料でヒアリングし、AI・GASで効率化できる箇所を具体的にご提案しています。元・施工管理の代表が現場目線でお答えします。勧誘・営業は一切行いません。</p><a href="../contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-wa-accent hover:opacity-90 text-white rounded-wa font-bold transition-colors"><i data-lucide="mail" class="w-4 h-4"></i>無料相談に申し込む</a></div>
+<div class="mt-8 text-center"><a href="../news.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-wa-brand text-wa-brand rounded-wa font-bold hover:bg-wa-brand hover:text-white transition-colors">← コラム一覧に戻る</a></div>
+</div></main>
+        <footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
+        <div class="max-w-[1080px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-white/60 text-sm">
+                    Copyright © 2026 BuildMate. All rights reserved.
+                </div>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
+                    <a href="../privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                    <a href="../terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                    <a href="../law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script>lucide.createIcons();</script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+</body></html>

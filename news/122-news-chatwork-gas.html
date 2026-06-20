@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5ECF52MHF6');</script>
+<meta charset="UTF-8"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../seigaiha.css"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>住宅業界ニュースをGASで自動収集してChatworkに毎朝配信する方法 | BuildMate</title>
+<link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/060-news-chatwork-gas.html">
+<meta name="description" content="住宅業界・建設業界の最新ニュースをGASでRSS自動収集し、Gemini APIで要約してChatworkに毎朝配信する方法を解説。情報収集の時間をゼロにしながら業界トレンドを把握し続ける仕組みをBuildMate代表が紹介します。">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article"><meta property="og:title" content="住宅業界ニュースをGASで自動収集してChatworkに毎朝配信する方法 | BuildMate"><meta property="og:description" content="住宅業界・建設業界の最新ニュースをGASでRSS自動収集し、Gemini APIで要約してChatworkに毎朝配信する方法を解説。情報収集の時間をゼロにしながら業界トレンドを把握し続ける仕組みをBuildMate代表が紹介します。"><meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/060-news-chatwork-gas.html"><meta property="og:site_name" content="BuildMate"><meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="住宅業界ニュースをGASで自動収集してChatworkに毎朝配信する方法 | BuildMate"><meta name="twitter:description" content="住宅業界・建設業界の最新ニュースをGASでRSS自動収集し、Gemini APIで要約してChatworkに毎朝配信する方法を解説。情報収集の時間をゼロにしながら業界トレンドを把握し続ける仕組みをBuildMate代表が紹介します。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"住宅業界ニュースをGASで自動収集してChatworkに毎朝配信する方法","datePublished":"2025-12-28","dateModified":"2025-12-28","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"住宅業界・建設業界の最新ニュースをGASでRSS自動収集し、Gemini APIで要約してChatworkに毎朝配信する方法を解説。情報収集の時間をゼロにしながら業界トレンドを把握し続ける仕組みをBuildMate代表が紹介します。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/060-news-chatwork-gas.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"住宅業界のニュースをGASで自動収集してChatworkに配信するにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"GASのRSSフィード取得機能でニュースを自動収集し、Chatwork APIで指定チャンネルへ自動投稿する仕組みを構築できます。BuildMate代表が実際に活用しており、毎朝の情報収集時間がゼロになっています。"}},{"@type":"Question","name":"工務店の業界ニュースをGemini APIで自動要約するにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"GASからGemini API（Google AI Studio）を呼び出し、取得した記事のテキストを送信して要約を自動生成できます。無料枠で十分に利用でき、BuildMateが設定手順をサポートします。"}},{"@type":"Question","name":"工務店の情報収集をGAS・Gemini・Chatworkで自動化するメリットは何ですか？","acceptedAnswer":{"@type":"Answer","text":"毎朝の情報収集時間がゼロになることに加え、チーム全員が同じ業界情報をリアルタイムで共有できます。BuildMate代表の実践例では、補助金の新着情報を見逃さなくなった効果が特に大きかったです。"}}]}
+</script>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<body class="bg-wa-bg text-wa-text font-sans">
+    <header class="bg-white/95 backdrop-blur-md fixed w-full top-0 z-50 border-b border-wa-border transition-all duration-300">
+        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
+                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+
+                <a href="../index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
+                <a href="../services.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">サービス・効果</a>
+                <a href="../ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
+                <a href="../diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
+                <a href="../gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
+                <a href="../gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
+                <a href="../contact.html" class="px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+<!-- モバイルメニュー -->
+<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
+    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
+    <a href="../index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
+    <a href="../services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
+    <a href="../ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
+    <a href="../diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
+    <a href="../gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
+    <a href="../gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
+    <a href="../contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+</div>
+<main class="max-w-[800px] mx-auto px-6 pt-28 pb-16">
+    <nav class="text-sm text-wa-gray mb-8"><a href="../index.html" class="hover:text-wa-brand">ホーム</a><span class="mx-2">/</span><a href="../news.html" class="hover:text-wa-brand">コラム一覧</a><span class="mx-2">/</span><span>住宅業界ニュースのGAS自動収集・Chatwork配信</span></nav>
+    <div class="flex items-center gap-2 mb-4">
+        <span class="inline-block bg-wa-brand text-white text-sm font-bold px-4 py-1 rounded-full">業務効率化</span>
+        <span class="inline-block bg-wa-accent text-white text-sm font-bold px-4 py-1 rounded-full">GAS活用</span>
+    </div>
+    <h1 class="break-keep text-balance font-serif text-2xl md:text-3xl font-bold text-wa-text mb-4 leading-snug">住宅業界ニュースをGASで自動収集して<br>Chatworkに毎朝配信する方法</h1>
+    <div class="flex items-center gap-4 text-sm text-wa-gray mb-8">
+        <span class="flex items-center gap-1"><i data-lucide="user" class="w-4 h-4"></i>木村 拓隆</span>
+    </div>
+    <div class="mb-10 rounded-wa overflow-hidden"><img src="../images/gas_sum.png" alt="住宅業界ニュースをGASで自動収集してChatworkに毎朝配信する方法" class="w-full object-cover"></div>
+    <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
+        <p class="font-bold text-xl mb-6 text-wa-brand">毎朝の業界ニュースチェック、どのくらい時間をかけていますか？</p>
+        <p class="mb-4 text-wa-text leading-relaxed">住宅・建設業界の経営者にとって、補助金制度の変更・建材価格の動向・法改正・競合動向などの最新情報を把握し続けることは重要です。しかし複数のニュースサイトを毎朝チェックするだけで20〜30分かかることがあり、忙しい日は後回しになりがちです。重要な情報を見逃して対応が遅れるリスクもあります。</p>
+        <p class="mb-8 text-wa-text leading-relaxed">この記事では、住宅業界・建設業界の最新ニュースをGASのRSSリーダーで自動収集し、Gemini APIで要約してChatworkへ毎朝自動配信する仕組みの構築方法を解説します。BuildMate代表が実際に活用している情報収集自動化の手法をもとにした内容です。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の業界情報収集業務とは</h4>
+        <p class="mb-4">工務店の業界情報収集業務とは、住宅・建設業界に関するニュース・法改正・補助金情報・建材価格・競合動向などを定期的に収集・整理し、経営判断や営業活動に活用する業務を指します。情報源が多岐にわたるため、手動での収集・整理には毎日20〜30分かかることがあります。</p>
+        <p class="mb-3">具体的には次のような作業が含まれます。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>住宅業界ニュースサイトの定期チェック</li><li>建設・不動産関連の法改正情報の確認</li><li>補助金・助成金の新着情報の確認</li><li>業界トレンド・競合動向のリサーチ</li><li>収集した情報の社内共有</li></ul>
+        <p class="mb-8">BuildMate代表が実際にこの仕組みを導入したことで、毎朝20〜30分かかっていたニュースチェック作業がゼロになり、重要な業界情報を見逃さない環境が整っています。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">仕組みの全体像：RSSとGASとGemini APIをつなぐ</h4><p class="mb-4">GASがRSSフィードから住宅業界・建設業界のニュースを自動取得します。取得した記事タイトル・概要をGemini APIへ送信し、「工務店経営者向けに100字で要約」という指示で自動要約させます。要約された情報をGASがChatwork APIで指定チャンネルへ毎朝8時に自動投稿します。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 1: 監視するRSSフィードの選定・登録</h4><p class="mb-4">GoogleスプレッドシートにRSSフィードのURLを登録します。住宅業界向けには「住宅産業新聞・住宅ビジネス・リフォーム産業新聞・建設通信新聞」などのRSSや、「国土交通省・中小企業庁」の新着情報フィードが有用です。スプレッドシートにURLを追加するだけで監視対象を増やせます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 2: Gemini APIによる自動要約</h4><p class="mb-4">GASがRSSで取得した記事の見出しと概要をGemini API（Google AI Studio・無料枠あり）へ送信します。「住宅業界の工務店経営者向けに、この記事の要点を100字で要約してください」というプロンプトで要約を自動生成します。専門用語を噛み砕いた平易な要約が毎朝届く状態になります。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 3: Chatworkへの自動投稿</h4><p class="mb-4">GASがChatwork APIを使って、要約されたニュース一覧を毎朝8時に指定チャンネルへ自動投稿します。「【本日の業界ニュース】①〇〇（要約）②〇〇（要約）…」という形式で整理されて届くため、スクロールするだけで当日の重要情報が把握できます。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+        <p class="mb-4">BuildMateが建設業・工務店の現場にGASを導入した実績をもとに、削減効果をまとめます。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>業界ニュース収集：毎朝20〜30分 → ゼロ（GASが自動収集）</li><li>記事の読み込み：全文読む必要あり → Geminiが100字で自動要約</li><li>情報の社内共有：口頭・メール → Chatworkへ自動投稿</li><li>重要情報の見逃し：複数サイト確認が必要 → 一か所に自動集約</li></ul>
+        <p class="mb-8">毎朝の情報収集時間がゼロになることに加え、チーム全員が同じ業界情報を把握できる環境が整います。補助金・法改正など対応が必要な情報をいち早くキャッチできることで、ビジネス機会の損失防止にもつながります。</p>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASでできないことについて</h4>
+        <p class="mb-4">GASのRSSリーダーが収集できるのはRSSフィードを提供しているサイトの情報に限られます。また、Geminiの要約はあくまでも参考情報であり、詳細確認が必要な情報は元記事を読む必要があります。情報の正確性は最終的に人間が判断する必要があります。</p>
+        <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">情報収集の自動化は、私自身が毎日活用している仕組みです。朝にChatworkを開くと業界の重要ニュースが要約されて届いている——これだけで1日のスタートが変わります。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）</div>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>住宅業界ニュースはGASのRSS自動収集＋Gemini API要約でChatworkへ毎朝自動配信できる</li><li>RSSフィードのURLをスプレッドシートに登録するだけで監視対象を自由に設定できる</li><li>Gemini APIが記事を100字で自動要約し、読む手間が大幅に削減される</li><li>毎朝20〜30分かかっていた情報収集作業がゼロになり、チームで情報を共有できる</li><li>導入コストはGAS（無料）・Gemini API（無料枠あり）・Chatwork API（無料）のみ</li></ul>
+        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 住宅業界のニュースをGASで自動収集してChatworkに配信するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">GASのRSSフィード取得機能でニュースを自動収集し、Chatwork APIで指定チャンネルへ自動投稿する仕組みを構築できます。BuildMate代表が実際に活用しており、毎朝の情報収集時間がゼロになっています。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の業界ニュースをGemini APIで自動要約するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">GASからGemini API（Google AI Studio）を呼び出し、取得した記事のテキストを送信して要約を自動生成できます。無料枠で十分に利用でき、BuildMateが設定手順をサポートします。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の情報収集をGAS・Gemini・Chatworkで自動化するメリットは何ですか？</p><p class="text-wa-text text-base m-0">毎朝の情報収集時間がゼロになることに加え、チーム全員が同じ業界情報をリアルタイムで共有できます。BuildMate代表の実践例では、補助金の新着情報を見逃さなくなった効果が特に大きかったです。</p></div></div>
+        <div class="mt-10 pt-8 border-t border-wa-border"><p class="font-bold text-wa-brand mb-4">関連記事</p><ul class="space-y-2"><li><a href="118-hojokin-gas.html" class="text-wa-brand hover:underline">工務店向け補助金・助成金の新着情報をGASで自動監視してLINE・Chatworkに通知する方法</a></li><li><a href="123-sns-gemini-gas.html" class="text-wa-brand hover:underline">SNS投稿ネタをGemini APIとGASで毎朝自動提案する方法</a></li><li><a href="055-shakunai-kanri-ai.html" class="text-wa-brand hover:underline">工務店の社内管理業務をAI・GASで効率化する方法</a></li></ul></div>
+    </article>
+    <div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5">
+        <div class="w-14 h-14 rounded-full bg-wa-brand flex items-center justify-center flex-shrink-0"><i data-lucide="user" class="w-7 h-7 text-white"></i></div>
+        <div><p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p><p class="text-[15px] md:text-base text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。現場の実態とシステムの限界を知り尽くした立場から、中小工務店向けのAI・GAS導入コンサルティングを提供。関西拠点・全国オンライン対応。</p></div>
+    </div>
+    <div class="mt-8 bg-white rounded-wa p-8 shadow-sm border border-wa-border text-center">
+        <p class="font-bold text-lg text-wa-brand mb-2">「うちでも使えるか」を一緒に確認しましょう</p>
+        <p class="text-wa-gray text-base md:text-lg mb-6 leading-relaxed max-w-2xl mx-auto">BuildMateでは、工務店・建設会社の現状業務を無料でヒアリングし、GASで効率化できる箇所を具体的にご提案しています。元・施工管理の代表が現場目線でお答えします。勧誘・営業は一切行いません。</p>
+        <a href="../contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-wa-accent hover:opacity-90 text-white rounded-wa font-bold transition-colors"><i data-lucide="mail" class="w-4 h-4"></i>無料相談に申し込む</a>
+    </div>
+    <div class="mt-8 text-center"><a href="../news.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-wa-brand text-wa-brand rounded-wa font-bold hover:bg-wa-brand hover:text-white transition-colors">← コラム一覧に戻る</a></div>
+</main>
+        <footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
+        <div class="max-w-[1080px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-white/60 text-sm">
+                    Copyright © 2026 BuildMate. All rights reserved.
+                </div>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
+                    <a href="../privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
+                    <a href="../terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
+                    <a href="../law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script>lucide.createIcons();</script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+</body></html>
