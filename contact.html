@@ -21,8 +21,11 @@
     <meta property="og:title" content="工務店AI活用の無料相談 | BuildMate">
     <meta property="og:description" content="AIに詳しくなくても、相談内容が未整理でも大丈夫。元・施工管理の代表が現場に合う形を一緒に整理します。">
     <meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/contact.html">
+    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
     <meta property="og:site_name" content="BuildMate">
     <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
@@ -124,13 +127,43 @@
 
     <main class="pt-32 pb-24 px-6">
         <div class="max-w-[700px] mx-auto">
-            <div class="text-center mb-12">
+            <div class="text-center mb-10">
                 <span class="text-wa-gold font-bold text-sm tracking-widest uppercase mb-3 block">Contact</span>
                 <h1 class="text-3xl md:text-4xl font-serif font-bold text-wa-text mb-6">無料相談・お問い合わせ</h1>
                 <p class="text-wa-gray text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
                     <span class="block">何を相談してよいか未整理でも大丈夫です。</span>
                     <span class="block mt-2">AIに詳しくなくても、今の現場に合う形を一緒に整理します。</span>
                 </p>
+            </div>
+
+            <!-- 無料相談の3つの約束＆ご相談の流れ -->
+            <div class="bg-white p-6 md:p-8 rounded-wa shadow-soft border border-wa-border mb-8">
+                <h2 class="text-base md:text-lg font-bold text-wa-brand mb-4 flex items-center gap-2">
+                    <i data-lucide="shield-check" class="w-5 h-5 text-wa-gold"></i>
+                    はじめての方も安心の「3つの約束」
+                </h2>
+                <div class="grid md:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-wa-bg/70 p-4 rounded-lg border border-wa-border/60">
+                        <div class="font-bold text-sm text-wa-brand mb-1">1. 無理な勧誘は一切なし</div>
+                        <p class="text-xs text-wa-gray leading-relaxed">情報収集や「自社でも使えるか聞いてみたい」という段階でも歓迎です。</p>
+                    </div>
+                    <div class="bg-wa-bg/70 p-4 rounded-lg border border-wa-border/60">
+                        <div class="font-bold text-sm text-wa-brand mb-1">2. 1〜2営業日以内に代表が返信</div>
+                        <p class="text-xs text-wa-gray leading-relaxed">元・施工管理の代表（木村）が直接内容を確認し、折り返しご連絡いたします。</p>
+                    </div>
+                    <div class="bg-wa-bg/70 p-4 rounded-lg border border-wa-border/60">
+                        <div class="font-bold text-sm text-wa-brand mb-1">3. オンライン30分・準備不要</div>
+                        <p class="text-xs text-wa-gray leading-relaxed">全国オンライン対応（関西圏は訪問相談も可能）。資料のご準備も不要です。</p>
+                    </div>
+                </div>
+                <div class="border-t border-wa-border/60 pt-4">
+                    <div class="text-xs font-bold text-wa-gray mb-2">ご相談までの3ステップ</div>
+                    <div class="grid grid-cols-3 gap-2 text-xs text-wa-text">
+                        <div class="bg-wa-bg/40 px-3 py-2 rounded border border-wa-border/40"><strong class="text-wa-brand">STEP 1</strong>：下記フォーム送信（約1分）</div>
+                        <div class="bg-wa-bg/40 px-3 py-2 rounded border border-wa-border/40"><strong class="text-wa-brand">STEP 2</strong>：メールで日程調整</div>
+                        <div class="bg-wa-bg/40 px-3 py-2 rounded border border-wa-border/40"><strong class="text-wa-brand">STEP 3</strong>：無料相談（現状整理・ご提案）</div>
+                    </div>
+                </div>
             </div>
 
             <div class="bg-white p-8 md:p-12 rounded-wa shadow-soft border border-wa-border">
@@ -148,7 +181,7 @@
                         </div>
                         <div>
                             <label for="email" class="block text-sm font-bold text-wa-text mb-2">メールアドレス <span class="text-wa-accent text-xs ml-1">*</span></label>
-                            <input type="email" id="email" name="email" required placeholder="buildmate88@gmail.com" class="form-input w-full bg-wa-input border border-wa-border rounded-md px-4 py-3 text-wa-text placeholder-wa-gray/50 transition-colors">
+                            <input type="email" id="email" name="email" required placeholder="例）info@example.co.jp" class="form-input w-full bg-wa-input border border-wa-border rounded-md px-4 py-3 text-wa-text placeholder-wa-gray/50 transition-colors">
                         </div>
                     </div>
 
@@ -157,19 +190,27 @@
                         <div class="space-y-3">
                             <label class="flex items-center p-3 border border-wa-border rounded-md cursor-pointer hover:bg-wa-bg transition-colors">
                                 <input type="checkbox" name="category" value="efficiency" class="w-4 h-4 text-wa-brand border-gray-300 focus:ring-wa-brand accent-wa-brand">
-                                <span class="ml-3 text-sm text-wa-text">事務作業・日報の効率化について</span>
+                                <span class="ml-3 text-sm text-wa-text">事務作業・現場記録（日報・見積・提案資料など）の効率化について</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-wa-border rounded-md cursor-pointer hover:bg-wa-bg transition-colors">
+                                <input type="checkbox" name="category" value="after_follow" class="w-4 h-4 text-wa-brand border-gray-300 focus:ring-wa-brand accent-wa-brand">
+                                <span class="ml-3 text-sm text-wa-text">アフター点検案内・OB客フォローの仕組み化について</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-wa-border rounded-md cursor-pointer hover:bg-wa-bg transition-colors">
+                                <input type="checkbox" name="category" value="gas_automation" class="w-4 h-4 text-wa-brand border-gray-300 focus:ring-wa-brand accent-wa-brand">
+                                <span class="ml-3 text-sm text-wa-text">Googleツール（スプレッドシート・GAS等）の自動化について</span>
                             </label>
                             <label class="flex items-center p-3 border border-wa-border rounded-md cursor-pointer hover:bg-wa-bg transition-colors">
                                 <input type="checkbox" name="category" value="marketing" class="w-4 h-4 text-wa-brand border-gray-300 focus:ring-wa-brand accent-wa-brand">
-                                <span class="ml-3 text-sm text-wa-text">SNS集客・ブログ自動化について</span>
+                                <span class="ml-3 text-sm text-wa-text">SNS集客・ブログ記事作成の効率化について</span>
                             </label>
                             <label class="flex items-center p-3 border border-wa-border rounded-md cursor-pointer hover:bg-wa-bg transition-colors">
                                 <input type="checkbox" name="category" value="plan" class="w-4 h-4 text-wa-brand border-gray-300 focus:ring-wa-brand accent-wa-brand">
-                                <span class="ml-3 text-sm text-wa-text">料金プラン・導入費用について</span>
+                                <span class="ml-3 text-sm text-wa-text">ご支援プラン・費用の考え方について</span>
                             </label>
                             <label class="flex items-center p-3 border border-wa-border rounded-md cursor-pointer hover:bg-wa-bg transition-colors">
                                 <input type="checkbox" name="category" value="other" class="w-4 h-4 text-wa-brand border-gray-300 focus:ring-wa-brand accent-wa-brand">
-                                <span class="ml-3 text-sm text-wa-text">その他</span>
+                                <span class="ml-3 text-sm text-wa-text">何から手をつけるか未整理なので、まず現状整理から相談したい（その他）</span>
                             </label>
                         </div>
                     </div>
@@ -190,7 +231,7 @@
 
                     <div class="text-center">
                         <button type="submit" id="submitButton" class="btn-cta w-full md:w-auto px-12 py-4 bg-wa-accent hover:bg-wa-accentHover text-white font-bold rounded-md shadow-lg transition-all duration-200 flex items-center justify-center gap-2 mx-auto disabled:opacity-50 disabled:cursor-not-allowed">
-                            <span id="btnText">この内容で送信する</span>
+                            <span id="btnText">無料相談を申し込む（1〜2営業日以内にご返信）</span>
                             <div id="btnSpinner" class="spinner hidden"></div>
                             <i data-lucide="send" id="btnIcon" class="w-4 h-4"></i>
                         </button>
@@ -250,13 +291,16 @@
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
                 .then(response => {
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'generate_lead', { event_category: 'contact', event_label: 'contact_form_submit' });
+                    }
                     window.location.href = 'thanks.html';
                 })
                 .catch(error => {
                     alert('送信に失敗しました。時間をおいて再度お試しください。');
                     console.error('Error!', error.message);
                     submitButton.disabled = false;
-                    btnText.textContent = 'この内容で送信する';
+                    btnText.textContent = '無料相談を申し込む（1〜2営業日以内にご返信）';
                     btnSpinner.classList.add('hidden');
                     btnIcon.classList.remove('hidden');
                 });
