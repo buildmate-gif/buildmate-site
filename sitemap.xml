@@ -16,6 +16,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <!-- 代表プロフィール・事業概要 -->
+  <url>
+    <loc>https://buildmate-gif.github.io/buildmate-site/about.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- AI活用入門ガイド -->
   <url>
     <loc>https://buildmate-gif.github.io/buildmate-site/ai-guide.html</loc>
