@@ -87,3 +87,20 @@ div.bg-wa-bg {
   background-color: #1e2f48;
   background-image: none;
 }
+
+/* ────────────────────────────────────────────
+   全ページ共通：日本語の美しい改行・組版ルール
+   ・見出し（h1〜h4）：文節単位で折り返し（auto-phrase）＆行長バランス均等化（balance）
+   ・本文（p, li, dd）：最終行の1文字孤立を防止（pretty）＆厳格な禁則処理（strict）
+   ──────────────────────────────────────────── */
+h1, h2, h3, h4 {
+  word-break: auto-phrase;
+  text-wrap: balance;
+  line-break: strict;
+  overflow-wrap: anywhere;
+}
+
+p, li, dd, td, .faq-q, .faq-a {
+  text-wrap: pretty;
+  line-break: strict;
+}
