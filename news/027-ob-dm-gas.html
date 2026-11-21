@@ -3,7 +3,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5ECF52MHF6');</script>
 <meta charset="UTF-8"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../seigaiha.css"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../theme-a2.css"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>工務店のOB客向けDM・ニュースレターをAI・GASで自動化する方法｜月4時間→30分を実現 | BuildMate</title>
 <link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/027-ob-dm-gas.html">
 <meta name="description" content="工事が終わったお客様へのアフターフォローは、再受注・紹介受注の源泉です。しかし現場が忙しくなると、OB客へのニュースレターやDMが「今月も後回し」になってしまう工務店が多いです。送らない月が続くほど、OB客との関係が薄れ、他社への乗り換えリBuildMate代表が紹介します。">
@@ -15,41 +15,39 @@
 <script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"工務店のOB客向けDM・ニュースレターをAI・GASで自動化する方法｜月4時間→30分を実現","datePublished":"2026-09-18","dateModified":"2026-09-18","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/048-ob-dm-gas.html"}}</script>
 <style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
-<body class="bg-wa-bg text-wa-text font-sans antialiased">
-    <header class="bg-white/95 backdrop-blur-md fixed w-full top-0 z-50 border-b border-wa-border transition-all duration-300">
-        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="../index.html" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
-                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
-            </a>
-
-            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
-
-                <a href="../index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
-                <a href="../services.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">サービス・効果</a>
-                <a href="../ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
-                <a href="../diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
-                <a href="../gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
-                <a href="../gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
-                <a href="../contact.html" class="px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
-            </nav>
-
-            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
-                <i data-lucide="menu" class="w-8 h-8"></i>
-            </button>
-        </div>
-    </header>
+<body class="bm-article-page bg-wa-bg text-wa-text font-sans antialiased">
+    <header class="site-header">
+    <div class="header-in">
+      <a href="../index.html" class="site-logo">
+        <span class="site-logo-mark">B</span>
+        <span>BuildMate</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../index.html">ホーム</a>
+        <a href="../services.html">サービス・効果</a>
+        <a href="../ai-guide.html">AI活用入門</a>
+        <a href="../diagnosis.html">AI診断</a>
+        <a href="../gift.html">特典プレゼント</a>
+        <a href="../gas.html">GAS活用事例</a>
+        <a href="../contact.html" class="nav-cta">無料相談</a>
+      </nav>
+      <button id="mobile-menu-btn" class="mobile-toggle" aria-label="メニューを開く">
+        <i data-lucide="menu" width="28" height="28"></i>
+      </button>
+    </div>
+  </header>
 
 <!-- モバイルメニュー -->
-<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
-    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
-    <a href="../index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
-    <a href="../services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
-    <a href="../ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
-    <a href="../diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
-    <a href="../gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
-    <a href="../gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
-    <a href="../contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+<div id="mobile-menu">
+    <button class="mm-close" onclick="closeMobileMenu()">✕ 閉じる</button>
+    <a href="../index.html" onclick="closeMobileMenu()">ホーム</a>
+    <a href="../services.html" onclick="closeMobileMenu()">サービス・効果</a>
+    <a href="../ai-guide.html" onclick="closeMobileMenu()">AI活用入門</a>
+    <a href="../diagnosis.html" onclick="closeMobileMenu()">AI診断</a>
+    <a href="../gift.html" onclick="closeMobileMenu()">特典プレゼント</a>
+    <a href="../gas.html" onclick="closeMobileMenu()">GAS活用事例</a>
+    <a href="../about.html" onclick="closeMobileMenu()">代表プロフィール・事業概要</a>
+    <a href="../contact.html" class="mm-cta" onclick="closeMobileMenu()">無料相談</a>
 </div>
 <main class="pt-32 pb-24 px-6"><div class="max-w-[800px] mx-auto">
 <nav class="text-sm text-wa-gray mb-8"><a href="../index.html" class="hover:text-wa-brand">ホーム</a><span class="mx-2">/</span><a href="../news.html" class="hover:text-wa-brand">コラム一覧</a><span class="mx-2">/</span><span>工務店のOB客向けDM・ニュースレター業務</span></nav>
@@ -79,24 +77,23 @@
 <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店のOB客向けニュースレター文章をAIで作成するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">テーマ・季節・対象顧客の情報をAIに入力するだけで、読みやすいニュースレター文章が数分で生成されます。BuildMateの支援実績では、文章作成時間が2時間から数分に短縮されています。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店のDM配信をGASで自動化するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">GASでGoogleスプレッドシートのOB客リストから送付対象を自動抽出し、作成した文章を組み込んでメールを自動送信する仕組みを構築できます。BuildMateの支援実績では、月4時間の配信業務が30分に短縮されています。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店のOB客フォローを自動化すると再受注率はどのくらい変わりますか？</p><p class="text-wa-text text-base m-0">BuildMateの支援実績では、月次ニュースレードの自動配信でOB客からの問い合わせが増加し、再受注・紹介受注につながった工務店があります。定期的な接触が再受注の鍵です。</p></div></div>
 <div class="mt-10 pt-8 border-t border-wa-border"><p class="font-bold text-wa-brand mb-4">関連記事</p><ul class="space-y-2"><li><a href="018-after-hosho-ai.html" class="text-wa-brand hover:underline">工務店のアフター対応業務をAI・GASで効率化する方法</a></li><li><a href="025-claim-gas.html" class="text-wa-brand hover:underline">工務店のクレーム・不具合受付をAI・GASで自動化する方法</a></li><li><a href="031-shinchoku-gas.html" class="text-wa-brand hover:underline">工務店の工事進捗報告をAI・GASで自動化する方法</a></li></ul></div>
 </article>
-<div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5"><div class="w-14 h-14 rounded-full bg-wa-brand flex items-center justify-center flex-shrink-0"><i data-lucide="user" class="w-7 h-7 text-white"></i></div><div><p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p><p class="text-[15px] md:text-base text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。現場の実態とシステムの限界を知り尽くした立場から、中小工務店向けのAI・GAS導入コンサルティングを提供。関西拠点・全国オンライン対応。</p></div></div>
+<div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5"><img src="../HP_profile.webp" alt="木村 拓隆（BuildMate代表）" loading="lazy" style="width:72px;height:72px;object-fit:cover;object-position:top;flex-shrink:0;"><div><p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p><p class="text-[15px] md:text-base text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。現場の実態とシステムの限界を知り尽くした立場から、中小工務店向けのAI・GAS導入コンサルティングを提供。関西拠点・全国オンライン対応。</p></div></div>
 <div class="mt-8 bg-white rounded-wa p-8 shadow-sm border border-wa-border text-center"><p class="font-bold text-lg text-wa-brand mb-2">「うちでも使えるか」を一緒に確認しましょう</p><p class="text-wa-gray text-base md:text-lg mb-6 leading-relaxed max-w-2xl mx-auto">BuildMateでは、工務店の現状業務を無料でヒアリングし、AI・GASで効率化できる箇所を具体的にご提案しています。元・施工管理の代表が現場目線でお答えします。勧誘・営業は一切行いません。</p><a href="../contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-wa-accent hover:opacity-90 text-white rounded-wa font-bold transition-colors"><i data-lucide="mail" class="w-4 h-4"></i>無料相談に申し込む</a></div>
 <div class="mt-8 text-center"><a href="../news.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-wa-brand text-wa-brand rounded-wa font-bold hover:bg-wa-brand hover:text-white transition-colors">← コラム一覧に戻る</a></div>
 </div></main>
-        <footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
-        <div class="max-w-[1080px] mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-                <div class="text-white/60 text-sm">
-                    Copyright © 2026 BuildMate. All rights reserved.
-                </div>
-                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-white text-sm">
-                    <a href="../privacy.html" class="hover:text-wa-accent transition-colors">プライバシーポリシー</a>
-                    <a href="../terms.html" class="hover:text-wa-accent transition-colors">利用規約</a>
-                    <a href="../law.html" class="hover:text-wa-accent transition-colors">特定商取引法に基づく表記</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+        <footer class="site-footer">
+    <div class="footer-in">
+      <div class="footer-links">
+        <a href="../news.html">コラム一覧</a>
+        <a href="../faq.html">よくある質問</a>
+        <a href="../about.html">代表プロフィール・事業概要</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../terms.html">利用規約</a>
+        <a href="../law.html">特定商取引法に基づく表記</a>
+      </div>
+      <div class="footer-copy">Copyright © 2026 BuildMate. All rights reserved.</div>
+    </div>
+  </footer>
 <script>lucide.createIcons();</script>
 <script id="buildmate-mobile-menu-script">
 (function() {

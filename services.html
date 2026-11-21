@@ -1,766 +1,530 @@
 <!DOCTYPE html>
 <html lang="ja" class="scroll-smooth">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-5ECF52MHF6');
-    </script>
-    <meta charset="UTF-8">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="seigaiha.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>工務店のためのAI伴走支援・社長の右腕プラン | BuildMate</title>
-    <link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/services.html">
-    <meta name="description" content="工務店・リフォーム会社・専門工事会社向けのAI伴走支援。提案資料、現場記録、アフター連絡、Google自動化まで、社長の右腕になる実務改善メニューをご紹介します。">
-    <meta name="robots" content="index, follow">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="工務店のためのAI伴走支援・社長の右腕プラン | BuildMate">
-    <meta property="og:description" content="提案資料、現場記録、アフター連絡、Google自動化まで。工務店の実務に寄り添うAI伴走支援をご紹介します。">
-    <meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/services.html">
-    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
-    <meta property="og:site_name" content="BuildMate">
-    <meta property="og:locale" content="ja_JP">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
-
-    <!-- Schema.org：Service -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "工務店向けAI業務効率化コンサルティング",
-      "description": "中小工務店の日報・見積・ブログ・営業資料などの事務作業をAIで支援し、社長やスタッフの時間を取り戻すコンサルティングサービス。",
-      "provider": {
-        "@type": "Organization",
-        "name": "BuildMate（ビルドメイト）",
-        "url": "https://buildmate-gif.github.io/buildmate-site"
-      },
-      "areaServed": "日本全国",
-      "serviceType": "AI業務効率化コンサルティング",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "AI活用シナリオ",
-        "itemListElement": [
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "営業成約率・最大化セット"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "現場監督・働き方改革セット"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "広報・ブランディング自動化セット"}}
-        ]
-      }
-    }
-    </script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Noto Sans JP"', 'sans-serif'],
-                        serif: ['"Noto Serif JP"', 'serif'],
-                    },
-                    colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }
-                }
-            }
-        }
-    </script>
-    <style>
-        .btn-accent {
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), box-shadow 0.28s cubic-bezier(0.22,1,0.36,1), background-color 0.2s ease;
-            will-change: transform, box-shadow;
-        }
-        .btn-accent::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: -72%;
-            width: 44%;
-            background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.08) 38%, rgba(255,255,255,0.3) 50%, transparent 62%);
-            transform: skewX(-18deg);
-            transition: left 0.55s ease;
-            pointer-events: none;
-        }
-        .btn-accent:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 18px 34px -18px rgba(31,41,51,0.42);
-        }
-        .btn-accent:hover::before { left: 128%; }
-        .btn-accent i { transition: transform 0.28s cubic-bezier(0.22,1,0.36,1); }
-        .btn-accent:hover i { transform: translateX(4px); }
-        @media (prefers-reduced-motion: reduce) {
-            .btn-accent, .btn-accent::before { transition: none !important; animation: none !important; }
-            .btn-accent::before { display: none !important; }
-            .btn-accent:hover, .btn-accent:hover i { transform: none !important; }
-        }
-    </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5ECF52MHF6');
+  </script>
+  <meta charset="UTF-8">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>工務店のためのAI伴走支援・社長の右腕プラン | BuildMate</title>
+  <link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/services.html">
+  <meta name="description" content="工務店・リフォーム会社・専門工事会社向けのAI伴走支援。提案資料、現場記録、アフター連絡、Google自動化まで、社長の右腕になる実務改善メニューをご紹介します。">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="工務店のためのAI伴走支援・社長の右腕プラン | BuildMate">
+  <meta property="og:description" content="提案資料、現場記録、アフター連絡、Google自動化まで。工務店の実務に寄り添うAI伴走支援をご紹介します。">
+  <meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/services.html">
+  <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+  <meta property="og:site_name" content="BuildMate">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "工務店向けAI業務効率化コンサルティング",
+    "description": "中小工務店の日報・見積・ブログ・営業資料などの事務作業をAIで支援し、社長やスタッフの時間を取り戻すコンサルティングサービス。",
+    "provider": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"},
+    "areaServed": "日本全国",
+    "serviceType": "AI業務効率化コンサルティング"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="theme-a2.css">
 </head>
-<body class="bg-wa-bg text-wa-text font-sans antialiased flex flex-col min-h-screen">
+<body>
 
-            <header class="border-wa-border transition-all border-b fixed w-full backdrop-blur-sm top-0 z-50 bg-wa-bg/90 duration-300 transition-all duration-300">
-        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
-                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
-            </a>
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="header-in">
+      <a href="index.html" class="site-logo">
+        <span class="site-logo-mark">B</span>
+        <span>BuildMate</span>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">ホーム</a>
+        <a href="services.html" class="is-active">サービス・効果</a>
+        <a href="ai-guide.html">AI活用入門</a>
+        <a href="diagnosis.html">AI診断</a>
+        <a href="gift.html">特典プレゼント</a>
+        <a href="gas.html">GAS活用事例</a>
+        <a href="contact.html" class="nav-cta">無料相談</a>
+      </nav>
+      <button id="mobile-menu-btn" class="mobile-toggle" aria-label="メニューを開く">
+        <i data-lucide="menu" width="28" height="28"></i>
+      </button>
+    </div>
+  </header>
 
-            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
+  <div id="mobile-menu">
+    <button class="mm-close" onclick="closeMobileMenu()">✕ 閉じる</button>
+    <a href="index.html" onclick="closeMobileMenu()">ホーム</a>
+    <a href="services.html" onclick="closeMobileMenu()">サービス・効果</a>
+    <a href="ai-guide.html" onclick="closeMobileMenu()">AI活用入門</a>
+    <a href="diagnosis.html" onclick="closeMobileMenu()">AI診断</a>
+    <a href="gift.html" onclick="closeMobileMenu()">特典プレゼント</a>
+    <a href="gas.html" onclick="closeMobileMenu()">GAS活用事例</a>
+    <a href="about.html" onclick="closeMobileMenu()">代表プロフィール・事業概要</a>
+    <a href="contact.html" class="mm-cta" onclick="closeMobileMenu()">無料相談</a>
+  </div>
 
-                <a href="index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
-                <a href="services.html" class="text-wa-brand border-b-2 border-wa-brand font-bold flex items-center gap-1">サービス・効果</a>
-                <a href="ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
-                <a href="diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
-                <a href="gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
-                <a href="gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
-                <a href="contact.html" class="btn-accent px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
-            </nav>
+  <main>
+    <!-- 1. ページヒーロー -->
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="eyebrow">SERVICES &amp; IMPACT</span>
+        <h1 class="h1-page">社長の右腕になるAI伴走支援</h1>
+        <p>
+          提案資料、現場記録、顧客対応、アフター連絡まで。<br>
+          今の業務にそのまま乗せやすい形で、工務店のAI活用を定着まで支援します。
+        </p>
+      </div>
+    </section>
 
-            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
-                <i data-lucide="menu" class="w-8 h-8"></i>
-            </button>
+    <!-- 2. 3つの基本方針 -->
+    <section class="sec-sm sec-bg">
+      <div class="wrap">
+        <div class="grid-3">
+          <div class="surface-paper">
+            <span class="num-label">01 / WHAT</span>
+            <h2 class="h3">何を提供するか</h2>
+            <p class="body-text">AI導入支援、業務設計、プロンプト整備、Googleツールの自動化、定着までの伴走をまとめて支援します。</p>
+          </div>
+          <div class="surface-paper">
+            <span class="num-label">02 / OUTCOME</span>
+            <h2 class="h3">何が起きるか</h2>
+            <p class="body-text">事務作業が軽くなり、提案の初速が上がり、アフターや顧客対応に使える時間が少しずつ戻ってきます。</p>
+          </div>
+          <div class="surface-paper">
+            <span class="num-label">03 / HOW</span>
+            <h2 class="h3">どう進めるか</h2>
+            <p class="body-text">高機能な仕組みを一気に入れるのではなく、今の現場に合う小さな改善から始めて、使える形に育てます。</p>
+          </div>
         </div>
-    </header>
+      </div>
+    </section>
 
-<!-- モバイルメニュー -->
-<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
-    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
-    <a href="index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
-    <a href="services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-active); font-weight:700; text-decoration:none;">サービス・効果</a>
-    <a href="ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
-    <a href="diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
-    <a href="gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
-    <a href="gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
-    <a href="about.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">代表プロフィール・事業概要</a>
-    <a href="contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
-</div>
-
-    <main class="flex-grow pt-20">
-        <section class="bg-wa-brand text-white py-16 text-center">
-            <h1 class="text-3xl md:text-4xl font-serif font-bold mb-4">社長の右腕になるAI伴走支援</h1>
-            <p class="text-white/85 text-base md:text-xl max-w-4xl mx-auto leading-loose">
-                <span class="block">提案資料、現場記録、顧客対応、アフター連絡まで。</span>
-                <span class="block mt-2">今の業務にそのまま乗せやすい形で、工務店のAI活用を定着まで支援します。</span>
-            </p>
-        </section>
-
-        <section class="py-16 bg-wa-bg border-b border-wa-border">
-            <div class="max-w-[980px] mx-auto px-6">
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-white rounded-wa border border-wa-border p-6">
-                        <h2 class="text-lg font-bold text-wa-brand mb-3">何を提供するか</h2>
-                        <p class="text-base text-wa-gray leading-loose">AI導入支援、業務設計、プロンプト整備、Googleツールの自動化、定着までの伴走をまとめて支援します。</p>
-                    </div>
-                    <div class="bg-white rounded-wa border border-wa-border p-6">
-                        <h2 class="text-lg font-bold text-wa-brand mb-3">何が起きるか</h2>
-                        <p class="text-base text-wa-gray leading-loose">事務作業が軽くなり、提案の初速が上がり、アフターや顧客対応に使える時間が少しずつ戻ってきます。</p>
-                    </div>
-                    <div class="bg-white rounded-wa border border-wa-border p-6">
-                        <h2 class="text-lg font-bold text-wa-brand mb-3">どう進めるか</h2>
-                        <p class="text-base text-wa-gray leading-loose">高機能な仕組みを一気に入れるのではなく、今の現場に合う小さな改善から始めて、使える形に育てます。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-20 bg-white">
-            <div class="max-w-[980px] mx-auto px-6">
-                <h2 class="text-3xl font-serif font-bold text-wa-text mb-12 text-center">
-                    <span class="border-b-4 border-wa-gold pb-2">実務がどう変わるか</span>
-                </h2>
-                <p class="text-center text-wa-gray text-base md:text-lg mb-12 max-w-4xl mx-auto leading-loose">
-                    <span class="block">以下は、社長やスタッフの時間を取り戻すための具体例です。</span>
-                    <span class="block mt-2">コスト削減だけでなく、顧客対応とアフターを続ける余白をつくることを重視しています。</span>
-                </p>
-
-                <div class="mb-16">
-                    <h3 class="text-xl font-bold text-wa-brand flex items-center gap-3 mb-6">
-                        <span class="w-8 h-8 rounded-full bg-wa-brand text-white flex items-center justify-center text-sm">A</span>
-                        集客・広報：センス不要で自動運転
-                    </h3>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
-                            <div class="font-bold text-wa-text mb-2 text-lg">ブログ記事作成</div>
-                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">ネタがなく、書くのが苦痛で更新が止まる…</p>
-                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
-                                <span class="text-xs font-bold text-gray-400">2時間</span>
-                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
-                                <span class="text-lg font-bold" style="color:#A64B3C">10分</span>
-                            </div>
-                        </div>
-                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
-                            <div class="font-bold text-wa-text mb-2 text-lg">SNS投稿作成</div>
-                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">画像選びやタグ選定に時間が溶ける…</p>
-                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
-                                <span class="text-xs font-bold text-gray-400">30分</span>
-                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
-                                <span class="text-lg font-bold" style="color:#A64B3C">3分</span>
-                            </div>
-                        </div>
-                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
-                            <div class="font-bold text-wa-text mb-2 text-lg">動画サムネイル</div>
-                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">デザインセンスがなく魅力的に見せられない…</p>
-                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
-                                <span class="text-xs font-bold text-gray-400">1時間</span>
-                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
-                                <span class="text-lg font-bold" style="color:#A64B3C">5分</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb-16">
-                    <h3 class="text-xl font-bold text-wa-brand flex items-center gap-3 mb-6">
-                        <span class="w-8 h-8 rounded-full bg-wa-brand text-white flex items-center justify-center text-sm">B</span>
-                        営業・提案：「待たせない」が最強の武器
-                    </h3>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
-                            <div class="font-bold text-wa-text mb-2 text-lg">即時フォロー資料</div>
-                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">商談後の作成が遅れ、お客様の熱が冷める。</p>
-                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
-                                <span class="text-xs text-gray-400">3時間</span>
-                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
-                                <span class="text-lg font-bold" style="color:#A64B3C">30分</span>
-                            </div>
-                        </div>
-                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
-                            <div class="font-bold text-wa-text mb-2 text-lg">AIパース（画像化）</div>
-                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">「ふんわりした要望」が掴めず手戻りが多い。</p>
-                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
-                                <span class="text-xs text-gray-400">数日</span>
-                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
-                                <span class="text-lg font-bold" style="color:#A64B3C">1分</span>
-                            </div>
-                        </div>
-                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
-                            <div class="font-bold text-wa-text mb-2 text-lg">リフォーム合成写真</div>
-                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">Afterイメージの作成に手間がかかる。</p>
-                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
-                                <span class="text-xs text-gray-400">2時間</span>
-                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
-                                <span class="text-lg font-bold" style="color:#A64B3C">10分</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb-16">
-                    <h3 class="text-xl font-bold text-wa-brand flex items-center gap-3 mb-6">
-                        <span class="w-8 h-8 rounded-full bg-wa-brand text-white flex items-center justify-center text-sm">C</span>
-                        現場管理・施工記録：現場監督の「書類地獄」を解消
-                    </h3>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
-                            <div class="font-bold text-wa-text mb-2 text-lg">日報・施工記録作成</div>
-                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">毎日の記録が面倒で後回しになり、抜け漏れが出る…</p>
-                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
-                                <span class="text-xs font-bold text-gray-400">60分</span>
-                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
-                                <span class="text-lg font-bold" style="color:#A64B3C">10分</span>
-                            </div>
-                        </div>
-                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
-                            <div class="font-bold text-wa-text mb-2 text-lg">近隣挨拶文・工事案内</div>
-                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">現場ごとに一から作り直す手間がバカにならない…</p>
-                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
-                                <span class="text-xs font-bold text-gray-400">90分</span>
-                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
-                                <span class="text-lg font-bold" style="color:#A64B3C">5分</span>
-                            </div>
-                        </div>
-                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
-                            <div class="font-bold text-wa-text mb-2 text-lg">安全書類・作業手順書</div>
-                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">書式が多く更新が追いつかない。作成に半日かかる…</p>
-                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
-                                <span class="text-xs font-bold text-gray-400">半日</span>
-                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
-                                <span class="text-lg font-bold" style="color:#A64B3C">20分</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb-16">
-                    <h3 class="text-xl font-bold text-wa-brand flex items-center gap-3 mb-6">
-                        <span class="w-8 h-8 rounded-full bg-wa-brand text-white flex items-center justify-center text-sm">D</span>
-                        経理・原価管理：「完工後に赤字」を未然に防ぐ
-                    </h3>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
-                            <div class="font-bold text-wa-text mb-2 text-lg">見積書・発注書作成</div>
-                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">拾い出しの転記ミスが怖く、確認に時間がかかる…</p>
-                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
-                                <span class="text-xs font-bold text-gray-400">3時間</span>
-                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
-                                <span class="text-lg font-bold" style="color:#A64B3C">30分</span>
-                            </div>
-                        </div>
-                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
-                            <div class="font-bold text-wa-text mb-2 text-lg">原価・粗利チェック</div>
-                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">月次でまとめて確認するため、完工後に赤字と気づく…</p>
-                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
-                                <span class="text-xs font-bold text-gray-400">月次のみ</span>
-                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
-                                <span class="text-lg font-bold" style="color:#A64B3C">随時確認</span>
-                            </div>
-                        </div>
-                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
-                            <div class="font-bold text-wa-text mb-2 text-lg">請求書・支払管理</div>
-                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">協力会社への支払い漏れや二重払いが不安…</p>
-                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
-                                <span class="text-xs font-bold text-gray-400">2時間</span>
-                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
-                                <span class="text-lg font-bold" style="color:#A64B3C">15分</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb-16">
-                    <h3 class="text-xl font-bold text-wa-brand flex items-center gap-3 mb-6">
-                        <span class="w-8 h-8 rounded-full bg-wa-brand text-white flex items-center justify-center text-sm">E</span>
-                        アフターメンテナンス・定期点検：完工後も「選ばれ続ける」仕組み
-                    </h3>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
-                            <div class="font-bold text-wa-text mb-2 text-lg">定期点検ご案内文</div>
-                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">完工後の連絡が後手に回り、OB客との関係が薄れる…</p>
-                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
-                                <span class="text-xs font-bold text-gray-400">60分/件</span>
-                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
-                                <span class="text-lg font-bold" style="color:#A64B3C">3分</span>
-                            </div>
-                        </div>
-                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
-                            <div class="font-bold text-wa-text mb-2 text-lg">点検報告書・写真整理</div>
-                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">報告書作成が面倒で後回しになり、お客様の信頼を損なう…</p>
-                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
-                                <span class="text-xs font-bold text-gray-400">半日</span>
-                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
-                                <span class="text-lg font-bold" style="color:#A64B3C">20分</span>
-                            </div>
-                        </div>
-                        <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
-                            <div class="font-bold text-wa-text mb-2 text-lg">OB客ニュースレター</div>
-                            <p class="text-[15px] md:text-base text-wa-gray mb-4 flex-grow leading-relaxed">ネタ切れ・文章力の壁で発信が止まり、紹介受注が途絶える…</p>
-                            <div class="flex items-center justify-between bg-white p-3 rounded-md shadow-sm">
-                                <span class="text-xs font-bold text-gray-400">丸1日</span>
-                                <i data-lucide="arrow-right" class="w-4 h-4" style="color:#A64B3C"></i>
-                                <span class="text-lg font-bold" style="color:#A64B3C">30分</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="py-20 bg-wa-bg border-t border-wa-border">
-            <div class="max-w-[1080px] mx-auto px-6">
-                <h2 class="text-3xl font-serif font-bold text-wa-text mb-6 text-center">
-                    <span class="block md:whitespace-nowrap">経営スタイルに合わせた</span>
-                    <span class="block">5つのAI活用シナリオ</span>
-                </h2>
-                <p class="text-center text-wa-gray text-base md:text-lg mb-12 max-w-4xl mx-auto leading-loose">
-                    <span class="block">AI導入は単なる効率化ではありません。</span>
-                    <span class="block mt-2">浮いた時間を「お施主様への誠実さ」と「社長の判断時間」に戻すための投資です。</span>
-                </p>
-
-                <div class="grid gap-12">
-                    
-                    <div class="bg-white rounded-wa shadow-lg overflow-hidden border border-wa-border">
-                        <div class="p-8">
-                            <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4">
-                                <div>
-                                    <h3 class="text-xl font-bold text-wa-brand">【CASE 01】 営業成約率・最大化セット</h3>
-                                    <p class="text-[15px] md:text-base text-wa-gray mt-1 leading-relaxed">課題：資料作成が追いつかず、お客様の検討熱が冷めてしまう。</p>
-                                </div>
-                                <div class="px-4 py-2 bg-wa-accent/10 text-wa-accent font-bold rounded-full text-sm">商談スピード重視</div>
-                            </div>
-                            <div class="overflow-x-auto">
-                                <table class="w-full text-left border-collapse min-w-[600px]">
-                                    <thead>
-                                        <tr class="border-b-2 border-wa-bg text-wa-gray text-sm">
-                                            <th class="py-3 px-4 w-1/3">削減項目</th>
-                                            <th class="py-3 px-4 w-1/3">従来のコスト（外注・残業代）</th>
-                                            <th class="py-3 px-4 w-1/3 font-bold text-wa-brand">AI活用コスト</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="text-wa-text">
-                                        <tr class="border-b border-wa-bg">
-                                            <td class="py-4 px-4 font-medium">即時フォロー資料 (月10件)</td>
-                                            <td class="py-4 px-4">150,000円</td>
-                                            <td class="py-4 px-4 font-bold">25,000円</td>
-                                        </tr>
-                                        <tr class="border-b border-wa-bg">
-                                            <td class="py-4 px-4 font-medium">AIパース・イメージ生成 (月10件)</td>
-                                            <td class="py-4 px-4">500,000円</td>
-                                            <td class="py-4 px-4 font-bold">1,000円</td>
-                                        </tr>
-                                        <tr class="bg-wa-brand/5">
-                                            <td class="py-4 px-4 font-bold text-wa-brand">月間合計メリット</td>
-                                            <td class="py-4 px-4 text-wa-gray line-through">650,000円</td>
-                                            <td class="py-4 px-4 text-2xl font-bold" style="color:#A64B3C">約 62万円 削減</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white rounded-wa shadow-lg overflow-hidden border border-wa-border">
-                        <div class="p-8">
-                            <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4">
-                                <div>
-                                    <h3 class="text-xl font-bold text-wa-brand">【CASE 02】 現場監督・働き方改革セット</h3>
-                                    <p class="text-[15px] md:text-base text-wa-gray mt-1 leading-relaxed">課題：事務作業で残業が常態化。現場チェックに集中できない。</p>
-                                </div>
-                                <div class="px-4 py-2 bg-wa-accent/10 text-wa-accent font-bold rounded-full text-sm">施工品質・安全重視</div>
-                            </div>
-                            <div class="overflow-x-auto">
-                                <table class="w-full text-left border-collapse min-w-[600px]">
-                                    <thead>
-                                        <tr class="border-b-2 border-wa-bg text-wa-gray text-sm">
-                                            <th class="py-3 px-4 w-1/3">削減項目</th>
-                                            <th class="py-3 px-4 w-1/3">従来のコスト（残業代等）</th>
-                                            <th class="py-3 px-4 w-1/3 font-bold text-wa-brand">AI活用コスト</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="text-wa-text">
-                                        <tr class="border-b border-wa-bg">
-                                            <td class="py-4 px-4 font-medium">近隣挨拶文・社内マニュアル作成</td>
-                                            <td class="py-4 px-4">100,000円</td>
-                                            <td class="py-4 px-4 font-bold">8,000円</td>
-                                        </tr>
-                                        <tr class="border-b border-wa-bg">
-                                            <td class="py-4 px-4 font-medium">定期点検報告・手紙作成</td>
-                                            <td class="py-4 px-4">25,000円</td>
-                                            <td class="py-4 px-4 font-bold">1,500円</td>
-                                        </tr>
-                                        <tr class="bg-wa-brand/5">
-                                            <td class="py-4 px-4 font-bold text-wa-brand">月間合計メリット</td>
-                                            <td class="py-4 px-4 text-wa-gray line-through">125,000円</td>
-                                            <td class="py-4 px-4 text-2xl font-bold" style="color:#A64B3C">約 11万円 削減</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white rounded-wa shadow-lg overflow-hidden border border-wa-border">
-                        <div class="p-8">
-                            <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4">
-                                <div>
-                                    <h3 class="text-xl font-bold text-wa-brand">【CASE 03】 広報・ブランディング自動化セット</h3>
-                                    <p class="text-[15px] md:text-base text-wa-gray mt-1 leading-relaxed">課題：ネタ切れやセンスの壁。外注費が高騰している。</p>
-                                </div>
-                                <div class="px-4 py-2 bg-wa-accent/10 text-wa-accent font-bold rounded-full text-sm">集客力・認知重視</div>
-                            </div>
-                            <div class="overflow-x-auto">
-                                <table class="w-full text-left border-collapse min-w-[600px]">
-                                    <thead>
-                                        <tr class="border-b-2 border-wa-bg text-wa-gray text-sm">
-                                            <th class="py-3 px-4 w-1/3">削減項目</th>
-                                            <th class="py-3 px-4 w-1/3">従来のコスト（外注・人件費）</th>
-                                            <th class="py-3 px-4 w-1/3 font-bold text-wa-brand">AI活用コスト</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="text-wa-text">
-                                        <tr class="border-b border-wa-bg">
-                                            <td class="py-4 px-4 font-medium">ブログ記事作成 (月4本)</td>
-                                            <td class="py-4 px-4">80,000円</td>
-                                            <td class="py-4 px-4 font-bold">400円</td>
-                                        </tr>
-                                        <tr class="border-b border-wa-bg">
-                                            <td class="py-4 px-4 font-medium">SNS投稿・サムネイル作成 (月20回)</td>
-                                            <td class="py-4 px-4">250,000円</td>
-                                            <td class="py-4 px-4 font-bold">11,000円</td>
-                                        </tr>
-                                        <tr class="bg-wa-brand/5">
-                                            <td class="py-4 px-4 font-bold text-wa-brand">月間合計メリット</td>
-                                            <td class="py-4 px-4 text-wa-gray line-through">330,000円</td>
-                                            <td class="py-4 px-4 text-2xl font-bold" style="color:#A64B3C">約 32万円 削減</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white rounded-wa shadow-lg overflow-hidden border border-wa-border">
-                        <div class="p-8">
-                            <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4">
-                                <div>
-                                    <h3 class="text-xl font-bold text-wa-brand">【CASE 04】 アフター・紹介受注特化セット</h3>
-                                    <p class="text-[15px] md:text-base text-wa-gray mt-1 leading-relaxed">課題：完工後のフォローが疎かになり、紹介が生まれない。</p>
-                                </div>
-                                <div class="px-4 py-2 bg-wa-accent/10 text-wa-accent font-bold rounded-full text-sm">顧客信頼・LTV重視</div>
-                            </div>
-                            <div class="overflow-x-auto">
-                                <table class="w-full text-left border-collapse min-w-[600px]">
-                                    <thead>
-                                        <tr class="border-b-2 border-wa-bg text-wa-gray text-sm">
-                                            <th class="py-3 px-4 w-1/3">削減項目</th>
-                                            <th class="py-3 px-4 w-1/3">従来のコスト（工数）</th>
-                                            <th class="py-3 px-4 w-1/3 font-bold text-wa-brand">AI活用コスト</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="text-wa-text">
-                                        <tr class="border-b border-wa-bg">
-                                            <td class="py-4 px-4 font-medium">個別メッセージ・案内状作成</td>
-                                            <td class="py-4 px-4">125,000円</td>
-                                            <td class="py-4 px-4 font-bold">7,500円</td>
-                                        </tr>
-                                        <tr class="border-b border-wa-bg">
-                                            <td class="py-4 px-4 font-medium">ニュースレター・ネタ出し</td>
-                                            <td class="py-4 px-4">50,000円</td>
-                                            <td class="py-4 px-4 font-bold">2,500円</td>
-                                        </tr>
-                                        <tr class="bg-wa-brand/5">
-                                            <td class="py-4 px-4 font-bold text-wa-brand">月間合計メリット</td>
-                                            <td class="py-4 px-4 text-wa-gray line-through">175,000円</td>
-                                            <td class="py-4 px-4 text-2xl font-bold" style="color:#A64B3C">約 16万円 削減</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white rounded-wa shadow-lg overflow-hidden border border-wa-border">
-                        <div class="p-8">
-                            <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4">
-                                <div>
-                                    <h3 class="text-xl font-bold text-wa-brand">【CASE 05】 少数精鋭・社長の右腕セット</h3>
-                                    <p class="text-[15px] md:text-base text-wa-gray mt-1 leading-relaxed">課題：社長が多忙を極め、経営判断の時間が取れない。</p>
-                                </div>
-                                <div class="px-4 py-2 bg-wa-accent/10 text-wa-accent font-bold rounded-full text-sm">経営効率重視</div>
-                            </div>
-                            <div class="overflow-x-auto">
-                                <table class="w-full text-left border-collapse min-w-[600px]">
-                                    <thead>
-                                        <tr class="border-b-2 border-wa-bg text-wa-gray text-sm">
-                                            <th class="py-3 px-4 w-1/3">削減項目</th>
-                                            <th class="py-3 px-4 w-1/3">従来のコスト（時給換算）</th>
-                                            <th class="py-3 px-4 w-1/3 font-bold text-wa-brand">AI活用コスト</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="text-wa-text">
-                                        <tr class="border-b border-wa-bg">
-                                            <td class="py-4 px-4 font-medium">営業・広報・総務の事務全般</td>
-                                            <td class="py-4 px-4">180,000円</td>
-                                            <td class="py-4 px-4 font-bold">14,400円</td>
-                                        </tr>
-                                        <tr class="bg-wa-brand/5">
-                                            <td class="py-4 px-4 font-bold text-wa-brand">月間合計メリット</td>
-                                            <td class="py-4 px-4 text-wa-gray line-through">180,000円</td>
-                                            <td class="py-4 px-4 text-2xl font-bold" style="color:#A64B3C">約 16万円 削減</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- 削減試算の前提注記 -->
-                <div class="mt-8 bg-white/80 rounded-wa border border-wa-border p-5 text-xs md:text-sm text-wa-gray leading-relaxed">
-                    <p class="font-bold text-wa-text mb-1">※削減試算の算出前提について</p>
-                    <p>上記の従来コストおよび削減額は、一般的な外注単価（建築パース制作1点5万円、記事作成1本2万円等）および社内作業の時給換算（時給2,500円〜3,000円相当）をもとに算出したモデル試算例です。AI活用コストは有料AIツール（月額約3,000円〜）および作業短縮後の社内工数をもとに試算しています。実際の削減効果は現在の業務量・体制・外注状況により異なり、特定の成果を保証するものではありません。</p>
-                </div>
-
-                <!-- ご支援プランと費用の考え方（金額非公開・安心設計） -->
-                <div class="mt-20">
-                    <h2 class="text-3xl font-serif font-bold text-wa-text mb-6 text-center">
-                        <span class="border-b-4 border-wa-gold pb-2">ご支援プランと費用の考え方</span>
-                    </h2>
-                    <p class="text-center text-wa-gray text-base md:text-lg mb-12 max-w-3xl mx-auto leading-loose">
-                        会社の規模や「まずどこから手をつけるか」によって最適な関わり方が異なるため、画一的な料金パックではなく、現状をお聞きした上で個別にお見積りしています。
-                    </p>
-
-                    <!-- 3つの安心ポイント -->
-                    <div class="grid md:grid-cols-3 gap-6 mb-12">
-                        <div class="bg-white rounded-wa border border-wa-border p-6 shadow-sm">
-                            <div class="w-10 h-10 rounded-full bg-wa-brand/10 text-wa-brand flex items-center justify-center font-bold mb-4">
-                                <i data-lucide="shield-check" class="w-5 h-5"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-wa-brand mb-2">高額な専用システム不要</h3>
-                            <p class="text-sm md:text-base text-wa-gray leading-relaxed">何百万円もする専用ソフトや長期リース契約は使いません。無料〜月額3,000円程度の生成AIと、今お使いのGoogle環境を活かして小さく始めます。</p>
-                        </div>
-                        <div class="bg-white rounded-wa border border-wa-border p-6 shadow-sm">
-                            <div class="w-10 h-10 rounded-full bg-wa-brand/10 text-wa-brand flex items-center justify-center font-bold mb-4">
-                                <i data-lucide="sliders" class="w-5 h-5"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-wa-brand mb-2">「1つの業務だけ」から可能</h3>
-                            <p class="text-sm md:text-base text-wa-gray leading-relaxed">いきなり全社導入ではなく、「まずは日報だけ」「点検案内だけ」など、ご予算と優先順位に合わせて無理のない範囲からスタートできます。</p>
-                        </div>
-                        <div class="bg-white rounded-wa border border-wa-border p-6 shadow-sm">
-                            <div class="w-10 h-10 rounded-full bg-wa-brand/10 text-wa-brand flex items-center justify-center font-bold mb-4">
-                                <i data-lucide="file-check" class="w-5 h-5"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-wa-brand mb-2">納得いただいてからのご契約</h3>
-                            <p class="text-sm md:text-base text-wa-gray leading-relaxed">無料相談で現状の課題を整理した上で、ご予算に合わせたプランをご提案します。相談したからといって契約の必要は一切ありません。</p>
-                        </div>
-                    </div>
-
-                    <!-- 関わり方の3つのメニュー -->
-                    <div class="bg-white rounded-wa border border-wa-border p-8 shadow-sm">
-                        <h3 class="text-xl font-bold text-wa-brand mb-6 text-center">選べる3つの関わり方</h3>
-                        <div class="grid md:grid-cols-3 gap-6">
-                            <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
-                                <div class="text-xs font-bold text-wa-accent bg-wa-accent/10 px-3 py-1 rounded-full self-start mb-3">単発・短期</div>
-                                <h4 class="text-lg font-bold text-wa-text mb-2">スポット業務整理・構築</h4>
-                                <p class="text-sm text-wa-gray leading-relaxed flex-grow">特定の1業務（プロンプト整備やGoogleスプレッドシート自動化など）を単発で整え、すぐ使える状態でお渡しするプランです。</p>
-                            </div>
-                            <div class="p-6 bg-wa-bg rounded-wa border-2 border-wa-brand flex flex-col relative">
-                                <div class="text-xs font-bold text-white bg-wa-brand px-3 py-1 rounded-full self-start mb-3">おすすめ・継続</div>
-                                <h4 class="text-lg font-bold text-wa-text mb-2">定着伴走（社長の右腕）</h4>
-                                <p class="text-sm text-wa-gray leading-relaxed flex-grow">定例ミーティングと日々のチャット相談を通じ、業務設計からツールの微調整、現場への定着までを継続的にお手伝いするプランです。</p>
-                            </div>
-                            <div class="p-6 bg-wa-bg rounded-wa border border-wa-border flex flex-col">
-                                <div class="text-xs font-bold text-wa-accent bg-wa-accent/10 px-3 py-1 rounded-full self-start mb-3">教育・内製化</div>
-                                <h4 class="text-lg font-bold text-wa-text mb-2">社内研修・実践勉強会</h4>
-                                <p class="text-sm text-wa-gray leading-relaxed flex-grow">社長やスタッフ様がご自身でAIを使いこなせるようになるため、実際の社内業務を題材に手を動かして学ぶ実践レクチャーです。</p>
-                            </div>
-                        </div>
-                        <p class="text-xs md:text-sm text-wa-gray mt-6 text-center">※ご状況に応じて、各種補助金・助成金を活用した導入のご相談も承っております。お気軽にお尋ねください。</p>
-                    </div>
-                </div>
-
-                <!-- 他の導入手法との違い（4手法比較表） -->
-                <div class="mt-20">
-                    <h2 class="text-3xl font-serif font-bold text-wa-text mb-6 text-center">
-                        <span class="border-b-4 border-wa-gold pb-2">他の導入手法との違い</span>
-                    </h2>
-                    <p class="text-center text-wa-gray text-base md:text-lg mb-10 max-w-3xl mx-auto leading-loose">
-                        「動画講座を契約したが見る時間がない」「高額なシステムを入れたが現場が使いこなせない」という失敗を防ぐため、BuildMateは実務への定着に特化しています。
-                    </p>
-                    <div class="bg-white rounded-wa shadow-lg overflow-hidden border border-wa-border">
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-left border-collapse min-w-[720px] text-sm md:text-base">
-                                <thead>
-                                    <tr class="bg-wa-brand text-white">
-                                        <th class="py-4 px-4 w-1/5 font-bold">比較項目</th>
-                                        <th class="py-4 px-4 w-1/4 font-bold bg-wa-gold text-wa-brand">BuildMate（当サービス）</th>
-                                        <th class="py-4 px-4 w-1/5 font-medium">AI動画講座・スクール</th>
-                                        <th class="py-4 px-4 w-1/5 font-medium">大手経営コンサル</th>
-                                        <th class="py-4 px-4 w-1/5 font-medium">建築専用システム（高額SaaS）</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-wa-text divide-y divide-wa-border">
-                                    <tr>
-                                        <td class="py-4 px-4 font-bold bg-wa-bg/50">支援スタイル</td>
-                                        <td class="py-4 px-4 font-bold bg-wa-gold/10 text-wa-brand">今の業務にAIとGoogle自動化を組み込み、定着まで個別伴走</td>
-                                        <td class="py-4 px-4 text-wa-gray">動画教材を見て自分で学ぶ（月例勉強会など）</td>
-                                        <td class="py-4 px-4 text-wa-gray">経営戦略から全社DXまで幅広く指導・助言</td>
-                                        <td class="py-4 px-4 text-wa-gray">見積・工程・原価を専用ソフトで一元管理</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-4 px-4 font-bold bg-wa-bg/50">費用の考え方</td>
-                                        <td class="py-4 px-4 font-bold bg-wa-gold/10 text-wa-brand">高額な初期費用なし。1業務からご予算に合わせて個別設計</td>
-                                        <td class="py-4 px-4 text-wa-gray">比較的安価な月額制（ただし自習時間は自社負担）</td>
-                                        <td class="py-4 px-4 text-wa-gray">高単価な月次顧問契約・長期契約が中心</td>
-                                        <td class="py-4 px-4 text-wa-gray">初期導入費＋毎月のアカウント利用料が発生</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-4 px-4 font-bold bg-wa-bg/50">現場の負担</td>
-                                        <td class="py-4 px-4 font-bold bg-wa-gold/10 text-wa-brand">小（今のGoogle環境・業務の流れのまま始める）</td>
-                                        <td class="py-4 px-4 text-wa-gray">大（動画を見て自社業務に置き換える時間が必要）</td>
-                                        <td class="py-4 px-4 text-wa-gray">中〜大（会議・資料準備の工数が必要）</td>
-                                        <td class="py-4 px-4 text-wa-gray">大（新しいソフトの入力ルールを覚える必要がある）</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-4 px-4 font-bold bg-wa-bg/50">向いている会社</td>
-                                        <td class="py-4 px-4 font-bold bg-wa-gold/10 text-wa-brand">専任IT担当がおらず、社長の右腕として一緒に手を動かしてほしい工務店</td>
-                                        <td class="py-4 px-4 text-wa-gray">社内にAI推進担当がおり、独学で自走できる会社</td>
-                                        <td class="py-4 px-4 text-wa-gray">予算に余裕があり、組織全体の改革を行いたい会社</td>
-                                        <td class="py-4 px-4 text-wa-gray">すでに業務フローが固まっており、基幹ソフトを入れ替えたい会社</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center mt-16">
-                    <p class="text-lg font-bold text-wa-text mb-6">
-                        まずは、今の業務のどこに「社長の右腕」が必要か診断しませんか？
-                    </p>
-                    <div class="flex flex-col md:flex-row gap-4 justify-center">
-                        <a href="diagnosis.html" class="btn-accent inline-flex items-center justify-center px-10 py-4 bg-wa-accent hover:bg-wa-accentHover text-white text-lg font-bold rounded-wa shadow-lg transition-all">
-                            AI活用ポテンシャル診断を受ける
-                        </a>
-                        <a href="contact.html" class="inline-flex items-center justify-center px-10 py-4 border-2 border-wa-brand text-wa-brand text-lg font-bold rounded-wa hover:bg-wa-brand hover:text-white transition-all">
-                            無料相談する
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-            <footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
-        <div class="max-w-[1080px] mx-auto px-6">
-            <div class="flex flex-col items-center gap-6">
-                <div class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-white text-sm">
-                    <a href="news.html" class="hover:text-wa-gold transition-colors whitespace-nowrap">コラム一覧</a>
-                    <a href="faq.html" class="hover:text-wa-gold transition-colors whitespace-nowrap">よくある質問</a>
-                    <a href="about.html" class="hover:text-wa-gold transition-colors whitespace-nowrap">代表プロフィール・事業概要</a>
-                    <a href="privacy.html" class="hover:text-wa-gold transition-colors whitespace-nowrap">プライバシーポリシー</a>
-                    <a href="terms.html" class="hover:text-wa-gold transition-colors whitespace-nowrap">利用規約</a>
-                    <a href="law.html" class="hover:text-wa-gold transition-colors whitespace-nowrap">特定商取引法に基づく表記</a>
-                </div>
-                <div class="text-white/60 text-sm text-center">
-                    Copyright © 2026 BuildMate. All rights reserved.
-                </div>
-            </div>
+    <!-- 3. 実務がどう変わるか（A〜E） -->
+    <section class="sec sec-paper">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="eyebrow">01 / BEFORE &amp; AFTER</span>
+            <h2 class="h2" style="margin-bottom:0;">実務がどう変わるか</h2>
+          </div>
+          <p class="sec-head-sub">社長やスタッフの時間を取り戻すための具体例です。コスト削減だけでなく、顧客対応とアフターを続ける余白をつくることを重視しています。</p>
         </div>
-    </footer>
 
-    <script>
-        lucide.createIcons();
-    </script>
-<script id="buildmate-mobile-menu-script">
-(function() {
-    function getMobileMenu() {
-        return document.getElementById('mobile-menu');
-    }
+        <!-- A -->
+        <div style="margin-bottom:56px;">
+          <div style="display:flex; align-items:baseline; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--border); margin-bottom:24px;">
+            <span class="num-label" style="margin:0;">CATEGORY A</span>
+            <h3 class="h3" style="margin:0;">集客・広報：センス不要で自動運転</h3>
+          </div>
+          <div class="grid-3">
+            <div class="surface-bg" style="display:flex; flex-direction:column;">
+              <strong style="font-size:16.5px; color:var(--brand); margin-bottom:8px;">ブログ記事作成</strong>
+              <p class="body-text jp-keep" style="font-size:15.5px; flex:1;">ネタがなく、書くのが苦痛で<wbr>更新が止まる…</p>
+              <div class="diff-badge"><span class="diff-before">2時間</span><i data-lucide="arrow-right" width="16" height="16" style="color:var(--gold);"></i><span class="diff-after">10分</span></div>
+            </div>
+            <div class="surface-bg" style="display:flex; flex-direction:column;">
+              <strong style="font-size:16.5px; color:var(--brand); margin-bottom:8px;">SNS投稿作成</strong>
+              <p class="body-text" style="font-size:15.5px; flex:1;">画像選びやタグ選定に時間が溶ける…</p>
+              <div class="diff-badge"><span class="diff-before">30分</span><i data-lucide="arrow-right" width="16" height="16" style="color:var(--gold);"></i><span class="diff-after">3分</span></div>
+            </div>
+            <div class="surface-bg" style="display:flex; flex-direction:column;">
+              <strong style="font-size:16.5px; color:var(--brand); margin-bottom:8px;">動画サムネイル</strong>
+              <p class="body-text jp-keep" style="font-size:15.5px; flex:1;">デザインセンスがなく<wbr>魅力的に見せられない…</p>
+              <div class="diff-badge"><span class="diff-before">1時間</span><i data-lucide="arrow-right" width="16" height="16" style="color:var(--gold);"></i><span class="diff-after">5分</span></div>
+            </div>
+          </div>
+        </div>
 
+        <!-- B -->
+        <div style="margin-bottom:56px;">
+          <div style="display:flex; align-items:baseline; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--border); margin-bottom:24px;">
+            <span class="num-label" style="margin:0;">CATEGORY B</span>
+            <h3 class="h3" style="margin:0;">営業・提案：「待たせない」が最強の武器</h3>
+          </div>
+          <div class="grid-3">
+            <div class="surface-bg" style="display:flex; flex-direction:column;">
+              <strong style="font-size:16.5px; color:var(--brand); margin-bottom:8px;">即時フォロー資料</strong>
+              <p class="body-text jp-keep" style="font-size:15.5px; flex:1;">商談後の作成が遅れ、<wbr>お客様の熱が冷める。</p>
+              <div class="diff-badge"><span class="diff-before">3時間</span><i data-lucide="arrow-right" width="16" height="16" style="color:var(--gold);"></i><span class="diff-after">30分</span></div>
+            </div>
+            <div class="surface-bg" style="display:flex; flex-direction:column;">
+              <strong style="font-size:16.5px; color:var(--brand); margin-bottom:8px;">AIパース（画像化）</strong>
+              <p class="body-text" style="font-size:15.5px; flex:1;">「ふんわりした要望」が掴めず手戻りが多い。</p>
+              <div class="diff-badge"><span class="diff-before">数日</span><i data-lucide="arrow-right" width="16" height="16" style="color:var(--gold);"></i><span class="diff-after">1分</span></div>
+            </div>
+            <div class="surface-bg" style="display:flex; flex-direction:column;">
+              <strong style="font-size:16.5px; color:var(--brand); margin-bottom:8px;">リフォーム合成写真</strong>
+              <p class="body-text" style="font-size:15.5px; flex:1;">Afterイメージの作成に手間がかかる。</p>
+              <div class="diff-badge"><span class="diff-before">2時間</span><i data-lucide="arrow-right" width="16" height="16" style="color:var(--gold);"></i><span class="diff-after">10分</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C -->
+        <div style="margin-bottom:56px;">
+          <div style="display:flex; align-items:baseline; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--border); margin-bottom:24px;">
+            <span class="num-label" style="margin:0;">CATEGORY C</span>
+            <h3 class="h3" style="margin:0;">現場管理・施工記録：現場監督の「書類地獄」を解消</h3>
+          </div>
+          <div class="grid-3">
+            <div class="surface-bg" style="display:flex; flex-direction:column;">
+              <strong style="font-size:16.5px; color:var(--brand); margin-bottom:8px;">日報・施工記録作成</strong>
+              <p class="body-text" style="font-size:15.5px; flex:1;">毎日の記録が面倒で後回しになり、抜け漏れが出る…</p>
+              <div class="diff-badge"><span class="diff-before">60分</span><i data-lucide="arrow-right" width="16" height="16" style="color:var(--gold);"></i><span class="diff-after">10分</span></div>
+            </div>
+            <div class="surface-bg" style="display:flex; flex-direction:column;">
+              <strong style="font-size:16.5px; color:var(--brand); margin-bottom:8px;">近隣挨拶文・工事案内</strong>
+              <p class="body-text" style="font-size:15.5px; flex:1;">現場ごとに一から作り直す手間がバカにならない…</p>
+              <div class="diff-badge"><span class="diff-before">90分</span><i data-lucide="arrow-right" width="16" height="16" style="color:var(--gold);"></i><span class="diff-after">5分</span></div>
+            </div>
+            <div class="surface-bg" style="display:flex; flex-direction:column;">
+              <strong style="font-size:16.5px; color:var(--brand); margin-bottom:8px;">安全書類・作業手順書</strong>
+              <p class="body-text" style="font-size:15.5px; flex:1;">書式が多く更新が追いつかない。作成に半日かかる…</p>
+              <div class="diff-badge"><span class="diff-before">半日</span><i data-lucide="arrow-right" width="16" height="16" style="color:var(--gold);"></i><span class="diff-after">20分</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- D -->
+        <div style="margin-bottom:56px;">
+          <div style="display:flex; align-items:baseline; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--border); margin-bottom:24px;">
+            <span class="num-label" style="margin:0;">CATEGORY D</span>
+            <h3 class="h3" style="margin:0;">経理・原価管理：「完工後に赤字」を未然に防ぐ</h3>
+          </div>
+          <div class="grid-3">
+            <div class="surface-bg" style="display:flex; flex-direction:column;">
+              <strong style="font-size:16.5px; color:var(--brand); margin-bottom:8px;">見積書・発注書作成</strong>
+              <p class="body-text" style="font-size:15.5px; flex:1;">拾い出しの転記ミスが怖く、確認に時間がかかる…</p>
+              <div class="diff-badge"><span class="diff-before">3時間</span><i data-lucide="arrow-right" width="16" height="16" style="color:var(--gold);"></i><span class="diff-after">30分</span></div>
+            </div>
+            <div class="surface-bg" style="display:flex; flex-direction:column;">
+              <strong style="font-size:16.5px; color:var(--brand); margin-bottom:8px;">原価・粗利チェック</strong>
+              <p class="body-text" style="font-size:15.5px; flex:1;">月次でまとめて確認するため、完工後に赤字と気づく…</p>
+              <div class="diff-badge"><span class="diff-before">月次のみ</span><i data-lucide="arrow-right" width="16" height="16" style="color:var(--gold);"></i><span class="diff-after">随時確認</span></div>
+            </div>
+            <div class="surface-bg" style="display:flex; flex-direction:column;">
+              <strong style="font-size:16.5px; color:var(--brand); margin-bottom:8px;">請求書・支払管理</strong>
+              <p class="body-text jp-keep" style="font-size:15.5px; flex:1;">協力会社への支払い漏れや<wbr>二重払いが不安…</p>
+              <div class="diff-badge"><span class="diff-before">2時間</span><i data-lucide="arrow-right" width="16" height="16" style="color:var(--gold);"></i><span class="diff-after">15分</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- E -->
+        <div>
+          <div style="display:flex; align-items:baseline; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--border); margin-bottom:24px;">
+            <span class="num-label" style="margin:0;">CATEGORY E</span>
+            <h3 class="h3" style="margin:0;">アフターメンテナンス・定期点検：完工後も「選ばれ続ける」仕組み</h3>
+          </div>
+          <div class="grid-3">
+            <div class="surface-bg" style="display:flex; flex-direction:column;">
+              <strong style="font-size:16.5px; color:var(--brand); margin-bottom:8px;">定期点検ご案内文</strong>
+              <p class="body-text" style="font-size:15.5px; flex:1;">完工後の連絡が後手に回り、OB客との関係が薄れる…</p>
+              <div class="diff-badge"><span class="diff-before">60分/件</span><i data-lucide="arrow-right" width="16" height="16" style="color:var(--gold);"></i><span class="diff-after">3分</span></div>
+            </div>
+            <div class="surface-bg" style="display:flex; flex-direction:column;">
+              <strong style="font-size:16.5px; color:var(--brand); margin-bottom:8px;">点検報告書・写真整理</strong>
+              <p class="body-text" style="font-size:15.5px; flex:1;">報告書作成が面倒で後回しになり、お客様の信頼を損なう…</p>
+              <div class="diff-badge"><span class="diff-before">半日</span><i data-lucide="arrow-right" width="16" height="16" style="color:var(--gold);"></i><span class="diff-after">20分</span></div>
+            </div>
+            <div class="surface-bg" style="display:flex; flex-direction:column;">
+              <strong style="font-size:16.5px; color:var(--brand); margin-bottom:8px;">OB客ニュースレター</strong>
+              <p class="body-text" style="font-size:15.5px; flex:1;">ネタ切れ・文章力の壁で発信が止まり、紹介受注が途絶える…</p>
+              <div class="diff-badge"><span class="diff-before">丸1日</span><i data-lucide="arrow-right" width="16" height="16" style="color:var(--gold);"></i><span class="diff-after">30分</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 5つのAI活用シナリオ -->
+    <section class="sec sec-bg">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="eyebrow">02 / USE CASES</span>
+            <h2 class="h2" style="margin-bottom:0;">経営スタイルに合わせた<br>5つのAI活用シナリオ</h2>
+          </div>
+          <p class="sec-head-sub">AI導入は単なる効率化ではありません。浮いた時間を「お施主様への誠実さ」と「社長の判断時間」に戻すための投資です。</p>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:24px;">
+          <!-- CASE 01 -->
+          <div class="surface-paper">
+            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:20px;">
+              <div>
+                <span class="num-label" style="margin-bottom:4px;">CASE 01 ／ 商談スピード重視</span>
+                <h3 class="h3" style="margin:0;">営業成約率・最大化セット</h3>
+                <p class="body-text" style="font-size:15.5px;">課題：資料作成が追いつかず、お客様の検討熱が冷めてしまう。</p>
+              </div>
+              <div style="font-family:var(--font-num); font-size:24px; font-weight:700; color:var(--brand);">月間 約62万円 削減</div>
+            </div>
+            <div style="overflow-x:auto;">
+              <table class="clean-table">
+                <thead><tr><th>削減項目</th><th>従来のコスト（外注・残業代）</th><th>AI活用コスト</th></tr></thead>
+                <tbody>
+                  <tr><td>即時フォロー資料 (月10件)</td><td>150,000円</td><td><strong>25,000円</strong></td></tr>
+                  <tr><td>AIパース・イメージ生成 (月10件)</td><td>500,000円</td><td><strong>1,000円</strong></td></tr>
+                  <tr class="row-total"><td>月間合計メリット</td><td style="text-decoration:line-through; color:var(--gray);">650,000円</td><td style="color:var(--gold);">約 62万円 削減</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- CASE 02 -->
+          <div class="surface-paper">
+            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:20px;">
+              <div>
+                <span class="num-label" style="margin-bottom:4px;">CASE 02 ／ 施工品質・安全重視</span>
+                <h3 class="h3" style="margin:0;">現場監督・働き方改革セット</h3>
+                <p class="body-text" style="font-size:15.5px;">課題：事務作業で残業が常態化。現場チェックに集中できない。</p>
+              </div>
+              <div style="font-family:var(--font-num); font-size:24px; font-weight:700; color:var(--brand);">月間 約11万円 削減</div>
+            </div>
+            <div style="overflow-x:auto;">
+              <table class="clean-table">
+                <thead><tr><th>削減項目</th><th>従来のコスト（残業代等）</th><th>AI活用コスト</th></tr></thead>
+                <tbody>
+                  <tr><td>近隣挨拶文・社内マニュアル作成</td><td>100,000円</td><td><strong>8,000円</strong></td></tr>
+                  <tr><td>定期点検報告・手紙作成</td><td>25,000円</td><td><strong>1,500円</strong></td></tr>
+                  <tr class="row-total"><td>月間合計メリット</td><td style="text-decoration:line-through; color:var(--gray);">125,000円</td><td style="color:var(--gold);">約 11万円 削減</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- CASE 03 -->
+          <div class="surface-paper">
+            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:20px;">
+              <div>
+                <span class="num-label" style="margin-bottom:4px;">CASE 03 ／ 集客力・認知重視</span>
+                <h3 class="h3" style="margin:0;">広報・ブランディング自動化セット</h3>
+                <p class="body-text" style="font-size:15.5px;">課題：ネタ切れやセンスの壁。外注費が高騰している。</p>
+              </div>
+              <div style="font-family:var(--font-num); font-size:24px; font-weight:700; color:var(--brand);">月間 約32万円 削減</div>
+            </div>
+            <div style="overflow-x:auto;">
+              <table class="clean-table">
+                <thead><tr><th>削減項目</th><th>従来のコスト（外注・人件費）</th><th>AI活用コスト</th></tr></thead>
+                <tbody>
+                  <tr><td>ブログ記事作成 (月4本)</td><td>80,000円</td><td><strong>400円</strong></td></tr>
+                  <tr><td>SNS投稿・サムネイル作成 (月20回)</td><td>250,000円</td><td><strong>11,000円</strong></td></tr>
+                  <tr class="row-total"><td>月間合計メリット</td><td style="text-decoration:line-through; color:var(--gray);">330,000円</td><td style="color:var(--gold);">約 32万円 削減</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- CASE 04 -->
+          <div class="surface-paper">
+            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:20px;">
+              <div>
+                <span class="num-label" style="margin-bottom:4px;">CASE 04 ／ 顧客信頼・LTV重視</span>
+                <h3 class="h3" style="margin:0;">アフター・紹介受注特化セット</h3>
+                <p class="body-text" style="font-size:15.5px;">課題：完工後のフォローが疎かになり、紹介が生まれない。</p>
+              </div>
+              <div style="font-family:var(--font-num); font-size:24px; font-weight:700; color:var(--brand);">月間 約16万円 削減</div>
+            </div>
+            <div style="overflow-x:auto;">
+              <table class="clean-table">
+                <thead><tr><th>削減項目</th><th>従来のコスト（工数）</th><th>AI活用コスト</th></tr></thead>
+                <tbody>
+                  <tr><td>個別メッセージ・案内状作成</td><td>125,000円</td><td><strong>7,500円</strong></td></tr>
+                  <tr><td>ニュースレター・ネタ出し</td><td>50,000円</td><td><strong>2,500円</strong></td></tr>
+                  <tr class="row-total"><td>月間合計メリット</td><td style="text-decoration:line-through; color:var(--gray);">175,000円</td><td style="color:var(--gold);">約 16万円 削減</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- CASE 05 -->
+          <div class="surface-paper">
+            <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:20px;">
+              <div>
+                <span class="num-label" style="margin-bottom:4px;">CASE 05 ／ 経営効率重視</span>
+                <h3 class="h3" style="margin:0;">少数精鋭・社長の右腕セット</h3>
+                <p class="body-text" style="font-size:15.5px;">課題：社長が多忙を極め、経営判断の時間が取れない。</p>
+              </div>
+              <div style="font-family:var(--font-num); font-size:24px; font-weight:700; color:var(--brand);">月間 約16万円 削減</div>
+            </div>
+            <div style="overflow-x:auto;">
+              <table class="clean-table">
+                <thead><tr><th>削減項目</th><th>従来のコスト（時給換算）</th><th>AI活用コスト</th></tr></thead>
+                <tbody>
+                  <tr><td>営業・広報・総務の事務全般</td><td>180,000円</td><td><strong>14,400円</strong></td></tr>
+                  <tr class="row-total"><td>月間合計メリット</td><td style="text-decoration:line-through; color:var(--gray);">180,000円</td><td style="color:var(--gold);">約 16万円 削減</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size:12.5px; color:var(--gray); margin-top:24px; line-height:1.85;">
+          ※削減試算の算出前提について：上記の従来コストおよび削減額は、一般的な外注単価（建築パース制作1点5万円、記事作成1本2万円等）および社内作業の時給換算（時給2,500円〜3,000円相当）をもとに算出したモデル試算例です。実際の削減効果は現在の業務量・体制・外注状況により異なり、特定の成果を保証するものではありません。
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. ご支援プランと費用の考え方 -->
+    <section class="sec sec-paper">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="eyebrow">03 / PLANS</span>
+            <h2 class="h2" style="margin-bottom:0;">ご支援プランと費用の考え方</h2>
+          </div>
+          <p class="sec-head-sub">会社の規模や「まずどこから手をつけるか」によって最適な関わり方が異なるため、画一的な料金パックではなく個別にお見積りしています。</p>
+        </div>
+
+        <!-- 3つの安心ポイント（細い横線リスト） -->
+        <div style="margin-bottom:56px;">
+          <div class="row-list-item">
+            <span class="num">01</span>
+            <h3>高額な専用システム不要</h3>
+            <p>何百万円もする専用ソフトや長期リース契約は使いません。無料〜月額3,000円程度の生成AIと、今お使いのGoogle環境を活かして小さく始めます。</p>
+          </div>
+          <div class="row-list-item">
+            <span class="num">02</span>
+            <h3>「1つの業務だけ」から可能</h3>
+            <p>いきなり全社導入ではなく、「まずは日報だけ」「点検案内だけ」など、ご予算と優先順位に合わせて無理のない範囲からスタートできます。</p>
+          </div>
+          <div class="row-list-item">
+            <span class="num">03</span>
+            <h3>納得いただいてからのご契約</h3>
+            <p>無料相談で現状の課題を整理した上で、ご予算に合わせたプランをご提案します。相談したからといって契約の必要は一切ありません。</p>
+          </div>
+        </div>
+
+        <!-- 選べる3つの関わり方 -->
+        <h3 class="h3" style="margin-bottom:24px;">選べる3つの関わり方</h3>
+        <div class="grid-3">
+          <div class="surface-bg">
+            <span class="num-label">単発・短期</span>
+            <h4 class="h3" style="font-size:18px;">スポット業務整理・構築</h4>
+            <p class="body-text" style="font-size:15.5px;">特定の1業務（プロンプト整備やGoogleスプレッドシート自動化など）を単発で整え、すぐ使える状態でお渡しするプランです。</p>
+          </div>
+          <div class="surface-bg" style="background:var(--brand); color:var(--paper);">
+            <span class="num-label">おすすめ・継続</span>
+            <h4 class="h3" style="font-size:18px; color:var(--paper);">定着伴走（社長の右腕）</h4>
+            <p class="body-text" style="font-size:15.5px; color:rgba(255,255,255,0.88);">定例ミーティングと日々のチャット相談を通じ、業務設計からツールの微調整、現場への定着までを継続的にお手伝いするプランです。</p>
+          </div>
+          <div class="surface-bg">
+            <span class="num-label">教育・内製化</span>
+            <h4 class="h3" style="font-size:18px;">社内研修・実践勉強会</h4>
+            <p class="body-text" style="font-size:15.5px;">社長やスタッフ様がご自身でAIを使いこなせるようになるため、実際の社内業務を題材に手を動かして学ぶ実践レクチャーです。</p>
+          </div>
+        </div>
+        <p style="font-size:13px; color:var(--gray); margin-top:18px;">※ご状況に応じて、各種補助金・助成金を活用した導入のご相談も承っております。お気軽にお尋ねください。</p>
+      </div>
+    </section>
+
+    <!-- 6. 他の導入手法との違い -->
+    <section class="sec sec-bg">
+      <div class="wrap">
+        <span class="eyebrow">04 / COMPARISON</span>
+        <h2 class="h2">他の導入手法との違い</h2>
+        <p class="body-text" style="max-width:740px; margin-bottom:36px;">
+          「動画講座を契約したが見る時間がない」「高額なシステムを入れたが現場が使いこなせない」という失敗を防ぐため、BuildMateは実務への定着に特化しています。
+        </p>
+
+        <div class="surface-paper" style="padding:12px 24px; overflow-x:auto;">
+          <table class="clean-table" style="min-width:760px;">
+            <thead>
+              <tr>
+                <th style="width:16%;">比較項目</th>
+                <th style="width:24%; background:var(--brand); color:var(--paper);">BuildMate（当サービス）</th>
+                <th style="width:20%;">AI動画講座・スクール</th>
+                <th style="width:20%;">大手経営コンサル</th>
+                <th style="width:20%;">建築専用システム</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>支援スタイル</strong></td>
+                <td style="background:var(--bg); color:var(--brand); font-weight:700;">今の業務にAIとGoogle自動化を組み込み、定着まで個別伴走</td>
+                <td style="color:var(--gray);">動画教材を見て自分で学ぶ（月例勉強会など）</td>
+                <td style="color:var(--gray);">経営戦略から全社DXまで幅広く指導・助言</td>
+                <td style="color:var(--gray);">見積・工程・原価を専用ソフトで一元管理</td>
+              </tr>
+              <tr>
+                <td><strong>費用の考え方</strong></td>
+                <td style="background:var(--bg); color:var(--brand); font-weight:700;">高額な初期費用なし。1業務からご予算に合わせて個別設計</td>
+                <td style="color:var(--gray);">比較的安価な月額制（自習時間は自社負担）</td>
+                <td style="color:var(--gray);">高単価な月次顧問契約・長期契約が中心</td>
+                <td style="color:var(--gray);">初期導入費＋毎月のアカウント利用料</td>
+              </tr>
+              <tr>
+                <td><strong>現場の負担</strong></td>
+                <td style="background:var(--bg); color:var(--brand); font-weight:700;">小（今のGoogle環境・業務の流れのまま始める）</td>
+                <td style="color:var(--gray);">大（自社業務に置き換える時間が必要）</td>
+                <td style="color:var(--gray);">中〜大（会議・資料準備の工数が必要）</td>
+                <td style="color:var(--gray);">大（新しい入力ルールを覚える必要あり）</td>
+              </tr>
+              <tr>
+                <td style="border-bottom:none;"><strong>向いている会社</strong></td>
+                <td style="background:var(--bg); color:var(--brand); font-weight:700; border-bottom:none;">専任IT担当がおらず、社長の右腕として一緒に手を動かしてほしい工務店</td>
+                <td style="color:var(--gray); border-bottom:none;">社内にAI推進担当がおり独学で自走できる会社</td>
+                <td style="color:var(--gray); border-bottom:none;">予算に余裕があり組織全体の改革を行いたい会社</td>
+                <td style="color:var(--gray); border-bottom:none;">業務フローが固まっており基幹ソフトを入れ替えたい会社</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- CTA -->
+        <div style="text-align:center; margin-top:56px;">
+          <p class="lead-text" style="margin-bottom:24px;">まずは、今の業務のどこに「社長の右腕」が必要か診断しませんか？</p>
+          <div class="btn-group" style="justify-content:center;">
+            <a href="diagnosis.html" class="btn-primary">AI活用ポテンシャル診断を受ける</a>
+            <a href="contact.html" class="btn-outline-dark">無料相談する</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-in">
+      <div class="footer-links">
+        <a href="news.html">コラム一覧</a>
+        <a href="faq.html">よくある質問</a>
+        <a href="about.html">代表プロフィール・事業概要</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+        <a href="terms.html">利用規約</a>
+        <a href="law.html">特定商取引法に基づく表記</a>
+      </div>
+      <div class="footer-copy">Copyright © 2026 BuildMate. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
     window.closeMobileMenu = function() {
-        const menu = getMobileMenu();
-        if (!menu) return;
-        menu.style.display = 'none';
-        document.body.style.overflow = '';
+      const menu = document.getElementById('mobile-menu');
+      if (menu) menu.style.display = 'none';
+      document.body.style.overflow = '';
     };
-
-    function openMobileMenu() {
-        const menu = getMobileMenu();
-        if (!menu) return;
-        menu.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const button = document.getElementById('mobile-menu-btn');
-        if (button) {
-            button.addEventListener('click', openMobileMenu);
-        }
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') closeMobileMenu();
-        });
+    document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+      const menu = document.getElementById('mobile-menu');
+      if (menu) menu.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
     });
-})();
-</script>
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMobileMenu(); });
+  </script>
 </body>
 </html>

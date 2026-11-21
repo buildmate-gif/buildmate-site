@@ -11,7 +11,7 @@
     </script>
     <meta charset="UTF-8">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="seigaiha.css">
+    <link rel="stylesheet" href="theme-a2.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>プライバシーポリシー | BuildMate</title>
     <link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/privacy.html">
@@ -38,41 +38,38 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-wa-bg text-wa-text antialiased">
-        <header class="bg-white/90 border-wa-border border-b fixed w-full backdrop-blur-md top-0 z-50 transition-all duration-300">
-        <div class="max-w-[1080px] mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 bg-wa-brand text-white flex items-center justify-center rounded-wa font-serif font-bold text-xl group-hover:bg-wa-brandHover transition-colors">B</div>
-                <span class="font-serif font-bold text-xl tracking-wide">BuildMate</span>
-            </a>
-
-            <nav class="hidden md:flex items-center gap-8 font-medium text-base">
-
-                <a href="index.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">ホーム</a>
-                <a href="services.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">サービス・効果</a>
-                <a href="ai-guide.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="book-open" class="w-4 h-4"></i> AI活用入門</a>
-                <a href="diagnosis.html" class="hover:text-wa-brand transition-colors flex items-center gap-1"><i data-lucide="clipboard-check" class="w-4 h-4"></i> AI診断</a>
-                <a href="gift.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">特典プレゼント</a>
-                <a href="gas.html" class="hover:text-wa-brand transition-colors flex items-center gap-1">GAS活用事例</a>
-                <a href="contact.html" class="px-5 py-2.5 bg-wa-accent text-white rounded-wa font-bold hover:bg-wa-accentHover transition-all shadow-md text-sm">無料相談</a>
-            </nav>
-
-            <button id="mobile-menu-btn" class="md:hidden text-wa-text hover:text-wa-brand transition-colors p-2">
-                <i data-lucide="menu" class="w-8 h-8"></i>
-            </button>
-        </div>
-    </header>
+        <header class="site-header">
+    <div class="header-in">
+      <a href="index.html" class="site-logo">
+        <span class="site-logo-mark">B</span>
+        <span>BuildMate</span>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">ホーム</a>
+        <a href="services.html">サービス・効果</a>
+        <a href="ai-guide.html">AI活用入門</a>
+        <a href="diagnosis.html">AI診断</a>
+        <a href="gift.html">特典プレゼント</a>
+        <a href="gas.html">GAS活用事例</a>
+        <a href="contact.html" class="nav-cta">無料相談</a>
+      </nav>
+      <button id="mobile-menu-btn" class="mobile-toggle" aria-label="メニューを開く">
+        <i data-lucide="menu" width="28" height="28"></i>
+      </button>
+    </div>
+  </header>
 
 <!-- モバイルメニュー -->
-<div id="mobile-menu" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background-color:var(--wa-mobile-menu-bg); flex-direction:column; padding:2rem; gap:1.5rem; font-size:1.25rem; font-weight:500; overflow-y:auto;">
-    <button onclick="closeMobileMenu()" style="align-self:flex-end; font-size:1rem; color:var(--wa-mobile-menu-muted); background:none; border:none; cursor:pointer; padding:0.5rem;">✕ 閉じる</button>
-    <a href="index.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">ホーム</a>
-    <a href="services.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">サービス・効果</a>
-    <a href="ai-guide.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI活用入門</a>
-    <a href="diagnosis.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">AI診断</a>
-    <a href="gift.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">特典プレゼント</a>
-    <a href="gas.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">GAS活用事例</a>
-    <a href="about.html" onclick="closeMobileMenu()" style="display:block; padding:0.75rem 0; border-bottom:1px solid var(--wa-mobile-menu-border); color:var(--wa-mobile-menu-text); text-decoration:none;">代表プロフィール・事業概要</a>
-    <a href="contact.html" onclick="closeMobileMenu()" style="display:block; margin-top:1rem; padding:1rem; background-color:var(--wa-mobile-menu-active); color:#ffffff; text-align:center; border-radius:0.75rem; text-decoration:none;">無料相談</a>
+<div id="mobile-menu">
+    <button class="mm-close" onclick="closeMobileMenu()">✕ 閉じる</button>
+    <a href="index.html" onclick="closeMobileMenu()">ホーム</a>
+    <a href="services.html" onclick="closeMobileMenu()">サービス・効果</a>
+    <a href="ai-guide.html" onclick="closeMobileMenu()">AI活用入門</a>
+    <a href="diagnosis.html" onclick="closeMobileMenu()">AI診断</a>
+    <a href="gift.html" onclick="closeMobileMenu()">特典プレゼント</a>
+    <a href="gas.html" onclick="closeMobileMenu()">GAS活用事例</a>
+    <a href="about.html" onclick="closeMobileMenu()">代表プロフィール・事業概要</a>
+    <a href="contact.html" class="mm-cta" onclick="closeMobileMenu()">無料相談</a>
 </div>
 
     <main class="pt-32 pb-24 px-6 max-w-[800px] mx-auto">
@@ -83,21 +80,21 @@
 
             <section>
                 <h2 class="text-xl font-bold mb-4 text-wa-brand flex items-center gap-2">
-                    <span class="inline-block w-1 h-6 bg-wa-brand rounded-full"></span> 第1条（個人情報）
+                    第1条（個人情報）
                 </h2>
                 <p>「個人情報」とは、個人情報保護法にいう「個人情報」を指すものとし、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先、その他の記述等により特定の個人を識別できる情報及び容貌、指紋、声紋にかかるデータ、及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。</p>
             </section>
 
             <section>
                 <h2 class="text-xl font-bold mb-4 text-wa-brand flex items-center gap-2">
-                    <span class="inline-block w-1 h-6 bg-wa-brand rounded-full"></span> 第2条（個人情報の収集方法）
+                    第2条（個人情報の収集方法）
                 </h2>
                 <p>当社は、ユーザーが利用登録をする際に氏名、生年月日、住所、電話番号、メールアドレス、銀行口座番号、クレジットカード番号、運転免許証番号などの個人情報をお尋ねすることがあります。また、ユーザーと提携先（情報提供元、広告主、広告配信先などを含みます。以下、｢提携先｣といいます。）などとの間でなされたユーザーの個人情報を含む取引記録や決済に関する情報を、当社の提携先などから収集することがあります。</p>
             </section>
 
             <section>
                 <h2 class="text-xl font-bold mb-4 text-wa-brand flex items-center gap-2">
-                    <span class="inline-block w-1 h-6 bg-wa-brand rounded-full"></span> 第3条（個人情報を収集・利用する目的）
+                    第3条（個人情報を収集・利用する目的）
                 </h2>
                 <p>当社が個人情報を収集・利用する目的は、以下のとおりです。</p>
                 <ul class="list-disc pl-5 mt-4 space-y-2 bg-wa-bg p-5 rounded-lg text-sm md:text-base">
@@ -114,14 +111,14 @@
 
             <section>
                 <h2 class="text-xl font-bold mb-4 text-wa-brand flex items-center gap-2">
-                    <span class="inline-block w-1 h-6 bg-wa-brand rounded-full"></span> 第4条（利用目的の変更）
+                    第4条（利用目的の変更）
                 </h2>
                 <p>当社は、利用目的が変更前と関連性を有すると合理的に認められる場合に限り、個人情報の利用目的を変更するものとします。利用目的の変更を行った場合には、変更後の目的について、当社所定の方法によりユーザーに通知し、または本ウェブサイト上に公表するものとします。</p>
             </section>
 
             <section>
                 <h2 class="text-xl font-bold mb-4 text-wa-brand flex items-center gap-2">
-                    <span class="inline-block w-1 h-6 bg-wa-brand rounded-full"></span> 第5条（個人情報の第三者提供）
+                    第5条（個人情報の第三者提供）
                 </h2>
                 <p>当社は、次に掲げる場合を除いて、あらかじめユーザーの同意を得ることなく、第三者に個人情報を提供することはありません。ただし、個人情報保護法その他の法令で認められる場合を除きます。</p>
                 <ol class="list-decimal pl-5 mt-4 space-y-2 text-sm md:text-base">
@@ -138,21 +135,21 @@
 
             <section>
                 <h2 class="text-xl font-bold mb-4 text-wa-brand flex items-center gap-2">
-                    <span class="inline-block w-1 h-6 bg-wa-brand rounded-full"></span> 第6条（外部サービスの利用）
+                    第6条（外部サービスの利用）
                 </h2>
                 <p>当社は、本サービスの提供にあたり、Google LLCが提供するGoogleフォームや、OpenAI社が提供するAI技術などの外部サービスを利用する場合があります。ユーザーが入力した情報は、これらのサービスプロバイダーのサーバーに保存・処理される可能性がありますが、当社は適切な監督を行い、情報の安全管理に努めます。</p>
             </section>
 
             <section>
                 <h2 class="text-xl font-bold mb-4 text-wa-brand flex items-center gap-2">
-                    <span class="inline-block w-1 h-6 bg-wa-brand rounded-full"></span> 第7条（個人情報の開示・訂正・利用停止）
+                    第7条（個人情報の開示・訂正・利用停止）
                 </h2>
                 <p>ユーザーは、当社の保有する自己の個人情報が誤った情報である場合には、当社が定める手続きにより、当社に対して個人情報の訂正、追加または削除（以下、「訂正等」といいます。）を請求することができます。当社は、ユーザーから前項の請求を受けてその請求に応じる必要があると判断した場合には、遅滞なく、当該個人情報の訂正等を行うものとします。</p>
             </section>
 
             <section>
                 <h2 class="text-xl font-bold mb-4 text-wa-brand flex items-center gap-2">
-                    <span class="inline-block w-1 h-6 bg-wa-brand rounded-full"></span> 第8条（お問い合わせ窓口）
+                    第8条（お問い合わせ窓口）
                 </h2>
                 <p>本ポリシーに関するお問い合わせは、下記の窓口までお願いいたします。</p>
                 <div class="mt-6 bg-wa-bg p-6 rounded-lg border border-wa-border">
@@ -168,23 +165,19 @@
         </div>
     </main>
 
-            <footer class="bg-wa-brand text-white/80 border-t border-wa-brand py-16 text-base">
-        <div class="max-w-[1080px] mx-auto px-6">
-            <div class="flex flex-col items-center gap-6">
-                <div class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-white text-sm">
-                    <a href="news.html" class="hover:text-wa-gold transition-colors whitespace-nowrap">コラム一覧</a>
-                    <a href="faq.html" class="hover:text-wa-gold transition-colors whitespace-nowrap">よくある質問</a>
-                    <a href="about.html" class="hover:text-wa-gold transition-colors whitespace-nowrap">代表プロフィール・事業概要</a>
-                    <a href="privacy.html" class="hover:text-wa-gold transition-colors whitespace-nowrap">プライバシーポリシー</a>
-                    <a href="terms.html" class="hover:text-wa-gold transition-colors whitespace-nowrap">利用規約</a>
-                    <a href="law.html" class="hover:text-wa-gold transition-colors whitespace-nowrap">特定商取引法に基づく表記</a>
-                </div>
-                <div class="text-white/60 text-sm text-center">
-                    Copyright © 2026 BuildMate. All rights reserved.
-                </div>
-            </div>
-        </div>
-    </footer>
+            <footer class="site-footer">
+    <div class="footer-in">
+      <div class="footer-links">
+        <a href="news.html">コラム一覧</a>
+        <a href="faq.html">よくある質問</a>
+        <a href="about.html">代表プロフィール・事業概要</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+        <a href="terms.html">利用規約</a>
+        <a href="law.html">特定商取引法に基づく表記</a>
+      </div>
+      <div class="footer-copy">Copyright © 2026 BuildMate. All rights reserved.</div>
+    </div>
+  </footer>
 
     <script>
         lucide.createIcons();
