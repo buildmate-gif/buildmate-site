@@ -327,16 +327,21 @@ const COMPANY_NAME = '株式会社〇〇工務店';
 const SENDER_NAME = '担当者名';
 const REPLY_EMAIL = 'buildmate88@gmail.com';
 
-function sendThankYouMail() {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  const lastRow = sheet.getLastRow();
-  
-  // 最新の問い合わせを取得（A列：タイムスタンプ、B列：名前、C列：メール）
-  const name = sheet.getRange(lastRow, 2).getValue();
-  const email = sheet.getRange(lastRow, 3).getValue();
-  
-  if (!email) return; // メールアドレスがなければ終了
-  
+function sendThankYouMail(e) {
+  const sheet = e &amp;&amp; e.range
+    ? e.range.getSheet()
+    : SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const targetRow = e &amp;&amp; e.range ? e.range.getRow() : sheet.getLastRow();
+
+  if (targetRow &lt; 2) return; // 見出し行のみの場合は終了
+
+  // 対象の問い合わせを取得（A列：タイムスタンプ、B列：名前、C列：メール、D列：送信状況）
+  const name = sheet.getRange(targetRow, 2).getValue();
+  const email = sheet.getRange(targetRow, 3).getValue();
+  const status = sheet.getRange(targetRow, 4).getValue();
+
+  if (!email || status === '送信済み') return; // メール未入力または送信済みなら終了
+
   const subject = `【${COMPANY_NAME}】お問い合わせありがとうございます`;
   const body = `${name} 様
 
@@ -355,9 +360,9 @@ ${COMPANY_NAME}
     replyTo: REPLY_EMAIL,
     name: COMPANY_NAME
   });
-  
+
   // 送信済みフラグをD列に記録
-  sheet.getRange(lastRow, 4).setValue('送信済み');
+  sheet.getRange(targetRow, 4).setValue('送信済み');
 }
 
 // トリガー設定：フォーム送信時にこの関数を実行してください</pre>
@@ -406,30 +411,45 @@ function checkObReminders() {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   const lastRow = sheet.getLastRow();
   const today = new Date();
-  
-  for (let i = 2; i <= lastRow; i++) {
+  today.setHours(0, 0, 0, 0);
+
+  for (let i = 2; i &lt;= lastRow; i++) {
     const customerName = sheet.getRange(i, 1).getValue();
-    const deliveryDate = new Date(sheet.getRange(i, 2).getValue());
+    const deliveryRaw = sheet.getRange(i, 2).getValue();
     const staffEmail = sheet.getRange(i, 3).getValue();
-    
-    if (!customerName || !deliveryDate || !staffEmail) continue;
-    
+    let notifiedLog = String(sheet.getRange(i, 4).getValue() || '');
+
+    if (!customerName || !deliveryRaw || !staffEmail) continue;
+
+    const deliveryDate = new Date(deliveryRaw);
+    if (isNaN(deliveryDate.getTime())) continue;
+    deliveryDate.setHours(0, 0, 0, 0);
+
     for (const year of REMIND_YEARS) {
+      const logKey = `${year}年通知済み`;
+      if (notifiedLog.includes(logKey)) continue; // 同じ点検年の重複通知を防止
+
       const targetDate = new Date(deliveryDate);
       targetDate.setFullYear(targetDate.getFullYear() + year);
-      
-      // 対象日の7日前〜当日に通知
-      const diffDays = Math.floor((targetDate - today) / (1000 * 60 * 60 * 24));
-      
-      if (diffDays >= 0 && diffDays <= DAYS_BEFORE) {
+      targetDate.setHours(0, 0, 0, 0);
+
+      // 対象日の7日前〜当日に1回だけ通知
+      const diffDays = Math.round((targetDate - today) / (1000 * 60 * 60 * 24));
+
+      if (diffDays &gt;= 0 &amp;&amp; diffDays &lt;= DAYS_BEFORE) {
+        const targetStr = Utilities.formatDate(targetDate, 'Asia/Tokyo', 'yyyy/MM/dd');
         const subject = `【${COMPANY_NAME_002}】${customerName}様 引き渡し${year}年点検のご連絡時期です`;
-        const body = `${customerName}様の引き渡しから${year}年が経過します（${targetDate.toLocaleDateString('ja-JP')}）。
+        const body = `${customerName}様の引き渡しから${year}年が経過します（${targetStr}）。
 
 点検・フォローのご連絡をお忘れなく。
 
 顧客情報をスプレッドシートで確認してください。`;
-        
+
         GmailApp.sendEmail(staffEmail, subject, body);
+
+        // D列に通知済みログを追記
+        notifiedLog = notifiedLog ? `${notifiedLog}, ${logKey}` : logKey;
+        sheet.getRange(i, 4).setValue(notifiedLog);
       }
     }
   }
@@ -471,37 +491,52 @@ const COMPANY_NAME_003 = '株式会社〇〇工務店';
 function sendWeeklyReport() {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   const lastRow = sheet.getLastRow();
-  
-  // 今週の月曜日を取得
+
+  // 先週の月曜日〜日曜日を対象期間として取得（月曜朝実行を想定）
   const today = new Date();
-  const monday = new Date(today);
-  monday.setDate(today.getDate() - today.getDay() + 1);
-  monday.setHours(0, 0, 0, 0);
-  
+  const diffToMonday = (today.getDay() + 6) % 7;
+  const thisMonday = new Date(today);
+  thisMonday.setDate(today.getDate() - diffToMonday);
+  thisMonday.setHours(0, 0, 0, 0);
+
+  const lastMonday = new Date(thisMonday);
+  lastMonday.setDate(thisMonday.getDate() - 7);
+
+  const lastSunday = new Date(thisMonday);
+  lastSunday.setDate(thisMonday.getDate() - 1);
+
+  const startStr = Utilities.formatDate(lastMonday, 'Asia/Tokyo', 'yyyy/MM/dd');
+  const endStr = Utilities.formatDate(lastSunday, 'Asia/Tokyo', 'yyyy/MM/dd');
+
   let reportBody = `${COMPANY_NAME_003} 週次作業レポート\n`;
-  reportBody += `対象期間：${monday.toLocaleDateString('ja-JP')} 〜 ${today.toLocaleDateString('ja-JP')}\n`;
+  reportBody += `対象期間：${startStr} 〜 ${endStr}\n`;
   reportBody += `━━━━━━━━━━━━━━━━━━━━━━\n\n`;
-  
+
   let count = 0;
-  for (let i = 2; i <= lastRow; i++) {
-    const timestamp = new Date(sheet.getRange(i, 1).getValue());
-    if (timestamp >= monday) {
+  for (let i = 2; i &lt;= lastRow; i++) {
+    const rawTimestamp = sheet.getRange(i, 1).getValue();
+    if (!rawTimestamp) continue;
+    const timestamp = new Date(rawTimestamp);
+    if (isNaN(timestamp.getTime())) continue;
+
+    if (timestamp &gt;= lastMonday &amp;&amp; timestamp &lt; thisMonday) {
       const worker = sheet.getRange(i, 2).getValue();   // 職人名
       const site = sheet.getRange(i, 3).getValue();     // 現場名
       const work = sheet.getRange(i, 4).getValue();     // 作業内容
       const progress = sheet.getRange(i, 5).getValue(); // 進捗状況
-      
-      reportBody += `【${timestamp.toLocaleDateString('ja-JP')}】\n`;
+      const dateStr = Utilities.formatDate(timestamp, 'Asia/Tokyo', 'yyyy/MM/dd');
+
+      reportBody += `【${dateStr}】\n`;
       reportBody += `担当：${worker} / 現場：${site}\n`;
       reportBody += `作業内容：${work}\n`;
       reportBody += `進捗：${progress}\n\n`;
       count++;
     }
   }
-  
+
   reportBody += `━━━━━━━━━━━━━━━━━━━━━━\n`;
-  reportBody += `今週の日報件数：${count}件`;
-  
+  reportBody += `先週の日報件数：${count}件`;
+
   GmailApp.sendEmail(
     MANAGER_EMAIL,
     `【${COMPANY_NAME_003}】週次作業レポート`,
@@ -509,7 +544,7 @@ function sendWeeklyReport() {
   );
 }
 
-// トリガー設定：毎週月曜日の午前8時に実行してください</pre>
+// トリガー設定：毎週月曜日の午前8時に実行してください（先週分が集計されます）</pre>
                 </div>
                 <button onclick="copyCode('gas-003', this)" class="flex items-center gap-2 px-5 py-2.5 border-2 border-wa-brand text-wa-brand rounded-md text-sm font-bold hover:bg-wa-brand hover:text-white transition-all">
                     <i data-lucide="copy" class="w-4 h-4"></i> コードをコピー
@@ -546,26 +581,37 @@ const SENDER_NAME_004 = '担当者名';
 function sendEstimatePdf() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = ss.getActiveSheet();
-  
+
   // ★スプレッドシートのセル位置に合わせて変更してください
-  const customerName = sheet.getRange('B2').getValue(); // 顧客名
+  const customerName = sheet.getRange('B2').getValue();  // 顧客名
   const customerEmail = sheet.getRange('B3').getValue(); // 顧客メール
   const estimateNo = sheet.getRange('B4').getValue();    // 見積番号
   const totalAmount = sheet.getRange('B20').getValue();  // 合計金額
-  
+
   if (!customerEmail) {
     SpreadsheetApp.getUi().alert('顧客のメールアドレスを入力してください。');
     return;
   }
-  
-  // スプレッドシート全体をPDF化
-  const url = `https://docs.google.com/spreadsheets/d/${ss.getId()}/export?format=pdf&size=A4&portrait=true&fitw=true`;
+
+  // 直前の編集内容を反映してから、現在開いているシートのみPDF化
+  SpreadsheetApp.flush();
+  const url = `https://docs.google.com/spreadsheets/d/${ss.getId()}/export?format=pdf&amp;gid=${sheet.getSheetId()}&amp;size=A4&amp;portrait=true&amp;fitw=true`;
   const token = ScriptApp.getOAuthToken();
   const response = UrlFetchApp.fetch(url, {
-    headers: { Authorization: `Bearer ${token}` }
+    headers: { Authorization: `Bearer ${token}` },
+    muteHttpExceptions: true
   });
-  const pdfBlob = response.getBlob().setName(`見積書_${estimateNo}.pdf`);
-  
+
+  if (response.getResponseCode() !== 200) {
+    SpreadsheetApp.getUi().alert('PDFの生成に失敗しました。権限設定やシート状態を確認してください。');
+    return;
+  }
+
+  const pdfBlob = response.getBlob().setName(`見積書_${estimateNo || '送付用'}.pdf`);
+  const amountLine = totalAmount !== '' &amp;&amp; !isNaN(Number(totalAmount))
+    ? `\nお見積金額：¥${Number(totalAmount).toLocaleString()}\n`
+    : '';
+
   const subject = `【${COMPANY_NAME_004}】見積書のご送付（見積番号：${estimateNo}）`;
   const body = `${customerName} 様
 
@@ -573,8 +619,7 @@ function sendEstimatePdf() {
 ${COMPANY_NAME_004}の${SENDER_NAME_004}です。
 
 ご依頼いただきました件について、見積書をお送りいたします。
-添付PDFをご確認ください。
-
+添付PDFをご確認ください。${amountLine}
 ご不明な点がございましたら、お気軽にご連絡ください。
 
 ━━━━━━━━━━━━━━━━━━━━━━
@@ -582,13 +627,13 @@ ${COMPANY_NAME_004}
 担当：${SENDER_NAME_004}
 メール：${SENDER_EMAIL_004}
 ━━━━━━━━━━━━━━━━━━━━━━`;
-  
+
   GmailApp.sendEmail(customerEmail, subject, body, {
     attachments: [pdfBlob],
     name: COMPANY_NAME_004,
     replyTo: SENDER_EMAIL_004
   });
-  
+
   SpreadsheetApp.getUi().alert(`${customerName}様にPDFを送信しました。`);
 }
 
@@ -642,7 +687,9 @@ function organizePhotos() {
     
     // ファイル名から現場名を取得（ファイル名の先頭に「現場名_」を付けるルール）
     // 例：「〇〇邸_外壁.jpg」→「〇〇邸」フォルダに振り分け
-    const siteName = fileName.includes('_') ? fileName.split('_')[0] : '未分類';
+    const siteName = fileName.includes('_')
+      ? (fileName.split('_')[0].trim() || '未分類')
+      : '未分類';
     
     // 現場名フォルダを作成または取得
     let siteFolder;
@@ -750,7 +797,8 @@ ${COMPANY_NAME_006}
   });
   
   // 送信履歴を記録
-  sheet.getRange('B9').setValue(`送信済み：${new Date().toLocaleString('ja-JP')}`);
+  const sentAt = Utilities.formatDate(new Date(), 'Asia/Tokyo', 'yyyy/MM/dd HH:mm');
+  sheet.getRange('B9').setValue(`送信済み：${sentAt}`);
   SpreadsheetApp.getUi().alert(`${vendorName}様に発注メールを送信しました。`);
 }
 
@@ -797,17 +845,19 @@ function sendSurveyEmail() {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   
-  for (let i = 2; i <= lastRow; i++) {
+  for (let i = 2; i &lt;= lastRow; i++) {
     const customerName = sheet.getRange(i, 1).getValue();
     const customerEmail = sheet.getRange(i, 2).getValue();
-    const deliveryDate = new Date(sheet.getRange(i, 3).getValue());
+    const deliveryRaw = sheet.getRange(i, 3).getValue();
     const surveySent = sheet.getRange(i, 4).getValue();
-    
-    if (!customerName || !customerEmail || surveySent === '送信済み') continue;
-    
+
+    if (!customerName || !customerEmail || !deliveryRaw || surveySent === '送信済み') continue;
+
+    const deliveryDate = new Date(deliveryRaw);
+    if (isNaN(deliveryDate.getTime())) continue;
     deliveryDate.setHours(0, 0, 0, 0);
-    const diffDays = Math.floor((today - deliveryDate) / (1000 * 60 * 60 * 24));
-    
+    const diffDays = Math.round((today - deliveryDate) / (1000 * 60 * 60 * 24));
+
     if (diffDays === DAYS_AFTER_DELIVERY) {
       const subject = `【${COMPANY_NAME_007}】新居のご感想をお聞かせください`;
       const body = `${customerName} 様
@@ -827,8 +877,11 @@ ${SURVEY_URL}
 ${COMPANY_NAME_007}
 メール：${SENDER_EMAIL_007}
 ━━━━━━━━━━━━━━━━━━━━━━`;
-      
-      GmailApp.sendEmail(customerEmail, subject, body);
+
+      GmailApp.sendEmail(customerEmail, subject, body, {
+        name: COMPANY_NAME_007,
+        replyTo: SENDER_EMAIL_007
+      });
       sheet.getRange(i, 4).setValue('送信済み');
     }
   }
@@ -875,16 +928,18 @@ function checkSubsidyDeadlines() {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   
-  for (let i = 2; i <= lastRow; i++) {
+  for (let i = 2; i &lt;= lastRow; i++) {
     const subsidyName = sheet.getRange(i, 1).getValue(); // 補助金名
-    const deadline = new Date(sheet.getRange(i, 2).getValue()); // 締め切り日
+    const deadlineRaw = sheet.getRange(i, 2).getValue(); // 締め切り日
     const maxAmount = sheet.getRange(i, 3).getValue();   // 最大補助額
     const status = sheet.getRange(i, 4).getValue();      // ステータス
-    
-    if (!subsidyName || status === '申請済み' || status === '終了') continue;
-    
+
+    if (!subsidyName || !deadlineRaw || status === '申請済み' || status === '終了') continue;
+
+    const deadline = new Date(deadlineRaw);
+    if (isNaN(deadline.getTime())) continue;
     deadline.setHours(0, 0, 0, 0);
-    const diffDays = Math.floor((deadline - today) / (1000 * 60 * 60 * 24));
+    const diffDays = Math.round((deadline - today) / (1000 * 60 * 60 * 24));
     
     if (ALERT_DAYS.includes(diffDays)) {
       const subject = `【重要】${subsidyName} 締め切りまであと${diffDays}日`;
@@ -943,35 +998,40 @@ function sendMonthlyReport() {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   const lastRow = sheet.getLastRow();
   
+  // 前月を対象月として取得（1月実行時は前年12月）
   const today = new Date();
-  const thisMonth = today.getMonth();
-  const thisYear = today.getFullYear();
-  
+  const targetDate = new Date(today.getFullYear(), today.getMonth() - 1, 1);
+  const targetMonth = targetDate.getMonth();
+  const targetYear = targetDate.getFullYear();
+
   let totalSales = 0;      // 売上合計
   let totalCost = 0;       // 原価合計
   let orderCount = 0;      // 件数
   let orderDetails = '';   // 明細
-  
-  for (let i = 2; i <= lastRow; i++) {
-    const orderDate = new Date(sheet.getRange(i, 1).getValue());
-    if (orderDate.getMonth() !== thisMonth || orderDate.getFullYear() !== thisYear) continue;
-    
-    const projectName = sheet.getRange(i, 2).getValue(); // 工事名
-    const sales = Number(sheet.getRange(i, 3).getValue()); // 売上
-    const cost = Number(sheet.getRange(i, 4).getValue());  // 原価
-    
+
+  for (let i = 2; i &lt;= lastRow; i++) {
+    const orderRaw = sheet.getRange(i, 1).getValue();
+    if (!orderRaw) continue;
+    const orderDate = new Date(orderRaw);
+    if (isNaN(orderDate.getTime())) continue;
+    if (orderDate.getMonth() !== targetMonth || orderDate.getFullYear() !== targetYear) continue;
+
+    const projectName = sheet.getRange(i, 2).getValue();       // 工事名
+    const sales = Number(sheet.getRange(i, 3).getValue()) || 0; // 売上
+    const cost = Number(sheet.getRange(i, 4).getValue()) || 0;  // 原価
+
     totalSales += sales;
     totalCost += cost;
     orderCount++;
-    
+
     const grossProfit = sales - cost;
-    const margin = sales > 0 ? Math.round((grossProfit / sales) * 100) : 0;
+    const margin = sales &gt; 0 ? Math.round((grossProfit / sales) * 100) : 0;
     orderDetails += `・${projectName}：¥${sales.toLocaleString()} （粗利率${margin}%）\n`;
   }
-  
+
   const grossProfit = totalSales - totalCost;
-  const grossMargin = totalSales > 0 ? Math.round((grossProfit / totalSales) * 100) : 0;
-  const monthStr = `${thisYear}年${thisMonth + 1}月`;
+  const grossMargin = totalSales &gt; 0 ? Math.round((grossProfit / totalSales) * 100) : 0;
+  const monthStr = `${targetYear}年${targetMonth + 1}月`;
   
   const subject = `【${COMPANY_NAME_009}】${monthStr}度 月次売上レポート`;
   const body = `${monthStr}度 月次レポート
@@ -1031,24 +1091,28 @@ function sendSafetyWeeklyReport() {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   const lastRow = sheet.getLastRow();
   
+  // 今週の月曜日0:00を取得（日曜実行時もその週の月曜日を正しく算出）
   const today = new Date();
+  const diffToMonday = (today.getDay() + 6) % 7;
   const monday = new Date(today);
-  monday.setDate(today.getDate() - today.getDay() + 1);
+  monday.setDate(today.getDate() - diffToMonday);
   monday.setHours(0, 0, 0, 0);
-  
+
   // カテゴリ別集計
   const categories = {};
   let totalCount = 0;
   let reportDetails = '';
-  
-  for (let i = 2; i <= lastRow; i++) {
-    const reportDate = new Date(sheet.getRange(i, 1).getValue());
-    if (reportDate < monday) continue;
-    
-    const site = sheet.getRange(i, 2).getValue();       // 現場名
-    const category = sheet.getRange(i, 3).getValue();   // カテゴリ（転倒・落下など）
-    const description = sheet.getRange(i, 4).getValue(); // 状況
-    const action = sheet.getRange(i, 5).getValue();     // 対処内容
+
+  for (let i = 2; i &lt;= lastRow; i++) {
+    const rawDate = sheet.getRange(i, 1).getValue();
+    if (!rawDate) continue;
+    const reportDate = new Date(rawDate);
+    if (isNaN(reportDate.getTime()) || reportDate &lt; monday) continue;
+
+    const site = sheet.getRange(i, 2).getValue();                 // 現場名
+    const category = sheet.getRange(i, 3).getValue() || '未分類'; // カテゴリ（転倒・落下など）
+    const description = sheet.getRange(i, 4).getValue();          // 状況
+    const action = sheet.getRange(i, 5).getValue();               // 対処内容
     
     categories[category] = (categories[category] || 0) + 1;
     totalCount++;
