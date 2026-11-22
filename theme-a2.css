@@ -593,30 +593,44 @@ body.bm-article-page article .border-wa-brand\/20 {
 
 .news-card {
   background: var(--bg);
+  border: 1px solid var(--light);
   display: flex;
   flex-direction: column;
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.28s ease;
 }
-.news-card:hover { transform: translateY(-3px); }
+.news-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(36, 50, 74, 0.08);
+}
 .news-thumb {
-  height: 190px;
-  background: var(--paper);
-  padding: 12px;
+  height: 204px;
+  background: var(--light);
+  padding: 14px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid var(--light);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
 }
-.news-thumb img { width: 100%; height: 100%; object-fit: contain; }
+.news-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--paper);
+  box-shadow: 0 6px 16px rgba(36, 50, 74, 0.12);
+}
 .news-tag {
   position: absolute;
-  top: 12px; left: 12px;
+  top: 12px;
+  right: 12px;
+  left: auto;
   background: var(--brand);
   color: var(--paper);
   font-size: 12px;
   font-weight: 700;
   padding: 4px 10px;
+  z-index: 2;
 }
 .news-body { padding: 24px; flex: 1; }
 .news-date {
@@ -732,4 +746,216 @@ body.bm-article-page article .border-wa-brand\/20 {
   .lead-text { font-size: 17px; }
   .btn-primary, .btn-secondary, .btn-outline-dark { width: 100%; padding: 15px 18px; font-size: 15px; }
   .surface-paper, .surface-bg, .surface-dark-tile { padding: 24px 20px; }
+}
+
+/* =========================================================
+   軽量CSSモーション＆エフェクト（transform / opacity のみ使用）
+   ========================================================= */
+
+/* ① ファーストビュー：すっと順番に現れる */
+@keyframes bmHeroIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.split-hero > div > *,
+.split-hero > aside,
+.page-hero .wrap > * {
+  opacity: 0;
+  animation: bmHeroIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.split-hero > div > :nth-child(1),
+.page-hero .wrap > :nth-child(1) { animation-delay: 0.04s; }
+.split-hero > div > :nth-child(2),
+.page-hero .wrap > :nth-child(2) { animation-delay: 0.12s; }
+.split-hero > div > :nth-child(3),
+.page-hero .wrap > :nth-child(3) { animation-delay: 0.20s; }
+.split-hero > div > :nth-child(4) { animation-delay: 0.28s; }
+.split-hero > div > :nth-child(5) { animation-delay: 0.34s; }
+.split-hero > aside { animation-delay: 0.24s; }
+
+/* ② 伸びるゴールドの細い線（ナビゲーション・横線リスト） */
+.site-nav a:not(.nav-cta) {
+  position: relative;
+  padding: 4px 0;
+}
+.site-nav a:not(.nav-cta)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.5px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.site-nav a:not(.nav-cta):hover::after,
+.site-nav a.is-active:not(.nav-cta)::after {
+  transform: scaleX(1);
+}
+
+.h-list-row,
+.row-list-item {
+  position: relative;
+}
+.h-list-row::after,
+.row-list-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1.5px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+.h-list-row:hover::after,
+.row-list-item:hover::after {
+  transform: scaleX(1);
+}
+
+/* ③ ボタンの矢印スライド＋押し心地 */
+.btn-primary,
+.btn-secondary,
+.btn-outline-dark,
+.btn-outline-light,
+.nav-cta,
+a[href*="contact.html"].btn-accent,
+button[type="submit"] {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    transform 0.24s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-outline-dark:hover,
+.btn-outline-light:hover,
+.nav-cta:hover {
+  transform: translateY(-2px);
+}
+.btn-primary svg,
+.btn-secondary svg,
+.btn-outline-dark svg,
+.btn-outline-light svg {
+  transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.btn-primary:hover svg,
+.btn-secondary:hover svg,
+.btn-outline-dark:hover svg,
+.btn-outline-light:hover svg {
+  transform: translateX(5px);
+}
+
+/* ④ 問い合わせボタン専用：左から右へ背景色がスッと塗り替わるスライド演出（旧ページの::beforeと競合しないよう明示） */
+.nav-cta::before,
+a[href*="contact.html"].btn-primary::before,
+a[href*="contact.html"].btn-secondary::before,
+a[href*="contact.html"].btn-outline-dark::before,
+a[href*="contact.html"].btn-accent::before,
+button[type="submit"]::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: -1 !important;
+  background: var(--gold) !important;
+  transform: scaleX(0) !important;
+  transform-origin: left center !important;
+  transition: transform 0.36s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  pointer-events: none !important;
+}
+a[href*="contact.html"].btn-secondary::before,
+a[href*="contact.html"].btn-outline-dark::before {
+  background: var(--brand) !important;
+}
+.nav-cta:hover::before,
+a[href*="contact.html"].btn-primary:hover::before,
+a[href*="contact.html"].btn-secondary:hover::before,
+a[href*="contact.html"].btn-outline-dark:hover::before,
+a[href*="contact.html"].btn-accent:hover::before,
+button[type="submit"]:hover::before {
+  left: 0 !important;
+  transform: scaleX(1) !important;
+}
+.nav-cta:hover,
+a[href*="contact.html"].btn-primary:hover,
+a[href*="contact.html"].btn-accent:hover,
+button[type="submit"]:hover {
+  background-color: var(--brand) !important;
+  color: var(--paper) !important;
+}
+a[href*="contact.html"].btn-secondary:hover,
+a[href*="contact.html"].btn-outline-dark:hover {
+  color: var(--paper) !important;
+  border-color: var(--brand) !important;
+}
+
+/* ⑤ 記事カードのサムネイルだけわずかに拡大 */
+.news-thumb {
+  overflow: hidden;
+}
+.news-thumb img {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.news-card:hover .news-thumb img {
+  transform: scale(1.045);
+}
+
+/* ⑥ 記事ページの読了プログレスバー（2px極細ゴールド線） */
+.bm-read-progress {
+  position: fixed;
+  top: 76px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left center;
+  z-index: 890;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* モーション軽減設定への配慮（自動オフ） */
+@media (prefers-reduced-motion: reduce) {
+  .split-hero > div > *,
+  .split-hero > aside,
+  .page-hero .wrap > *,
+  .bm-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+  .site-nav a::after,
+  .h-list-row::after,
+  .row-list-item::after,
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline-dark,
+  .btn-outline-light,
+  .nav-cta,
+  .news-thumb img {
+    transition: none !important;
+    transform: none !important;
+  }
+  .bm-read-progress { display: none !important; }
 }

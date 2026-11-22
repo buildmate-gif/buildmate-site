@@ -333,11 +333,10 @@
             const rawText = (data.content || '').replace(/<[^>]+>/g, '').trim();
             const excerpt = rawText.length > 68 ? rawText.substring(0, 68) + '…' : rawText;
             return `
-                <a href="${pageUrl}" class="bg-white rounded-wa overflow-hidden shadow-sm hover:shadow-xl transition-all group border border-gray-100 flex flex-col h-full transform hover:-translate-y-1">
-                    <div class="h-48 bg-white relative overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
-                        <img src="${imgSrc}" alt="${data.title}" loading="lazy" class="w-full h-full object-contain object-center transition-all duration-500 group-hover:-translate-y-1">
-                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
-                        <span class="absolute top-4 left-4 bg-wa-brand text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md z-10">${data.tag}</span>
+                <a href="${pageUrl}" class="bg-white rounded-wa overflow-hidden transition-all group border border-wa-border/60 flex flex-col h-full transform hover:-translate-y-1">
+                    <div class="h-52 relative overflow-hidden flex-shrink-0 flex items-center justify-center p-3.5 border-b border-wa-border/70" style="background-color:#F0EBE0;">
+                        <img src="${imgSrc}" alt="${data.title}" loading="lazy" class="w-full h-full object-contain object-center bg-white transition-transform duration-500 group-hover:scale-[1.04]" style="box-shadow:0 6px 16px rgba(36,50,74,0.12);">
+                        <span class="absolute top-3 right-3 bg-wa-brand text-white text-xs font-bold px-3 py-1 z-10">${data.tag}</span>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <div class="text-xs text-wa-gray mb-1.5 font-mono">${data.date || ''}</div>
@@ -448,5 +447,6 @@
     });
 })();
 </script>
+<script src="motion.js" defer></script>
 </body>
 </html>
