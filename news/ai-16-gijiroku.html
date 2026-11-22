@@ -6,22 +6,22 @@
 <meta charset="UTF-8"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../theme-a2.css"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>議事録をChatGPTで5分で作る、コピペで使えるプロンプト集 | BuildMate</title>
-<link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/ai-16-gijiroku.html">
+<link rel="canonical" href="https://buildmate-ai.com/news/ai-16-gijiroku.html">
 <meta name="description" content="会議の議事録をChatGPTで5分で作るための具体的なプロンプトを紹介。発言者別・アクションアイテム抽出など、コピペで使えるプロンプト集とカスタマイズのコツを解説します。">
 <meta name="robots" content="index, follow">
-<meta property="og:type" content="article"><meta property="og:title" content="議事録をChatGPTで5分で作る、コピペで使えるプロンプト集 | BuildMate"><meta property="og:description" content="会議の議事録をChatGPTで5分で作るための具体的なプロンプトを紹介。発言者別・アクションアイテム抽出など、コピペで使えるプロンプト集とカスタマイズのコツを解説します。"><meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/ai-16-gijiroku.html"><meta property="og:site_name" content="BuildMate"><meta property="og:locale" content="ja_JP">
+<meta property="og:type" content="article"><meta property="og:title" content="議事録をChatGPTで5分で作る、コピペで使えるプロンプト集 | BuildMate"><meta property="og:description" content="会議の議事録をChatGPTで5分で作るための具体的なプロンプトを紹介。発言者別・アクションアイテム抽出など、コピペで使えるプロンプト集とカスタマイズのコツを解説します。"><meta property="og:url" content="https://buildmate-ai.com/news/ai-16-gijiroku.html"><meta property="og:site_name" content="BuildMate"><meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="議事録をChatGPTで5分で作る、コピペで使えるプロンプト集 | BuildMate"><meta name="twitter:description" content="会議の議事録をChatGPTで5分で作るための具体的なプロンプトを紹介。発言者別・アクションアイテム抽出など、コピペで使えるプロンプト集とカスタマイズのコツを解説します。">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
 <script>tailwind.config={theme:{extend:{fontFamily:{sans:[['"Noto Sans JP"','sans-serif']],serif:[['"Noto Serif JP"','serif']]},colors:{wa:{bg:'#F7F2EA',paper:'#ffffff',text:'#1F2933',gray:'#6B7280',brand:'#24324A',brandHover:'#1A2838',accent:'#24324A',accentHover:'#1A2838',border:'#D4CAB8',gold:'#B99745',purple:'#5C3B8A',cyan:'#38BDF8'}},borderRadius:{wa:'12px'}}}}</script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "議事録をChatGPTで5分で作る、コピペで使えるプロンプト集", "datePublished": "2026-04-21", "dateModified": "2026-04-21", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経てAI活用支援を提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "会議の議事録をChatGPTで5分で作るための具体的なプロンプトを紹介。発言者別・アクションアイテム抽出など、コピペで使えるプロンプト集とカスタマイズのコツを解説します。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/ai-16-gijiroku.html"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "議事録をChatGPTで5分で作る、コピペで使えるプロンプト集", "datePublished": "2026-04-21", "dateModified": "2026-04-21", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経てAI活用支援を提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-ai.com"}, "description": "会議の議事録をChatGPTで5分で作るための具体的なプロンプトを紹介。発言者別・アクションアイテム抽出など、コピペで使えるプロンプト集とカスタマイズのコツを解説します。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-ai.com/news/ai-16-gijiroku.html"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "録音した音声から議事録を作ることはできますか？", "acceptedAnswer": {"@type": "Answer", "text": "ChatGPTのスマートフォンアプリには音声入力機能があります。また、録音データをWhisper（音声認識AI）でテキスト化し、そのテキストをChatGPTで整理するワークフローも効果的です。"}}, {"@type": "Question", "name": "英語の会議メモを日本語の議事録にすることはできますか？", "acceptedAnswer": {"@type": "Answer", "text": "はい。プロンプトに「英語で書かれたメモを日本語の議事録に整えてください」と指定するだけで対応できます。多言語の会議が多い組織では特に役立ちます。"}}, {"@type": "Question", "name": "議事録の書き方が毎回バラバラになるのですが、統一する方法はありますか？", "acceptedAnswer": {"@type": "Answer", "text": "組織内で「議事録フォーマット」を決め、そのフォーマットをプロンプトに含めてください。例：「以下のフォーマットで議事録を作成してください：【日時】【参加者】【決定事項】【アクション】」。フォーマットを固定することで毎回一貫した議事録になります。"}}]}
 </script>
-<style>.text-balance{text-wrap:balance}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
-    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+<style>.text-balance{text-wrap:balance}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-ai.com/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-ai.com/ogp.png">
 </head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans">
 <header class="site-header">
