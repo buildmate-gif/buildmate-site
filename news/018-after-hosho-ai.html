@@ -42,30 +42,8 @@
         }
     </script>
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "工務店のアフター対応をAI・GASで効率化する方法｜点検・クレーム・OB客管理を自動化",
-      "datePublished":"2026-05-23",
-      "dateModified":"2026-05-23",
-      "author": {
-        "@type": "Person",
-        "name": "木村 拓隆",
-        "jobTitle": "BuildMate代表・AI活用伴走パートナー",
-        "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "BuildMate（ビルドメイト）",
-        "url": "https://buildmate-gif.github.io/buildmate-site"
-      },
-      "description": "工務店のアフター対応業務（定期点検・クレーム受付・OB客へのDM・再受注活動など）をAIとGASで自動化する方法を解説。OB客向けDMを月4時間から30分に短縮した手順をBuildMate代表が紹介します。",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://buildmate-gif.github.io/buildmate-site/news/038-after-hosho-ai.html"
-      }
-    }
-    </script>
+{"@context": "https://schema.org", "@type": "Article", "headline": "工務店のアフター対応をAI・GASで効率化する方法｜点検・クレーム・OB客管理を自動化", "datePublished": "2026-05-23", "dateModified": "2026-05-23", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "工務店のアフター対応業務（定期点検・クレーム受付・OB客へのDM・再受注活動など）をAIとGASで自動化する方法を解説。OB客向けDMを月4時間から30分に短縮した手順をBuildMate代表が紹介します。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/018-after-hosho-ai.html"}}
+</script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -98,7 +76,9 @@
       ]
     }
     </script>
-<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+</head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans antialiased">
 
         <header class="site-header">
@@ -164,7 +144,7 @@
                 <p>工務店にとってアフター対応は、紹介・再受注という次の受注につながる最重要活動です。しかし実態は、引渡し後に定期点検の連絡が漏れたり、OB客へのDMを送る時間が確保できなかったりと、アフターが「後回し」になっている工務店が少なくありません。引渡して終わりではなく、その後の継続的な関係こそが工務店の安定経営を支えます。</p>
                 <p>この記事では、工務店のアフター対応に関わる業務について、AI（Claude・ChatGPT）とGoogle Apps Script（GAS）を使って効率化する具体的な方法を解説します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。定期点検管理から再受注活動まで、7つのアフター業務の効率化手法を紹介します。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店のアフター対応業務とは</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店のアフター対応業務とは</h2>
 
                 <p>工務店のアフター対応業務とは、住宅・建物の引渡し後に施主との継続的な関係を維持し、点検・保証・修繕・再受注につなげるための業務全般を指します。具体的には次の6項目が代表的です。</p>
 
@@ -179,27 +159,27 @@
 
                 <p>これらはいずれも工務店の長期的な収益を左右する業務ですが、定型的な通知・書類作成・管理の部分はAIとGASで大幅に効率化できます。BuildMateの支援実績では、これらの業務をまとめて導入した工務店（社員5名規模）で月15〜18時間の削減を実現しています。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">1. 定期点検スケジュール管理・通知（GASで対応）</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">1. 定期点検スケジュール管理・通知（GASで対応）</h2>
 
                 <p>工務店の定期点検管理とは、引渡し後1年・2年・5年・10年の節目に点検を実施するため、各顧客の点検予定日を管理し、時期が来たら連絡する業務です。顧客数が増えるほど「点検漏れ」が発生しやすくなり、トラブルの原因になります。</p>
                 <p>GASで引渡し日から自動計算した点検日程を登録し、顧客への通知メールを自動送信する仕組みを構築することで、月2時間かかっていた点検スケジュール管理がほぼ自動化されます。点検漏れゼロと顧客満足度の向上という追加効果も得られます。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">2. 不具合・クレームの受付・初期対応（AI＋GASで対応）</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">2. 不具合・クレームの受付・初期対応（AI＋GASで対応）</h2>
 
                 <p>工務店のクレーム受付とは、引渡し後に施主から寄せられる不具合報告・クレームをフォームで受け付け、担当者へ迅速に通知して初期対応の方針を決める業務です。受付から担当者への連絡まで30分以上かかる場合、初動の遅れがクレームの深刻化につながります。</p>
                 <p>GASでフォームからの受付と担当者への自動通知を行い、AIで対応方針の初期提案を生成することで、30分かかっていたクレーム初期対応が5分程度に短縮されます。対応速度の向上がお客様の不満を早期に解消する効果を生みます。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">3. OB客へのDM・ニュースレター配信（AI＋GASで対応）</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">3. OB客へのDM・ニュースレター配信（AI＋GASで対応）</h2>
 
                 <p>工務店のOB客フォローとは、既存施主に対して季節のメンテナンス情報・リフォーム提案・近況のご挨拶などを定期的に送付し、関係を継続させる業務です。手作業でメールを作成・個別送信している工務店では、月4〜5時間の作業時間が発生します。</p>
                 <p>AIで顧客属性・季節・築年数に合わせた文章を生成し、GASで顧客リストに応じた自動配信を行うことで、月4時間かかっていたDM業務が30分程度に短縮されます。再受注・紹介案件の増加という直接的な売上効果も期待できます。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">4. リフォーム再受注のアプローチ管理（AI＋GASで対応）</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">4. リフォーム再受注のアプローチ管理（AI＋GASで対応）</h2>
 
                 <p>工務店のリフォーム再受注活動とは、引渡しから一定年数が経過した施主に対して、設備の交換・外壁塗装・水回りリフォームをタイミングよく提案する業務です。提案のタイミングを逃すと、他社に受注を奪われるリスクがあります。</p>
                 <p>GASで築年数・設備の劣化サイクルから最適な提案タイミングを自動計算し、AIで提案文を生成する仕組みを構築することで、月4時間かかっていた再受注アプローチ業務がほぼ自動化されます。再受注率の向上という収益への直接効果も生まれます。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h2>
 
                 <p>BuildMateが工務店のアフター対応業務にAI・GASを導入した実績をもとに、削減効果をまとめます。</p>
 
@@ -213,7 +193,7 @@
 
                 <p>社員数5名規模の工務店でこれらを組み合わせた場合、月15〜18時間の削減が現実的な目標値です。時給換算（2,000円）で月3〜3.5万円相当のコスト削減になります。AIツールの月額費用（約3,000円）と比較すると、10倍以上の費用対効果が見込める計算です。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIに任せない業務について</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIに任せない業務について</h2>
 
                 <p>修繕・補修工事の現地確認と職人手配の判断——これは現場を実際に見て状況を判断する必要があるため、AIで代替できません。また、長年お付き合いのあるOB客への電話一本の声がけも、信頼関係を深める工務店固有の価値です。しかしAIが定型業務を肩代わりするからこそ、工務店のスタッフがこうした「人にしかできない仕事」に集中できる時間が生まれます。</p>
 
@@ -221,7 +201,7 @@
                     アフターで差がつく工務店は、引渡し後も「忘れていない」ことを伝え続けています。GASで自動通知する仕組みを作れば、手間ゼロで継続的なフォローが実現できます。—— BuildMate代表・木村拓隆（元・施工管理1,200件以上）
                 </div>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
 
                 <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg">
                     <li>工務店のアフター対応業務は6項目あり、そのほぼすべてがAI・GASで効率化できる</li>
@@ -231,7 +211,7 @@
                     <li>導入に必要なのは月3,000円程度のAIツールとGoogleの無料ツールだけ</li>
                 </ul>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
 
                 <div class="space-y-6">
                     <div class="bg-wa-bg p-5 rounded-lg">

@@ -27,12 +27,14 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Article","headline":"工務店の経費精算・領収書の整理をAIで自動化する方法｜月5時間→1時間に短縮","datePublished":"2026-03-08","dateModified":"2026-03-08","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"工務店の経費精算・領収書の整理にAIを活用する方法を解説。AI-OCRで領収書を自動読取り科目分類しGASで精算表に自動転記。月5時間かかっていた作業を1時間に短縮した手順をBuildMate代表が解説します。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/086-keihi-ai.html"}}
-    </script>
+{"@context": "https://schema.org", "@type": "Article", "headline": "工務店の経費精算・領収書の整理をAIで自動化する方法｜月5時間→1時間に短縮", "datePublished": "2026-03-08", "dateModified": "2026-03-08", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "工務店の経費精算・領収書の整理にAIを活用する方法を解説。AI-OCRで領収書を自動読取り科目分類しGASで精算表に自動転記。月5時間かかっていた作業を1時間に短縮した手順をBuildMate代表が解説します。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/086-keihi-ai.html"}}
+</script>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"工務店の領収書整理はAIで自動化できますか？","acceptedAnswer":{"@type":"Answer","text":"BuildMateの支援実績では、AI-OCRでスマホ撮影の領収書を自動読取り科目分類しGASで精算表へ自動転記する仕組みを構築。月5時間かかっていた作業を1時間に短縮した工務店があります。"}},{"@type":"Question","name":"工務店の経費の勘定科目判定をAIでサポートできますか？","acceptedAnswer":{"@type":"Answer","text":"BuildMateの支援実績では、AIが領収書の内容から適切な勘定科目を自動提案することで科目判定の迷いをなくし転記ミスを大幅に削減した工務店があります。"}},{"@type":"Question","name":"工務店の経費精算をGASで自動集計できますか？","acceptedAnswer":{"@type":"Answer","text":"BuildMateの支援実績では、GASでGoogleフォームの経費データをスプレッドシートに自動転記・月次集計する仕組みを構築し月末の精算表作成作業をゼロにした工務店があります。"}}]}
     </script>
-<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+</head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans">
     <header class="site-header">
     <div class="header-in">
@@ -82,31 +84,31 @@
         <span class="flex items-center gap-1"><i data-lucide="user" class="w-4 h-4"></i>木村 拓隆</span>
     </div>
     <div class="mb-10 rounded-wa overflow-hidden">
-        <img src="../images/keiri_sum.png" alt="工務店の経費精算・領収書の整理をAI・GASで自動化する方法" class="w-full object-cover">
+        <img src="../images/keiri_sum.webp" alt="工務店の経費精算・領収書の整理をAI・GASで自動化する方法" class="w-full object-cover">
     </div>
     <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
         <p class="font-bold text-xl mb-6 text-wa-brand">月末に領収書の山を前にして精算作業に半日かかっていませんか？</p>
         <p class="mb-4 text-wa-text leading-relaxed">工務店では現場の材料費・交通費・接待費など多くの経費が発生します。「領収書をまとめて月末に処理している」「科目の判断に迷う」「Excelへの手入力に時間がかかる」という悩みを持つ担当者が多くいます。</p>
         <p class="mb-8 text-wa-text leading-relaxed">この記事では、AI-OCRで領収書を自動読取り科目分類し、GASで精算表に自動転記する方法をご紹介します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の経費精算・領収書の整理とは</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の経費精算・領収書の整理とは</h2>
         <p class="mb-4">工務店の経費精算・領収書の整理とは、現場や業務で発生した支出の領収書を収集・分類し月次の経費精算表を作成する業務です。税務・会計の正確性に直結する重要な業務です。</p>
         <p class="mb-3">具体的には次のような作業が含まれます。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>領収書の収集・保管</li><li>勘定科目の判定・分類</li><li>金額・日付・支払先のスプレッドシートへの転記</li><li>月次経費精算表の作成</li><li>税理士への提出用データ整形</li></ul>
         <p class="mb-8">BuildMateの支援実績では、AI-OCRとGASを活用することで月5時間かかっていた経費精算作業を1時間程度に短縮した工務店があります。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIで行う部分（領収書の自動読取・科目分類）</h4><p class="mb-4">AI-OCRによる領収書処理とは、スマホで撮影した領収書画像をAIが自動で読取り、日付・金額・支払先・科目を自動抽出する仕組みです。</p><p class="mb-6">領収書をスマホで撮影してAIに送るだけで内容が自動認識されます。「これは交通費か材料費か」という科目判断もAIがサポートし迷う時間をゼロにします。現場でその都度処理することで月末の山積みを防げます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASで行う部分（精算表への自動転記）</h4><p class="mb-4">GASによる自動転記とは、AI読取り結果をGoogleスプレッドシートの経費精算テンプレートに自動で転記・集計する仕組みです。</p><p class="mb-6">AI読取りデータをGoogleフォームで送信するとGASが自動でスプレッドシートに転記・集計。月末には自動集計された精算表が完成しており確認するだけで税理士に提出できます。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIで行う部分（領収書の自動読取・科目分類）</h2><p class="mb-4">AI-OCRによる領収書処理とは、スマホで撮影した領収書画像をAIが自動で読取り、日付・金額・支払先・科目を自動抽出する仕組みです。</p><p class="mb-6">領収書をスマホで撮影してAIに送るだけで内容が自動認識されます。「これは交通費か材料費か」という科目判断もAIがサポートし迷う時間をゼロにします。現場でその都度処理することで月末の山積みを防げます。</p><h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASで行う部分（精算表への自動転記）</h2><p class="mb-4">GASによる自動転記とは、AI読取り結果をGoogleスプレッドシートの経費精算テンプレートに自動で転記・集計する仕組みです。</p><p class="mb-6">AI読取りデータをGoogleフォームで送信するとGASが自動でスプレッドシートに転記・集計。月末には自動集計された精算表が完成しており確認するだけで税理士に提出できます。</p>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h2>
         <p class="mb-4">BuildMateが工務店の経費精算・領収書の整理にAIを導入した実績をもとに、削減効果をまとめます。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>領収書の読取り・転記：月5時間 → 1時間</li><li>科目判定の迷い・ミス：随時発生 → 大幅削減</li><li>月次精算表の作成：1時間 → 自動</li></ul>
         <p class="mb-8">AIとGASの活用で経費精算にかかる月5時間が1時間に短縮されます。科目ミスの削減と転記精度の向上が税理士対応の効率化にもつながります。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIでできないことについて</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIでできないことについて</h2>
         <p class="mb-4">AI-OCRは手書き領収書や印字がかすれている場合に読取り精度が下がることがあります。最終確認は担当者が行う必要があります。</p>
         <p class="mb-8">しかし読取り・転記作業の大半を自動化できるため確認だけに集中できます。月末の精算作業が大幅に楽になります。</p>
         <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">
             領収書の管理は「ためるほど大変になる」業務の典型です。AIで現場でその都度処理する習慣を作れば、月末の憂鬱が消えます。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）
         </div>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>工務店の経費精算はAIで月5時間→1時間に短縮できる</li><li>スマホで領収書を撮影するだけでAI-OCRが自動読取り・科目分類する</li><li>GASで精算表への自動転記・月次集計が完了する</li><li>AIツールは月3,000円程度から始められる</li><li>科目ミスが減り税理士への提出精度が向上する</li></ul>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
         <div class="space-y-6">
             <div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の領収書整理はAIで自動化できますか？</p><p class="text-wa-text text-base m-0">BuildMateの支援実績では、AI-OCRでスマホ撮影の領収書を自動読取り科目分類しGASで精算表へ自動転記する仕組みを構築。月5時間かかっていた作業を1時間に短縮した工務店があります。</p></div>
             <div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の経費の勘定科目判定をAIでサポートできますか？</p><p class="text-wa-text text-base m-0">BuildMateの支援実績では、AIが領収書の内容から適切な勘定科目を自動提案することで科目判定の迷いをなくし転記ミスを大幅に削減した工務店があります。</p></div>

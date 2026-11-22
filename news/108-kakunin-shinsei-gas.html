@@ -27,12 +27,14 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Article","headline":"工務店の確認申請・完了検査の申請管理をGASで自動化する方法｜月2時間→自動化","datePublished":"2026-05-24","dateModified":"2026-05-24","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"工務店の確認申請・完了検査の申請管理にGASを活用する方法を解説。GASで申請スケジュール・期限管理を構築し提出期限アラートを自動送信。月2時間かかっていた管理業務を完全自動化した手順を解説します。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/108-kakunin-shinsei-gas.html"}}
-    </script>
+{"@context": "https://schema.org", "@type": "Article", "headline": "工務店の確認申請・完了検査の申請管理をGASで自動化する方法｜月2時間→自動化", "datePublished": "2026-05-24", "dateModified": "2026-05-24", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "工務店の確認申請・完了検査の申請管理にGASを活用する方法を解説。GASで申請スケジュール・期限管理を構築し提出期限アラートを自動送信。月2時間かかっていた管理業務を完全自動化した手順を解説します。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/108-kakunin-shinsei-gas.html"}}
+</script>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"工務店の確認申請の期限管理はGASで自動化できますか？","acceptedAnswer":{"@type":"Answer","text":"BuildMateの支援実績では、GASでスプレッドシートの申請期限から自動アラートを送信する仕組みを構築。月2時間かかっていた管理業務を完全自動化した工務店があります。"}},{"@type":"Question","name":"工務店の確認申請漏れをGASで防ぐことはできますか？","acceptedAnswer":{"@type":"Answer","text":"BuildMateの支援実績では、GASで申請期限3日前・前日に自動リマインダーを送信することで申請漏れをゼロにした工務店があります。複数案件の並行管理も漏れなく対応できます。"}},{"@type":"Question","name":"工務店の確認申請進捗をGASで一元管理できますか？","acceptedAnswer":{"@type":"Answer","text":"BuildMateの支援実績では、GASで全案件の申請状況を色分けでリアルタイム表示するダッシュボードを構築し申請の見落としをゼロにした工務店があります。"}}]}
     </script>
-<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+</head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans">
     <header class="site-header">
     <div class="header-in">
@@ -82,31 +84,31 @@
         <span class="flex items-center gap-1"><i data-lucide="user" class="w-4 h-4"></i>木村 拓隆</span>
     </div>
     <div class="mb-10 rounded-wa overflow-hidden">
-        <img src="../images/gas_sum.png" alt="工務店の確認申請・完了検査の申請管理をAI・GASで自動化する方法" class="w-full object-cover">
+        <img src="../images/gas_sum.webp" alt="工務店の確認申請・完了検査の申請管理をAI・GASで自動化する方法" class="w-full object-cover">
     </div>
     <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
         <p class="font-bold text-xl mb-6 text-wa-brand">確認申請の期限を管理しきれず工程が押してしまったことはありませんか？</p>
         <p class="mb-4 text-wa-text leading-relaxed">工務店では複数案件を同時に進める中で確認申請・中間検査・完了検査の申請タイミングを管理する必要があります。「申請漏れで工事が止まった」「担当者の記憶頼りで期限を忘れる」という問題が多くあります。</p>
         <p class="mb-8 text-wa-text leading-relaxed">この記事では、Google Apps Script（GAS）を使って申請スケジュールと期限をGoogleスプレッドシートで一元管理し提出期限前にアラートを自動送信する方法をご紹介します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の確認申請・完了検査の申請管理とは</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の確認申請・完了検査の申請管理とは</h2>
         <p class="mb-4">工務店の確認申請・完了検査の申請管理とは、建築確認申請から中間検査・完了検査まで各申請の提出期限と進捗を管理し適切なタイミングで申請する業務です。</p>
         <p class="mb-3">具体的には次のような作業が含まれます。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>各案件の確認申請・検査申請の提出期限管理</li><li>申請書類の準備進捗の確認</li><li>審査機関への提出・受付確認</li><li>中間検査・完了検査の立会い日程管理</li><li>検査済証の受取・保管</li></ul>
         <p class="mb-8">BuildMateの支援実績では、GASで申請管理を自動化することで月2時間かかっていた管理業務を完全自動化した工務店があります。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">仕組みの全体像</h4><p class="mb-4">GASによる申請管理自動化とは、Googleスプレッドシートに各案件の申請情報を入力するだけでGASが期限前にリマインダーメールを自動送信し進捗をリアルタイムで一元管理する仕組みです。</p><p class="mb-6">スプレッドシートに「案件名・申請種別・提出期限・ステータス」を入力するとGASが期限3日前・前日に担当者へアラートメールを自動送信します。全案件の申請状況を色分けで一目で把握できます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">活用のポイント（工程との連動）</h4><p class="mb-4">申請スケジュールと工程の連動とは、工程表の進捗とリンクさせることで「この申請が完了しないと次の工程に進めない」という依存関係を自動でチェックする仕組みです。</p><p class="mb-6">GASで確認申請の完了ステータスが更新されると自動的に次工程の担当者へ通知が届きます。申請の遅れが工程全体に影響することを事前に検知できます。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">仕組みの全体像</h2><p class="mb-4">GASによる申請管理自動化とは、Googleスプレッドシートに各案件の申請情報を入力するだけでGASが期限前にリマインダーメールを自動送信し進捗をリアルタイムで一元管理する仕組みです。</p><p class="mb-6">スプレッドシートに「案件名・申請種別・提出期限・ステータス」を入力するとGASが期限3日前・前日に担当者へアラートメールを自動送信します。全案件の申請状況を色分けで一目で把握できます。</p><h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">活用のポイント（工程との連動）</h2><p class="mb-4">申請スケジュールと工程の連動とは、工程表の進捗とリンクさせることで「この申請が完了しないと次の工程に進めない」という依存関係を自動でチェックする仕組みです。</p><p class="mb-6">GASで確認申請の完了ステータスが更新されると自動的に次工程の担当者へ通知が届きます。申請の遅れが工程全体に影響することを事前に検知できます。</p>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h2>
         <p class="mb-4">BuildMateが工務店の確認申請・完了検査の申請管理にGASを導入した実績をもとに、削減効果をまとめます。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>申請スケジュール管理：月2時間 → 自動</li><li>申請漏れ・遅延リスク：ゼロ</li><li>工程との連動確認：都度確認 → 自動通知</li></ul>
         <p class="mb-8">GASで申請管理を自動化することで月2時間の管理業務がゼロになります。期限管理の自動化が申請漏れゼロを実現し工事の中断リスクを根本的になくします。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASでできないことについて</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASでできないことについて</h2>
         <p class="mb-4">GASによる管理はスプレッドシートへの入力が前提です。申請情報の入力が遅れるとアラートも遅れます。</p>
         <p class="mb-8">しかし一度入力すれば以降は自動管理されます。申請漏れによる工事中断という最悪の事態を確実に防ぐ体制が整います。</p>
         <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">
             確認申請の漏れは工事を止め、お客様に迷惑をかけます。GASで期限管理を自動化して申請漏れをゼロにしてください。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）
         </div>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>工務店の確認申請管理はGASで月2時間→完全自動化できる</li><li>申請情報を入力するだけでGASが期限前に自動アラートを送信する</li><li>全案件の申請進捗をリアルタイムで一覧管理できる</li><li>申請漏れによる工事中断リスクがゼロになる</li><li>GASはGoogleの無料ツールで追加費用なしで実装できる</li></ul>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
         <div class="space-y-6">
             <div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の確認申請の期限管理はGASで自動化できますか？</p><p class="text-wa-text text-base m-0">BuildMateの支援実績では、GASでスプレッドシートの申請期限から自動アラートを送信する仕組みを構築。月2時間かかっていた管理業務を完全自動化した工務店があります。</p></div>
             <div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の確認申請漏れをGASで防ぐことはできますか？</p><p class="text-wa-text text-base m-0">BuildMateの支援実績では、GASで申請期限3日前・前日に自動リマインダーを送信することで申請漏れをゼロにした工務店があります。複数案件の並行管理も漏れなく対応できます。</p></div>

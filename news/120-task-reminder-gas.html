@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="../theme-a2.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>工務店の未対応タスクリマインドをGASで自動化してChatwork・LINEに通知する方法 | BuildMate</title>
-<link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/058-task-reminder-gas.html">
+<link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/120-task-reminder-gas.html">
 <meta name="description" content="工務店の未対応タスク・期日超過タスクをGASで毎日自動チェックし、ChatworkやLINEへ自動通知する方法を解説。タスク管理のスプレッドシートと連携して担当者への期日リマインドを自動化した手順をBuildMate代表が紹介します。">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="工務店の未対応タスクリマインドをGASで自動化してChatwork・LINEに通知する方法 | BuildMate">
 <meta property="og:description" content="工務店の未対応タスク・期日超過タスクをGASで毎日自動チェックし、ChatworkやLINEへ自動通知する方法を解説。タスク管理のスプレッドシートと連携して担当者への期日リマインドを自動化した手順をBuildMate代表が紹介します。">
-<meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/058-task-reminder-gas.html">
+<meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/120-task-reminder-gas.html">
 <meta property="og:site_name" content="BuildMate">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
@@ -27,12 +27,14 @@
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"工務店の未対応タスクリマインドをGASで自動化してChatwork・LINEに通知する方法","datePublished":"2026-10-14","dateModified":"2026-10-14","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"工務店の未対応タスク・期日超過タスクをGASで毎日自動チェックし、ChatworkやLINEへ自動通知する方法を解説。タスク管理のスプレッドシートと連携して担当者への期日リマインドを自動化した手順をBuildMate代表が紹介します。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/058-task-reminder-gas.html"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "工務店の未対応タスクリマインドをGASで自動化してChatwork・LINEに通知する方法", "datePublished": "2026-10-14", "dateModified": "2026-10-14", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "工務店の未対応タスク・期日超過タスクをGASで毎日自動チェックし、ChatworkやLINEへ自動通知する方法を解説。タスク管理のスプレッドシートと連携して担当者への期日リマインドを自動化した手順をBuildMate代表が紹介します。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/120-task-reminder-gas.html"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"工務店のタスクリマインドをGASで自動化するにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"GASでGoogleスプレッドシートのタスクリストを毎朝チェックし、期日が近いタスクをChatwork・LINEへ自動通知する仕組みを構築できます。BuildMateの支援実績では、タスク期日超過がほぼゼロになった工務店があります。"}},{"@type":"Question","name":"工務店のタスク管理をGASとChatworkで連携するにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"Chatwork APIとGASを組み合わせることで、スプレッドシートのタスクリストから担当者のChatworkへ自動通知できます。BuildMateの支援実績では、設定完了から翌日に自動リマインドの運用が始まった工務店があります。"}},{"@type":"Question","name":"未対応タスクが期日を超過した場合にGASで自動アラートする方法を教えてください。","acceptedAnswer":{"@type":"Answer","text":"GASで毎朝スプレッドシートを確認し、期日超過・未完了のタスクを検出して管理者のChatwork・LINEへ自動アラートを送る仕組みを構築できます。BuildMateの支援実績では、この仕組みで管理者のフォロー漏れがゼロになった工務店があります。"}}]}
 </script>
-<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+</head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans">
     <header class="site-header">
     <div class="header-in">
@@ -82,31 +84,31 @@
         <span class="flex items-center gap-1"><i data-lucide="user" class="w-4 h-4"></i>木村 拓隆</span>
     </div>
     <div class="mb-10 rounded-wa overflow-hidden">
-        <img src="../images/gas_sum.png" alt="工務店の未対応タスクリマインドを
+        <img src="../images/gas_sum.webp" alt="工務店の未対応タスクリマインドを
 GASで自動化してChatwork・LINEに通知する方法" class="w-full object-cover">
     </div>
     <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
         <p class="font-bold text-xl mb-6 text-wa-brand">「あの件、対応していたっけ？」と後から気づくことはありませんか？</p>
         <p class="mb-4 text-wa-text leading-relaxed">工務店では現場管理・営業・事務・アフター対応など多岐にわたるタスクが同時進行します。Excelやスプレッドシートでタスクを管理していても、期日が近づいてもリマインドがなければ忘れてしまうことがあります。お客様への連絡漏れ・申請期限の見落とし・業者への発注忘れは、信頼問題やトラブルに直結します。</p>
         <p class="mb-8 text-wa-text leading-relaxed">この記事では、Googleスプレッドシートで管理するタスクリストをGoogle Apps Script（GAS）が毎日自動チェックし、期日当日・前日・前週にChatworkまたはLINEへ担当者へ自動通知する仕組みの構築方法を解説します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店のタスク管理・リマインド業務とは</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店のタスク管理・リマインド業務とは</h2>
         <p class="mb-4">工務店のタスク管理業務とは、現場・営業・事務・アフター対応など多岐にわたる業務タスクの期日・担当者・ステータスを一元管理し、漏れなく対応できる状態を維持する業務を指します。タスク数が多い繁忙期ほど手動でのリマインド管理が追いつかなくなります。</p>
         <p class="mb-3">具体的には次のような作業が含まれます。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>タスクの作成・期日・担当者の設定</li><li>期日が近いタスクの手動確認・リマインド</li><li>未対応・期日超過タスクの抽出</li><li>担当者への連絡・督促</li><li>対応完了後のステータス更新</li></ul>
         <p class="mb-8">BuildMateの支援実績では、GASでタスクリマインドを自動化した工務店で、タスクの期日超過がほぼゼロになり、担当者間の「やってると思ってた」トラブルがなくなっています。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">仕組みの全体像：スプレッドシートとGASをつなぐ</h4><p class="mb-4">Googleスプレッドシートにタスク名・担当者・期日・ステータス・LINE/ChatworkユーザーIDを記録します。GASのトリガーを毎朝8時に設定し、期日が「今日」「明日」「1週間後」に該当するタスクを自動抽出します。対象タスクの担当者のChatwork・LINEへ「【リマインド】〇〇のタスク期日が〇日です」と自動通知します。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 1: タスク管理スプレッドシートの整備</h4><p class="mb-4">Googleスプレッドシートに「タスク名・担当者名・期日・ステータス（未対応/対応中/完了）・通知先（ChatworkユーザーID or LINE ID）」の列を設けます。既存のExcelタスクリストをこのシートに転記するのが最初の作業です。一度整備すれば以降はGASが自動管理します。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 2: GASによる期日チェックと通知</h4><p class="mb-4">GASが毎朝スプレッドシートの全タスクを読み取り、ステータスが「未対応」または「対応中」で期日が今日・翌日・1週間後のタスクを抽出します。抽出されたタスクをChatwork APIまたはLINE Messaging APIで担当者へ個別通知します。「今日期限」「明日期限」「1週間後期限」で通知文を変えることで、緊急度が一目でわかります。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 3: 期日超過タスクの管理者アラート</h4><p class="mb-4">ステータスが未完了のまま期日を過ぎたタスクは、GASが「期日超過タスク」として管理者のChatwork・LINEへ別途アラートを送信します。「〇〇さんのタスク『〇〇』が〇日間期日超過しています」という形式で通知されるため、管理者がフォローできます。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">仕組みの全体像：スプレッドシートとGASをつなぐ</h2><p class="mb-4">Googleスプレッドシートにタスク名・担当者・期日・ステータス・LINE/ChatworkユーザーIDを記録します。GASのトリガーを毎朝8時に設定し、期日が「今日」「明日」「1週間後」に該当するタスクを自動抽出します。対象タスクの担当者のChatwork・LINEへ「【リマインド】〇〇のタスク期日が〇日です」と自動通知します。</p><h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 1: タスク管理スプレッドシートの整備</h2><p class="mb-4">Googleスプレッドシートに「タスク名・担当者名・期日・ステータス（未対応/対応中/完了）・通知先（ChatworkユーザーID or LINE ID）」の列を設けます。既存のExcelタスクリストをこのシートに転記するのが最初の作業です。一度整備すれば以降はGASが自動管理します。</p><h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 2: GASによる期日チェックと通知</h2><p class="mb-4">GASが毎朝スプレッドシートの全タスクを読み取り、ステータスが「未対応」または「対応中」で期日が今日・翌日・1週間後のタスクを抽出します。抽出されたタスクをChatwork APIまたはLINE Messaging APIで担当者へ個別通知します。「今日期限」「明日期限」「1週間後期限」で通知文を変えることで、緊急度が一目でわかります。</p><h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 3: 期日超過タスクの管理者アラート</h2><p class="mb-4">ステータスが未完了のまま期日を過ぎたタスクは、GASが「期日超過タスク」として管理者のChatwork・LINEへ別途アラートを送信します。「〇〇さんのタスク『〇〇』が〇日間期日超過しています」という形式で通知されるため、管理者がフォローできます。</p>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h2>
         <p class="mb-4">BuildMateが建設業・工務店の現場にGASを導入した実績をもとに、削減効果をまとめます。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>タスクリマインド作業：手動確認 → GASが毎日自動チェック</li><li>期日超過タスク：発見が遅れる → 翌日に管理者へ自動アラート</li><li>担当者への督促：電話・手動メール → Chatwork/LINEへ自動通知</li><li>タスク漏れによるトラブル：自動リマインドでほぼゼロに</li></ul>
         <p class="mb-8">月30〜50件のタスクが発生する工務店では、タスク管理・リマインドに費やしていた月3〜5時間の削減が現実的な目標値です。それ以上に、タスク漏れによるお客様・業者とのトラブル防止という効果が大きく、信頼維持への貢献が高い施策です。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASでできないことについて</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASでできないことについて</h2>
         <p class="mb-4">タスクの優先順位の判断・緊急対応の意思決定は人間が行う必要があります。また、タスクの追加・更新はスプレッドシートへの入力が必要なため、入力する習慣づけが定着の鍵になります。
 
 しかしGASが「リマインドと督促」を自動化することで、管理者が一人ひとりに確認する時間がなくなり、本来の業務に集中できます。</p>
         <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">タスク漏れの多くは「悪意ではなく、忘れ」です。GASのリマインドで期日前に通知が届く仕組みを作れば、担当者も安心して業務に集中できます。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）</div>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>工務店の未対応タスクはGASで毎日自動チェックしてChatwork・LINEへリマインドできる</li><li>スプレッドシートのタスクリストに期日・担当者を登録するだけで自動通知が始まる</li><li>今日・明日・1週間後の期日別に通知内容を変えて緊急度を伝えられる</li><li>期日超過タスクは管理者へ自動アラートが届き、フォロー漏れがなくなる</li><li>導入コストは実質ゼロで、月3〜5時間のリマインド作業が自動化できる</li></ul>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
         <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店のタスクリマインドをGASで自動化するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">GASでGoogleスプレッドシートのタスクリストを毎朝チェックし、期日が近いタスクをChatwork・LINEへ自動通知する仕組みを構築できます。BuildMateの支援実績では、タスク期日超過がほぼゼロになった工務店があります。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店のタスク管理をGASとChatworkで連携するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">Chatwork APIとGASを組み合わせることで、スプレッドシートのタスクリストから担当者のChatworkへ自動通知できます。BuildMateの支援実績では、設定完了から翌日に自動リマインドの運用が始まった工務店があります。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 未対応タスクが期日を超過した場合にGASで自動アラートする方法を教えてください。</p><p class="text-wa-text text-base m-0">GASで毎朝スプレッドシートを確認し、期日超過・未完了のタスクを検出して管理者のChatwork・LINEへ自動アラートを送る仕組みを構築できます。BuildMateの支援実績では、この仕組みで管理者のフォロー漏れがゼロになった工務店があります。</p></div></div>
         <div class="mt-10 pt-8 border-t border-wa-border">
             <p class="font-bold text-wa-brand mb-4">関連記事</p>

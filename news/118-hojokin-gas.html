@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="../theme-a2.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>工務店向け補助金・助成金の新着情報をGASで自動監視してLINE・Chatworkに通知する方法 | BuildMate</title>
-<link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/056-hojokin-gas.html">
+<link rel="canonical" href="https://buildmate-gif.github.io/buildmate-site/news/118-hojokin-gas.html">
 <meta name="description" content="工務店向け補助金・助成金の新着情報をGASで自動監視し、LINEやChatworkに自動通知する方法を解説。中小企業庁・国土交通省のページを定期クロールして新着補助金を見逃さない仕組みをBuildMate代表が紹介します。">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="工務店向け補助金・助成金の新着情報をGASで自動監視してLINE・Chatworkに通知する方法 | BuildMate">
 <meta property="og:description" content="工務店向け補助金・助成金の新着情報をGASで自動監視し、LINEやChatworkに自動通知する方法を解説。中小企業庁・国土交通省のページを定期クロールして新着補助金を見逃さない仕組みをBuildMate代表が紹介します。">
-<meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/056-hojokin-gas.html">
+<meta property="og:url" content="https://buildmate-gif.github.io/buildmate-site/news/118-hojokin-gas.html">
 <meta property="og:site_name" content="BuildMate">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
@@ -27,12 +27,14 @@
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"工務店向け補助金・助成金の新着情報をGASで自動監視してLINE・Chatworkに通知する方法","datePublished":"2026-01-03","dateModified":"2026-01-03","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"工務店向け補助金・助成金の新着情報をGASで自動監視し、LINEやChatworkに自動通知する方法を解説。中小企業庁・国土交通省のページを定期クロールして新着補助金を見逃さない仕組みをBuildMate代表が紹介します。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/056-hojokin-gas.html"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "工務店向け補助金・助成金の新着情報をGASで自動監視してLINE・Chatworkに通知する方法", "datePublished": "2026-01-03", "dateModified": "2026-01-03", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "工務店向け補助金・助成金の新着情報をGASで自動監視し、LINEやChatworkに自動通知する方法を解説。中小企業庁・国土交通省のページを定期クロールして新着補助金を見逃さない仕組みをBuildMate代表が紹介します。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/118-hojokin-gas.html"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"工務店向けの補助金情報をGASで自動収集するにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"GASのUrlFetchAppで対象ページを定期取得し、前回との差分を検出してLINE・Chatworkへ自動通知する仕組みを構築できます。BuildMateの支援実績では、週数時間の情報収集作業がゼロになった工務店があります。"}},{"@type":"Question","name":"補助金の新着情報をLINEで自動通知するにはどのツールが必要ですか？","acceptedAnswer":{"@type":"Answer","text":"GAS（無料）とLINE Notify（無料）またはChatwork API（無料プランあり）の組み合わせで構築できます。BuildMateの支援実績では、導入から1週間以内に新着通知の運用を開始した工務店があります。"}},{"@type":"Question","name":"GASで監視できる補助金情報の対象サイトはどこですか？","acceptedAnswer":{"@type":"Answer","text":"中小企業庁・国土交通省・各都道府県の公式サイト・J-Net21など、テキスト形式で公開されているWebページであれば監視対象にできます。BuildMateがサイトリストの選定もサポートしています。"}}]}
 </script>
-<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+</head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans">
     <header class="site-header">
     <div class="header-in">
@@ -82,29 +84,29 @@
         <span class="flex items-center gap-1"><i data-lucide="user" class="w-4 h-4"></i>木村 拓隆</span>
     </div>
     <div class="mb-10 rounded-wa overflow-hidden">
-        <img src="../images/keiri_sum.png" alt="工務店向け補助金・助成金の新着情報を
+        <img src="../images/keiri_sum.webp" alt="工務店向け補助金・助成金の新着情報を
 GASで自動監視してLINE・Chatworkに通知する方法" class="w-full object-cover">
     </div>
     <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
         <p class="font-bold text-xl mb-6 text-wa-brand">使えるはずの補助金を、知らずに申請期限が過ぎていたことはありませんか？</p>
         <p class="mb-4 text-wa-text leading-relaxed">IT導入補助金・小規模事業者持続化補助金・省エネ改修補助金など、工務店が活用できる補助金・助成金は毎年多数公募されます。しかし「どこをチェックすればいいかわからない」「気づいたら締め切りが過ぎていた」という声を工務店の経営者から頻繁に聞きます。補助金の見逃しは、そのまま数十万〜数百万円の機会損失につながります。</p>
         <p class="mb-8 text-wa-text leading-relaxed">この記事では、中小企業庁・国土交通省・各都道府県のWebページをGoogle Apps Script（GAS）で定期的に自動クロールし、新着補助金情報をLINEやChatworkへ自動通知する仕組みの構築方法を解説します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の補助金・助成金情報収集業務とは</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の補助金・助成金情報収集業務とは</h2>
         <p class="mb-4">工務店の補助金情報収集業務とは、事業に活用できる補助金・助成金の公募情報を定期的に確認し、申請要件・締切日・補助額を把握して適切なタイミングで申請する業務を指します。情報源が国・都道府県・市区町村など多岐にわたるため、手動での確認作業が煩雑になりがちです。</p>
         <p class="mb-3">具体的には次のような作業が含まれます。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>中小企業庁・国土交通省等のWebページの定期確認</li><li>都道府県・市区町村の補助金情報のチェック</li><li>申請要件・補助額・締切日の整理</li><li>申請書類の準備・スケジュール管理</li><li>補助金申請状況の社内共有</li></ul>
         <p class="mb-8">BuildMateの支援実績では、GASで補助金情報を自動監視する仕組みを導入した工務店で、毎週数時間かかっていた情報収集作業がゼロになり、新着補助金の見逃しがなくなっています。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">仕組みの全体像：GASとAPIをつなぐ方法</h4><p class="mb-4">GASのトリガーを毎日朝8時に設定し、監視対象のWebページを自動取得します。前回取得時のコンテンツとの差分を検出し、変更があった場合にLINE NotifyまたはChatwork APIを使って担当者へ自動通知します。通知内容には補助金名・概要・URLが含まれるため、クリックするだけで詳細を確認できます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 1: 監視対象URLとキーワードの設定</h4><p class="mb-4">Googleスプレッドシートに監視対象のURL（中小企業庁・国土交通省・都道府県サイト等）と検知キーワード（「補助金」「助成金」「公募」「工務店」等）を登録します。キーワードに一致する新着情報が検出されたときだけ通知する設定にすることで、不要な通知を防げます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 2: GASによる自動クロールと差分検出</h4><p class="mb-4">GASのUrlFetchAppで対象ページのHTMLを取得し、前回取得内容と比較します。新しいテキストが追加されていた場合を「新着あり」と判断し、その差分テキストを通知内容として抽出します。スプレッドシートに通知履歴を自動記録するため、過去の情報も一覧で確認できます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 3: LINE・Chatworkへの自動通知</h4><p class="mb-4">新着情報が検出されるとGASがLINE NotifyまたはChatwork APIを呼び出し、「【補助金新着】〇〇補助金の公募が開始されました。詳細：〇〇URL」という形式で自動通知します。LINEグループまたはChatworkの専用チャンネルへ送信することで、経営者・事務担当者が即座に確認できます。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">仕組みの全体像：GASとAPIをつなぐ方法</h2><p class="mb-4">GASのトリガーを毎日朝8時に設定し、監視対象のWebページを自動取得します。前回取得時のコンテンツとの差分を検出し、変更があった場合にLINE NotifyまたはChatwork APIを使って担当者へ自動通知します。通知内容には補助金名・概要・URLが含まれるため、クリックするだけで詳細を確認できます。</p><h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 1: 監視対象URLとキーワードの設定</h2><p class="mb-4">Googleスプレッドシートに監視対象のURL（中小企業庁・国土交通省・都道府県サイト等）と検知キーワード（「補助金」「助成金」「公募」「工務店」等）を登録します。キーワードに一致する新着情報が検出されたときだけ通知する設定にすることで、不要な通知を防げます。</p><h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 2: GASによる自動クロールと差分検出</h2><p class="mb-4">GASのUrlFetchAppで対象ページのHTMLを取得し、前回取得内容と比較します。新しいテキストが追加されていた場合を「新着あり」と判断し、その差分テキストを通知内容として抽出します。スプレッドシートに通知履歴を自動記録するため、過去の情報も一覧で確認できます。</p><h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 3: LINE・Chatworkへの自動通知</h2><p class="mb-4">新着情報が検出されるとGASがLINE NotifyまたはChatwork APIを呼び出し、「【補助金新着】〇〇補助金の公募が開始されました。詳細：〇〇URL」という形式で自動通知します。LINEグループまたはChatworkの専用チャンネルへ送信することで、経営者・事務担当者が即座に確認できます。</p>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h2>
         <p class="mb-4">BuildMateが建設業・工務店の現場にGASを導入した実績をもとに、削減効果をまとめます。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>補助金情報収集：週数時間 → GASが毎日自動監視</li><li>新着検知：手動確認 → 差分検出で自動通知</li><li>申請機会の損失：見逃しゼロで大幅削減</li><li>情報収集の属人化：URLリスト管理で標準化</li></ul>
         <p class="mb-8">補助金1件の採択で数十万〜数百万円の収入になるケースがある工務店では、この仕組みの費用対効果は非常に高いです。導入コストはGoogleスプレッドシート（無料）とLINE Notify（無料）のみで、実質ゼロです。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASでできないことについて</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASでできないことについて</h2>
         <p class="mb-4">GASが検知できるのはWebページのテキスト変化であり、PDF・画像形式の補助金情報は自動検知が難しい場合があります。また、申請要件への適合判断・申請書類の作成は人間が行う必要があります。新着通知はあくまでも「見逃し防止」のツールです。</p>
         <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">補助金は「知っているかどうか」で申請できるかが決まります。GASで自動監視する仕組みを作れば、忙しい現場でも情報を取り逃すことがなくなります。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）</div>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>工務店向け補助金・助成金の新着情報はGASで毎日自動監視してLINE・Chatworkに通知できる</li><li>監視対象URLとキーワードをスプレッドシートに登録するだけで設定が完了する</li><li>新着検知時に補助金名・概要・URLを含む通知が自動送信される</li><li>導入コストはゼロで、補助金1件の採択で費用対効果が一気に高まる</li><li>申請機会の見逃しをなくし、工務店の資金調達力が向上する</li></ul>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
         <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店向けの補助金情報をGASで自動収集するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">GASのUrlFetchAppで対象ページを定期取得し、前回との差分を検出してLINE・Chatworkへ自動通知する仕組みを構築できます。BuildMateの支援実績では、週数時間の情報収集作業がゼロになった工務店があります。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 補助金の新着情報をLINEで自動通知するにはどのツールが必要ですか？</p><p class="text-wa-text text-base m-0">GAS（無料）とLINE Notify（無料）またはChatwork API（無料プランあり）の組み合わせで構築できます。BuildMateの支援実績では、導入から1週間以内に新着通知の運用を開始した工務店があります。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. GASで監視できる補助金情報の対象サイトはどこですか？</p><p class="text-wa-text text-base m-0">中小企業庁・国土交通省・各都道府県の公式サイト・J-Net21など、テキスト形式で公開されているWebページであれば監視対象にできます。BuildMateがサイトリストの選定もサポートしています。</p></div></div>
         <div class="mt-10 pt-8 border-t border-wa-border">
             <p class="font-bold text-wa-brand mb-4">関連記事</p>

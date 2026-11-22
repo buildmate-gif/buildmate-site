@@ -27,12 +27,14 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Article","headline":"工務店の外注費の単価管理・契約書整備をAI・GASで自動化する方法｜月2時間→30分に短縮","datePublished":"2026-06-21","dateModified":"2026-06-21","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"工務店の外注費の単価管理・契約書整備にAIとGASを活用する方法を解説。GASで単価データベースを管理しAIで契約書ひな形を自動生成。月2時間かかっていた作業を30分に短縮した手順をBuildMate代表が解説します。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/106-gaichuu-gas.html"}}
-    </script>
+{"@context": "https://schema.org", "@type": "Article", "headline": "工務店の外注費の単価管理・契約書整備をAI・GASで自動化する方法｜月2時間→30分に短縮", "datePublished": "2026-06-21", "dateModified": "2026-06-21", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "工務店の外注費の単価管理・契約書整備にAIとGASを活用する方法を解説。GASで単価データベースを管理しAIで契約書ひな形を自動生成。月2時間かかっていた作業を30分に短縮した手順をBuildMate代表が解説します。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/106-gaichuu-gas.html"}}
+</script>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"工務店の外注単価はGASで管理できますか？","acceptedAnswer":{"@type":"Answer","text":"BuildMateの支援実績では、GASでGoogleスプレッドシートの外注単価DBを見積り時に自動参照する仕組みを構築。単価管理にかかる月2時間を30分に短縮した工務店があります。"}},{"@type":"Question","name":"工務店の外注基本契約書はAIで自動作成できますか？","acceptedAnswer":{"@type":"Answer","text":"BuildMateの支援実績では、AIに工種・取引条件を入力するだけで外注基本契約書のひな形を自動生成し作成時間を2時間から30分に短縮した工務店があります。"}},{"@type":"Question","name":"工務店の外注費管理をAIとGASで効率化するとどんな効果がありますか？","acceptedAnswer":{"@type":"Answer","text":"BuildMateの支援実績では、GASとAIで外注費を仕組み化することで単価の透明化と契約書整備が進み外注コストの管理精度が向上した工務店があります。業者トラブルも減少しています。"}}]}
     </script>
-<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+</head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans">
     <header class="site-header">
     <div class="header-in">
@@ -82,31 +84,31 @@
         <span class="flex items-center gap-1"><i data-lucide="user" class="w-4 h-4"></i>木村 拓隆</span>
     </div>
     <div class="mb-10 rounded-wa overflow-hidden">
-        <img src="../images/gas_sum.png" alt="工務店の外注費の単価管理・契約書整備をAI・GASで自動化する方法" class="w-full object-cover">
+        <img src="../images/gas_sum.webp" alt="工務店の外注費の単価管理・契約書整備をAI・GASで自動化する方法" class="w-full object-cover">
     </div>
     <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
         <p class="font-bold text-xl mb-6 text-wa-brand">外注業者との単価交渉の根拠がなく、毎回なんとなく決めていませんか？</p>
         <p class="mb-4 text-wa-text leading-relaxed">工務店では協力業者に多くの工事を外注していますが「外注単価の根拠が担当者の記憶頼り」「業者ごとの契約書が整備されていない」「単価の見直し交渉がしにくい」という課題を持つ工務店が多くあります。</p>
         <p class="mb-8 text-wa-text leading-relaxed">この記事では、GASで外注単価データベースを管理しAI（Claude・ChatGPT）で契約書ひな形を自動生成する方法をご紹介します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の外注費の単価管理・契約書整備とは</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の外注費の単価管理・契約書整備とは</h2>
         <p class="mb-4">工務店の外注費の単価管理・契約書整備とは、協力業者への外注単価を適正に管理し外注契約書を整備することで適切なコスト管理とトラブル防止を実現する業務です。</p>
         <p class="mb-3">具体的には次のような作業が含まれます。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>業者別・工種別の外注単価の管理</li><li>単価の更新・見直し</li><li>外注基本契約書の作成・締結</li><li>工事ごとの個別発注書の管理</li><li>外注費の集計・分析</li></ul>
         <p class="mb-8">BuildMateの支援実績では、GASとAIを活用することで外注費管理・契約書整備にかかる月2時間を30分程度に短縮した工務店があります。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASで行う部分（単価DBの管理）</h4><p class="mb-4">GASによる単価DB管理とは、Googleスプレッドシートで業者別・工種別の外注単価を一元管理しGASが見積書作成時に自動参照する仕組みです。</p><p class="mb-6">スプレッドシートに「業者名・工種・単価・適用期間」を登録するとGASが見積書作成時に最新単価を自動参照します。単価を更新すれば以降の見積りに自動反映され「古い単価で計算してしまった」という問題がなくなります。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIで行う部分（契約書ひな形の自動生成）</h4><p class="mb-4">AIによる契約書生成とは、業者の種別・外注内容・取引条件をAIに入力するだけで外注基本契約書のひな形を自動生成する仕組みです。</p><p class="mb-6">ClaudeやChatGPTに「大工工事の外注基本契約書を作って。支払いサイト30日、損害賠償条項あり」と指示するだけで契約書の下書きが完成します。業者ごとにカスタマイズする形で体裁の整った契約書を効率的に整備できます。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASで行う部分（単価DBの管理）</h2><p class="mb-4">GASによる単価DB管理とは、Googleスプレッドシートで業者別・工種別の外注単価を一元管理しGASが見積書作成時に自動参照する仕組みです。</p><p class="mb-6">スプレッドシートに「業者名・工種・単価・適用期間」を登録するとGASが見積書作成時に最新単価を自動参照します。単価を更新すれば以降の見積りに自動反映され「古い単価で計算してしまった」という問題がなくなります。</p><h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIで行う部分（契約書ひな形の自動生成）</h2><p class="mb-4">AIによる契約書生成とは、業者の種別・外注内容・取引条件をAIに入力するだけで外注基本契約書のひな形を自動生成する仕組みです。</p><p class="mb-6">ClaudeやChatGPTに「大工工事の外注基本契約書を作って。支払いサイト30日、損害賠償条項あり」と指示するだけで契約書の下書きが完成します。業者ごとにカスタマイズする形で体裁の整った契約書を効率的に整備できます。</p>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h2>
         <p class="mb-4">BuildMateが工務店の外注費の単価管理・契約書整備にAIとGASを導入した実績をもとに、削減効果をまとめます。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>単価管理・更新：月2時間 → 30分</li><li>契約書作成：都度2時間 → 30分（AI生成）</li><li>外注費の見積り精度：DB参照で向上</li></ul>
         <p class="mb-8">GASとAIで外注管理を効率化することで月2時間の作業が30分に短縮されます。単価の透明化と契約書整備が外注コスト管理の精度向上と業者トラブル防止につながります。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIとGASでできないことについて</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIとGASでできないことについて</h2>
         <p class="mb-4">AIが生成する契約書はひな形であり、法的有効性・建設業法への対応は弁護士・行政書士への確認が推奨されます。</p>
         <p class="mb-8">しかし契約書の骨格が自動生成されることで整備のハードルが大幅に下がります。「契約書がない」という状態を解消するだけでもトラブルリスクが大幅に低減します。</p>
         <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">
             外注費の管理が曖昧だと利益が見えません。GASで単価を見える化しAIで契約を整備することで工務店の外注管理を一段階レベルアップさせてください。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）
         </div>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>工務店の外注費管理はAI・GASで月2時間→30分に短縮できる</li><li>GASで業者別・工種別の外注単価DBを管理し見積り時に自動参照できる</li><li>AIで外注基本契約書のひな形を自動生成し契約書整備のハードルが下がる</li><li>単価の透明化がコスト管理の精度向上につながる</li><li>AIツールは月3,000円程度から始められる</li></ul>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
         <div class="space-y-6">
             <div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の外注単価はGASで管理できますか？</p><p class="text-wa-text text-base m-0">BuildMateの支援実績では、GASでGoogleスプレッドシートの外注単価DBを見積り時に自動参照する仕組みを構築。単価管理にかかる月2時間を30分に短縮した工務店があります。</p></div>
             <div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の外注基本契約書はAIで自動作成できますか？</p><p class="text-wa-text text-base m-0">BuildMateの支援実績では、AIに工種・取引条件を入力するだけで外注基本契約書のひな形を自動生成し作成時間を2時間から30分に短縮した工務店があります。</p></div>

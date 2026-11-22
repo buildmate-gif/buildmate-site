@@ -27,12 +27,14 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Article","headline":"工務店の発注書の作成・送付・確認をAI・GASで自動化する方法｜30分→5分に短縮","datePublished":"2026-03-05","dateModified":"2026-03-05","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"工務店の発注書の作成・送付・確認にAIとGASを活用する方法を解説。GASで発注書を自動生成・メール送付しAIで発注内容をチェック。30分かかっていた作業を5分に短縮し発注ミスを削減した手順をBuildMate代表が解説します。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/081-chuhmon-gas.html"}}
-    </script>
+{"@context": "https://schema.org", "@type": "Article", "headline": "工務店の発注書の作成・送付・確認をAI・GASで自動化する方法｜30分→5分に短縮", "datePublished": "2026-03-05", "dateModified": "2026-03-05", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "工務店の発注書の作成・送付・確認にAIとGASを活用する方法を解説。GASで発注書を自動生成・メール送付しAIで発注内容をチェック。30分かかっていた作業を5分に短縮し発注ミスを削減した手順をBuildMate代表が解説します。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/081-chuhmon-gas.html"}}
+</script>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"工務店の発注書はGASで自動生成・送付できますか？","acceptedAnswer":{"@type":"Answer","text":"BuildMateの支援実績では、GASでスプレッドシートの発注情報から発注書PDFを自動生成しGmailで自動送付する仕組みを構築。30分かかっていた作業を5分に短縮した工務店があります。"}},{"@type":"Question","name":"工務店の発注ミスをAIで防ぐことはできますか？","acceptedAnswer":{"@type":"Answer","text":"BuildMateの支援実績では、AIで発注書の内容チェックを自動化することで数量ミス・仕様漏れを事前検出し発注ミスをゼロにした工務店があります。人間の確認作業を補完する役割を果たしています。"}},{"@type":"Question","name":"工務店の発注書のFAX送付をデジタル化するにはどうすればよいですか？","acceptedAnswer":{"@type":"Answer","text":"BuildMateの支援実績では、GASでGoogleドキュメントのテンプレートからPDFを自動生成しGmailで送付する仕組みを構築。FAX作業を完全になくしコスト削減と送付スピード向上を同時に実現した工務店があります。"}}]}
     </script>
-<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+</head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans">
     <header class="site-header">
     <div class="header-in">
@@ -82,31 +84,31 @@
         <span class="flex items-center gap-1"><i data-lucide="user" class="w-4 h-4"></i>木村 拓隆</span>
     </div>
     <div class="mb-10 rounded-wa overflow-hidden">
-        <img src="../images/gas_sum.png" alt="工務店の発注書の作成・送付・確認をAI・GASで自動化する方法" class="w-full object-cover">
+        <img src="../images/gas_sum.webp" alt="工務店の発注書の作成・送付・確認をAI・GASで自動化する方法" class="w-full object-cover">
     </div>
     <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
         <p class="font-bold text-xl mb-6 text-wa-brand">発注書を毎回Excelで作って印刷してFAXして、という作業がまだ続いていませんか？</p>
         <p class="mb-4 text-wa-text leading-relaxed">工務店では協力業者への発注書を毎回手作業で作成・送付しているケースが多くあります。「同じような発注書を毎回一から入力している」「送り忘れが発生して工程が止まった」「発注内容のミスに後から気づいた」という悩みを持つ工務店が後を絶ちません。</p>
         <p class="mb-8 text-wa-text leading-relaxed">この記事では、GASで発注書を自動生成・メール送付し、AI（Claude・ChatGPT）で発注内容をチェックする方法をご紹介します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の発注書の作成・送付・確認とは</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の発注書の作成・送付・確認とは</h2>
         <p class="mb-4">工務店の発注書の作成・送付・確認とは、協力業者へ工事内容・数量・単価・納期などを記載した発注書を作成して送付し、受領確認を取る業務です。発注ミスが発生すると工程全体に影響するため正確さが求められます。</p>
         <p class="mb-3">具体的には次のような作業が含まれます。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>発注書の作成（工事内容・数量・単価・納期の記入）</li><li>業者へのメール・FAX・郵送による送付</li><li>業者からの受領確認の取得</li><li>発注内容の変更・追加時の修正対応</li><li>発注書の保管・管理</li></ul>
         <p class="mb-8">BuildMateの支援実績では、GASとAIを活用することで発注書の作成から送付完了まで30分から5分に短縮し発注ミスをゼロにした工務店があります。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASで行う部分（発注書の自動生成・メール送付）</h4><p class="mb-4">GASによる発注書自動化とは、Googleスプレッドシートに発注情報を入力するだけでGASが発注書PDFを自動生成し業者のメールアドレスへ自動送付する仕組みです。</p><p class="mb-6">スプレッドシートの発注リストに「業者名・工事内容・数量・単価・納期」を入力してボタンを押すだけで、GASがGoogleドキュメントのテンプレートに自動差し込みしてPDF化、Gmailで自動送信します。FAX作業が完全に不要になります。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIで行う部分（発注内容のチェック）</h4><p class="mb-4">AIによる発注チェックとは、作成した発注書の内容をAIに確認させることで数量の誤り・仕様の抜け漏れ・単価の異常値などを自動検出する仕組みです。</p><p class="mb-6">発注書の内容をAIに貼り付けて「発注内容に問題がないか確認して」と指示するだけで、チェックリストに基づいた確認結果が返ってきます。人間が見落としがちな細かいミスをAIが検出することで発注ミスを大幅に削減できます。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASで行う部分（発注書の自動生成・メール送付）</h2><p class="mb-4">GASによる発注書自動化とは、Googleスプレッドシートに発注情報を入力するだけでGASが発注書PDFを自動生成し業者のメールアドレスへ自動送付する仕組みです。</p><p class="mb-6">スプレッドシートの発注リストに「業者名・工事内容・数量・単価・納期」を入力してボタンを押すだけで、GASがGoogleドキュメントのテンプレートに自動差し込みしてPDF化、Gmailで自動送信します。FAX作業が完全に不要になります。</p><h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIで行う部分（発注内容のチェック）</h2><p class="mb-4">AIによる発注チェックとは、作成した発注書の内容をAIに確認させることで数量の誤り・仕様の抜け漏れ・単価の異常値などを自動検出する仕組みです。</p><p class="mb-6">発注書の内容をAIに貼り付けて「発注内容に問題がないか確認して」と指示するだけで、チェックリストに基づいた確認結果が返ってきます。人間が見落としがちな細かいミスをAIが検出することで発注ミスを大幅に削減できます。</p>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h2>
         <p class="mb-4">BuildMateが工務店の発注書の作成・送付・確認にAIとGASを導入した実績をもとに、削減効果をまとめます。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>発注書の作成・送付：30分 → 5分</li><li>発注ミスの発生：随時リスク → 大幅削減</li><li>FAX・郵送コスト：毎回発生 → ゼロ</li></ul>
         <p class="mb-8">GASとAIを活用することで発注書作成から送付まで30分から5分に短縮できます。FAXレスと発注ミス削減により業者対応の品質と速度が同時に向上します。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIとGASでできないことについて</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIとGASでできないことについて</h2>
         <p class="mb-4">GASによる自動送付はメール対応の業者に限られます。メールを使わない業者へはFAXや郵送での対応が引き続き必要です。また発注書テンプレートの初期設定が必要です。</p>
         <p class="mb-8">しかしメール対応の業者への発注業務を自動化するだけで作業時間は大幅に削減されます。段階的に自動化範囲を広げることで工務店全体の発注業務を効率化できます。</p>
         <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">
             発注ミスは現場に迷惑をかけるだけでなく業者との信頼関係にも影響します。GASとAIで二重チェックの仕組みを作り発注精度を上げてください。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）
         </div>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>工務店の発注書作成・送付はGASで30分→5分に短縮できる</li><li>スプレッドシートへの入力だけでGASが発注書PDF生成→メール送付を自動実行する</li><li>AIで発注内容を自動チェックし数量ミス・仕様漏れを事前に検出できる</li><li>FAX・郵送コストをゼロにしながら発注ミスを大幅削減できる</li><li>GASはGoogleの無料ツールで追加費用なしで実装できる</li></ul>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
         <div class="space-y-6">
             <div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の発注書はGASで自動生成・送付できますか？</p><p class="text-wa-text text-base m-0">BuildMateの支援実績では、GASでスプレッドシートの発注情報から発注書PDFを自動生成しGmailで自動送付する仕組みを構築。30分かかっていた作業を5分に短縮した工務店があります。</p></div>
             <div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の発注ミスをAIで防ぐことはできますか？</p><p class="text-wa-text text-base m-0">BuildMateの支援実績では、AIで発注書の内容チェックを自動化することで数量ミス・仕様漏れを事前検出し発注ミスをゼロにした工務店があります。人間の確認作業を補完する役割を果たしています。</p></div>

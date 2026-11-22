@@ -26,9 +26,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"工務店の見積書確認・請求書発行をAI・GASで自動化する方法｜請求漏れをゼロに","datePublished":"2026-07-09","dateModified":"2026-07-09","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"工務店の見積書確認・請求書発行をAIとGASで自動化する方法を解説。1時間→10分に短縮し請求漏れをゼロにした手順を紹介。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/043-seikyu-gas.html"}}</script>
+    <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "工務店の見積書確認・請求書発行をAI・GASで自動化する方法｜請求漏れをゼロに", "datePublished": "2026-07-09", "dateModified": "2026-07-09", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "工務店の見積書確認・請求書発行をAIとGASで自動化する方法を解説。1時間→10分に短縮し請求漏れをゼロにした手順を紹介。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/042-seikyu-gas.html"}}
+</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"工務店の請求書発行をGASで自動化するにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"GASを使ってGoogleスプレッドシートの案件データから請求書を自動生成し、お客様へメール送付する仕組みを構築できます。BuildMateの支援実績では、1時間かかっていた請求書発行が約10分に短縮されています。"}},{"@type":"Question","name":"工務店の見積書の誤りをAIでチェックするにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"見積書のデータをAIに読み込ませ、単価の異常値・数量の計算ミス・合計金額の不一致などを自動検出できます。BuildMateの支援実績では、このチェックで請求ミスによるトラブルがゼロになった工務店があります。"}},{"@type":"Question","name":"工務店の請求漏れをゼロにするためにGASで何ができますか？","acceptedAnswer":{"@type":"Answer","text":"GASで案件の進捗ステータスを管理し、竣工・引渡し後に自動で請求書を発行するトリガーを設定できます。BuildMateの支援実績では、この仕組みで請求漏れが完全になくなった工務店があります。"}}]}</script>
-<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+</head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans antialiased">
         <header class="site-header">
     <div class="header-in">
@@ -78,14 +82,14 @@
                 <h1 class="break-keep text-balance text-2xl md:text-4xl font-serif font-bold text-wa-text leading-tight mb-4">工務店の見積書確認・<wbr>請求書発行を<wbr><br>AI・<wbr>GASで<wbr>自動化する方法</h1>
             </div>
             <div class="mb-10">
-                <img src="../images/keiri_sum.png" alt="工務店の見積書確認・請求書発行をAI・GASで自動化する方法のイメージ" class="w-full rounded-wa object-cover" onerror="this.style.display='none'">
+                <img src="../images/keiri_sum.webp" alt="工務店の見積書確認・請求書発行をAI・GASで自動化する方法のイメージ" class="w-full rounded-wa object-cover" onerror="this.style.display='none'">
             </div>
             <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
                 <p class="font-bold text-xl mb-6 text-wa-brand">「あの現場、請求書を送り忘れていた」は笑えない話です。</p>
                 <p>竣工後に請求書を出し忘れる、見積書の単価を1桁間違えたまま提出してしまう、引渡し後に請求処理が後回しになって月をまたいでしまう——。工務店の財務管理でよく聞くトラブルです。現場が忙しいほど事務処理が後回しになり、気づいたときには請求漏れが積み重なっているケースもあります。</p>
                 <p>この記事では、工務店の見積書確認・請求書発行業務を、AI（Claude・ChatGPT）とGoogle Apps Script（GAS）を組み合わせて自動化する具体的な方法を解説します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の見積書確認・請求書発行業務とは</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の見積書確認・請求書発行業務とは</h2>
                 <p>工務店の請求書発行業務とは、案件ごとに見積書の内容を確認し、工事完了後に正確な請求書を作成してお客様へ送付し、入金確認まで管理する一連の作業を指します。手作業でExcelに入力・印刷・郵送している工務店では、1件あたり1時間近くかかることがあります。</p>
                 <p>具体的には次のような作業が含まれます。</p>
                 <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg">
@@ -97,15 +101,15 @@
                 </ul>
                 <p>BuildMateの支援実績では、AIとGASで自動化した工務店（月10〜20件の請求業務がある規模）で、月10時間以上の削減と請求漏れゼロを実現しています。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIで行う部分：見積書の誤り自動検出</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIで行う部分：見積書の誤り自動検出</h2>
                 <p>工務店の見積書チェックとは、単価・数量・計算式・合計金額に誤りがないかを確認し、提出前にミスを防ぐ業務です。目視確認だけでは見落としが起きやすく、特に変更工事の追加項目で抜け漏れが発生しがちです。</p>
                 <p>AIに見積書データを読み込ませると、単価の異常値（相場から大きく外れた金額）・数量の計算ミス・合計金額の不一致・消費税の計算誤りなどを自動で検出できます。「前回の類似工事と比べて単価が20%以上乖離している項目があります」といった指摘も可能です。提出前の最終チェックが数分で完了します。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASで行う部分：請求書の自動生成・送付</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASで行う部分：請求書の自動生成・送付</h2>
                 <p>工務店の請求書自動生成とは、案件管理スプレッドシートのデータをもとに、請求書テンプレートへ自動転記してPDFを生成し、お客様へメール送付するまでを自動化する仕組みです。手動入力によるミスと送り忘れを両方なくせます。</p>
                 <p>GASを使えば、Googleスプレッドシートの案件ステータスが「引渡し完了」に変わった瞬間に、請求書テンプレートへ自動転記→PDF生成→お客様へ自動メール送付のフローを構築できます。支払期日が近づいたら自動リマインドを送る設定も可能です。1時間かかっていた請求書発行が約10分に短縮されます。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h2>
                 <p>BuildMateが工務店の見積書確認・請求書発行業務にAI・GASを導入した実績をもとに、削減効果をまとめます。</p>
                 <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg">
                     <li>請求書発行：1時間 → 約10分（1件あたり）</li>
@@ -115,7 +119,7 @@
                 </ul>
                 <p>月10〜20件の請求業務がある工務店では、月10〜15時間の削減が現実的な目標値です。時給換算（2,000円）で月2〜3万円相当のコスト削減になります。請求漏れ防止による売上回収の改善効果も加えると、実質的な効果はさらに大きくなります。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIとGASでできないことについて</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIとGASでできないことについて</h2>
                 <p>追加工事の金額交渉や、お客様との支払い条件のすり合わせは人間が行う必要があります。また、複雑な工事変更が重なった案件の最終的な請求金額の判断は、現場を熟知した担当者が行うべきです。</p>
                 <p>しかしAIとGASが定型の請求書発行・チェック・送付を自動化することで、工務店の経営者や事務担当者が「判断が必要な交渉・確認」に集中できる時間が月10時間以上生まれます。</p>
 
@@ -123,7 +127,7 @@
                     請求漏れは「気づいたら数十万円の未回収」につながることがあります。GASで自動発行の仕組みを作れば、忙しい時期でも請求書が自動で出ていきます。まず請求書の自動生成だけでも導入する価値があります。—— BuildMate代表・木村拓隆（元・施工管理1,200件以上）
                 </div>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
                 <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg">
                     <li>工務店の請求書発行はGASの自動生成・送付で1時間→10分に短縮できる</li>
                     <li>AIが見積書の単価異常・計算ミス・合計不一致を自動検出し、提出前のミスを防ぐ</li>
@@ -132,7 +136,7 @@
                     <li>導入に必要なのはGoogleスプレッドシート（無料）とAIツール月3,000円程度のみ</li>
                 </ul>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
                 <div class="space-y-6">
                     <div class="bg-wa-bg p-5 rounded-lg">
                         <p class="font-bold text-wa-brand mb-2">Q. 工務店の請求書発行をGASで自動化するにはどうすればいいですか？</p>

@@ -15,12 +15,14 @@
 <script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
 <script>tailwind.config={theme:{extend:{fontFamily:{sans:[['"Noto Sans JP"','sans-serif']],serif:[['"Noto Serif JP"','serif']]},colors:{wa:{bg:'#F7F2EA',paper:'#ffffff',text:'#1F2933',gray:'#6B7280',brand:'#24324A',brandHover:'#1A2838',accent:'#24324A',accentHover:'#1A2838',border:'#D4CAB8',gold:'#B99745',purple:'#5C3B8A',cyan:'#38BDF8'}},borderRadius:{wa:'12px'}}}}</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"AI導入前に「現在の業務棚卸し」を30分でやる方法","datePublished":"2026-01-27","dateModified":"2026-05-16","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走者","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経てAI活用支援を提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"AI導入前に業務棚卸しをする方法を解説。30分でできる「繰り返し業務リスト」の作り方と、AIが使える業務・使えない業務の見分け方を具体的に紹介します。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/ai-04-tanaoroshi.html"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "AI導入前に「現在の業務棚卸し」を30分でやる方法", "datePublished": "2026-01-27", "dateModified": "2026-05-16", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経てAI活用支援を提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "AI導入前に業務棚卸しをする方法を解説。30分でできる「繰り返し業務リスト」の作り方と、AIが使える業務・使えない業務の見分け方を具体的に紹介します。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/ai-04-tanaoroshi.html"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "業務棚卸しは一人でやるべきですか、チームでやるべきですか？", "acceptedAnswer": {"@type": "Answer", "text": "最初は一人でもできます。ただし、チームで行うと「私の業務ではAIが使えそう」という気づきが多人数から出るため、組織全体のAI活用候補が増えます。管理職の方は、チームミーティングの30分を使って一緒にやることをおすすめします。"}}, {"@type": "Question", "name": "業務棚卸しをせずにAIを始めてもいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "はい、始めても構いません。ただし棚卸しなしで始めると「何に使えばいいか分からない」状態が続きやすく、試行が散漫になります。30分の棚卸しで方向性が定まるため、投資対効果は高いです。"}}, {"@type": "Question", "name": "棚卸しシートのテンプレートはありますか？", "acceptedAnswer": {"@type": "Answer", "text": "BuildMateでは無料相談の中で業務棚卸しシートのひな形をお渡しし、一緒に記入するサポートも行っています。「何から始めればいいか」を整理するサービスですので、お気軽にご相談ください。"}}]}
 </script>
-<style>.text-balance{text-wrap:balance}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<style>.text-balance{text-wrap:balance}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+</head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans">
 <header class="site-header">
     <div class="header-in">
@@ -75,22 +77,22 @@
             <p class="text-wa-text leading-relaxed m-0">業務棚卸しとは、現在行っている業務を「繰り返し頻度・かかる時間・文章作業の有無」の3軸で整理することです。AIが役立つ業務と、人間が直接対応すべき業務を明確に分けることが目的です。</p>
         </div>
         
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">業務棚卸しの進め方（30分でできる）</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">業務棚卸しの進め方（30分でできる）</h2>
         <p class="mb-4 leading-relaxed">業務棚卸しは以下の3ステップで30分で完了します。①リスト化（15分）：1日・1週間で行っている業務を思いつく限り書き出す。②分類（10分）：各業務を「毎日/毎週/毎月」の頻度と「文章あり/なし」で分類する。③優先順位（5分）：頻度が高く文章作業がある業務を「AI活用候補1位」とする。この3ステップで、どの業務からAIを試すべきかが一目瞭然になります。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>ステップ①：業務を全て書き出す（15分）</li><li>ステップ②：頻度と文章作業の有無で分類（10分）</li><li>ステップ③：AI活用候補に優先順位をつける（5分）</li></ul>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIが使いやすい業務の特徴</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIが使いやすい業務の特徴</h2>
         <p class="mb-4 leading-relaxed">AIが特に役立つ業務には共通した特徴があります。①定期的に繰り返される（毎週の連絡文・月次レポートなど）、②文章を書く・整理する作業がある（メール・報告書・案内文など）、③正解が複数存在する（表現・構成に複数の選択肢がある）。これらの特徴を持つ業務は、AIによる効率化の恩恵が大きい業務です。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>定期的に繰り返される業務</li><li>文章を書く・整理する作業が含まれる業務</li><li>正解が複数存在する（表現に幅がある）業務</li></ul>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIが使いにくい業務の特徴</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIが使いにくい業務の特徴</h2>
         <p class="mb-4 leading-relaxed">一方、AIだけに任せにくい業務もあります。①感情や人間関係が直接関わる業務（患者・利用者への直接対応、スタッフへの個別指導）、②法的・専門的な最終判断が必要な業務（医療判断・法的アドバイス）、③当日の状況や最新情報を踏まえて判断する業務（最新の市況・当日の状況判断）です。検索や外部データ参照で補助できる場面はありますが、最終判断は人間が担う必要があります。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>感情・人間関係が直接関わる業務</li><li>専門的・法的な最終判断が必要な業務</li><li>リアルタイム情報が必要な状況判断</li></ul>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">棚卸し結果をAI活用計画に変える</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">棚卸し結果をAI活用計画に変える</h2>
         <p class="mb-4 leading-relaxed">業務棚卸しが完了したら、「AI活用候補1位」の業務を今週中に試してみてください。試した結果を「時間がどのくらい短縮されたか」「出力の品質はどうだったか」という2点で簡単に振り返ります。この振り返りを記録しておくことで、組織内でのAI活用効果の説明資料になります。</p>
         
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>業務棚卸しは「リスト化→分類→優先順位」の3ステップで30分で完了</li><li>AIが使いやすい業務は「繰り返し・文章あり・複数の正解がある」業務</li><li>感情対応や専門判断、当日の状況判断が要る業務ではAIを補助として使う</li><li>棚卸し結果は「AI活用候補1位」から試し始める</li><li>試した結果を時間短縮・品質の2点で振り返ると組織展開の資料になる</li></ul>
         <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">「業務を棚卸しすると、AIに頼めることが思ったより多いことに気づきます。気づきが行動の起点になります。」<span class="block not-italic text-sm mt-3 text-right">BuildMate代表・木村拓隆</span></div>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
         <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 業務棚卸しは一人でやるべきですか、チームでやるべきですか？</p><p class="text-wa-text text-base m-0">最初は一人でもできます。ただし、チームで行うと「私の業務ではAIが使えそう」という気づきが多人数から出るため、組織全体のAI活用候補が増えます。管理職の方は、チームミーティングの30分を使って一緒にやることをおすすめします。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 業務棚卸しをせずにAIを始めてもいいですか？</p><p class="text-wa-text text-base m-0">はい、始めても構いません。ただし棚卸しなしで始めると「何に使えばいいか分からない」状態が続きやすく、試行が散漫になります。30分の棚卸しで方向性が定まるため、投資対効果は高いです。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 棚卸しシートのテンプレートはありますか？</p><p class="text-wa-text text-base m-0">BuildMateでは無料相談の中で業務棚卸しシートのひな形をお渡しし、一緒に記入するサポートも行っています。「何から始めればいいか」を整理するサービスですので、お気軽にご相談ください。</p></div></div>
         <div class="mt-10 pt-8 border-t border-wa-border">
             <p class="font-bold text-wa-brand mb-4 flex items-center gap-2"><i data-lucide="book-open" class="w-4 h-4"></i>関連記事はこちら▼</p>

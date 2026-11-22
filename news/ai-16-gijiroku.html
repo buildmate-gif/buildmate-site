@@ -15,12 +15,14 @@
 <script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
 <script>tailwind.config={theme:{extend:{fontFamily:{sans:[['"Noto Sans JP"','sans-serif']],serif:[['"Noto Serif JP"','serif']]},colors:{wa:{bg:'#F7F2EA',paper:'#ffffff',text:'#1F2933',gray:'#6B7280',brand:'#24324A',brandHover:'#1A2838',accent:'#24324A',accentHover:'#1A2838',border:'#D4CAB8',gold:'#B99745',purple:'#5C3B8A',cyan:'#38BDF8'}},borderRadius:{wa:'12px'}}}}</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"議事録をChatGPTで5分で作る、コピペで使えるプロンプト集","datePublished":"2026-04-21","dateModified":"2026-04-21","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走者","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経てAI活用支援を提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"会議の議事録をChatGPTで5分で作るための具体的なプロンプトを紹介。発言者別・アクションアイテム抽出など、コピペで使えるプロンプト集とカスタマイズのコツを解説します。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/ai-16-gijiroku.html"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "議事録をChatGPTで5分で作る、コピペで使えるプロンプト集", "datePublished": "2026-04-21", "dateModified": "2026-04-21", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経てAI活用支援を提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "会議の議事録をChatGPTで5分で作るための具体的なプロンプトを紹介。発言者別・アクションアイテム抽出など、コピペで使えるプロンプト集とカスタマイズのコツを解説します。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/ai-16-gijiroku.html"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "録音した音声から議事録を作ることはできますか？", "acceptedAnswer": {"@type": "Answer", "text": "ChatGPTのスマートフォンアプリには音声入力機能があります。また、録音データをWhisper（音声認識AI）でテキスト化し、そのテキストをChatGPTで整理するワークフローも効果的です。"}}, {"@type": "Question", "name": "英語の会議メモを日本語の議事録にすることはできますか？", "acceptedAnswer": {"@type": "Answer", "text": "はい。プロンプトに「英語で書かれたメモを日本語の議事録に整えてください」と指定するだけで対応できます。多言語の会議が多い組織では特に役立ちます。"}}, {"@type": "Question", "name": "議事録の書き方が毎回バラバラになるのですが、統一する方法はありますか？", "acceptedAnswer": {"@type": "Answer", "text": "組織内で「議事録フォーマット」を決め、そのフォーマットをプロンプトに含めてください。例：「以下のフォーマットで議事録を作成してください：【日時】【参加者】【決定事項】【アクション】」。フォーマットを固定することで毎回一貫した議事録になります。"}}]}
 </script>
-<style>.text-balance{text-wrap:balance}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<style>.text-balance{text-wrap:balance}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+</head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans">
 <header class="site-header">
     <div class="header-in">
@@ -75,31 +77,31 @@
             <p class="text-wa-text leading-relaxed m-0">議事録のAI作成とは、会議中に取ったメモや走り書きをChatGPTに貼り付けて、整理・構造化・要約を依頼することです。完璧なメモでなくても、箇条書きの走り書きでも、AIが読みやすい議事録に整えてくれます。</p>
         </div>
         
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">基本プロンプト：メモを議事録に整える</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">基本プロンプト：メモを議事録に整える</h2>
         <p class="mb-4 leading-relaxed">最も基本的な使い方は、会議メモをそのままコピーして貼り付け、以下のプロンプトで整える方法です。このプロンプトは「会議日時・参加者・議題・決定事項・次回アクション」の5項目で整理するフォーマットを指定しています。完璧なメモでなくても、走り書きやキーワードの箇条書きでも構いません。「読みにくくてもいいので原文のまま貼り付ける」が鉄則です。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>プロンプト例：「以下の会議メモを議事録に整えてください。①会議日時 ②参加者 ③議題と内容 ④決定事項 ⑤次回アクション（担当者・期限付き）の形式で、できる限り簡潔にまとめてください。
 
 【会議メモ】
 （ここにメモを貼り付ける）」</li></ul>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">応用プロンプト：アクションアイテムだけ抽出する</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">応用プロンプト：アクションアイテムだけ抽出する</h2>
         <p class="mb-4 leading-relaxed">長い会議メモから「誰が・何を・いつまでにやるか」だけを抽出したい場合は、以下のプロンプトを使います。プロジェクト管理ツールへの転記やタスク共有に便利です。特に「次回に向けてやること」が多い会議（定例会・プロジェクト会議）で効果的です。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>プロンプト例：「以下の会議メモから、アクションアイテム（誰が・何を・いつまでに行うか）だけを表形式で抽出してください。
 
 【会議メモ】
 （ここにメモを貼り付ける）」</li></ul>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">応用プロンプト：要点だけ3行にまとめる</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">応用プロンプト：要点だけ3行にまとめる</h2>
         <p class="mb-4 leading-relaxed">経営者への報告・上司への共有・関係者への周知など、「詳細より要点」が求められる場面では、3行要約のプロンプトが役立ちます。長い議事録をそのまま送るのではなく、まず3行要約を送ることでレスポンス率が上がります。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>プロンプト例：「以下の議事録から最も重要な情報を3行で要約してください。「①今回の決定事項 ②次回までのアクション ③共有が必要な注意事項」の形式でお願いします。
 
 【議事録】
 （ここに議事録を貼り付ける）」</li></ul>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">議事録AIを使う際のポイントと注意事項</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">議事録AIを使う際のポイントと注意事項</h2>
         <p class="mb-4 leading-relaxed">議事録作成にAIを使う際のポイントを整理します。①メモは走り書きでも構わないが、発言者・議題・日時だけは明記しておく、②AIの出力は必ず内容を確認してから送信・共有する、③固有名詞（人名・社名・製品名）は特に確認が必要、④会議内容に機密情報が含まれる場合は個人情報の扱いルールに従う。出力を確認する習慣と合わせて使うことで、品質と安全性が保たれます。</p>
         
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>メモをコピペして「議事録フォーマット指定」プロンプトで5分で完成</li><li>アクションアイテム抽出プロンプトでタスク管理が効率化する</li><li>3行要約プロンプトで要点を素早く共有できる</li><li>固有名詞・決定事項は出力後に必ず確認する</li><li>機密情報が含まれる場合は組織のAI利用ルールに従う</li></ul>
         <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">「議事録に1時間かけていた人が、AIで15分になる。その45分を、次の仕事に使えるようになります。」<span class="block not-italic text-sm mt-3 text-right">BuildMate代表・木村拓隆</span></div>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
         <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 録音した音声から議事録を作ることはできますか？</p><p class="text-wa-text text-base m-0">ChatGPTのスマートフォンアプリには音声入力機能があります。また、録音データをWhisper（音声認識AI）でテキスト化し、そのテキストをChatGPTで整理するワークフローも効果的です。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 英語の会議メモを日本語の議事録にすることはできますか？</p><p class="text-wa-text text-base m-0">はい。プロンプトに「英語で書かれたメモを日本語の議事録に整えてください」と指定するだけで対応できます。多言語の会議が多い組織では特に役立ちます。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 議事録の書き方が毎回バラバラになるのですが、統一する方法はありますか？</p><p class="text-wa-text text-base m-0">組織内で「議事録フォーマット」を決め、そのフォーマットをプロンプトに含めてください。例：「以下のフォーマットで議事録を作成してください：【日時】【参加者】【決定事項】【アクション】」。フォーマットを固定することで毎回一貫した議事録になります。</p></div></div>
         <div class="mt-10 pt-8 border-t border-wa-border">
             <p class="font-bold text-wa-brand mb-4 flex items-center gap-2"><i data-lucide="book-open" class="w-4 h-4"></i>関連記事はこちら▼</p>

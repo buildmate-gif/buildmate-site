@@ -27,12 +27,14 @@
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"建設現場の施工写真をLINE×GASでGoogleドライブに自動整理する方法","datePublished":"2026-09-01","dateModified":"2026-09-01","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"「写真はLINEで送って」と伝えているのに、グループLINEに流れるだけで整理されず、後から探せなくなる——建設現場でよく起きる問題です。現場監督が帰社後に写真を1枚ずつダウンロードしてフォルダに振り分ける作業が毎日続き、それだけで1時間近","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/052-line-shashin-gas.html"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "建設現場の施工写真をLINE×GASでGoogleドライブに自動整理する方法", "datePublished": "2026-09-01", "dateModified": "2026-09-01", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "「写真はLINEで送って」と伝えているのに、グループLINEに流れるだけで整理されず、後から探せなくなる——建設現場でよく起きる問題です。現場監督が帰社後に写真を1枚ずつダウンロードしてフォルダに振り分ける作業が毎日続き、それだけで1時間近", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/014-line-shashin-gas.html"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"建設現場の施工写真をLINEで送るだけでGoogleドライブに自動保存するにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"LINE公式アカウントのWebhookとGASを連携させることで、LINEへの写真送信と同時にGoogleドライブの指定フォルダへ自動保存できます。BuildMateの支援実績では、設定完了から翌日に運用開始した建設会社があります。"}},{"@type":"Question","name":"建設業の施工写真整理をLINE×GASで自動化するとどのくらい時間が短縮できますか？","acceptedAnswer":{"@type":"Answer","text":"BuildMateの支援実績では、毎日1時間かかっていた写真の振り分け・命名作業が約10分に短縮されています。月換算で20時間以上の削減になります。"}},{"@type":"Question","name":"建設現場の写真フォルダをGASで自動作成するにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"GASで現場名・日付・工程名の階層フォルダをGoogleドライブ上に自動生成するスクリプトを設定できます。職人がLINEで現場名を送るだけで、対応するフォルダが自動作成されます。"}}]}
 </script>
-<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+</head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans antialiased">
     <header class="site-header">
     <div class="header-in">
@@ -82,30 +84,30 @@
       <h1 class="break-keep text-balance text-2xl md:text-4xl font-serif font-bold text-wa-text leading-tight mb-4">建設現場の施工写真を<wbr><br>LINE×<wbr>GASで<wbr>自動整理する方法</h1>
     </div>
     <div class="mb-10">
-      <img src="../images/genba_sum.png" alt="建設現場の施工写真整理業務のイメージ" class="w-full rounded-wa object-cover" onerror="this.style.display='none'">
+      <img src="../images/genba_sum.webp" alt="建設現場の施工写真整理業務のイメージ" class="w-full rounded-wa object-cover" onerror="this.style.display='none'">
     </div>
     <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
       <p class="font-bold text-xl mb-6 text-wa-brand">現場の写真、LINEで送ってそのまま放置になっていませんか？</p>
       <p>「写真はLINEで送って」と伝えているのに、グループLINEに流れるだけで整理されず、後から探せなくなる——建設現場でよく起きる問題です。現場監督が帰社後に写真を1枚ずつダウンロードしてフォルダに振り分ける作業が毎日続き、それだけで1時間近く消えてしまうことがあります。</p>
       <p>この記事では、建設現場の施工写真をLINEで送信するだけでGoogleドライブへ自動整理する仕組みを、GAS（Google Apps Script）を使って構築する方法を解説します。BuildMateが実際に建設会社へ導入支援した事例をもとにした内容です。</p>
-      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">建設現場の施工写真整理業務とは</h4>
+      <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">建設現場の施工写真整理業務とは</h2>
       <p>建設現場の施工写真整理業務とは、現場で撮影した写真を現場名・日付・工程ごとに分類してGoogleドライブやサーバーに保存し、報告書・竣工書類への活用やお客様への共有を可能にする業務を指します。現場が複数ある建設会社では、写真整理だけで月20時間以上かかるケースもあります。</p>
       <p>具体的には次のような作業が含まれます。</p>
       <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>現場ごとにフォルダを作成して写真を振り分ける</li><li>ファイル名を日付・工程名で統一してリネームする</li><li>報告書・竣工書類用に必要な写真を抽出する</li><li>お客様・設計事務所への写真共有</li><li>古い写真のアーカイブ管理</li></ul>
       <p>BuildMateの支援実績では、LINE×GASで写真整理を自動化した建設会社で、毎日1時間かかっていた写真整理業務が約10分に短縮されています。</p>
-      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">仕組みの全体像：LINEとGASをつなぐ方法</h4><p>職人・現場監督がLINE公式アカウントへ写真を送信すると、WebhookがGASへ通知します。GASがLINE Messaging APIで画像データを取得し、Googleドライブの現場別フォルダへ自動保存・自動命名します。写真と一緒にテキスト（「1F配筋」など）を送ると、そのテキストをファイル名の一部として自動設定できます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 1: LINEで写真を送信するルールの設定</h4><p>職人・監督が写真を送る際に「現場名 工程名」とテキストを一緒に送るルールにします。例：「〇〇邸 基礎配筋」とテキストを送った後に写真を送信するだけです。このテキストをGASが読み取り、フォルダ振り分けとファイル命名に自動活用します。難しい操作は一切不要です。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 2: GASがGoogleドライブへ自動振り分け・命名</h4><p>GASはLINEから受け取った画像を、送信者・テキスト情報・送信日時をもとに、Googleドライブの「現場名→日付→工程名」の階層フォルダへ自動保存します。ファイル名は「20260427_基礎配筋_001」のように自動設定されます。フォルダが存在しない場合はGASが自動作成するため、事前準備も不要です。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 3: 写真受取の自動確認通知</h4><p>写真がGoogleドライブへ保存されると、GASが送信者のLINEへ「〇〇邸の写真を受け取りました（3枚）」と自動返信します。受け取り漏れがないか現場側でも確認できるため、「写真が届いていなかった」というトラブルがなくなります。</p>
-      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+      <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">仕組みの全体像：LINEとGASをつなぐ方法</h2><p>職人・現場監督がLINE公式アカウントへ写真を送信すると、WebhookがGASへ通知します。GASがLINE Messaging APIで画像データを取得し、Googleドライブの現場別フォルダへ自動保存・自動命名します。写真と一緒にテキスト（「1F配筋」など）を送ると、そのテキストをファイル名の一部として自動設定できます。</p><h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 1: LINEで写真を送信するルールの設定</h2><p>職人・監督が写真を送る際に「現場名 工程名」とテキストを一緒に送るルールにします。例：「〇〇邸 基礎配筋」とテキストを送った後に写真を送信するだけです。このテキストをGASが読み取り、フォルダ振り分けとファイル命名に自動活用します。難しい操作は一切不要です。</p><h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 2: GASがGoogleドライブへ自動振り分け・命名</h2><p>GASはLINEから受け取った画像を、送信者・テキスト情報・送信日時をもとに、Googleドライブの「現場名→日付→工程名」の階層フォルダへ自動保存します。ファイル名は「20260427_基礎配筋_001」のように自動設定されます。フォルダが存在しない場合はGASが自動作成するため、事前準備も不要です。</p><h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 3: 写真受取の自動確認通知</h2><p>写真がGoogleドライブへ保存されると、GASが送信者のLINEへ「〇〇邸の写真を受け取りました（3枚）」と自動返信します。受け取り漏れがないか現場側でも確認できるため、「写真が届いていなかった」というトラブルがなくなります。</p>
+      <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h2>
       <p>BuildMateが建築・建設業の現場にLINE×GASを導入した実績をもとに、削減効果をまとめます。</p>
       <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>写真整理・フォルダ振り分け：毎日1時間 → 約10分</li><li>ファイル命名：手動 → 自動（ルール統一）</li><li>フォルダ作成：手動 → GASが自動作成</li><li>写真の紛失・フォルダ迷子：構造統一でゼロに</li></ul>
       <p>現場3〜5件を同時進行する建設会社では、月20時間以上の削減が現実的な目標値です。時給換算（2,000円）で月4万円相当のコスト削減になります。導入コストはLINE公式アカウント（無料）とGoogleドライブ（無料）だけで、初期費用がほぼゼロです。</p>
-      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">LINEとGASでできないことについて</h4>
+      <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">LINEとGASでできないことについて</h2>
       <p>写真の内容確認（品質チェック・安全確認）や、報告書への最終選定・コメント追記は人間の目が必要です。AIによる写真の自動分類は将来的に精度が上がりますが、現時点では職人が「工程名」をテキストで送るルールが最も確実です。
 
 しかしLINE×GASが「送信→整理」を自動化することで、現場監督が帰社後に写真整理に追われることがなくなります。</p>
       <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">写真をLINEで送ってもらうのはすでにやっている工務店がほとんどです。あとはそれをGoogleドライブへ自動振り分けする仕組みを作るだけ。この一歩で毎日1時間が返ってきます。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）</div>
-      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+      <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
       <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>建設現場の施工写真はLINE×GASでGoogleドライブへ送信と同時に自動整理できる</li><li>職人・監督がLINEに写真＋工程名を送るだけで、フォルダ振り分け・ファイル命名が自動化される</li><li>GASがフォルダを自動作成するため事前準備が不要で、翌日から使い始められる</li><li>現場3〜5件規模の建設会社で月20時間以上・4万円相当のコスト削減が見込める</li><li>導入費用は実質ゼロで、既存のLINEとGoogleドライブをそのまま活用できる</li></ul>
-      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+      <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
       <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 建設現場の施工写真をLINEで送るだけでGoogleドライブに自動保存するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">LINE公式アカウントのWebhookとGASを連携させることで、LINEへの写真送信と同時にGoogleドライブの指定フォルダへ自動保存できます。BuildMateの支援実績では、設定完了から翌日に運用開始した建設会社があります。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 建設業の施工写真整理をLINE×GASで自動化するとどのくらい時間が短縮できますか？</p><p class="text-wa-text text-base m-0">BuildMateの支援実績では、毎日1時間かかっていた写真の振り分け・命名作業が約10分に短縮されています。月換算で20時間以上の削減になります。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 建設現場の写真フォルダをGASで自動作成するにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">GASで現場名・日付・工程名の階層フォルダをGoogleドライブ上に自動生成するスクリプトを設定できます。職人がLINEで現場名を送るだけで、対応するフォルダが自動作成されます。</p></div></div>
       <div class="mt-10 pt-8 border-t border-wa-border">
         <p class="font-bold text-wa-brand mb-4">関連記事</p>

@@ -42,30 +42,8 @@
         }
     </script>
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "工務店の社内管理をAI・GASで効率化する方法｜日報・勤怠・会議録を自動化",
-      "datePublished":"2026-08-08",
-      "dateModified":"2026-08-08",
-      "author": {
-        "@type": "Person",
-        "name": "木村 拓隆",
-        "jobTitle": "BuildMate代表・AI活用伴走パートナー",
-        "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "BuildMate（ビルドメイト）",
-        "url": "https://buildmate-gif.github.io/buildmate-site"
-      },
-      "description": "工務店の社内管理業務（日報・勤怠集計・会議録・備品発注など）をAIとGASで自動化する方法を解説。月15時間以上の削減を実現した具体的な手順を紹介。",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://buildmate-gif.github.io/buildmate-site/news/031-shakunai-kanri-ai.html"
-      }
-    }
-    </script>
+{"@context": "https://schema.org", "@type": "Article", "headline": "工務店の社内管理をAI・GASで効率化する方法｜日報・勤怠・会議録を自動化", "datePublished": "2026-08-08", "dateModified": "2026-08-08", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "工務店の社内管理業務（日報・勤怠集計・会議録・備品発注など）をAIとGASで自動化する方法を解説。月15時間以上の削減を実現した具体的な手順を紹介。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/055-shakunai-kanri-ai.html"}}
+</script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -98,7 +76,9 @@
       ]
     }
     </script>
-<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+</head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans antialiased">
 
         <header class="site-header">
@@ -164,7 +144,7 @@
                 <p>日報を書く、勤怠を集計する、会議の議事録をまとめる——これらはどれも、工務店本来の仕事ではありません。しかし毎日積み重なることで、月換算10〜20時間が「管理のための管理業務」に費やされている工務店は珍しくありません。現場に出られない、お客様への連絡が後回しになる、という悪循環の根本原因がここにあります。</p>
                 <p>この記事では、工務店の社内管理に関わる8つの業務について、AI（Claude・ChatGPT）とGoogle Apps Script（GAS）を使って効率化する具体的な方法を解説します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。特別なIT知識は不要で、今日から始められるものから順に紹介します。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の社内管理業務とは</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の社内管理業務とは</h2>
 
                 <p>工務店の社内管理業務とは、現場施工や営業以外の、会社運営を維持するために発生するバックオフィス業務全般を指します。具体的には次の8項目が代表的です。</p>
 
@@ -181,32 +161,32 @@
 
                 <p>どれも「やらなければいけない」業務ですが、AIとGASを活用することで、そのほぼすべてを大幅に削減または自動化できます。BuildMateの支援実績では、これらの業務をまとめて導入した工務店（社員5名規模）で月15〜20時間の削減を実現しています。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">1. 日報・週報の作成（AIで対応）</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">1. 日報・週報の作成（AIで対応）</h2>
 
                 <p>工務店の日報作成とは、現場監督や職人が1日の作業内容・特記事項・翌日の予定を記録して上長へ報告する業務です。手書きやExcel入力で対応している工務店では、1件あたり30〜60分かかるケースが多く見られます。</p>
                 <p>AIを使った効率化では、現場からスマホで音声入力した内容をClaudeやChatGPTに貼り付けるだけで、社内フォーマットに合った日報文章が自動生成されます。BuildMateの支援実績では、60分かかっていた日報作成が約10分に短縮されました。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">2. 勤怠管理・残業集計（AI＋GASで対応）</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">2. 勤怠管理・残業集計（AI＋GASで対応）</h2>
 
                 <p>工務店の勤怠管理とは、社員・職人の出退勤時刻を記録し、月次で残業時間・休日出勤を集計して給与計算に反映させる業務です。紙タイムカードや手書き台帳で管理している工務店では、月末の集計だけで4時間以上かかることがあります。</p>
                 <p>GASを使ってGoogleフォームから出退勤を受け付け、スプレッドシートへの自動集計・残業時間の計算まで行う仕組みを構築できます。月4時間かかっていた集計がほぼ自動化されます。AIと組み合わせれば、残業が続いている社員への注意喚起文や翌月のシフト調整案も自動生成できます。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">3. 社内会議の議事録作成（AIで対応）</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">3. 社内会議の議事録作成（AIで対応）</h2>
 
                 <p>工務店の議事録作成とは、週次の現場確認会議や業者調整MTGの内容を文章にまとめ、決定事項・担当者・期限を関係者へ共有する業務です。会議後に手書きメモを清書する時間が別途45分前後かかるケースが一般的です。</p>
                 <p>ZoomやGoogle Meetの自動文字起こし機能で会議内容をテキスト化し、AIに「議事録と次回アクション一覧を作って」と指示するだけで完成します。45分かかっていた議事録作成が5分以内に短縮されます。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">4. 備品・消耗品の在庫管理・発注（GASで対応）</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">4. 備品・消耗品の在庫管理・発注（GASで対応）</h2>
 
                 <p>工務店の在庫管理とは、現場で使う消耗品（養生テープ・軍手・ビス類など）の残量を把握し、切れる前に発注する業務です。担当者の記憶や目視確認に頼っているケースが多く、欠品による現場作業の中断リスクが常につきまといます。</p>
                 <p>GASを使えば、スプレッドシートの在庫数が設定値を下回った時点で担当者へ自動メール通知する仕組みを構築できます。週1時間かかっていた在庫確認・発注作業を自動化でき、欠品リスクも大幅に低下します。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">5. 社内連絡・通達の一斉送信（GASで対応）</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">5. 社内連絡・通達の一斉送信（GASで対応）</h2>
 
                 <p>工務店の社内連絡とは、今週の現場情報・安全注意事項・スケジュール変更などを全スタッフへ周知する業務です。メールやLINEを毎回手動で送っている工務店では、送付作業だけで毎回30分程度かかることがあります。</p>
                 <p>GASを使えば、GmailやChatwork、LINE WORKSへの一斉送信を自動化できます。「毎週月曜に今週の現場情報を全員に送る」といった定型通達は、一度設定すれば手動操作が不要になり、毎回30分かかっていた作業が3分程度に短縮されます。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h2>
 
                 <p>BuildMateが工務店の社内管理業務にAI・GASを導入した実績をもとに、削減効果をまとめます。</p>
 
@@ -220,7 +200,7 @@
 
                 <p>社員数5名規模の工務店でこれらを組み合わせた場合、月15〜20時間の削減が現実的な目標値です。時給換算（2,000円）で月3〜4万円相当のコスト削減になります。AIツールの月額費用（約3,000円）と比較すると、10倍以上の費用対効果が見込める計算です。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIに任せない業務について</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIに任せない業務について</h2>
 
                 <p>スタッフへの個別フォロー・面談、就業規則の変更対応、社員間トラブルの調整——これらは人の判断と感情の機微が必要な業務であり、AIで代替すべきではありません。しかしAIが定型業務を肩代わりするからこそ、工務店の社長やリーダーがこうした「人にしかできない仕事」に集中できる時間が生まれます。自動化の目的は、人が人らしく働くための時間をつくることです。</p>
 
@@ -228,7 +208,7 @@
                     「どこから手をつければいいかわからない」という工務店の方がほとんどです。まずは日報の自動化だけでも試してみてください。一つ成功体験ができると、次のステップが自然と見えてきます。—— BuildMate代表・木村拓隆（元・施工管理1,200件以上）
                 </div>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
 
                 <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg">
                     <li>工務店の社内管理業務は8項目あり、そのほぼすべてがAI・GASで効率化できる</li>
@@ -238,7 +218,7 @@
                     <li>導入に必要なのは月3,000円程度のAIツールとGoogleの無料ツールだけ</li>
                 </ul>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
 
                 <div class="space-y-6">
                     <div class="bg-wa-bg p-5 rounded-lg">

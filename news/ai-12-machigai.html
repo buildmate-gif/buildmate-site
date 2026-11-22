@@ -15,12 +15,14 @@
 <script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
 <script>tailwind.config={theme:{extend:{fontFamily:{sans:[['"Noto Sans JP"','sans-serif']],serif:[['"Noto Serif JP"','serif']]},colors:{wa:{bg:'#F7F2EA',paper:'#ffffff',text:'#1F2933',gray:'#6B7280',brand:'#24324A',brandHover:'#1A2838',accent:'#24324A',accentHover:'#1A2838',border:'#D4CAB8',gold:'#B99745',purple:'#5C3B8A',cyan:'#38BDF8'}},borderRadius:{wa:'12px'}}}}</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"AIが間違えることがある、だからこそ必要な確認習慣とは","datePublished":"2026-03-24","dateModified":"2026-05-16","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走者","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経てAI活用支援を提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"AIが間違える「ハルシネーション」の仕組みと、現場での確認習慣の作り方を解説。AIを信頼しすぎないための具体的な対策と、人間が担う最終確認の重要性を説明します。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/ai-12-machigai.html"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "AIが間違えることがある、だからこそ必要な確認習慣とは", "datePublished": "2026-03-24", "dateModified": "2026-05-16", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経てAI活用支援を提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "AIが間違える「ハルシネーション」の仕組みと、現場での確認習慣の作り方を解説。AIを信頼しすぎないための具体的な対策と、人間が担う最終確認の重要性を説明します。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/ai-12-machigai.html"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "ハルシネーションを減らすためのプロンプトの書き方はありますか？", "acceptedAnswer": {"@type": "Answer", "text": "「確認できない場合は「不明」と答えてください」「事実に基づいた情報のみ教えてください」という指示を加えると、ハルシネーションが減少します。また、出力後に「この情報の根拠を教えてください」と聞くと不確かな情報が浮かび上がります。"}}, {"@type": "Question", "name": "介護記録の文章整理にAIを使う場合、どのくらい確認が必要ですか？", "acceptedAnswer": {"@type": "Answer", "text": "文章の整理・表現の改善であれば、最終的に担当者が内容を確認すれば十分です。ただし、記録の内容（薬の量・処置内容など）に誤りが含まれていないかを確認する習慣は必須です。"}}, {"@type": "Question", "name": "ChatGPTが自信満々に間違えた場合はどうすればいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "「この情報は正確ですか？」「別の情報源で確認してください」と追加質問するか、信頼できるウェブサイトや専門家に確認してください。AIが間違いを認めない場合もあるため、重要情報は必ず別途確認します。"}}]}
 </script>
-<style>.text-balance{text-wrap:balance}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<style>.text-balance{text-wrap:balance}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+</head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans">
 <header class="site-header">
     <div class="header-in">
@@ -75,22 +77,22 @@
             <p class="text-wa-text leading-relaxed m-0">ハルシネーションとは、AIが事実ではない情報を、まるで本当のことのように自信を持って出力する現象です。情報の正確さが重要な業務では、AIの出力をそのまま使わず、必ず人間が確認するプロセスが必要です。</p>
         </div>
         
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">なぜAIは間違えるのか</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">なぜAIは間違えるのか</h2>
         <p class="mb-4 leading-relaxed">ChatGPTなどの生成AIは、膨大なテキストデータから「次にくる言葉として自然な文章」を生成する仕組みです。「正確な情報を調べる」のではなく「もっともらしい文章を作る」ことが得意なため、事実確認を経ずに自信満々な文章を出力することがあります。特に「具体的な数字・日付・人名・統計データ」は間違いが多い傾向があります。AIは確認作業を自分でできません。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>数字・日付・統計データは特に間違いが多い</li><li>人物のプロフィールや発言は不正確な場合がある</li><li>「知らない」と正直に言わずもっともらしく答える傾向がある</li></ul>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">確認が必要な出力・不要な出力</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">確認が必要な出力・不要な出力</h2>
         <p class="mb-4 leading-relaxed">AIの出力全てを疑う必要はありません。確認が特に必要なのは、①具体的な数字・法律・医療情報を含む出力、②外部に送信する前のメールや文書、③意思決定に影響する情報。一方、確認の優先度が低いのは、文章の書き方・言葉の言い換え・構成の提案など、創作的な作業です。業務の重要度に応じた確認の深さを使い分けることが効率的です。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>要確認：数字・法律・医療情報を含む出力</li><li>要確認：外部送信前のメール・文書</li><li>確認優先度低：文章表現・言い換え・構成案</li></ul>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">現場で使える確認習慣の作り方</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">現場で使える確認習慣の作り方</h2>
         <p class="mb-4 leading-relaxed">確認習慣を作るための実践的な方法を紹介します。①AIの出力を使う前に「この内容は本当か？」と1秒だけ立ち止まる、②数字・固有名詞・専門用語は別途確認する、③外部送信前に必ず人間の目で読み直す。この3ステップを「AIチェック」として習慣化することで、ミスを防ぎながらAIの効率化を享受できます。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>出力を見た瞬間「本当か？」と1秒立ち止まる</li><li>数字・固有名詞・専門用語は公式サイトや一次情報で確認</li><li>外部送信前は必ず人間が読み直す</li></ul>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIを信頼しすぎないための考え方</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIを信頼しすぎないための考え方</h2>
         <p class="mb-4 leading-relaxed">AIは「優秀なアシスタント」ですが「最終判断者」ではありません。メールの下書きを作るのはAI、送信を判断するのは人間——という役割分担が安全な使い方の基本です。AIへの指示が上手になっても、出力の最終確認は人間が担う必要があります。この考え方を組織で共有しておくことで、AIへの過度な依存を防ぎ、人間の判断力を維持できます。</p>
         
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>ハルシネーションとはAIが事実でない情報を自信満々に出力する現象</li><li>数字・日付・統計・法律情報は特に確認が必要</li><li>出力前に「本当か？」と1秒立ち止まる習慣を作る</li><li>AIは下書きを作り、最終判断は人間が担う役割分担が基本</li><li>この考え方を組織全体で共有することが安全なAI活用の土台になる</li></ul>
         <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">「AIを疑うことは、AIを否定することではありません。道具の特性を理解した上で使うことが、本当の信頼関係です。」<span class="block not-italic text-sm mt-3 text-right">BuildMate代表・木村拓隆</span></div>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
         <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. ハルシネーションを減らすためのプロンプトの書き方はありますか？</p><p class="text-wa-text text-base m-0">「確認できない場合は「不明」と答えてください」「事実に基づいた情報のみ教えてください」という指示を加えると、ハルシネーションが減少します。また、出力後に「この情報の根拠を教えてください」と聞くと不確かな情報が浮かび上がります。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 介護記録の文章整理にAIを使う場合、どのくらい確認が必要ですか？</p><p class="text-wa-text text-base m-0">文章の整理・表現の改善であれば、最終的に担当者が内容を確認すれば十分です。ただし、記録の内容（薬の量・処置内容など）に誤りが含まれていないかを確認する習慣は必須です。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. ChatGPTが自信満々に間違えた場合はどうすればいいですか？</p><p class="text-wa-text text-base m-0">「この情報は正確ですか？」「別の情報源で確認してください」と追加質問するか、信頼できるウェブサイトや専門家に確認してください。AIが間違いを認めない場合もあるため、重要情報は必ず別途確認します。</p></div></div>
         <div class="mt-10 pt-8 border-t border-wa-border">
             <p class="font-bold text-wa-brand mb-4 flex items-center gap-2"><i data-lucide="book-open" class="w-4 h-4"></i>関連記事はこちら▼</p>

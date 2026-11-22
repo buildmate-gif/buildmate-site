@@ -26,9 +26,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"工務店の入金確認・管理台帳をGASで自動更新する方法｜未入金アラートで入金遅延を防ぐ","datePublished":"2026-03-30","dateModified":"2026-03-30","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"工務店の入金確認・管理台帳をGASで自動更新する方法を解説。月4時間かかっていた入金管理をほぼ自動化した手順を紹介。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/044-nyukin-gas.html"}}</script>
+    <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "工務店の入金確認・管理台帳をGASで自動更新する方法｜未入金アラートで入金遅延を防ぐ", "datePublished": "2026-03-30", "dateModified": "2026-03-30", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "工務店の入金確認・管理台帳をGASで自動更新する方法を解説。月4時間かかっていた入金管理をほぼ自動化した手順を紹介。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/040-nyukin-gas.html"}}
+</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"工務店の入金確認をGASで自動化するにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"GASを使って銀行明細データをGoogleスプレッドシートに取り込み、請求台帳と自動照合する仕組みを構築できます。BuildMateの支援実績では、月4時間かかっていた入金確認作業がほぼゼロになっています。"}},{"@type":"Question","name":"工務店の未入金アラートをGASで設定するにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"GASで支払期日を監視し、期日を過ぎても入金が確認できない案件を自動検知して担当者へメール通知する仕組みを構築できます。入金遅延への対応が遅れるリスクを大幅に下げられます。"}},{"@type":"Question","name":"工務店の入金管理台帳をGASで自動更新することはできますか？","acceptedAnswer":{"@type":"Answer","text":"できます。GASで銀行明細と台帳を定期的に自動照合し、入金済みのステータスを自動更新できます。BuildMateの支援実績では、月末の集計作業が手動ゼロになった工務店があります。"}}]}</script>
-<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+</head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans antialiased">
         <header class="site-header">
     <div class="header-in">
@@ -78,14 +82,14 @@
                 <h1 class="break-keep text-balance text-2xl md:text-4xl font-serif font-bold text-wa-text leading-tight mb-4">工務店の入金確認・<wbr>管理台帳を<wbr><br>GASで<wbr>自動更新する方法</h1>
             </div>
             <div class="mb-10">
-                <img src="../images/keiri_sum.png" alt="工務店の入金確認・管理台帳をGASで自動更新する方法のイメージ" class="w-full rounded-wa object-cover" onerror="this.style.display='none'">
+                <img src="../images/keiri_sum.webp" alt="工務店の入金確認・管理台帳をGASで自動更新する方法のイメージ" class="w-full rounded-wa object-cover" onerror="this.style.display='none'">
             </div>
             <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
                 <p class="font-bold text-xl mb-6 text-wa-brand">月末の入金照合、何時間かかっていますか？</p>
                 <p>請求書を出したはいいが、どの案件の入金が済んでいるか、まだ台帳を手で確認している工務店は多いです。銀行の入出金明細を印刷して、請求台帳と1行ずつ照らし合わせる——この作業だけで月末に4時間以上かかっているケースも珍しくありません。しかも確認が遅れると、入金遅延に気づくのが数週間後になることもあります。</p>
                 <p>この記事では、工務店の入金確認・管理台帳更新業務を、Google Apps Script（GAS）を使って自動化する具体的な方法を解説します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の入金確認・管理台帳更新業務とは</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の入金確認・管理台帳更新業務とは</h2>
                 <p>工務店の入金確認業務とは、発行した請求書に対して正しい金額が期日通りに入金されているかを確認し、管理台帳に反映させる業務を指します。入金が確認できなければ次の支払い処理ができず、キャッシュフロー管理にも影響します。</p>
                 <p>具体的には次のような作業が含まれます。</p>
                 <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg">
@@ -97,19 +101,19 @@
                 </ul>
                 <p>BuildMateの支援実績では、GASで自動化した工務店（月20〜30件の請求がある規模）で、月4時間かかっていた入金管理業務がほぼ自動化されました。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 1: 銀行明細データをスプレッドシートへ取り込む</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 1: 銀行明細データをスプレッドシートへ取り込む</h2>
                 <p>入金管理自動化の第一歩は、銀行明細データをGoogleスプレッドシートに取り込む仕組みを作ることです。多くの銀行ではCSV形式で明細をダウンロードできるため、GASでそのデータを自動読み込みして専用シートへ展開できます。</p>
                 <p>Googleドライブに銀行明細のCSVを置くだけで、GASが自動的に読み込んでスプレッドシートの所定のシートへ転記する仕組みを構築できます。手動でコピー&ペーストする作業がなくなります。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 2: 請求台帳と銀行明細を自動照合する</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 2: 請求台帳と銀行明細を自動照合する</h2>
                 <p>工務店の入金照合とは、請求書の金額・顧客名・振込日が銀行明細と一致しているかを確認する作業です。件数が多いと手作業での照合に時間がかかり、誤照合も起きやすくなります。</p>
                 <p>GASを使えば、請求台帳の「請求金額」「顧客名」と銀行明細の「入金額」「振込人名」を自動で突き合わせ、一致した場合は台帳の入金ステータスを「入金済み」に自動更新できます。金額が合わない場合や振込人名が一致しない場合は「要確認」フラグを立てて担当者へ通知します。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 3: 未入金アラートを自動送信する</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 3: 未入金アラートを自動送信する</h2>
                 <p>工務店の未入金管理とは、支払期日を過ぎても入金が確認できない案件を早期に発見し、速やかにお客様へ確認連絡を行う業務です。発見が遅れるほど回収が難しくなります。</p>
                 <p>GASで支払期日を毎日自動チェックし、期日を過ぎても未入金の案件を検知したら担当者へメール通知する仕組みを構築できます。「支払期日から3日経過・未入金」といった条件を細かく設定することも可能です。入金遅延への対応が格段に早くなります。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h2>
                 <p>BuildMateが工務店の入金確認・管理台帳業務にGASを導入した実績をもとに、削減効果をまとめます。</p>
                 <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg">
                     <li>月次の入金照合作業：月4時間 → ほぼ自動化</li>
@@ -119,7 +123,7 @@
                 </ul>
                 <p>月20〜30件の請求がある工務店では、月4〜5時間の削減が現実的な目標値です。時給換算（2,000円）で月1〜1.5万円相当のコスト削減に加え、未入金の早期発見による売上回収の改善効果が大きく、導入メリットが高い業務です。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASでできないことについて</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASでできないことについて</h2>
                 <p>入金されていないお客様への実際の督促連絡や、支払い条件の変更交渉は人間が行う必要があります。また、振込人名が正式名称と異なるケース（屋号・略称など）の照合判断は、最終的に人が確認する必要があります。</p>
                 <p>しかしGASが日々の照合・更新・アラートを自動化することで、工務店の経営者や事務担当者が「判断が必要な確認・交渉」だけに集中できる環境が整います。</p>
 
@@ -127,7 +131,7 @@
                     入金管理を月末にまとめてやると、問題に気づくのが常に遅れます。GASで毎日自動チェックする仕組みを作れば、翌日には未入金に気づけます。まず未入金アラートだけでも導入してみてください。—— BuildMate代表・木村拓隆（元・施工管理1,200件以上）
                 </div>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
                 <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg">
                     <li>工務店の入金確認・台帳更新はGASの自動照合で月4時間→ほぼ自動化できる</li>
                     <li>銀行明細CSVを取り込み、請求台帳と自動照合して入金ステータスを自動更新できる</li>
@@ -136,7 +140,7 @@
                     <li>導入に必要なのはGoogleスプレッドシート（無料）のみ</li>
                 </ul>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
                 <div class="space-y-6">
                     <div class="bg-wa-bg p-5 rounded-lg">
                         <p class="font-bold text-wa-brand mb-2">Q. 工務店の入金確認をGASで自動化するにはどうすればいいですか？</p>

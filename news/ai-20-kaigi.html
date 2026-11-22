@@ -15,12 +15,14 @@
 <script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
 <script>tailwind.config={theme:{extend:{fontFamily:{sans:[['"Noto Sans JP"','sans-serif']],serif:[['"Noto Serif JP"','serif']]},colors:{wa:{bg:'#F7F2EA',paper:'#ffffff',text:'#1F2933',gray:'#6B7280',brand:'#24324A',brandHover:'#1A2838',accent:'#24324A',accentHover:'#1A2838',border:'#D4CAB8',gold:'#B99745',purple:'#5C3B8A',cyan:'#38BDF8'}},borderRadius:{wa:'12px'}}}}</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"会議の事前準備・アジェンダ作成をAIにやってもらう方法","datePublished":"2026-05-08","dateModified":"2026-05-16","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走者","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経てAI活用支援を提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"会議の事前準備やアジェンダ作成をAIで効率化する方法を解説。アジェンダのプロンプト例・事前資料の整理・会議後のまとめまで、会議全体のAI活用法を紹介します。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/ai-20-kaigi.html"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "会議の事前準備・アジェンダ作成をAIにやってもらう方法", "datePublished": "2026-05-08", "dateModified": "2026-05-16", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経てAI活用支援を提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "会議の事前準備やアジェンダ作成をAIで効率化する方法を解説。アジェンダのプロンプト例・事前資料の整理・会議後のまとめまで、会議全体のAI活用法を紹介します。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/ai-20-kaigi.html"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "アジェンダのフォーマットを毎回統一したい場合はどうすればいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "プロンプトに「以下のフォーマットでアジェンダを作成してください：【目的】【議題と時間配分】【事前確認事項】」と指定してください。フォーマットを固定することで毎回一貫したアジェンダになります。"}}, {"@type": "Question", "name": "会議の録音データをAIで処理することはできますか？", "acceptedAnswer": {"@type": "Answer", "text": "録音をWhisperなどの音声認識AIでテキスト化し、そのテキストをChatGPTに貼り付けて議事録化することが可能です。iPhoneのボイスメモでも音声テキスト変換が使えます。"}}, {"@type": "Question", "name": "オンライン会議（Zoom・Teams）の議事録もAIで作れますか？", "acceptedAnswer": {"@type": "Answer", "text": "Zoomの AI Companion の会議要約機能や、Microsoft Teams の Copilot や Recap 機能を使うと、会議内容の要約やアクション項目の整理を補助できます。自動生成された内容は、そのまま議事録として使う前に確認する前提が安全です。"}}]}
 </script>
-<style>.text-balance{text-wrap:balance}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<style>.text-balance{text-wrap:balance}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+</head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans">
 <header class="site-header">
     <div class="header-in">
@@ -75,7 +77,7 @@
             <p class="text-wa-text leading-relaxed m-0">会議準備のAI活用とは、アジェンダの作成・事前資料の要約・会議後のまとめなど、会議に関わる文書作業をAIに担ってもらう活用方法です。会議の「準備・実施・後処理」の全段階でAIが役立ちます。</p>
         </div>
         
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">アジェンダ作成のプロンプト</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">アジェンダ作成のプロンプト</h2>
         <p class="mb-4 leading-relaxed">アジェンダを作るプロンプトのポイントは「会議の目的・議題・参加者・所要時間」を伝えることです。これだけで時間配分付きのアジェンダが完成します。毎月の定例会・プロジェクト会議・スタッフミーティングなど、繰り返し開催される会議のアジェンダはテンプレート化することで、さらに時間を短縮できます。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>プロンプト例：「以下の条件で会議アジェンダを作成してください。
 目的：〇〇について方針を決定する
@@ -83,19 +85,19 @@
 参加者：〇名（役職：〇〇）
 所要時間：60分
 時間配分も含めてください。」</li></ul>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">事前資料の整理・要約</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">事前資料の整理・要約</h2>
         <p class="mb-4 leading-relaxed">会議前に配布する資料が長い場合、参加者が読んでこないという問題がよく起きます。AIを使って「長い資料の要点を1ページにまとめる」ことで、会議の質が上がります。プロンプトに「この資料の要点を5つの箇条書きで、会議参加者が事前に読めるよう1分で読める量にまとめてください」と指示すると、コンパクトな事前共有資料が完成します。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>長い資料→「要点5つを箇条書きで1分で読める量に」</li><li>数字データ→「表形式でまとめてください」</li><li>複数の資料→「共通のポイントをまとめてください」</li></ul>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">会議後のまとめと共有</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">会議後のまとめと共有</h2>
         <p class="mb-4 leading-relaxed">会議後の「何が決まったか・誰が何をするか」をまとめる作業もAIに任せられます。会議中のメモをそのままAIに渡し、「決定事項・アクションアイテム・次回議題」の形式でまとめてもらうことで、会議後5分で全員への共有が完了します。この「会議後共有の速さ」が、次の行動開始を早める効果があります。</p>
         
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">会議全体のAI活用フロー</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">会議全体のAI活用フロー</h2>
         <p class="mb-4 leading-relaxed">会議にAIを取り入れる理想的なフローを紹介します。①会議前：アジェンダ作成・事前資料の要約（10分→2分）、②会議中：メモは箇条書きで取る（AIで整理するため）、③会議後：メモを貼り付けて議事録・アクションリスト・共有メールを生成（30分→5分）。このフロー全体で、1回の会議にかかる付帯作業が70%以上削減できます。</p>
         
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>アジェンダは「目的・議題・参加者・時間」を入力するだけで時間配分付きで完成</li><li>長い資料は事前に「1分で読める要点5つ」に要約して配布する</li><li>会議後のメモをAIに渡すと議事録・アクションリスト・共有メールが同時に完成</li><li>会議前・中・後の全段階でAI活用することで付帯作業を70%削減できる</li><li>繰り返す会議はプロンプトをテンプレート化してさらに効率化する</li></ul>
         <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">「会議の価値は「話し合い」にあります。準備・記録・共有をAIに任せることで、人間は「考えること」に集中できます。」<span class="block not-italic text-sm mt-3 text-right">BuildMate代表・木村拓隆</span></div>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
         <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. アジェンダのフォーマットを毎回統一したい場合はどうすればいいですか？</p><p class="text-wa-text text-base m-0">プロンプトに「以下のフォーマットでアジェンダを作成してください：【目的】【議題と時間配分】【事前確認事項】」と指定してください。フォーマットを固定することで毎回一貫したアジェンダになります。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 会議の録音データをAIで処理することはできますか？</p><p class="text-wa-text text-base m-0">録音をWhisperなどの音声認識AIでテキスト化し、そのテキストをChatGPTに貼り付けて議事録化することが可能です。iPhoneのボイスメモでも音声テキスト変換が使えます。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. オンライン会議（Zoom・Teams）の議事録もAIで作れますか？</p><p class="text-wa-text text-base m-0">Zoomの AI Companion の会議要約機能や、Microsoft Teams の Copilot や Recap 機能を使うと、会議内容の要約やアクション項目の整理を補助できます。自動生成された内容は、そのまま議事録として使う前に確認する前提が安全です。</p></div></div>
         <div class="mt-10 pt-8 border-t border-wa-border">
             <p class="font-bold text-wa-brand mb-4 flex items-center gap-2"><i data-lucide="book-open" class="w-4 h-4"></i>関連記事はこちら▼</p>

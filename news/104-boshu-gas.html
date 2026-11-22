@@ -27,12 +27,14 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Article","headline":"工務店の応募者の選考・面接調整をGASで自動化する方法｜毎回1時間→15分に短縮","datePublished":"2026-10-23","dateModified":"2026-10-23","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"工務店の応募者の選考・面接調整にGASを活用する方法を解説。GASで応募フォームから自動確認メール・日程調整を自動化。毎回1時間かかっていた対応業務を15分に短縮した手順をBuildMate代表が解説します。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/104-boshu-gas.html"}}
-    </script>
+{"@context": "https://schema.org", "@type": "Article", "headline": "工務店の応募者の選考・面接調整をGASで自動化する方法｜毎回1時間→15分に短縮", "datePublished": "2026-10-23", "dateModified": "2026-10-23", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "工務店の応募者の選考・面接調整にGASを活用する方法を解説。GASで応募フォームから自動確認メール・日程調整を自動化。毎回1時間かかっていた対応業務を15分に短縮した手順をBuildMate代表が解説します。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/104-boshu-gas.html"}}
+</script>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"工務店の採用応募の確認メールはGASで自動送信できますか？","acceptedAnswer":{"@type":"Answer","text":"BuildMateの支援実績では、GASでGoogleフォームへの応募と同時に確認メールを自動送信する仕組みを構築し応募対応時間を毎回1時間から15分に短縮した工務店があります。"}},{"@type":"Question","name":"工務店の面接日程調整をGASで自動化できますか？","acceptedAnswer":{"@type":"Answer","text":"BuildMateの支援実績では、GASで面接候補日のメール自動送信とGoogleカレンダーへの自動登録を実現し日程調整のメール往復をなくした工務店があります。"}},{"@type":"Question","name":"工務店の応募者管理をGASで効率化できますか？","acceptedAnswer":{"@type":"Answer","text":"BuildMateの支援実績では、GASでGoogleフォームの応募データをスプレッドシートに自動蓄積する仕組みを構築し応募者情報を一元管理できる体制を整えた工務店があります。"}}]}
     </script>
-<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+</head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans">
     <header class="site-header">
     <div class="header-in">
@@ -82,31 +84,31 @@
         <span class="flex items-center gap-1"><i data-lucide="user" class="w-4 h-4"></i>木村 拓隆</span>
     </div>
     <div class="mb-10 rounded-wa overflow-hidden">
-        <img src="../images/gas_sum.png" alt="工務店の応募者の選考・面接調整をAI・GASで自動化する方法" class="w-full object-cover">
+        <img src="../images/gas_sum.webp" alt="工務店の応募者の選考・面接調整をAI・GASで自動化する方法" class="w-full object-cover">
     </div>
     <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
         <p class="font-bold text-xl mb-6 text-wa-brand">応募が来るたびにメール対応と面接調整に1時間以上かかっていませんか？</p>
         <p class="mb-4 text-wa-text leading-relaxed">工務店の採用担当者は応募者への対応を現場業務と並行して行う必要があります。「応募確認メールを送るのを忘れた」「面接日程の調整メールが何往復もかかる」「応募者の情報管理が散らかっている」という問題が多くあります。</p>
         <p class="mb-8 text-wa-text leading-relaxed">この記事では、Google Apps Script（GAS）を使って応募フォームからの自動確認メール送信と面接日程調整を自動化する方法をご紹介します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の応募者の選考・面接調整とは</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の応募者の選考・面接調整とは</h2>
         <p class="mb-4">工務店の応募者の選考・面接調整とは、求人への応募受付から選考・面接日程の確定・採用可否の通知まで一連の採用プロセスを管理する業務です。応募者の第一印象を決める重要なコミュニケーション業務です。</p>
         <p class="mb-3">具体的には次のような作業が含まれます。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>応募受付・応募者情報の管理</li><li>応募確認メールの送付</li><li>書類選考・一次スクリーニング</li><li>面接日程の調整・確定</li><li>採用可否通知の送付</li></ul>
         <p class="mb-8">BuildMateの支援実績では、GASで応募対応を自動化することで毎回1時間かかっていた作業を15分程度に短縮した工務店があります。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">仕組みの全体像</h4><p class="mb-4">GASによる応募対応自動化とは、Googleフォームへの応募が入るとGASが即座に確認メールを自動送信し応募者情報をスプレッドシートに自動記録する仕組みです。</p><p class="mb-6">求人サイトやHP上のGoogleフォームに応募が入るとGASが自動で「応募ありがとうございます」という確認メールを送信します。応募者の情報（氏名・連絡先・希望職種・経歴概要）がスプレッドシートに自動蓄積されます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">活用のポイント（面接日程調整の自動化）</h4><p class="mb-4">GASによる日程調整自動化とは、面接候補日をスプレッドシートで管理しGASが応募者への日程選択メールを自動送信する仕組みです。</p><p class="mb-6">書類通過者に対してGASが「以下の日程からご都合の良い日時をお選びください」というメールを自動送信します。応募者の回答を受けてGASがGoogleカレンダーに面接予定を自動登録します。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">仕組みの全体像</h2><p class="mb-4">GASによる応募対応自動化とは、Googleフォームへの応募が入るとGASが即座に確認メールを自動送信し応募者情報をスプレッドシートに自動記録する仕組みです。</p><p class="mb-6">求人サイトやHP上のGoogleフォームに応募が入るとGASが自動で「応募ありがとうございます」という確認メールを送信します。応募者の情報（氏名・連絡先・希望職種・経歴概要）がスプレッドシートに自動蓄積されます。</p><h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">活用のポイント（面接日程調整の自動化）</h2><p class="mb-4">GASによる日程調整自動化とは、面接候補日をスプレッドシートで管理しGASが応募者への日程選択メールを自動送信する仕組みです。</p><p class="mb-6">書類通過者に対してGASが「以下の日程からご都合の良い日時をお選びください」というメールを自動送信します。応募者の回答を受けてGASがGoogleカレンダーに面接予定を自動登録します。</p>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h2>
         <p class="mb-4">BuildMateが工務店の応募者の選考・面接調整にGASを導入した実績をもとに、削減効果をまとめます。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>確認メール送付：毎回15分 → 自動（即時）</li><li>面接日程調整：毎回45分 → 自動</li><li>応募者管理：散在 → スプレッドシートで一元化</li></ul>
         <p class="mb-8">GASで応募対応を自動化することで毎回1時間の作業が15分に短縮されます。迅速な初期対応が応募者の工務店への印象を高め採用成功率の向上につながります。</p>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASでできないことについて</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">GASでできないことについて</h2>
         <p class="mb-4">GASによる自動化は定型的な初期対応を自動化するものです。書類選考の合否判断・面接での評価は人の判断が必要です。</p>
         <p class="mb-8">しかし定型的な対応を自動化することで担当者は選考の本質的な業務に集中できます。応募者への迅速な対応が工務店の採用競争力を高めます。</p>
         <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">
             応募から連絡まで時間がかかる工務店は候補者を逃します。GASで即時対応を自動化して「対応が早い会社」というイメージを応募者に与えてください。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）
         </div>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>工務店の応募対応はGASで毎回1時間→15分に短縮できる</li><li>Googleフォームへの応募と同時にGASが確認メールを自動送信する</li><li>面接日程調整メールの自動送信とカレンダー登録も自動化できる</li><li>応募者情報がスプレッドシートで一元管理され選考がスムーズになる</li><li>GASはGoogleの無料ツールで追加費用なしで実装できる</li></ul>
-        <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
         <div class="space-y-6">
             <div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の採用応募の確認メールはGASで自動送信できますか？</p><p class="text-wa-text text-base m-0">BuildMateの支援実績では、GASでGoogleフォームへの応募と同時に確認メールを自動送信する仕組みを構築し応募対応時間を毎回1時間から15分に短縮した工務店があります。</p></div>
             <div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 工務店の面接日程調整をGASで自動化できますか？</p><p class="text-wa-text text-base m-0">BuildMateの支援実績では、GASで面接候補日のメール自動送信とGoogleカレンダーへの自動登録を実現し日程調整のメール往復をなくした工務店があります。</p></div>

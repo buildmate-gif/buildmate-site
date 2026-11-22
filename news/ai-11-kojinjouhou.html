@@ -15,12 +15,14 @@
 <script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
 <script>tailwind.config={theme:{extend:{fontFamily:{sans:[['"Noto Sans JP"','sans-serif']],serif:[['"Noto Serif JP"','serif']]},colors:{wa:{bg:'#F7F2EA',paper:'#ffffff',text:'#1F2933',gray:'#6B7280',brand:'#24324A',brandHover:'#1A2838',accent:'#24324A',accentHover:'#1A2838',border:'#D4CAB8',gold:'#B99745',purple:'#5C3B8A',cyan:'#38BDF8'}},borderRadius:{wa:'12px'}}}}</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"個人情報をAIに入力しても大丈夫？現場で使うための安全ルール","datePublished":"2026-03-17","dateModified":"2026-05-16","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走者","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経てAI活用支援を提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"個人情報をAIに入力しても大丈夫か不安な方へ。ChatGPTのデータ扱いの実態と、現場で安全にAIを使うための3つのルールをわかりやすく解説します。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/ai-11-kojinjouhou.html"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "個人情報をAIに入力しても大丈夫？現場で使うための安全ルール", "datePublished": "2026-03-17", "dateModified": "2026-05-16", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経てAI活用支援を提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "個人情報をAIに入力しても大丈夫か不安な方へ。ChatGPTのデータ扱いの実態と、現場で安全にAIを使うための3つのルールをわかりやすく解説します。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/ai-11-kojinjouhou.html"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "患者さんや利用者さんの記録を整理するのにAIを使っても大丈夫ですか？", "acceptedAnswer": {"@type": "Answer", "text": "氏名・住所・生年月日などの個人を特定できる情報を除外（仮名化）した上で使用すれば問題ありません。「70代女性の患者さんのケア記録をまとめてください」という形で匿名化して入力します。"}}, {"@type": "Question", "name": "スマートフォンのChatGPTアプリは安全ですか？", "acceptedAnswer": {"@type": "Answer", "text": "アプリ版でも Data Controls の設定は確認できます。ただし、業務利用では端末管理や組織のセキュリティポリシーも重要です。スマートフォン利用を認めるかどうかは、組織のルールに従ってください。"}}, {"@type": "Question", "name": "「AI利用ガイドライン」はどう作ればいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "A4一枚で十分です。「使っていいこと・使ってはいけないこと・使い方の手順・報告ルール」の4項目をシンプルにまとめます。BuildMateでは無料相談でガイドラインのひな形作成サポートも行っています。"}}]}
 </script>
-<style>.text-balance{text-wrap:balance}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<style>.text-balance{text-wrap:balance}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+</head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans">
 <header class="site-header">
     <div class="header-in">
@@ -75,22 +77,22 @@
             <p class="text-wa-text leading-relaxed m-0">個人情報とAI活用の安全ルールとは、「誰が・どの情報を・どのように入力するか」を組織として明確に決めることです。ツールの安全性だけでなく、使い方のルール設計が「安全なAI活用」の本質です。</p>
         </div>
         
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">ChatGPTに入力した情報はどうなるか</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">ChatGPTに入力した情報はどうなるか</h2>
         <p class="mb-4 leading-relaxed">ChatGPTに入力した文章は、個人向けプランでは設定によってモデル改善に使われる場合があります。ただし、Settings の Data Controls で「Improve the model for everyone」をオフにすると、新しい会話は学習に使われません。ChatGPT Business や API では、契約条件に応じて学習利用の扱いが分かれるため、業務利用では契約内容と設定の両方を確認することが大切です。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>無料版・Plus：Data Controls で学習利用をオフにできる</li><li>Business・API：契約条件と設定を確認する</li><li>Settings → Data Controls → Improve the model for everyone をオフにする</li></ul>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">絶対に入力してはいけない情報</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">絶対に入力してはいけない情報</h2>
         <p class="mb-4 leading-relaxed">氏名・住所・電話番号・生年月日などの個人を特定できる情報、医療記録・診断情報・処方内容などの要配慮個人情報、金融情報・口座番号・マイナンバーなどの機密情報——これらは絶対にAIに入力してはいけません。これはChatGPTに限らず、全てのAIツールに共通するルールです。代わりに「患者Aさん（70代女性）」「利用者の方（仮名：田中さん）」のように匿名化・仮名化して入力することで、個人情報を使わずにAIを活用できます。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>氏名・住所・電話番号・生年月日</li><li>医療記録・診断名・処方内容</li><li>口座番号・マイナンバー・保険証番号</li><li>これらは匿名化・仮名化して使用する</li></ul>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">現場で使える3つの安全ルール</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">現場で使える3つの安全ルール</h2>
         <p class="mb-4 leading-relaxed">安全なAI活用のために組織で決めるべきルールは3つです。①個人を特定できる情報は入力しない（仮名・匿名で代替）、②業務でAIを使う際は上長に報告する、③出力内容を必ず確認してから使用する（ファクトチェック）。このルールを「AI利用ガイドライン1枚」にまとめて全スタッフに共有するだけで、組織全体の安全性が大幅に向上します。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>個人情報は入力せず、仮名・匿名で代替する</li><li>業務での使用は上長に報告する</li><li>出力内容は必ず確認してから使用する</li></ul>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">安全に使える業務の具体例</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">安全に使える業務の具体例</h2>
         <p class="mb-4 leading-relaxed">個人情報を使わずにAIを活用できる業務は多くあります。ケア記録の文章整理（仮名使用）、スタッフへの連絡文の作成、研修資料の下書き、メールや手紙の文章改善、業務マニュアルの作成——これらは個人情報を含まないため、安全に使えます。「個人情報を使わずに使える業務」から始めることで、安心してAI活用をスタートできます。</p>
         
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>個人向けプランは Data Controls で学習利用をオフにできる</li><li>氏名・住所・医療情報などは絶対に入力しない</li><li>仮名・匿名化することで安全に業務へ活用できる</li><li>「個人情報なし・上長報告・出力確認」の3ルールを組織で決める</li><li>連絡文・記録整理・マニュアル作成は個人情報なしで活用できる</li></ul>
         <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">「安全なAI活用は「使わないこと」ではありません。正しいルールを決めて使うことが、現場を守りながら業務を改善する唯一の方法です。」<span class="block not-italic text-sm mt-3 text-right">BuildMate代表・木村拓隆</span></div>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
         <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 患者さんや利用者さんの記録を整理するのにAIを使っても大丈夫ですか？</p><p class="text-wa-text text-base m-0">氏名・住所・生年月日などの個人を特定できる情報を除外（仮名化）した上で使用すれば問題ありません。「70代女性の患者さんのケア記録をまとめてください」という形で匿名化して入力します。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. スマートフォンのChatGPTアプリは安全ですか？</p><p class="text-wa-text text-base m-0">アプリ版でも Data Controls の設定は確認できます。ただし、業務利用では端末管理や組織のセキュリティポリシーも重要です。スマートフォン利用を認めるかどうかは、組織のルールに従ってください。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 「AI利用ガイドライン」はどう作ればいいですか？</p><p class="text-wa-text text-base m-0">A4一枚で十分です。「使っていいこと・使ってはいけないこと・使い方の手順・報告ルール」の4項目をシンプルにまとめます。BuildMateでは無料相談でガイドラインのひな形作成サポートも行っています。</p></div></div>
         <div class="mt-10 pt-8 border-t border-wa-border">
             <p class="font-bold text-wa-brand mb-4 flex items-center gap-2"><i data-lucide="book-open" class="w-4 h-4"></i>関連記事はこちら▼</p>

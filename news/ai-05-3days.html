@@ -15,12 +15,14 @@
 <script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
 <script>tailwind.config={theme:{extend:{fontFamily:{sans:[['"Noto Sans JP"','sans-serif']],serif:[['"Noto Serif JP"','serif']]},colors:{wa:{bg:'#F7F2EA',paper:'#ffffff',text:'#1F2933',gray:'#6B7280',brand:'#24324A',brandHover:'#1A2838',accent:'#24324A',accentHover:'#1A2838',border:'#D4CAB8',gold:'#B99745',purple:'#5C3B8A',cyan:'#38BDF8'}},borderRadius:{wa:'12px'}}}}</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"ChatGPTを無料で始める、最初の3日間でやること","datePublished":"2026-02-03","dateModified":"2026-05-16","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走者","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経てAI活用支援を提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"ChatGPTを無料で始める手順と、最初の3日間でやるべき具体的な課題を紹介。アカウント作成から最初の実務利用まで、初めての方でもつまずかない手順を解説します。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/ai-05-3days.html"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "ChatGPTを無料で始める、最初の3日間でやること", "datePublished": "2026-02-03", "dateModified": "2026-05-16", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経てAI活用支援を提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "ChatGPTを無料で始める手順と、最初の3日間でやるべき具体的な課題を紹介。アカウント作成から最初の実務利用まで、初めての方でもつまずかない手順を解説します。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/ai-05-3days.html"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "スマートフォンのアプリでも同じことができますか？", "acceptedAnswer": {"@type": "Answer", "text": "はい。ChatGPTのスマートフォンアプリ（iOS・Android対応）からも同じ機能が使えます。移動中や休憩中にも練習できるため、アプリのインストールも合わせておすすめします。"}}, {"@type": "Question", "name": "無料版と有料版（Plus）の違いは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "無料版でも一定回数まで高性能モデルや主要ツールを試せます。Plusは月額20ドルで、より高い利用上限や画像生成、ファイル分析などを使いやすくなります。最初は無料版から始めて問題ありません。"}}, {"@type": "Question", "name": "3日間で「使えない」と感じた場合はどうすればいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "プロンプトの書き方が原因の場合がほとんどです。「役割・背景・指示・条件」の4要素を含む指示に変えてみてください。それでも改善しない場合は、BuildMateの無料相談でプロンプト改善のサポートを受けてください。"}}]}
 </script>
-<style>.text-balance{text-wrap:balance}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<style>.text-balance{text-wrap:balance}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+</head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans">
 <header class="site-header">
     <div class="header-in">
@@ -75,22 +77,22 @@
             <p class="text-wa-text leading-relaxed m-0">ChatGPT無料版とは、OpenAIが提供する無料プランです。現在は無料枠でも一定回数まで高性能モデルや各種ツールを使え、文章作成・整理・アイデア出しなど多くの業務活用が可能です。クレジットカード不要で始められます。</p>
         </div>
         
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">1日目：アカウント作成と最初の会話</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">1日目：アカウント作成と最初の会話</h2>
         <p class="mb-4 leading-relaxed">まず chat.openai.com にアクセスし、メールアドレスでアカウントを作成します。Googleアカウントがあれば「Googleでログイン」を選ぶと30秒で完了します。ログイン後、テキスト入力欄に「こんにちは。私は介護施設で働いています。家族向けの月次報告文を書くのを手伝ってください」と入力してみてください。AIからの返答を見て「こういうものか」と感触をつかむことが1日目の目標です。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>chat.openai.comにアクセス</li><li>Googleアカウントまたはメールでアカウント作成</li><li>最初の会話：自分の業種と相談内容を入力する</li><li>返答を読んで「AIとはこういうものか」と理解する</li></ul>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">2日目：実際の業務で試してみる</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">2日目：実際の業務で試してみる</h2>
         <p class="mb-4 leading-relaxed">2日目は「実際の業務で使う」体験をします。昨日の業務の中で「文章を書くのに時間がかかった場面」を1つ思い出してください。そのシチュエーションをChatGPTに説明して、文章の下書きを作ってもらいます。「うまくいかなかった」と感じても問題ありません。「もっと短く」「もう少し丁寧に」「箇条書きで」など追加指示を出して出力が変わることを体験するのが目標です。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>昨日の業務で時間がかかった文章作業を1つ選ぶ</li><li>シチュエーションをAIに説明して下書きを作ってもらう</li><li>「短く」「丁寧に」などの追加指示で出力を改善する</li><li>最終的に使えるクオリティかどうか確認する</li></ul>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">3日目：自分専用の使い方を決める</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">3日目：自分専用の使い方を決める</h2>
         <p class="mb-4 leading-relaxed">3日目は「この業務でAIを定期的に使う」という決意と仕組みを作ります。2日間で試した業務の中で「これは使える」と感じたものを1つ選び、毎週使うことを決めます。使いやすかったプロンプトはメモアプリに保存しておくと、次回から素早く使えます。最後に「ChatGPTに毎週の連絡文を任せる」という宣言を1名でもスタッフに伝えると、習慣化の確率が上がります。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>「使える」と感じた業務を1つ選んで定期利用を決める</li><li>使ったプロンプトをメモアプリに保存する</li><li>「毎週○○にAIを使う」という宣言を誰かに伝える</li></ul>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">3日間の後にやること</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">3日間の後にやること</h2>
         <p class="mb-4 leading-relaxed">3日間が終わったら、1週間後に「AIを使った業務が楽になったか」を振り返ってください。楽になったと感じたら、次の業務にAIを広げるサインです。まだうまくいかないと感じたら、プロンプトの書き方（記事19参照）を学ぶタイミングです。BuildMateの無料相談では、この振り返りをサポートし、次のステップを一緒に考えます。</p>
         
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>1日目：アカウント作成と最初の会話で「AIとはこういうものか」を掴む</li><li>2日目：実際の業務で試して追加指示で出力を改善する体験をする</li><li>3日目：「この業務に毎週使う」を決めてプロンプトをメモに保存する</li><li>3日後：使えたか振り返り、次の業務展開か、プロンプト改善かを判断</li><li>誰かに宣言することで習慣化の確率が大きく上がる</li></ul>
         <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">「3日間で「使えるかどうか」は分かります。3ヶ月後に「手放せなくなる」かどうかは、最初の3日間の質で決まります。」<span class="block not-italic text-sm mt-3 text-right">BuildMate代表・木村拓隆</span></div>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
         <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. スマートフォンのアプリでも同じことができますか？</p><p class="text-wa-text text-base m-0">はい。ChatGPTのスマートフォンアプリ（iOS・Android対応）からも同じ機能が使えます。移動中や休憩中にも練習できるため、アプリのインストールも合わせておすすめします。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 無料版と有料版（Plus）の違いは何ですか？</p><p class="text-wa-text text-base m-0">無料版でも一定回数まで高性能モデルや主要ツールを試せます。Plusは月額20ドルで、より高い利用上限や画像生成、ファイル分析などを使いやすくなります。最初は無料版から始めて問題ありません。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 3日間で「使えない」と感じた場合はどうすればいいですか？</p><p class="text-wa-text text-base m-0">プロンプトの書き方が原因の場合がほとんどです。「役割・背景・指示・条件」の4要素を含む指示に変えてみてください。それでも改善しない場合は、BuildMateの無料相談でプロンプト改善のサポートを受けてください。</p></div></div>
         <div class="mt-10 pt-8 border-t border-wa-border">
             <p class="font-bold text-wa-brand mb-4 flex items-center gap-2"><i data-lucide="book-open" class="w-4 h-4"></i>関連記事はこちら▼</p>

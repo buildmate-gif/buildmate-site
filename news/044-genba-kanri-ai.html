@@ -42,30 +42,8 @@
         }
     </script>
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "工務店の現場管理をAI・GASで効率化する方法｜工程表・施工写真・品質管理を自動化",
-      "datePublished":"2026-09-23",
-      "dateModified":"2026-09-23",
-      "author": {
-        "@type": "Person",
-        "name": "木村 拓隆",
-        "jobTitle": "BuildMate代表・AI活用伴走パートナー",
-        "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "BuildMate（ビルドメイト）",
-        "url": "https://buildmate-gif.github.io/buildmate-site"
-      },
-      "description": "工務店の現場管理業務（工程表・施工写真・品質検査・安全管理など）をAIとGASで自動化する方法を解説。工程表作成を3時間から30分に短縮した具体的な手順をBuildMate代表が紹介します。",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://buildmate-gif.github.io/buildmate-site/news/034-genba-kanri-ai.html"
-      }
-    }
-    </script>
+{"@context": "https://schema.org", "@type": "Article", "headline": "工務店の現場管理をAI・GASで効率化する方法｜工程表・施工写真・品質管理を自動化", "datePublished": "2026-09-23", "dateModified": "2026-09-23", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "工務店の現場管理業務（工程表・施工写真・品質検査・安全管理など）をAIとGASで自動化する方法を解説。工程表作成を3時間から30分に短縮した具体的な手順をBuildMate代表が紹介します。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/044-genba-kanri-ai.html"}}
+</script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -98,7 +76,9 @@
       ]
     }
     </script>
-<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+</head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans antialiased">
 
         <header class="site-header">
@@ -164,7 +144,7 @@
                 <p>工務店の現場管理では、工程表の作成・更新・共有、施工写真の撮影・整理・報告、品質チェック、安全管理記録と、書類系の業務が膨大に発生します。現場監督が事務作業に追われて現場を巡回できない、という状況は工務店あるあるの悩みです。特に複数現場を掛け持ちする状況では、工程表の更新漏れや写真整理の遅れが慢性化しやすくなります。</p>
                 <p>この記事では、工務店の現場管理に関わる業務について、AI（Claude・ChatGPT）とGoogle Apps Script（GAS）を使って効率化する具体的な方法を解説します。BuildMateが実際に工務店へ導入支援した事例をもとにした内容です。工程表から竣工書類整理まで、8つの現場管理業務の効率化手法を紹介します。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の現場管理業務とは</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の現場管理業務とは</h2>
 
                 <p>工務店の現場管理業務とは、着工から竣工まで工事の進捗・品質・安全・記録を一元管理し、施主・業者・社内への情報共有を行う業務全般を指します。具体的には次の7項目が代表的です。</p>
 
@@ -180,27 +160,27 @@
 
                 <p>これらは現場の安全と品質を守るために欠かせない業務ですが、記録・作成・共有の部分はAIとGASで大幅に効率化できます。BuildMateの支援実績では、これらの業務をまとめて導入した工務店（社員5名規模）で月20〜25時間の削減を実現しています。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">1. 工程表の作成・更新・共有（AI＋GASで対応）</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">1. 工程表の作成・更新・共有（AI＋GASで対応）</h2>
 
                 <p>工務店の工程表作成とは、着工から竣工までの各工種の施工順序・期間・担当業者を整理し、変更が生じるたびに更新して関係者へ共有する業務です。複数案件を抱える現場では工程表の更新だけで毎回3時間近くかかることがあります。</p>
                 <p>AIが工期・工種・職人手配を考慮した工程案の叩き台を自動生成し、GASでスプレッドシートへの反映・関係者へのメール自動配信まで行うことで、3時間かかっていた工程表作成が30分程度に短縮されます。変更発生時の修正・再配信も自動化できます。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">2. 施工写真の整理・報告書挿入（AI＋GASで対応）</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">2. 施工写真の整理・報告書挿入（AI＋GASで対応）</h2>
 
                 <p>工務店の施工写真管理とは、工事各段階の施工状況を写真記録し、工種・日付ごとにフォルダ整理して報告書に挿入する業務です。スマホで撮影した写真を手動でリネームしフォルダ分けする作業は、1現場あたり1時間以上かかることが一般的です。</p>
                 <p>AI画像認識で写真を工種・工程ごとに自動分類・命名し、GASでGoogleドライブを整理・報告書への自動挿入まで行うことで、1時間かかっていた写真整理が約10分に短縮されます。写真の抜け漏れチェックも自動化でき、施工記録の完成度が向上します。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">3. 材料搬入・納期リマインダー（GASで対応）</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">3. 材料搬入・納期リマインダー（GASで対応）</h2>
 
                 <p>工務店の材料管理とは、各工種で必要な建材・設備機器の発注リストを管理し、搬入遅延が工期に影響しないよう業者への確認・督促を行う業務です。確認電話やメールを毎日手動で行っている工務店では、毎日30分前後の追跡作業が発生します。</p>
                 <p>GASで発注リストと搬入予定日を管理し、期限近くになると業者へ自動でリマインダーメールを送信する仕組みを構築できます。毎日30分かかっていた搬入確認作業が自動化され、工期遅延リスクも大幅に低減されます。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">4. 安全管理（KY活動・ヒヤリハット記録）（AI＋GASで対応）</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">4. 安全管理（KY活動・ヒヤリハット記録）（AI＋GASで対応）</h2>
 
                 <p>工務店の安全管理とは、毎朝のKY（危険予知）活動の記録・ヒヤリハット事例の収集・同種事故の類似事例検索・月次集計を行う業務です。紙に手書きして転記している工務店では、記録・集計だけで月4〜5時間かかるケースがあります。</p>
                 <p>AIでKY記録の文章化・類似事例の自動検索を行い、GASで記録・集計を自動化することで、30分かかっていた1回あたりの記録作業が10分程度に短縮されます。蓄積データを活用した安全教育にも役立ちます。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h2>
 
                 <p>BuildMateが工務店の現場管理業務にAI・GASを導入した実績をもとに、削減効果をまとめます。</p>
 
@@ -214,7 +194,7 @@
 
                 <p>社員数5名規模の工務店でこれらを組み合わせた場合、月20〜25時間の削減が現実的な目標値です。時給換算（2,000円）で月4〜5万円相当のコスト削減になります。AIツールの月額費用（約3,000円）と比較すると、13倍以上の費用対効果が見込める計算です。</p>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIに任せない業務について</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIに任せない業務について</h2>
 
                 <p>近隣への挨拶・クレーム対応の現地訪問——これは人間関係と現地での誠意ある対応が決め手であり、AIで代替できません。工務店が地域で信頼を積み重ねるためには、現場監督が顔を出し頭を下げる場面が欠かせません。しかしAIが定型業務を肩代わりするからこそ、工務店の現場監督がこうした「人にしかできない仕事」に集中できる時間が生まれます。</p>
 
@@ -222,7 +202,7 @@
                     施工管理の仕事で一番大切なのは現場を歩くことです。写真整理や工程表の更新をAIに任せることで、その時間を確保してほしい。それが現場の品質と安全につながります。—— BuildMate代表・木村拓隆（元・施工管理1,200件以上）
                 </div>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
 
                 <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg">
                     <li>工務店の現場管理業務は7項目あり、そのほぼすべてがAI・GASで効率化できる</li>
@@ -232,7 +212,7 @@
                     <li>導入に必要なのは月3,000円程度のAIツールとGoogleの無料ツールだけ</li>
                 </ul>
 
-                <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+                <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
 
                 <div class="space-y-6">
                     <div class="bg-wa-bg p-5 rounded-lg">

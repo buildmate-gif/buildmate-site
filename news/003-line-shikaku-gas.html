@@ -27,12 +27,14 @@
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors: { wa: { bg: '#F7F2EA', paper: '#ffffff', text: '#1F2933', gray: '#6B7280', brand: '#24324A', brandHover: '#1A2838', accent: '#24324A', accentHover: '#1A2838', border: '#D4CAB8', gold: '#B99745', purple: '#5C3B8A', cyan: '#38BDF8' } }, borderRadius: { 'wa': '12px' }}}}</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"建設業の資格・免許更新期限をLINE×GASで自動アラートする方法｜法的リスクをゼロに","datePublished":"2026-01-16","dateModified":"2026-01-16","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走パートナー","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"建設業では、玉掛け技能者・クレーン運転士・足場組立作業主任者など多くの資格が法的に必要です。しかし職人が増えるほど全員の資格更新期限を把握するのが難しくなり、気づいたら資格が失効していた——というケースが実際に起きています。無資格者が作業す","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/055-line-shikaku-gas.html"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "建設業の資格・免許更新期限をLINE×GASで自動アラートする方法｜法的リスクをゼロに", "datePublished": "2026-01-16", "dateModified": "2026-01-16", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "建設業では、玉掛け技能者・クレーン運転士・足場組立作業主任者など多くの資格が法的に必要です。しかし職人が増えるほど全員の資格更新期限を把握するのが難しくなり、気づいたら資格が失効していた——というケースが実際に起きています。無資格者が作業す", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/003-line-shikaku-gas.html"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"建設業の資格更新期限をLINEで自動アラートするにはどうすればいいですか？","acceptedAnswer":{"@type":"Answer","text":"Googleスプレッドシートに資格情報を登録し、GASで毎朝期限チェックを実行してLINE Notifyで本人へ自動通知する仕組みを構築できます。BuildMateの支援実績では、月3時間かかっていた資格管理業務がほぼ自動化されています。"}},{"@type":"Question","name":"建設会社の資格管理をGASで自動化するにはどんな準備が必要ですか？","acceptedAnswer":{"@type":"Answer","text":"Googleスプレッドシートへの資格情報の入力とGASの設定、LINE NotifyのトークンのみでOKです。BuildMateの支援実績では、初期設定から運用開始まで最短3日で完了しています。"}},{"@type":"Question","name":"建設業の資格失効リスクをLINE×GASでゼロにできますか？","acceptedAnswer":{"@type":"Answer","text":"できます。3ヶ月前・1ヶ月前・2週間前の多段階アラートに加え、期限当日に緊急アラートを設定することで、失効リスクを事実上ゼロにできます。BuildMateの支援実績では、この仕組み導入後に資格失効が一件もなくなった建設会社があります。"}}]}
 </script>
-<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+</head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans antialiased">
     <header class="site-header">
     <div class="header-in">
@@ -82,30 +84,30 @@
       <h1 class="break-keep text-balance text-2xl md:text-4xl font-serif font-bold text-wa-text leading-tight mb-4">建設業の資格・<wbr>免許更新期限を<wbr><br>LINE×<wbr>GASで<wbr>自動アラートする方法</h1>
     </div>
     <div class="mb-10">
-      <img src="../images/gas_sum.png" alt="建設業の資格・免許更新管理業務のイメージ" class="w-full rounded-wa object-cover" onerror="this.style.display='none'">
+      <img src="../images/gas_sum.webp" alt="建設業の資格・免許更新管理業務のイメージ" class="w-full rounded-wa object-cover" onerror="this.style.display='none'">
     </div>
     <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
       <p class="font-bold text-xl mb-6 text-wa-brand">現場で働く職人の資格、更新期限を把握できていますか？</p>
       <p>建設業では、玉掛け技能者・クレーン運転士・足場組立作業主任者など多くの資格が法的に必要です。しかし職人が増えるほど全員の資格更新期限を把握するのが難しくなり、気づいたら資格が失効していた——というケースが実際に起きています。無資格者が作業すると法令違反となり、重大なリスクにつながります。</p>
       <p>この記事では、建設業の社員・職人の資格・免許更新期限を、LINEとGoogle Apps Script（GAS）を連携させて自動アラートする仕組みの構築方法を解説します。更新期限の3ヶ月前・1ヶ月前・2週間前に本人のLINEへ自動通知できます。BuildMateが実際に建設会社へ導入支援した事例をもとにした内容です。</p>
-      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">建設業の資格・免許更新管理業務とは</h4>
+      <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">建設業の資格・免許更新管理業務とは</h2>
       <p>建設業の資格・免許更新管理業務とは、社員・職人が保有する資格・免許の更新期限を一元管理し、失効前に本人・会社が確実に更新手続きを完了できるようにする業務を指します。職人30名規模の建設会社では、資格管理だけで担当者が月数時間を費やすケースがあります。</p>
       <p>具体的には次のような作業が含まれます。</p>
       <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>社員・職人全員の資格・免許情報の収集・記録</li><li>更新期限の確認と期限が近い資格のリストアップ</li><li>本人・現場監督への更新期限の通知</li><li>更新講習の申し込みサポート</li><li>更新完了後の新しい資格情報への更新</li></ul>
       <p>BuildMateの支援実績では、LINE×GASで資格管理を自動化した建設会社（職人30名規模）で、月3時間かかっていた資格管理業務がほぼ自動化され、資格失効のリスクがゼロになっています。</p>
-      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">仕組みの全体像：LINEとGASをつなぐ方法</h4><p>Googleスプレッドシートに社員・職人の資格名・有効期限・LINE IDを登録します。GASが毎朝自動実行され、更新期限まで90日・30日・14日の対象者を抽出します。GASがLINE Notifyで本人のLINEへ「〇〇の更新期限が〇日です」と自動通知します。同時に管理者のLINEにも一覧で通知されるため、会社全体の資格状況をリアルタイムで把握できます。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 1: 資格管理スプレッドシートの整備</h4><p>Googleスプレッドシートに「氏名・LINE ID・資格名・取得日・有効期限・更新状況」の列を設けます。既存の台帳（Excel・紙）をこのシートに転記するのが最初の作業です。一度整備すれば以降はGASが自動管理するため、転記は最初だけです。資格が更新されたら担当者がシートを更新するだけでアラートの基準日が自動で変わります。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 2: GASで期限チェックと自動アラート送信</h4><p>GASのトリガーを毎朝8時に設定すると、スプレッドシートの有効期限列を全件チェックし、90日・30日・14日前の対象者を自動抽出します。該当する職人のLINEへ「〇〇（玉掛け技能者）の更新期限が〇月〇日（〇日後）です。更新講習のご確認をお願いします」と自動通知します。通知済みフラグを自動更新するため、同じ通知が重複して送られることもありません。</p><h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 3: 管理者への一覧通知と期限切れアラート</h4><p>GASが毎週月曜日に管理者のLINEへ「今週中に期限が切れる資格：〇件、来月中に期限が切れる資格：〇件」という一覧を自動送信します。更新期限を1日でも過ぎた資格が検知された場合は、緊急アラートとして管理者へ即時通知します。法令違反のリスクを事前に排除できます。</p>
-      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h4>
+      <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">仕組みの全体像：LINEとGASをつなぐ方法</h2><p>Googleスプレッドシートに社員・職人の資格名・有効期限・LINE IDを登録します。GASが毎朝自動実行され、更新期限まで90日・30日・14日の対象者を抽出します。GASがLINE Notifyで本人のLINEへ「〇〇の更新期限が〇日です」と自動通知します。同時に管理者のLINEにも一覧で通知されるため、会社全体の資格状況をリアルタイムで把握できます。</p><h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 1: 資格管理スプレッドシートの整備</h2><p>Googleスプレッドシートに「氏名・LINE ID・資格名・取得日・有効期限・更新状況」の列を設けます。既存の台帳（Excel・紙）をこのシートに転記するのが最初の作業です。一度整備すれば以降はGASが自動管理するため、転記は最初だけです。資格が更新されたら担当者がシートを更新するだけでアラートの基準日が自動で変わります。</p><h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 2: GASで期限チェックと自動アラート送信</h2><p>GASのトリガーを毎朝8時に設定すると、スプレッドシートの有効期限列を全件チェックし、90日・30日・14日前の対象者を自動抽出します。該当する職人のLINEへ「〇〇（玉掛け技能者）の更新期限が〇月〇日（〇日後）です。更新講習のご確認をお願いします」と自動通知します。通知済みフラグを自動更新するため、同じ通知が重複して送られることもありません。</p><h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 3: 管理者への一覧通知と期限切れアラート</h2><p>GASが毎週月曜日に管理者のLINEへ「今週中に期限が切れる資格：〇件、来月中に期限が切れる資格：〇件」という一覧を自動送信します。更新期限を1日でも過ぎた資格が検知された場合は、緊急アラートとして管理者へ即時通知します。法令違反のリスクを事前に排除できます。</p>
+      <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入効果のまとめ</h2>
       <p>BuildMateが建築・建設業の現場にLINE×GASを導入した実績をもとに、削減効果をまとめます。</p>
       <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>資格期限の定期確認：月3時間 → GASが毎日自動チェック</li><li>職人への通知：手動メール・電話 → LINE自動通知（3ヶ月前・1ヶ月前・2週間前）</li><li>資格失効リスク：多段階アラートでゼロに</li><li>管理者の状況把握：週次で自動一覧通知</li></ul>
       <p>職人30名規模の建設会社では、月3時間の削減が現実的な目標値です。時給換算（2,000円）で月6,000円相当のコスト削減に見えますが、資格失効による法令違反リスクの排除という観点では、数百万円規模のリスク回避に相当します。</p>
-      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">LINEとGASでできないことについて</h4>
+      <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">LINEとGASでできないことについて</h2>
       <p>更新講習の申し込み・受講・費用負担の調整は人間が行う必要があります。また、資格取得の推薦・判断や人材育成計画は管理者が行うべきです。
 
 しかしLINE×GASが「期限管理と通知」を自動化することで、管理者が本来すべき人材育成・技術指導に集中できる環境が整います。</p>
       <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">資格の失効は「うっかり」では済まされません。建設業法上の重大なリスクです。GASで毎日自動チェック・LINEで本人に直接通知する仕組みを作れば、30名の資格管理も漏れなく回せます。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）</div>
-      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+      <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
       <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>建設業の資格・免許更新期限はLINE×GASで3ヶ月前・1ヶ月前・2週間前に自動アラートできる</li><li>Googleスプレッドシートで資格情報を一元管理し、GASが毎朝自動チェックして該当者のLINEへ通知する</li><li>管理者のLINEへも週次で一覧通知・失効当日は緊急アラートが届く</li><li>職人30名規模で月3時間削減と資格失効リスクゼロを実現できる</li><li>導入費用は実質ゼロで、Googleスプレッドシート（無料）とLINE Notify（無料）だけで構築できる</li></ul>
-      <h4 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+      <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
       <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 建設業の資格更新期限をLINEで自動アラートするにはどうすればいいですか？</p><p class="text-wa-text text-base m-0">Googleスプレッドシートに資格情報を登録し、GASで毎朝期限チェックを実行してLINE Notifyで本人へ自動通知する仕組みを構築できます。BuildMateの支援実績では、月3時間かかっていた資格管理業務がほぼ自動化されています。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 建設会社の資格管理をGASで自動化するにはどんな準備が必要ですか？</p><p class="text-wa-text text-base m-0">Googleスプレッドシートへの資格情報の入力とGASの設定、LINE NotifyのトークンのみでOKです。BuildMateの支援実績では、初期設定から運用開始まで最短3日で完了しています。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 建設業の資格失効リスクをLINE×GASでゼロにできますか？</p><p class="text-wa-text text-base m-0">できます。3ヶ月前・1ヶ月前・2週間前の多段階アラートに加え、期限当日に緊急アラートを設定することで、失効リスクを事実上ゼロにできます。BuildMateの支援実績では、この仕組み導入後に資格失効が一件もなくなった建設会社があります。</p></div></div>
       <div class="mt-10 pt-8 border-t border-wa-border">
         <p class="font-bold text-wa-brand mb-4">関連記事</p>

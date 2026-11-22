@@ -15,12 +15,14 @@
 <script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
 <script>tailwind.config={theme:{extend:{fontFamily:{sans:[['"Noto Sans JP"','sans-serif']],serif:[['"Noto Serif JP"','serif']]},colors:{wa:{bg:'#F7F2EA',paper:'#ffffff',text:'#1F2933',gray:'#6B7280',brand:'#24324A',brandHover:'#1A2838',accent:'#24324A',accentHover:'#1A2838',border:'#D4CAB8',gold:'#B99745',purple:'#5C3B8A',cyan:'#38BDF8'}},borderRadius:{wa:'12px'}}}}</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"社内でAIを安全に使うためのルール設計の基本","datePublished":"2026-04-07","dateModified":"2026-04-07","author":{"@type":"Person","name":"木村 拓隆","jobTitle":"BuildMate代表・AI活用伴走者","description":"元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経てAI活用支援を提供。"},"publisher":{"@type":"Organization","name":"BuildMate（ビルドメイト）","url":"https://buildmate-gif.github.io/buildmate-site"},"description":"組織でAIを安全に使うためのルール設計の手順を解説。1枚のガイドラインに必要な4つの項目と、ルールを形骸化させないための運用のコツまで、実践的にまとめます。","mainEntityOfPage":{"@type":"WebPage","@id":"https://buildmate-gif.github.io/buildmate-site/news/ai-14-rule.html"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "社内でAIを安全に使うためのルール設計の基本", "datePublished": "2026-04-07", "dateModified": "2026-04-07", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経てAI活用支援を提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-gif.github.io/buildmate-site"}, "description": "組織でAIを安全に使うためのルール設計の手順を解説。1枚のガイドラインに必要な4つの項目と、ルールを形骸化させないための運用のコツまで、実践的にまとめます。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-gif.github.io/buildmate-site/news/ai-14-rule.html"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "AI利用ガイドラインは法的に義務化されていますか？", "acceptedAnswer": {"@type": "Answer", "text": "現時点（2026年）では法的義務はありませんが、個人情報保護法の観点から適切な管理が求められます。医療・介護分野では厚生労働省のガイドラインも参考にしてください。"}}, {"@type": "Question", "name": "ガイドラインを作る前に専門家に相談すべきですか？", "acceptedAnswer": {"@type": "Answer", "text": "基本的なルールであれば専門家なしで作成できます。個人情報の取り扱いに不安がある場合や、医療・金融などの規制業種では、弁護士やプライバシーコンサルタントへの相談をおすすめします。"}}, {"@type": "Question", "name": "スタッフがルールを守らない場合はどうすればいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "ルールが「難しい・面倒」と感じられている場合は簡略化が必要です。ルール違反を罰するより、「守りやすいルール設計」を優先してください。定期的な研修と事例共有も遵守率向上に効果的です。"}}]}
 </script>
-<style>.text-balance{text-wrap:balance}.break-keep{word-break:keep-all;line-break:strict}</style></head>
+<style>.text-balance{text-wrap:balance}.break-keep{word-break:keep-all;line-break:strict}</style>    <meta property="og:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+    <meta name="twitter:image" content="https://buildmate-gif.github.io/buildmate-site/ogp.png">
+</head>
 <body class="bm-article-page bg-wa-bg text-wa-text font-sans">
 <header class="site-header">
     <div class="header-in">
@@ -75,22 +77,22 @@
             <p class="text-wa-text leading-relaxed m-0">AI利用ルールとは、組織内でAIツールを使う際の「使っていいこと・使ってはいけないこと・使い方の手順・報告の方法」を明文化したものです。ルールが明確であれば、スタッフは迷わずAIを使い、組織としての一貫したリスク管理が可能になります。</p>
         </div>
         
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">ルールに含めるべき4つの項目</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">ルールに含めるべき4つの項目</h2>
         <p class="mb-4 leading-relaxed">AI利用ガイドラインに最低限含めるべき項目は4つです。①使用を許可するツール名（例：ChatGPT、Gemini）、②入力してはいけない情報（個人情報・機密情報の具体例）、③使用の報告・承認フロー（誰に報告するか）、④出力内容の確認ルール（送信前の確認義務）。この4項目をA4一枚にまとめるだけで、十分なガイドラインになります。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>使用を許可するツール名とバージョン</li><li>入力禁止情報の具体例リスト</li><li>使用報告・承認のフロー</li><li>出力確認義務とファクトチェックの手順</li></ul>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">ルールを作る3ステップ</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">ルールを作る3ステップ</h2>
         <p class="mb-4 leading-relaxed">ルールを作る手順は3ステップです。①現状把握（誰がどのAIを使っているか・使っていないかを把握する）、②リスクの洗い出し（業種・業務別に想定されるリスクを箇条書きにする）、③ルール文書の作成（リスクに対応した使用ルールをシンプルな言葉でまとめる）。法律の専門知識は不要です。「何がリスクか」「どうすれば防げるか」を常識的な範囲で整理するだけで基本的なルールは完成します。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>STEP1：誰が・何を・どう使っているかを把握する</li><li>STEP2：業種別リスク（個人情報・信頼性・依存度）を洗い出す</li><li>STEP3：リスクに対応したルールをA4一枚にまとめる</li></ul>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">ルールが形骸化しないための3つの工夫</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">ルールが形骸化しないための3つの工夫</h2>
         <p class="mb-4 leading-relaxed">作ったルールが守られない原因は、難しすぎる・抽象的すぎる・更新されないの3つです。形骸化を防ぐ工夫として、①ルールを「使っていいこと」から始める（禁止事項から始めると萎縮する）、②具体的な例を盛り込む（「こういう文章はOK、こういう文章はNG」）、③半年に一度見直してアップデートする——の3点が効果的です。</p>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>ルールは「使っていいこと」から書き始める</li><li>具体的なOK例・NG例を入れる</li><li>半年に一度見直してアップデートする</li></ul>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">小規模組織での簡易ルール例</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">小規模組織での簡易ルール例</h2>
         <p class="mb-4 leading-relaxed">5〜10名程度の小規模組織向けのシンプルなルール例を示します。「ChatGPTを業務で使う場合は以下を守ること：①氏名・住所・電話番号・患者情報は入力しない、②外部送信前に必ず内容を読み直す、③不明な点は〇〇（担当者名）に相談する」——この3行だけでも、最低限のリスク管理が機能します。完璧なルールより、実際に守られるシンプルなルールの方が価値があります。</p>
         
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
         <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/80 bg-wa-bg p-4 rounded-lg"><li>AI利用ガイドラインには「許可ツール・入力禁止情報・報告フロー・確認義務」の4項目が必須</li><li>ルール作りは「現状把握→リスク洗い出し→文書化」の3ステップ</li><li>ルールは禁止から始めず「使っていいこと」から書く</li><li>具体的なOK例・NG例を入れることで形骸化を防ぐ</li><li>半年に一度のアップデートでルールを現実に合わせ続ける</li></ul>
         <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">「ルールは守るためのものではなく、安心して使うためのものです。スタッフが「これなら使える」と感じるルールが、本物のルールです。」<span class="block not-italic text-sm mt-3 text-right">BuildMate代表・木村拓隆</span></div>
-        <h4 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h4>
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
         <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. AI利用ガイドラインは法的に義務化されていますか？</p><p class="text-wa-text text-base m-0">現時点（2026年）では法的義務はありませんが、個人情報保護法の観点から適切な管理が求められます。医療・介護分野では厚生労働省のガイドラインも参考にしてください。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. ガイドラインを作る前に専門家に相談すべきですか？</p><p class="text-wa-text text-base m-0">基本的なルールであれば専門家なしで作成できます。個人情報の取り扱いに不安がある場合や、医療・金融などの規制業種では、弁護士やプライバシーコンサルタントへの相談をおすすめします。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. スタッフがルールを守らない場合はどうすればいいですか？</p><p class="text-wa-text text-base m-0">ルールが「難しい・面倒」と感じられている場合は簡略化が必要です。ルール違反を罰するより、「守りやすいルール設計」を優先してください。定期的な研修と事例共有も遵守率向上に効果的です。</p></div></div>
         <div class="mt-10 pt-8 border-t border-wa-border">
             <p class="font-bold text-wa-brand mb-4 flex items-center gap-2"><i data-lucide="book-open" class="w-4 h-4"></i>関連記事はこちら▼</p>
