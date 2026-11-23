@@ -247,6 +247,32 @@
         const btnSpinner = document.getElementById('btnSpinner');
         const btnIcon = document.getElementById('btnIcon');
 
+        // シミュレーター・ご相談ガイドからの内容自動引き継ぎ
+        (function applyPrefill() {
+            try {
+                const raw = sessionStorage.getItem('bm_contact_prefill');
+                if (!raw) return;
+                const data = JSON.parse(raw);
+                const msgEl = document.getElementById('message');
+                if (msgEl && data.message && !msgEl.value.trim()) {
+                    msgEl.value = data.message;
+                }
+                if (Array.isArray(data.categories)) {
+                    data.categories.forEach(function(val) {
+                        const cb = form.querySelector('input[name="category"][value="' + val + '"]');
+                        if (cb) cb.checked = true;
+                    });
+                }
+                if (data.sourceLabel && msgEl) {
+                    const notice = document.createElement('div');
+                    notice.style.cssText = 'margin-bottom:10px;padding:10px 14px;background:#F0EBE0;border:1px solid #D4CAB8;font-size:13px;color:#24324A;';
+                    notice.textContent = '※ ' + data.sourceLabel + 'の内容を自動入力しました。自由に書き換えてご利用ください。';
+                    msgEl.parentNode.insertBefore(notice, msgEl);
+                }
+                sessionStorage.removeItem('bm_contact_prefill');
+            } catch (err) {}
+        })();
+
         form.addEventListener('submit', e => {
             e.preventDefault(); 
 

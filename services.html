@@ -380,12 +380,117 @@
       </div>
     </section>
 
-    <!-- 5. ご支援プランと費用の考え方 -->
-    <section class="sec sec-paper">
+    <!-- 4.5 導入効果シミュレーター -->
+    <section id="roi-simulator" class="sec sec-paper">
       <div class="wrap">
         <div class="sec-head">
           <div>
-            <span class="eyebrow">03 / PLANS</span>
+            <span class="eyebrow">03 / ROI SIMULATOR</span>
+            <h2 class="h2" style="margin-bottom:0;">自社なら毎月どれくらい<br>時間が戻るか試算する</h2>
+          </div>
+          <p class="sec-head-sub">人数と現在の事務時間、減らしたい業務を選ぶだけで、AI・Googleツール導入後の「戻ってくる時間」と「人件費換算の目安」をその場で計算できます。</p>
+        </div>
+
+        <div class="bm-sim-shell">
+          <div class="bm-sim-topbar">
+            <span>工務店・建設業向け かんたん導入効果試算（30秒）</span>
+            <span class="bm-sim-topsub">※ 入力内容は送信されません。その場ですぐ試せます</span>
+          </div>
+
+          <div class="bm-sim-grid">
+            <div class="bm-sim-inputs">
+              <div class="bm-sim-group">
+                <span class="bm-sim-step">STEP 01</span>
+                <div class="bm-sim-labelrow">
+                  <label class="bm-sim-label" for="bmStaffRange">事務・現場管理に関わる人数</label>
+                  <div class="bm-sim-val"><span id="bmStaffOut">3</span><small>名</small></div>
+                </div>
+                <input type="range" id="bmStaffRange" class="bm-sim-range" min="1" max="20" value="3">
+                <div class="bm-sim-scale"><span>1名（代表のみ）</span><span>5名</span><span>10名</span><span>20名</span></div>
+              </div>
+
+              <div class="bm-sim-group">
+                <span class="bm-sim-step">STEP 02</span>
+                <div class="bm-sim-labelrow">
+                  <label class="bm-sim-label" for="bmHoursRange">1人あたり週の事務・資料・発信時間</label>
+                  <div class="bm-sim-val"><span id="bmHoursOut">6</span><small>時間 / 週</small></div>
+                </div>
+                <input type="range" id="bmHoursRange" class="bm-sim-range" min="2" max="20" value="6">
+                <div class="bm-sim-scale"><span>2時間</span><span>6時間</span><span>12時間</span><span>20時間</span></div>
+              </div>
+
+              <div class="bm-sim-group">
+                <span class="bm-sim-step">STEP 03</span>
+                <div class="bm-sim-label">特に減らしたい業務（複数選択可）</div>
+                <div class="bm-sim-tasks" id="bmSimTasks">
+                  <button type="button" class="bm-sim-task" data-rate="0.10" data-cat="efficiency" data-tip="日報・写真の音声入力化" aria-pressed="true"><span class="bm-sim-dot">✓</span><span>日報・現場写真の整理</span></button>
+                  <button type="button" class="bm-sim-task" data-rate="0.10" data-cat="efficiency" data-tip="見積説明・提案書のひな形化" aria-pressed="true"><span class="bm-sim-dot">✓</span><span>見積説明・提案書の作成</span></button>
+                  <button type="button" class="bm-sim-task" data-rate="0.08" data-cat="marketing" data-tip="ブログ・SNS下書きの5分生成" aria-pressed="false"><span class="bm-sim-dot"></span><span>ブログ・SNS・顧客返信</span></button>
+                  <button type="button" class="bm-sim-task" data-rate="0.08" data-cat="after_follow" data-tip="OB客点検案内の自動通知（GAS）" aria-pressed="false"><span class="bm-sim-dot"></span><span>OB客フォロー・点検案内</span></button>
+                  <button type="button" class="bm-sim-task" data-rate="0.07" data-cat="gas_automation" data-tip="図面・過去書類のAI検索整理" aria-pressed="false"><span class="bm-sim-dot"></span><span>図面・書類の整理と検索</span></button>
+                  <button type="button" class="bm-sim-task" data-rate="0.07" data-cat="gas_automation" data-tip="協力業者への連絡テンプレ化" aria-pressed="false"><span class="bm-sim-dot"></span><span>外注・協力業者への連絡</span></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bm-sim-result">
+              <div>
+                <span class="bm-sim-eyebrow">ESTIMATED IMPACT / 試算結果</span>
+                <div class="bm-sim-main">
+                  <div class="bm-sim-caption">毎月、お客様対応や現場に戻せる時間</div>
+                  <div class="bm-sim-big" id="bmMonthlyHours">約 26<small>時間 / 月</small></div>
+                </div>
+
+                <div class="bm-sim-bars">
+                  <div class="bm-sim-barrow">
+                    <div class="bm-sim-barhead"><span>現在の事務・資料時間（月計）</span><span id="bmBeforeLabel">72 時間</span></div>
+                    <div class="bm-sim-track"><div class="bm-sim-fill-before" style="width:100%;"></div></div>
+                  </div>
+                  <div class="bm-sim-barrow">
+                    <div class="bm-sim-barhead"><span>AI導入後の目安（月計）</span><span id="bmAfterLabel">46 時間（-36%）</span></div>
+                    <div class="bm-sim-track"><div class="bm-sim-fill-after" id="bmAfterBar" style="width:64%;"></div></div>
+                  </div>
+                </div>
+
+                <div class="bm-sim-subgrid">
+                  <div class="bm-sim-subbox">
+                    <div class="bm-sim-caption">年間で生まれる時間</div>
+                    <div class="bm-sim-subnum" id="bmYearlyHours">約 312<small>時間</small></div>
+                  </div>
+                  <div class="bm-sim-subbox">
+                    <div class="bm-sim-caption">人件費換算の目安</div>
+                    <div class="bm-sim-subnum" id="bmYearlyYen">約 78<small>万円 / 年</small></div>
+                  </div>
+                </div>
+
+                <div class="bm-sim-translate" id="bmTranslateBox">
+                  これは年間で <strong>約 39 営業日分</strong>、お客様との打ち合わせなら <strong>毎月 約 17 回分</strong> のゆとりに相当します。
+                </div>
+
+                <p class="bm-sim-note">
+                  ※ 算出前提：選択業務に応じた削減率（20〜55%目安）、月4週・1日8時間・時給換算2,500円での参考試算です。実務に即した正確な効果は無料相談で整理いたします。
+                </p>
+              </div>
+
+              <a href="contact.html" id="bmSimCta" class="bm-sim-cta">
+                この試算をもとに無料相談する →
+              </a>
+            </div>
+          </div>
+
+          <div class="bm-sim-advice">
+            <div><strong>おすすめの最初の一歩：</strong> <span id="bmAdviceText">「日報・写真の音声入力化」・「見積説明・提案書のひな形化」から着手すると、初月から効果を実感しやすいです。</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ご支援プランと費用の考え方 -->
+    <section class="sec sec-bg">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="eyebrow">04 / PLANS</span>
             <h2 class="h2" style="margin-bottom:0;">ご支援プランと費用の考え方</h2>
           </div>
           <p class="sec-head-sub">会社の規模や「まずどこから手をつけるか」によって最適な関わり方が異なるため、画一的な料金パックではなく個別にお見積りしています。</p>
@@ -434,9 +539,9 @@
     </section>
 
     <!-- 6. 他の導入手法との違い -->
-    <section class="sec sec-bg">
+    <section class="sec sec-paper">
       <div class="wrap">
-        <span class="eyebrow">04 / COMPARISON</span>
+        <span class="eyebrow">05 / COMPARISON</span>
         <h2 class="h2">他の導入手法との違い</h2>
         <p class="body-text" style="max-width:740px; margin-bottom:36px;">
           「動画講座を契約したが見る時間がない」「高額なシステムを入れたが現場が使いこなせない」という失敗を防ぐため、BuildMateは実務への定着に特化しています。
