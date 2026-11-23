@@ -252,7 +252,10 @@
       after_all: { tag: '完全まとめ', title: '工務店のアフター対応業務をAI・GASで効率化する方法【完全まとめ】', url: 'news/113-after-matome.html' },
       ob_letter: { tag: 'おすすめコラム', title: '「売りっぱなし」と言わせない。AIで書く心のこもった手紙術', url: 'news/002-afterservice-letter.html' },
       ob_dm: { tag: 'おすすめコラム', title: '工務店のOB客向けDM・ニュースレターをAI・GASで自動化する方法｜月4時間→30分', url: 'news/027-ob-dm-gas.html' },
-      analog_ceo: { tag: '対談記事', title: '【対談】アナログ一筋だった社長がDXに目覚めたきっかけ', url: 'news/039-analog-ceo-dx.html' }
+      analog_ceo: { tag: '対談記事', title: '【対談】アナログ一筋だった社長がDXに目覚めたきっかけ', url: 'news/039-analog-ceo-dx.html' },
+      agent_basic: { tag: 'NEW・AIエージェント', title: '工務店のAIエージェント入門｜チャットAIとの違いと全体像', url: 'news/126-ai-agent-basics.html' },
+      agent_gas: { tag: 'NEW・AIエージェント', title: 'AIエージェントで工務店のGAS自動化ツールを自作する手順', url: 'news/130-ai-agent-gas-automation.html' },
+      agent_comp: { tag: 'NEW・徹底比較', title: 'Codex・Claude Code・Antigravity徹底比較｜工務店向け', url: 'news/132-ai-agent-comparison-koumuten.html' }
     };
 
     function savePrefillForContact() {
@@ -418,8 +421,13 @@
           cards = [articles.gyosha_auto];
         }
       } else if (detailKey === 'seiri') {
-        text = '「何から手を付けるか」が一番迷いますよね。まずは<strong>効果が出やすい3つの業務</strong>か、一覧ガイドを眺めてみてください。';
-        cards = [articles.first_3, articles.all_76];
+        if (levelKey === 'auto') {
+          text = 'すでにAIを使われているなら、ファイル操作やGAS作成まで任せられる<strong>「AIエージェント」</strong>の活用が次のステップにぴったりです！';
+          cards = [articles.agent_comp, articles.agent_gas];
+        } else {
+          text = '「何から手を付けるか」が一番迷いますよね。まずは<strong>効果が出やすい3つの業務</strong>か、AIエージェントの入門ガイドを眺めてみてください。';
+          cards = [articles.first_3, articles.agent_basic];
+        }
       } else if (detailKey === 'sns') {
         if (levelKey === 'auto') {
           text = 'ネタ出しから自動化するなら、<strong>毎朝AIが投稿ネタを提案してくれる仕組み</strong>が便利です！こちらに手順を載せています。';
