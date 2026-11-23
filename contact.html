@@ -283,23 +283,10 @@
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
                 .then(response => {
-                    let redirected = false;
-                    const goThanks = () => {
-                        if (redirected) return;
-                        redirected = true;
-                        window.location.href = 'thanks.html';
-                    };
-                    if (typeof gtag === 'function') {
-                        gtag('event', 'generate_lead', {
-                            event_category: 'contact',
-                            event_label: 'contact_form_submit',
-                            event_callback: goThanks,
-                            event_timeout: 800
-                        });
-                        setTimeout(goThanks, 800);
-                    } else {
-                        goThanks();
-                    }
+                    try {
+                        sessionStorage.setItem('bm_lead_pending', '1');
+                    } catch (err) {}
+                    window.location.href = 'thanks.html';
                 })
                 .catch(error => {
                     alert('送信に失敗しました。時間をおいて再度お試しください。');

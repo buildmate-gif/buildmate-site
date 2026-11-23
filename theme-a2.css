@@ -1579,6 +1579,17 @@ main a[href*="contact.html"][class*="bg-white"]:hover {
   .bm-chat-callout { display: none; }
   .bm-chat-panel { right: 12px; bottom: 78px; height: 72vh; }
 }
+@media (max-width: 960px) {
+  body.has-mobile-sticky .bm-chat-wrap,
+  body:has(.mobile-sticky-cta) .bm-chat-wrap {
+    bottom: 82px;
+  }
+  body.has-mobile-sticky .bm-chat-panel,
+  body:has(.mobile-sticky-cta) .bm-chat-panel {
+    bottom: 148px;
+    max-height: calc(100vh - 172px);
+  }
+}
 
 /* ============================================================
    ⑨ 全コラム記事末尾の自然な導線カード（bm-article-page）

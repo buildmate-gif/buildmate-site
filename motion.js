@@ -149,11 +149,48 @@
     calcSim();
   }
 
-  /* 3. コラム記事末尾の自然な導線カード（全155本・bm-article-page） */
+  /* 3. コラム記事末尾の重複相談枠整理・3択導線カード・スマホ固定バー一括適用 */
   function initArticleCta() {
+    if (document.querySelector('.mobile-sticky-cta')) {
+      document.body.classList.add('has-mobile-sticky');
+    }
     if (!document.body.classList.contains('bm-article-page')) return;
+
+    // 記事ページへスマホ下部固定CTAバーを一括挿入
+    if (!document.querySelector('.mobile-sticky-cta')) {
+      var sticky = document.createElement('div');
+      sticky.className = 'mobile-sticky-cta';
+      sticky.innerHTML =
+        '<div class="mobile-sticky-cta-grid">' +
+          '<a href="' + base + 'diagnosis.html" class="m-sub">1分AI診断</a>' +
+          '<a href="' + base + 'contact.html" class="m-main">無料相談する</a>' +
+        '</div>';
+      document.body.appendChild(sticky);
+      document.body.classList.add('has-mobile-sticky');
+    }
+
     var article = document.querySelector('article');
-    if (!article || document.querySelector('.bm-article-cta')) return;
+    if (!article) return;
+
+    // 全132記事の直書き相談枠を非表示化し、著者欄がある場合はその直後に配置
+    var insertAnchor = article;
+    var sib = article.nextElementSibling;
+    while (sib) {
+      if (sib.querySelector && sib.querySelector('img[src*="HP_profile"]')) {
+        insertAnchor = sib;
+      } else if (
+        !sib.classList.contains('bm-article-cta') &&
+        sib.querySelector &&
+        sib.querySelector('a[href$="contact.html"]') &&
+        !sib.querySelector('img[src*="HP_profile"]')
+      ) {
+        sib.style.display = 'none';
+        sib.setAttribute('aria-hidden', 'true');
+      }
+      sib = sib.nextElementSibling;
+    }
+
+    if (document.querySelector('.bm-article-cta')) return;
 
     var box = document.createElement('section');
     box.className = 'bm-article-cta';
@@ -177,7 +214,7 @@
         '</a>' +
       '</div>';
 
-    article.parentNode.insertBefore(box, article.nextSibling);
+    insertAnchor.parentNode.insertBefore(box, insertAnchor.nextSibling);
   }
 
   /* 4. LINE風「ご相談ガイド」（全ページ共通・3往復・コラム記事案内・記憶機能） */
