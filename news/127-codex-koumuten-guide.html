@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5ECF52MHF6');</script>
+<meta charset="UTF-8"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../theme-a2.css"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenAI Codexとは？工務店がChatGPTの延長でツール作成・業務改善を任せる方法 | BuildMate</title>
+<link rel="canonical" href="https://buildmate-ai.com/news/127-codex-koumuten-guide.html">
+<meta name="description" content="ChatGPT Plus等のプランで利用できるOpenAI Codexの特徴を解説。クラウド実行・デスクトップアプリ・CLIの違いや、工務店のGAS作成・ホームページ修正への具体的な活かし方をBuildMate代表がわかりやすく紹介します。">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenAI Codexとは？工務店がChatGPTの延長でツール作成・業務改善を任せる方法 | BuildMate">
+<meta property="og:description" content="ChatGPT Plus等のプランで利用できるOpenAI Codexの特徴を解説。クラウド実行・デスクトップアプリ・CLIの違いや、工務店のGAS作成・ホームページ修正への具体的な活かし方をBuildMate代表がわかりやすく紹介します。">
+<meta property="og:url" content="https://buildmate-ai.com/news/127-codex-koumuten-guide.html">
+<meta property="og:site_name" content="BuildMate">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://buildmate-ai.com/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OpenAI Codexとは？工務店がChatGPTの延長でツール作成・業務改善を任せる方法 | BuildMate">
+<meta name="twitter:description" content="ChatGPT Plus等のプランで利用できるOpenAI Codexの特徴を解説。クラウド実行・デスクトップアプリ・CLIの違いや、工務店のGAS作成・ホームページ修正への具体的な活かし方をBuildMate代表がわかりやすく紹介します。">
+<meta name="twitter:image" content="https://buildmate-ai.com/ogp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors:{wa:{bg:'#F7F2EA',paper:'#ffffff',text:'#1F2933',gray:'#6B7280',brand:'#24324A',brandHover:'#1A2838',accent:'#24324A',accentHover:'#1A2838',border:'#D4CAB8',gold:'#B99745',purple:'#5C3B8A',cyan:'#38BDF8'}},borderRadius:{'wa':'12px'}}}}</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "OpenAI Codexとは？工務店がChatGPTの延長でツール作成・業務改善を任せる方法", "datePublished": "2026-09-05", "dateModified": "2026-09-05", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-ai.com"}, "description": "ChatGPT Plus等のプランで利用できるOpenAI Codexの特徴を解説。クラウド実行・デスクトップアプリ・CLIの違いや、工務店のGAS作成・ホームページ修正への具体的な活かし方をBuildMate代表がわかりやすく紹介します。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-ai.com/news/127-codex-koumuten-guide.html"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "ChatGPTの無料プランでもCodexは使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "OpenAI公式ページでは、CodexはChatGPT Plus（月額$20）、Pro、Businessなどの有料プランに利用枠が含まれる形で提供されています。すでにPlusを契約している工務店であれば、そのまま試せます。"}}, {"@type": "Question", "name": "GitHubを使っていない工務店でもCodexは使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "はい。GitHub連携によるクラウド実行だけでなく、デスクトップアプリやCLIを使って手元のパソコン内のフォルダを対象に動かすこともできます。"}}, {"@type": "Question", "name": "自社ホームページの修正をCodexに任せても大丈夫ですか？", "acceptedAnswer": {"@type": "Answer", "text": "HTMLやCSSで構成されたサイトであれば対応しやすいです。ただし本番ファイルを直接上書きせず、コピーや履歴管理の上で見た目を必ず確認してから公開する運用にしてください。"}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://buildmate-ai.com/"}, {"@type": "ListItem", "position": 2, "name": "コラム一覧", "item": "https://buildmate-ai.com/news.html"}, {"@type": "ListItem", "position": 3, "name": "OpenAI Codexの工務店向け活用ガイド", "item": "https://buildmate-ai.com/news/127-codex-koumuten-guide.html"}]}
+</script>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style>
+</head>
+<body class="bm-article-page bg-wa-bg text-wa-text font-sans">
+  <header class="site-header">
+    <div class="header-in">
+      <a href="../index.html" class="site-logo">
+        <span class="site-logo-mark">B</span>
+        <span>BuildMate</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../index.html">ホーム</a>
+        <a href="../services.html">サービス・効果</a>
+        <a href="../ai-guide.html">AI活用入門</a>
+        <a href="../diagnosis.html">AI診断</a>
+        <a href="../gift.html">特典プレゼント</a>
+        <a href="../gas.html">GAS活用事例</a>
+        <a href="../contact.html" class="nav-cta">無料相談</a>
+      </nav>
+      <button id="mobile-menu-btn" class="mobile-toggle" aria-label="メニューを開く">
+        <i data-lucide="menu" width="28" height="28"></i>
+      </button>
+    </div>
+  </header>
+
+  <div id="mobile-menu">
+    <button class="mm-close" onclick="closeMobileMenu()">✕ 閉じる</button>
+    <a href="../index.html" onclick="closeMobileMenu()">ホーム</a>
+    <a href="../services.html" onclick="closeMobileMenu()">サービス・効果</a>
+    <a href="../ai-guide.html" onclick="closeMobileMenu()">AI活用入門</a>
+    <a href="../diagnosis.html" onclick="closeMobileMenu()">AI診断</a>
+    <a href="../gift.html" onclick="closeMobileMenu()">特典プレゼント</a>
+    <a href="../gas.html" onclick="closeMobileMenu()">GAS活用事例</a>
+    <a href="../about.html" onclick="closeMobileMenu()">代表プロフィール・事業概要</a>
+    <a href="../contact.html" class="mm-cta" onclick="closeMobileMenu()">無料相談</a>
+  </div>
+
+  <main class="max-w-[800px] mx-auto px-6 pt-12 pb-16">
+    <nav class="text-sm text-wa-gray mb-8"><a href="../index.html" class="hover:text-wa-brand">ホーム</a><span class="mx-2">/</span><a href="../news.html" class="hover:text-wa-brand">コラム一覧</a><span class="mx-2">/</span><span>OpenAI Codexの工務店向け活用ガイド</span></nav>
+    <div class="flex flex-wrap items-center gap-2 mb-4">
+        <span class="inline-block bg-wa-brand text-white text-sm font-bold px-4 py-1 rounded-full">AIエージェント</span>
+        <span class="inline-block bg-wa-accent text-white text-sm font-bold px-4 py-1 rounded-full">AI活用</span>
+    </div>
+    <h1 class="break-keep text-balance font-serif text-2xl md:text-3xl font-bold text-wa-text mb-4 leading-snug">OpenAI Codexとは？<br>工務店がChatGPTの延長で業務ツール作成を任せる方法</h1>
+    <div class="flex items-center gap-4 text-sm text-wa-gray mb-8">
+        <span class="flex items-center gap-1"><i data-lucide="user" class="w-4 h-4"></i>木村 拓隆</span>
+        <span class="flex items-center gap-1 font-mono"><i data-lucide="calendar" class="w-4 h-4"></i>2026.09.05</span>
+    </div>
+    <div class="mb-10 rounded-wa overflow-hidden"><img src="../images/aiagent_sum.png" alt="OpenAI Codexとは？工務店がChatGPTの延長でツール作成・業務改善を任せる方法" class="w-full object-cover"></div>
+
+    <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
+
+        <p class="font-bold text-xl mb-6 text-wa-brand">すでにChatGPTを契約しているなら、新しい予算を組まずにAIエージェントを試せます。</p>
+        <p class="mb-4 text-wa-text leading-relaxed">工務店の現場で最も普及しているAIといえばChatGPTです。そのOpenAIが提供しているAIエージェントが<strong>Codex（コーデックス）</strong>です。<a href="https://openai.com/ja-JP/codex/" target="_blank" rel="noopener noreferrer" class="text-wa-brand underline">OpenAI Codex公式ページ</a>でも案内されている通り、CodexはChatGPT Plus（月額$20）やPro、Businessプランに利用枠が含まれており、同じアカウントのまま使い始められます。</p>
+        <p class="mb-8 text-wa-text leading-relaxed">「エンジニア専用の難しいツールでは？」と感じる方も多いのですが、仕組みを知っておくと、工務店のホームページ修正やGAS（Google Apps Script）による社内ツールづくりをぐっと身近にしてくれます。この記事では、Codexの仕組みと工務店での現実的な使い方を整理します。</p>
+
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">OpenAI Codexの3つの特徴</h2>
+        <h3 class="font-bold text-lg mt-6 mb-2 text-wa-text">1. PCを閉じて現場に出ても、クラウド上で作業が進む</h3>
+        <p class="mb-4">工務店の社長や担当者は、日中ずっとパソコンの前に座っているわけではありません。CodexはGitHubなどのリポジトリと連携したクラウド環境で作業を進められるため、朝のうちに「見学会ページの下書きを作って」「このエラーを直して」と指示を出して現場へ出かけ、事務所に戻ってから結果を確認する、という使い方ができます。</p>
+        <h3 class="font-bold text-lg mt-6 mb-2 text-wa-text">2. ブラウザ・デスクトップアプリ・CLIを同じアカウントで使い分けられる</h3>
+        <p class="mb-4">CodexはChatGPTのWeb画面だけでなく、専用のデスクトップアプリ、VS Codeなどのエディタ拡張機能、ターミナルから動かすCodex CLIまで用意されています。最初は画面操作がわかりやすいWebやデスクトップアプリから入り、慣れてきたら手元のフォルダを直接扱う形へ広げることも可能です。</p>
+        <h3 class="font-bold text-lg mt-6 mb-2 text-wa-text">3. 変更内容をレビューしてから反映できる</h3>
+        <p class="mb-4">いきなり本番サイトを書き換えるのではなく、「どこをどう直したか」の差分（プルリクエストなど）を作り、自動レビューまでかけた状態で人間に提示してくれます。確認して問題なければ反映する流れになるため、うっかりサイトを壊すリスクを抑えられます。</p>
+
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店の実務でCodexが向いている作業</h2>
+        <p class="mb-4">実際に中小工務店の業務に当てはめると、次のような場面で使いやすさを実感できます。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/90 bg-wa-bg p-5 rounded-lg">
+          <li><strong>ホームページのテキスト・写真・お知らせ更新</strong>：GitHub Pagesなどで運用している自社サイトなら、指示を出すだけで変更案と確認用差分まで作ってくれます。</li>
+          <li><strong>GAS業務自動化スクリプトの作成と修正</strong>：スプレッドシートの集計や通知ツールを作る際、仕様を箇条書きで渡してコード一式とテスト手順をまとめて出力させます。</li>
+          <li><strong>複数パターンの並行作成</strong>：見学会LPの構成案や社内向けチェックツールを、条件を変えて並行で試作させ、良い方を選ぶ使い方ができます。</li>
+        </ul>
+
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">失敗しないための始め方（3ステップ）</h2>
+        <p class="mb-4">最初から大きな業務システムを作ろうとすると、指示が曖昧になって手戻りが増えます。以下の順番で進めるとスムーズです。</p>
+        <ol class="list-decimal pl-5 mb-6 space-y-3 text-wa-text/90 bg-wa-bg p-5 rounded-lg">
+          <li><strong>ChatGPTの既存プランでログインして画面を確認する</strong>：まずは追加課金せず、PlusやBusinessの利用枠で触ってみます。</li>
+          <li><strong>テスト用の小さな作業を1つだけ頼む</strong>：いきなり本番ではなく、「既存のお知らせ記事を1本コピーして日付と文言を変えた試作ページを作る」など、正解がはっきりしている作業から試します。</li>
+          <li><strong>指示書（前提ルール）をテキストで置いておく</strong>：会社のトーン、使ってよい色、避けたい表現を短いメモにまとめておくと、毎回同じ注意をしなくて済みます。</li>
+        </ol>
+
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Codexを使うときの注意点</h2>
+        <p class="mb-4">Plusプランには利用枠の上限があるため、重い作業を連続で回すと一時的に制限に達することがあります。また、クラウド連携を使う場合は、対象リポジトリにお施主様の個人情報やパスワード類を含めない管理が欠かせません。社内で「公開してよいコード・ひな形だけを入れる」という線引きを最初に決めておくと安全です。</p>
+
+        <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">「ChatGPTは使っているけれど、月20ドルの元をまだ取り切れていない」と感じている工務店さんには、Codexはちょうどいい次の一歩です。現場に出ている間に下書きを進めてもらえる感覚は、一度体験すると戻れません。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）</div>
+
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/90 bg-wa-bg p-5 rounded-lg">
+          <li>OpenAI CodexはChatGPT Plus（月額$20）などの既存プランに含まれており、追加契約なしで試せる</li>
+          <li>クラウド上で作業を進められるため、現場対応が多い工務店の働き方と相性がよい</li>
+          <li>変更差分を確認してから反映する流れを作れば、非エンジニアでも安全にHP更新やツール作成を進められる</li>
+        </ul>
+
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
+        <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. ChatGPTの無料プランでもCodexは使えますか？</p><p class="text-wa-text text-base m-0">OpenAI公式ページでは、CodexはChatGPT Plus（月額$20）、Pro、Businessなどの有料プランに利用枠が含まれる形で提供されています。すでにPlusを契約している工務店であれば、そのまま試せます。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. GitHubを使っていない工務店でもCodexは使えますか？</p><p class="text-wa-text text-base m-0">はい。GitHub連携によるクラウド実行だけでなく、デスクトップアプリやCLIを使って手元のパソコン内のフォルダを対象に動かすこともできます。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 自社ホームページの修正をCodexに任せても大丈夫ですか？</p><p class="text-wa-text text-base m-0">HTMLやCSSで構成されたサイトであれば対応しやすいです。ただし本番ファイルを直接上書きせず、コピーや履歴管理の上で見た目を必ず確認してから公開する運用にしてください。</p></div></div>
+        <div class="mt-10 pt-8 border-t border-wa-border"><p class="font-bold text-wa-brand mb-4">関連記事</p><ul class="space-y-2"><li><a href="126-ai-agent-basics.html" class="text-wa-brand hover:underline">工務店のためのAIエージェント入門｜チャットAIとの違いと2026年に知っておきたい全体像</a></li><li><a href="131-ai-agent-hp-lp-update.html" class="text-wa-brand hover:underline">工務店のホームページ更新・見学会LP・コラム運用をAIエージェントで内製化する方法</a></li><li><a href="132-ai-agent-comparison-koumuten.html" class="text-wa-brand hover:underline">Codex・Claude Code・Antigravityを徹底比較｜中小工務店が最初に選ぶべきAIエージェント</a></li></ul></div>
+    </article>
+
+    <div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5">
+        <img src="../HP_profile.webp" alt="木村 拓隆（BuildMate代表）" loading="lazy" style="width:72px;height:72px;object-fit:cover;object-position:top;flex-shrink:0;">
+        <div><p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p><p class="text-[15px] md:text-base text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。現場の実態とシステムの限界を知り尽くした立場から、中小工務店向けのAI・GAS・AIエージェント導入コンサルティングを提供。関西拠点・全国オンライン対応。</p></div>
+    </div>
+
+    <div class="mt-8 bg-white rounded-wa p-8 shadow-sm border border-wa-border text-center">
+        <p class="font-bold text-lg text-wa-brand mb-2">今のChatGPT契約を、もう一段上の業務改善に活かしませんか</p>
+        <p class="text-wa-gray text-base md:text-lg mb-6 leading-relaxed max-w-2xl mx-auto">BuildMateでは、すでにChatGPTを導入している工務店様向けに、CodexやGASを組み合わせた業務自動化の設計を無料相談で整理しています。現場の忙しさに合わせた現実的なステップをご提案します。</p>
+        <a href="../contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-wa-accent hover:opacity-90 text-white rounded-wa font-bold transition-colors"><i data-lucide="mail" class="w-4 h-4"></i>無料相談に申し込む</a>
+    </div>
+
+    <div class="mt-8 text-center"><a href="../news.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-wa-brand text-wa-brand rounded-wa font-bold hover:bg-wa-brand hover:text-white transition-colors">← コラム一覧に戻る</a></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-in">
+      <div class="footer-links">
+        <a href="../news.html">コラム一覧</a>
+        <a href="../faq.html">よくある質問</a>
+        <a href="../about.html">代表プロフィール・事業概要</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../terms.html">利用規約</a>
+        <a href="../law.html">特定商取引法に基づく表記</a>
+      </div>
+      <div class="footer-copy">Copyright © 2026 BuildMate. All rights reserved.</div>
+    </div>
+  </footer>
+<script>lucide.createIcons();</script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+<script src="../motion.js" defer></script>
+</body>
+</html>

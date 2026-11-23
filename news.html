@@ -306,7 +306,7 @@
             allArticles.forEach(a => {
                 counts[a.tag] = (counts[a.tag] || 0) + 1;
             });
-            const categories = ['すべて', 'GAS活用', 'AI活用', '業務効率化', 'アフター', '営業', 'DX', '採用', '事例'];
+            const categories = ['すべて', 'AIエージェント', 'GAS活用', 'AI活用', '業務効率化', 'アフター', '営業', 'DX', '採用', '事例'];
             container.innerHTML = '';
             categories.forEach(cat => {
                 if (!counts[cat]) return;

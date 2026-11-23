@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5ECF52MHF6');</script>
+<meta charset="UTF-8"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../theme-a2.css"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIエージェントで工務店のGAS業務自動化ツールを自社で作る手順｜外注費をかけずに仕組み化 | BuildMate</title>
+<link rel="canonical" href="https://buildmate-ai.com/news/130-ai-agent-gas-automation.html">
+<meta name="description" content="工務店のスプレッドシート・LINE・Chatwork連携（GAS）をCodex・Claude Code・AntigravityなどのAIエージェントで内製化する手順を解説。仕様の伝え方、テスト用シートでの安全検証、現場定着のコツまでまとめます。">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AIエージェントで工務店のGAS業務自動化ツールを自社で作る手順｜外注費をかけずに仕組み化 | BuildMate">
+<meta property="og:description" content="工務店のスプレッドシート・LINE・Chatwork連携（GAS）をCodex・Claude Code・AntigravityなどのAIエージェントで内製化する手順を解説。仕様の伝え方、テスト用シートでの安全検証、現場定着のコツまでまとめます。">
+<meta property="og:url" content="https://buildmate-ai.com/news/130-ai-agent-gas-automation.html">
+<meta property="og:site_name" content="BuildMate">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://buildmate-ai.com/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AIエージェントで工務店のGAS業務自動化ツールを自社で作る手順｜外注費をかけずに仕組み化 | BuildMate">
+<meta name="twitter:description" content="工務店のスプレッドシート・LINE・Chatwork連携（GAS）をCodex・Claude Code・AntigravityなどのAIエージェントで内製化する手順を解説。仕様の伝え方、テスト用シートでの安全検証、現場定着のコツまでまとめます。">
+<meta name="twitter:image" content="https://buildmate-ai.com/ogp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors:{wa:{bg:'#F7F2EA',paper:'#ffffff',text:'#1F2933',gray:'#6B7280',brand:'#24324A',brandHover:'#1A2838',accent:'#24324A',accentHover:'#1A2838',border:'#D4CAB8',gold:'#B99745',purple:'#5C3B8A',cyan:'#38BDF8'}},borderRadius:{'wa':'12px'}}}}</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "AIエージェントで工務店のGAS業務自動化ツールを自社で作る手順｜外注費をかけずに仕組み化", "datePublished": "2026-10-31", "dateModified": "2026-10-31", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-ai.com"}, "description": "工務店のスプレッドシート・LINE・Chatwork連携（GAS）をCodex・Claude Code・AntigravityなどのAIエージェントで内製化する手順を解説。仕様の伝え方、テスト用シートでの安全検証、現場定着のコツまでまとめます。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-ai.com/news/130-ai-agent-gas-automation.html"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "GASのコードはAIエージェントが直接Googleスプレッドシートに書き込んでくれますか？", "acceptedAnswer": {"@type": "Answer", "text": "通常はAIエージェントに手元のフォルダでコードを作成させ、内容を確認したうえでスプレッドシートの『拡張機能 → Apps Script』に貼り付けて保存する運用が最も安全です。慣れてくればclaspなどの公式CLIツールで連携することもできます。"}}, {"@type": "Question", "name": "一度作ったGASツールが途中でエラーになったらどうすればいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "Apps Scriptの『実行数』画面に残るエラーメッセージをコピーしてAIエージェントに渡せば、原因と修正箇所を特定してくれます。最初の仕様メモを残しておくと復旧がさらに早くなります。"}}, {"@type": "Question", "name": "どのAIエージェントがGAS作成に向いていますか？", "acceptedAnswer": {"@type": "Answer", "text": "Codex・Claude Code・Google AntigravityのいずれもGAS（JavaScriptベース）の作成が得意です。Google環境中心で無料から試すならAntigravity、ChatGPT契約済みならCodex、複雑な複数ファイル構成ならClaude Codeが扱いやすいです。"}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://buildmate-ai.com/"}, {"@type": "ListItem", "position": 2, "name": "コラム一覧", "item": "https://buildmate-ai.com/news.html"}, {"@type": "ListItem", "position": 3, "name": "AIエージェントでGAS業務自動化ツールを自社で作る手順", "item": "https://buildmate-ai.com/news/130-ai-agent-gas-automation.html"}]}
+</script>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style>
+</head>
+<body class="bm-article-page bg-wa-bg text-wa-text font-sans">
+  <header class="site-header">
+    <div class="header-in">
+      <a href="../index.html" class="site-logo">
+        <span class="site-logo-mark">B</span>
+        <span>BuildMate</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../index.html">ホーム</a>
+        <a href="../services.html">サービス・効果</a>
+        <a href="../ai-guide.html">AI活用入門</a>
+        <a href="../diagnosis.html">AI診断</a>
+        <a href="../gift.html">特典プレゼント</a>
+        <a href="../gas.html">GAS活用事例</a>
+        <a href="../contact.html" class="nav-cta">無料相談</a>
+      </nav>
+      <button id="mobile-menu-btn" class="mobile-toggle" aria-label="メニューを開く">
+        <i data-lucide="menu" width="28" height="28"></i>
+      </button>
+    </div>
+  </header>
+
+  <div id="mobile-menu">
+    <button class="mm-close" onclick="closeMobileMenu()">✕ 閉じる</button>
+    <a href="../index.html" onclick="closeMobileMenu()">ホーム</a>
+    <a href="../services.html" onclick="closeMobileMenu()">サービス・効果</a>
+    <a href="../ai-guide.html" onclick="closeMobileMenu()">AI活用入門</a>
+    <a href="../diagnosis.html" onclick="closeMobileMenu()">AI診断</a>
+    <a href="../gift.html" onclick="closeMobileMenu()">特典プレゼント</a>
+    <a href="../gas.html" onclick="closeMobileMenu()">GAS活用事例</a>
+    <a href="../about.html" onclick="closeMobileMenu()">代表プロフィール・事業概要</a>
+    <a href="../contact.html" class="mm-cta" onclick="closeMobileMenu()">無料相談</a>
+  </div>
+
+  <main class="max-w-[800px] mx-auto px-6 pt-12 pb-16">
+    <nav class="text-sm text-wa-gray mb-8"><a href="../index.html" class="hover:text-wa-brand">ホーム</a><span class="mx-2">/</span><a href="../news.html" class="hover:text-wa-brand">コラム一覧</a><span class="mx-2">/</span><span>AIエージェントでGAS業務自動化ツールを自社で作る手順</span></nav>
+    <div class="flex flex-wrap items-center gap-2 mb-4">
+        <span class="inline-block bg-wa-brand text-white text-sm font-bold px-4 py-1 rounded-full">AIエージェント</span>
+        <span class="inline-block bg-wa-accent text-white text-sm font-bold px-4 py-1 rounded-full">GAS活用</span>
+    </div>
+    <h1 class="break-keep text-balance font-serif text-2xl md:text-3xl font-bold text-wa-text mb-4 leading-snug">AIエージェントで工務店のGAS自動化を自社で作る手順<br>外注費をかけずに現場の仕組みを整える</h1>
+    <div class="flex items-center gap-4 text-sm text-wa-gray mb-8">
+        <span class="flex items-center gap-1"><i data-lucide="user" class="w-4 h-4"></i>木村 拓隆</span>
+        <span class="flex items-center gap-1 font-mono"><i data-lucide="calendar" class="w-4 h-4"></i>2026.10.31</span>
+    </div>
+    <div class="mb-10 rounded-wa overflow-hidden"><img src="../images/aiagent_sum.png" alt="AIエージェントで工務店のGAS業務自動化ツールを自社で作る手順｜外注費をかけずに仕組み化" class="w-full object-cover"></div>
+
+    <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
+
+        <p class="font-bold text-xl mb-6 text-wa-brand">「ChatGPTにGASのコードを書かせたけれど、エラーが出てそのまま放置してしまった」という声はよく聞きます。</p>
+        <p class="mb-4 text-wa-text leading-relaxed">Google Apps Script（GAS）を使えば、定期点検のリマインド通知、来場アンケートの集計、週次の経営サマリー配信など、工務店の事務作業を追加ソフト代ゼロで自動化できます。ただ、従来のチャットAIに1回コードを書かせただけでは、シートの列構成が少しでも違うとエラーになり、原因がわからず挫折しがちでした。</p>
+        <p class="mb-8 text-wa-text leading-relaxed">そこで効いてくるのが、Codex・Claude Code・Google AntigravityといったAIエージェントです。手元のファイル構成や設計メモを踏まえてコード全体を整理し、エラーログを渡せば原因箇所をピンポイントで修正できます。この記事では、中小工務店がAIエージェントを使ってGASツールを安全に自作する手順を4ステップで解説します。</p>
+
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">AIエージェント×GASで作りやすい工務店業務</h2>
+        <p class="mb-4">いきなり複雑な原価管理システムを作る必要はありません。まずは次のような「入力元と通知先がはっきりしている業務」から始めると成功率が上がります。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/90 bg-wa-bg p-5 rounded-lg">
+          <li><strong>定期点検・アフター時期の自動リマインド</strong>：引渡し日の一覧シートから「1年点検・2年点検の30日前」の案件を抽出し、担当者のChatworkやメールへ通知する。</li>
+          <li><strong>問い合わせ・来場予約の即時通知</strong>：Googleフォームに回答が入った瞬間、LINEやChatworkへ担当者宛てに要点を飛ばす。</li>
+          <li><strong>未対応タスク・提出期限のチェック</strong>：確認申請や補助金手続きの期限が近づいた案件だけ毎朝ピックアップする。</li>
+        </ul>
+
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 1：コードを書く前に「シートの列」と「やりたいこと」をメモにする</h2>
+        <p class="mb-4">AIエージェントが最もミスを減らせるのは、最初に前提条件をテキストファイル（例：<code>spec.md</code>）へ書き出したときです。専門用語は不要で、次の4点だけを箇条書きにします。</p>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/90 bg-wa-bg p-5 rounded-lg">
+          <li>使うシート名と列の並び（例：A列＝お客様名、B列＝引渡し日、C列＝担当者、D列＝通知済みフラグ）</li>
+          <li>いつ動かしたいか（例：毎週月曜の朝8時）</li>
+          <li>何をしてほしいか（例：引渡し日から1年後の30日前に該当する行だけ通知し、D列に「済」と書く）</li>
+          <li>やってはいけないこと（例：すでに「済」が入っている行には二度送らない、行の削除はしない）</li>
+        </ul>
+
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 2：AIエージェントに「設計案 → コード作成」の順で頼む</h2>
+        <p class="mb-4">いきなり完成コードを書かせるのではなく、「まず処理の流れを日本語で整理して。問題なければGASのコードと設定手順を作って」と2段階で進めます。Google Antigravityの <code>/plan</code> 機能や、Claude Codeの計画確認を使うと、意図のズレを早い段階で潰せます。</p>
+
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 3：必ず「テスト用コピーシート」と自分宛て通知で検証する</h2>
+        <p class="mb-4">ここが一番大事なポイントです。稼働中の顧客台帳や全員が見るChatworkグループに直接つなぐ前に、<strong>ダミーデータ（山田太郎様など架空の3件）を入れたコピーシート</strong>と、<strong>社長1人だけのテスト用チャット</strong>で動かします。</p>
+        <p class="mb-4">エラーが出た場合は、Apps Scriptの実行ログをそのままAIエージェントへ貼り付けて「このエラーの原因と修正版を出して」と伝えれば、どこが違っていたのかを説明しながら直してくれます。</p>
+
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Step 4：本番反映と「1枚マニュアル」の作成</h2>
+        <p class="mb-4">テストで3回続けて想定通りに動いたら本番シートへ移します。このとき、同じAIエージェントに「社内の事務担当者向けに、このGASが何をしているか・止まったときにどこを見ればよいかをA4一枚分の手順書にまとめて」と頼んでおくと、作った本人以外も運用できるようになります。</p>
+
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">現場に定着させるための注意点</h2>
+        <p class="mb-4">GASの仕組み自体は自動化できても、元になるスプレッドシートに「引渡し日」や「担当者」が入力されていなければ通知は飛びません。ツールを作って終わりにせず、「どのタイミングで誰が1行入力するか」という現場の動線まで決めて初めて、毎月数時間の削減が定着します。</p>
+
+        <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">外注すると1本あたり十数万円かかる小さな自動化ツールでも、仕様の整理さえ丁寧に行えば自社で作れる時代になりました。浮いたお金と時間は、現場の品質向上やお施主様へのフォローに回せます。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）</div>
+
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/90 bg-wa-bg p-5 rounded-lg">
+          <li>AIエージェントを使えば、仕様整理・GASコード作成・エラー修正・運用マニュアル作成まで一気通貫で進められる</li>
+          <li>最初は「シートの列構成」と「やってはいけないこと」を短いメモにまとめるのが成功の近道</li>
+          <li>必ずダミーデータのコピーシートと個人テスト環境で動作確認してから本番へ反映する</li>
+        </ul>
+
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
+        <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. GASのコードはAIエージェントが直接Googleスプレッドシートに書き込んでくれますか？</p><p class="text-wa-text text-base m-0">通常はAIエージェントに手元のフォルダでコードを作成させ、内容を確認したうえでスプレッドシートの『拡張機能 → Apps Script』に貼り付けて保存する運用が最も安全です。慣れてくればclaspなどの公式CLIツールで連携することもできます。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 一度作ったGASツールが途中でエラーになったらどうすればいいですか？</p><p class="text-wa-text text-base m-0">Apps Scriptの『実行数』画面に残るエラーメッセージをコピーしてAIエージェントに渡せば、原因と修正箇所を特定してくれます。最初の仕様メモを残しておくと復旧がさらに早くなります。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. どのAIエージェントがGAS作成に向いていますか？</p><p class="text-wa-text text-base m-0">Codex・Claude Code・Google AntigravityのいずれもGAS（JavaScriptベース）の作成が得意です。Google環境中心で無料から試すならAntigravity、ChatGPT契約済みならCodex、複雑な複数ファイル構成ならClaude Codeが扱いやすいです。</p></div></div>
+        <div class="mt-10 pt-8 border-t border-wa-border"><p class="font-bold text-wa-brand mb-4">関連記事</p><ul class="space-y-2"><li><a href="117-gas-guide.html" class="text-wa-brand hover:underline">工務店のGAS（Google Apps Script）活用完全ガイド【2026年版】</a></li><li><a href="125-weekly-summary-gas.html" class="text-wa-brand hover:underline">工務店の週次経営サマリーをGASで自動生成してChatworkに配信する方法</a></li><li><a href="120-task-reminder-gas.html" class="text-wa-brand hover:underline">工務店の未対応タスクリマインドをGASで自動化してChatwork・LINEに通知する方法</a></li></ul></div>
+    </article>
+
+    <div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5">
+        <img src="../HP_profile.webp" alt="木村 拓隆（BuildMate代表）" loading="lazy" style="width:72px;height:72px;object-fit:cover;object-position:top;flex-shrink:0;">
+        <div><p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p><p class="text-[15px] md:text-base text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。現場の実態とシステムの限界を知り尽くした立場から、中小工務店向けのAI・GAS・AIエージェント導入コンサルティングを提供。関西拠点・全国オンライン対応。</p></div>
+    </div>
+
+    <div class="mt-8 bg-white rounded-wa p-8 shadow-sm border border-wa-border text-center">
+        <p class="font-bold text-lg text-wa-brand mb-2">自社で回せるGAS自動化の設計、一緒に整理しませんか</p>
+        <p class="text-wa-gray text-base md:text-lg mb-6 leading-relaxed max-w-2xl mx-auto">BuildMateでは、工務店の既存スプレッドシートを見ながら「どの業務からGAS化すべきか」「AIエージェントにどう指示を出せばよいか」を無料相談で具体的にアドバイスしています。</p>
+        <a href="../contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-wa-accent hover:opacity-90 text-white rounded-wa font-bold transition-colors"><i data-lucide="mail" class="w-4 h-4"></i>無料相談に申し込む</a>
+    </div>
+
+    <div class="mt-8 text-center"><a href="../news.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-wa-brand text-wa-brand rounded-wa font-bold hover:bg-wa-brand hover:text-white transition-colors">← コラム一覧に戻る</a></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-in">
+      <div class="footer-links">
+        <a href="../news.html">コラム一覧</a>
+        <a href="../faq.html">よくある質問</a>
+        <a href="../about.html">代表プロフィール・事業概要</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../terms.html">利用規約</a>
+        <a href="../law.html">特定商取引法に基づく表記</a>
+      </div>
+      <div class="footer-copy">Copyright © 2026 BuildMate. All rights reserved.</div>
+    </div>
+  </footer>
+<script>lucide.createIcons();</script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+<script src="../motion.js" defer></script>
+</body>
+</html>

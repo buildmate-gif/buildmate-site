@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ECF52MHF6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5ECF52MHF6');</script>
+<meta charset="UTF-8"><link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../theme-a2.css"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Codeとは？中小工務店がWeb・業務ツールを自社で整えるための入門ガイド | BuildMate</title>
+<link rel="canonical" href="https://buildmate-ai.com/news/128-claude-code-koumuten-guide.html">
+<meta name="description" content="Anthropic社のAIエージェント「Claude Code」の特徴と使い方を工務店向けに解説。複数ファイルの整合性を保った編集力や権限設定による安全な運用、Web更新・GAS内製化への活かし方を紹介します。">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Claude Codeとは？中小工務店がWeb・業務ツールを自社で整えるための入門ガイド | BuildMate">
+<meta property="og:description" content="Anthropic社のAIエージェント「Claude Code」の特徴と使い方を工務店向けに解説。複数ファイルの整合性を保った編集力や権限設定による安全な運用、Web更新・GAS内製化への活かし方を紹介します。">
+<meta property="og:url" content="https://buildmate-ai.com/news/128-claude-code-koumuten-guide.html">
+<meta property="og:site_name" content="BuildMate">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://buildmate-ai.com/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude Codeとは？中小工務店がWeb・業務ツールを自社で整えるための入門ガイド | BuildMate">
+<meta name="twitter:description" content="Anthropic社のAIエージェント「Claude Code」の特徴と使い方を工務店向けに解説。複数ファイルの整合性を保った編集力や権限設定による安全な運用、Web更新・GAS内製化への活かし方を紹介します。">
+<meta name="twitter:image" content="https://buildmate-ai.com/ogp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/lucide@latest"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Noto Sans JP"','sans-serif'],serif:['"Noto Serif JP"','serif']},colors:{wa:{bg:'#F7F2EA',paper:'#ffffff',text:'#1F2933',gray:'#6B7280',brand:'#24324A',brandHover:'#1A2838',accent:'#24324A',accentHover:'#1A2838',border:'#D4CAB8',gold:'#B99745',purple:'#5C3B8A',cyan:'#38BDF8'}},borderRadius:{'wa':'12px'}}}}</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Claude Codeとは？中小工務店がWeb・業務ツールを自社で整えるための入門ガイド", "datePublished": "2026-09-25", "dateModified": "2026-09-25", "author": {"@type": "Person", "name": "木村 拓隆", "jobTitle": "BuildMate代表・AI活用伴走者", "description": "元・施工管理（1,200件以上）、SaaS営業・導入支援（200社以上）を経て中小工務店向けAIコンサルティングを提供。"}, "publisher": {"@type": "Organization", "name": "BuildMate（ビルドメイト）", "url": "https://buildmate-ai.com"}, "description": "Anthropic社のAIエージェント「Claude Code」の特徴と使い方を工務店向けに解説。複数ファイルの整合性を保った編集力や権限設定による安全な運用、Web更新・GAS内製化への活かし方を紹介します。", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://buildmate-ai.com/news/128-claude-code-koumuten-guide.html"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "黒い画面（ターミナル）が苦手でもClaude Codeは使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "はい。Claude Codeはターミナルだけでなく、ClaudeのデスクトップアプリやWeb、VS Code拡張機能からも利用できます。最初は画面を見ながら操作できるデスクトップアプリから始めるのがおすすめです。"}}, {"@type": "Question", "name": "CLAUDE.mdとは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "作業フォルダに置いておく『AI向けの業務マニュアル』のようなテキストファイルです。会社のブランドカラー、文章のトーン、触ってはいけないファイルなどを書いておくと、毎回指示しなくてもルールを守って動いてくれます。"}}, {"@type": "Question", "name": "社内の機密ファイルがあるパソコンで使っても大丈夫ですか？", "acceptedAnswer": {"@type": "Answer", "text": "作業対象のフォルダを限定し、お施主様の個人情報や財務データが入ったフォルダにはアクセスさせない運用が基本です。権限設定で実行前確認をオンにしておくと、意図しない操作を防げます。"}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://buildmate-ai.com/"}, {"@type": "ListItem", "position": 2, "name": "コラム一覧", "item": "https://buildmate-ai.com/news.html"}, {"@type": "ListItem", "position": 3, "name": "Claude Codeの工務店向け入門ガイド", "item": "https://buildmate-ai.com/news/128-claude-code-koumuten-guide.html"}]}
+</script>
+<style>.text-balance{text-wrap:balance}.text-pretty{text-wrap:pretty}.break-keep{word-break:keep-all;line-break:strict}</style>
+</head>
+<body class="bm-article-page bg-wa-bg text-wa-text font-sans">
+  <header class="site-header">
+    <div class="header-in">
+      <a href="../index.html" class="site-logo">
+        <span class="site-logo-mark">B</span>
+        <span>BuildMate</span>
+      </a>
+      <nav class="site-nav">
+        <a href="../index.html">ホーム</a>
+        <a href="../services.html">サービス・効果</a>
+        <a href="../ai-guide.html">AI活用入門</a>
+        <a href="../diagnosis.html">AI診断</a>
+        <a href="../gift.html">特典プレゼント</a>
+        <a href="../gas.html">GAS活用事例</a>
+        <a href="../contact.html" class="nav-cta">無料相談</a>
+      </nav>
+      <button id="mobile-menu-btn" class="mobile-toggle" aria-label="メニューを開く">
+        <i data-lucide="menu" width="28" height="28"></i>
+      </button>
+    </div>
+  </header>
+
+  <div id="mobile-menu">
+    <button class="mm-close" onclick="closeMobileMenu()">✕ 閉じる</button>
+    <a href="../index.html" onclick="closeMobileMenu()">ホーム</a>
+    <a href="../services.html" onclick="closeMobileMenu()">サービス・効果</a>
+    <a href="../ai-guide.html" onclick="closeMobileMenu()">AI活用入門</a>
+    <a href="../diagnosis.html" onclick="closeMobileMenu()">AI診断</a>
+    <a href="../gift.html" onclick="closeMobileMenu()">特典プレゼント</a>
+    <a href="../gas.html" onclick="closeMobileMenu()">GAS活用事例</a>
+    <a href="../about.html" onclick="closeMobileMenu()">代表プロフィール・事業概要</a>
+    <a href="../contact.html" class="mm-cta" onclick="closeMobileMenu()">無料相談</a>
+  </div>
+
+  <main class="max-w-[800px] mx-auto px-6 pt-12 pb-16">
+    <nav class="text-sm text-wa-gray mb-8"><a href="../index.html" class="hover:text-wa-brand">ホーム</a><span class="mx-2">/</span><a href="../news.html" class="hover:text-wa-brand">コラム一覧</a><span class="mx-2">/</span><span>Claude Codeの工務店向け入門ガイド</span></nav>
+    <div class="flex flex-wrap items-center gap-2 mb-4">
+        <span class="inline-block bg-wa-brand text-white text-sm font-bold px-4 py-1 rounded-full">AIエージェント</span>
+        <span class="inline-block bg-wa-accent text-white text-sm font-bold px-4 py-1 rounded-full">AI活用</span>
+    </div>
+    <h1 class="break-keep text-balance font-serif text-2xl md:text-3xl font-bold text-wa-text mb-4 leading-snug">Claude Codeとは？<br>中小工務店がWeb・業務ツールを自社で整える入門ガイド</h1>
+    <div class="flex items-center gap-4 text-sm text-wa-gray mb-8">
+        <span class="flex items-center gap-1"><i data-lucide="user" class="w-4 h-4"></i>木村 拓隆</span>
+        <span class="flex items-center gap-1 font-mono"><i data-lucide="calendar" class="w-4 h-4"></i>2026.09.25</span>
+    </div>
+    <div class="mb-10 rounded-wa overflow-hidden"><img src="../images/aiagent_sum.png" alt="Claude Codeとは？中小工務店がWeb・業務ツールを自社で整えるための入門ガイド" class="w-full object-cover"></div>
+
+    <article class="bg-white rounded-wa p-8 md:p-12 shadow-sm border border-wa-border prose prose-lg max-w-none text-wa-text leading-loose">
+
+        <p class="font-bold text-xl mb-6 text-wa-brand">「あちこちのファイルを整合性を取りながら直す」作業は、人が一番ミスをしやすいところです。</p>
+        <p class="mb-4 text-wa-text leading-relaxed">ホームページに新しいメニューを1つ追加するだけでも、トップページ・サービスページ・お問い合わせページ・スマートフォン用メニューと、何十ものファイルを揃えて直す必要があります。こうした「全体を見渡して矛盾なく整える作業」に強いAIエージェントが、Anthropic社の<strong>Claude Code（クロードコード）</strong>です。</p>
+        <p class="mb-8 text-wa-text leading-relaxed"><a href="https://claude.com/product/claude-code" target="_blank" rel="noopener noreferrer" class="text-wa-brand underline">Claude Code公式ページ</a>にある通り、ターミナル（CLI）だけでなくデスクトップアプリ、Web、VS Code・JetBrains拡張、Slackからも利用できます。この記事では、中小工務店の実務目線でClaude Codeの強みと安全な使い方を整理します。</p>
+
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">Claude Codeが工務店の内製化に向いている理由</h2>
+        <h3 class="font-bold text-lg mt-6 mb-2 text-wa-text">1. フォルダ全体の構造を自分で調べてから動く</h3>
+        <p class="mb-4">従来のAIでは「このファイルとこのファイルを読んで」と人間が毎回指定する必要がありました。Claude Codeはプロジェクト全体から必要な箇所を自分で探し出し、デザインや命名ルールを崩さずに複数ファイルをまとめて編集できます。</p>
+        <h3 class="font-bold text-lg mt-6 mb-2 text-wa-text">2. 日本語のニュアンスと文脈のくみ取りが丁寧</h3>
+        <p class="mb-4">工務店のホームページや案内資料では、「専門用語を噛み砕く」「売り込み感を出さない」「地域のお施主様に寄り添う」といった微妙なトーンが大切です。Claude系モデルは日本語の文脈理解が自然で、社内のルールファイル（<code>CLAUDE.md</code>）に会社の考え方や禁止表現を書いておけば、それに沿って作業してくれます。</p>
+        <h3 class="font-bold text-lg mt-6 mb-2 text-wa-text">3. 権限モードで「勝手に実行される」を防げる</h3>
+        <p class="mb-4">業務で使ううえで一番心配なのは「よくわからないコマンドを勝手に実行されないか」という点です。Claude Codeは権限設定（Permission modes）や許可・拒否ルールを細かく指定できるため、「ファイルの書き換えやコマンド実行の前には必ず人間に確認を求める」設定にしておけば、内容を見てから承認できます。</p>
+
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">工務店での具体的な活用シーン</h2>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/90 bg-wa-bg p-5 rounded-lg">
+          <li><strong>ホームページの一括メンテナンス</strong>：住所・電話番号・営業時間・キャンペーン期間の変更を全ページ漏れなく反映し、リンク切れがないかチェックさせる。</li>
+          <li><strong>社内専用ミニアプリの作成</strong>：見積りの概算シミュレーション画面や、現場チェックリストなど、ブラウザだけで動く簡単な社内ツールをHTML単体で作らせる。</li>
+          <li><strong>GASやExcelマクロの引き継ぎ・改修</strong>：過去に作ったけれど中身がわからなくなった自動化コードを読み込ませ、「今どういう動きをしているか」を日本語で解説させてから修正する。</li>
+        </ul>
+
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">導入コストと始め方</h2>
+        <p class="mb-4">Claude Codeは、個人のClaude Pro / Max / Ultraプラン、チーム向けのTeamプラン（年額契約時1席あたり月額$20〜）、またはAPIの従量課金で利用できます。まずは1名分のアカウントでデスクトップアプリやVS Code拡張から試し、社内のルールをまとめた <code>CLAUDE.md</code> を1枚置くところから始めると失敗しにくくなります。</p>
+
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">うまく使うためのコツ：最初に「やってほしくないこと」を書く</h2>
+        <p class="mb-4">Claude Codeに作業を頼むときは、「何をしたいか」だけでなく<strong>「触ってはいけないファイル」「変えてはいけないデザイン」「守ってほしい言葉遣い」</strong>を最初に伝えておくのがコツです。現場で協力業者さんに図面と注意事項を最初に渡しておくのと同じで、前提が明確なほど手戻りが減ります。</p>
+
+        <div class="bg-wa-bg p-6 rounded-lg border border-wa-brand/20 my-8 italic text-wa-gray">以前なら「担当者が辞めたら誰も直せないブラックボックス」になっていた社内ツールやHPも、中身を日本語で説明させながら直せる時代になりました。属人化を減らす道具としても非常に優秀です。 —— BuildMate代表・木村拓隆（元・施工管理1,200件以上）</div>
+
+        <h2 class="font-bold text-xl mt-8 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">この記事のまとめ</h2>
+        <ul class="list-disc pl-5 mb-6 space-y-2 text-wa-text/90 bg-wa-bg p-5 rounded-lg">
+          <li>Claude Codeはフォルダ全体を理解し、複数ファイルにまたがる修正を矛盾なく進められる</li>
+          <li>デスクトップアプリ・VS Code・ターミナルなど使い慣れた環境から利用でき、権限設定で安全に制御できる</li>
+          <li>ルールファイル（CLAUDE.md）に会社のトーンや禁止事項を書いておくと、工務店らしい品質を保ちやすい</li>
+        </ul>
+
+        <h2 class="font-bold text-xl mt-10 mb-4 text-wa-brand border-b-2 border-wa-brand/20 pb-2">よくある質問</h2>
+        <div class="space-y-6"><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 黒い画面（ターミナル）が苦手でもClaude Codeは使えますか？</p><p class="text-wa-text text-base m-0">はい。Claude Codeはターミナルだけでなく、ClaudeのデスクトップアプリやWeb、VS Code拡張機能からも利用できます。最初は画面を見ながら操作できるデスクトップアプリから始めるのがおすすめです。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. CLAUDE.mdとは何ですか？</p><p class="text-wa-text text-base m-0">作業フォルダに置いておく『AI向けの業務マニュアル』のようなテキストファイルです。会社のブランドカラー、文章のトーン、触ってはいけないファイルなどを書いておくと、毎回指示しなくてもルールを守って動いてくれます。</p></div><div class="bg-wa-bg p-5 rounded-lg"><p class="font-bold text-wa-brand mb-2">Q. 社内の機密ファイルがあるパソコンで使っても大丈夫ですか？</p><p class="text-wa-text text-base m-0">作業対象のフォルダを限定し、お施主様の個人情報や財務データが入ったフォルダにはアクセスさせない運用が基本です。権限設定で実行前確認をオンにしておくと、意図しない操作を防げます。</p></div></div>
+        <div class="mt-10 pt-8 border-t border-wa-border"><p class="font-bold text-wa-brand mb-4">関連記事</p><ul class="space-y-2"><li><a href="126-ai-agent-basics.html" class="text-wa-brand hover:underline">工務店のためのAIエージェント入門｜チャットAIとの違いと2026年に知っておきたい全体像</a></li><li><a href="130-ai-agent-gas-automation.html" class="text-wa-brand hover:underline">AIエージェントで工務店のGAS業務自動化ツールを自社で作る手順</a></li><li><a href="132-ai-agent-comparison-koumuten.html" class="text-wa-brand hover:underline">Codex・Claude Code・Antigravityを徹底比較｜中小工務店が最初に選ぶべきAIエージェント</a></li></ul></div>
+    </article>
+
+    <div class="mt-8 bg-white rounded-wa p-6 shadow-sm border border-wa-border flex items-start gap-5">
+        <img src="../HP_profile.webp" alt="木村 拓隆（BuildMate代表）" loading="lazy" style="width:72px;height:72px;object-fit:cover;object-position:top;flex-shrink:0;">
+        <div><p class="font-bold text-wa-text mb-1">木村 拓隆（BuildMate代表）</p><p class="text-[15px] md:text-base text-wa-gray leading-relaxed">元・施工管理として1,200件以上の現場を経験後、SaaS企業で200社以上の業務効率化支援に従事。現場の実態とシステムの限界を知り尽くした立場から、中小工務店向けのAI・GAS・AIエージェント導入コンサルティングを提供。関西拠点・全国オンライン対応。</p></div>
+    </div>
+
+    <div class="mt-8 bg-white rounded-wa p-8 shadow-sm border border-wa-border text-center">
+        <p class="font-bold text-lg text-wa-brand mb-2">「自社で直せる体制」を無理なく作りませんか</p>
+        <p class="text-wa-gray text-base md:text-lg mb-6 leading-relaxed max-w-2xl mx-auto">BuildMateでは、Claude CodeなどのAIエージェントを使った社内ツール整備やホームページ運用の伴走支援を行っています。まずは現状のお困りごとを無料相談でお聞かせください。</p>
+        <a href="../contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-wa-accent hover:opacity-90 text-white rounded-wa font-bold transition-colors"><i data-lucide="mail" class="w-4 h-4"></i>無料相談に申し込む</a>
+    </div>
+
+    <div class="mt-8 text-center"><a href="../news.html" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-wa-brand text-wa-brand rounded-wa font-bold hover:bg-wa-brand hover:text-white transition-colors">← コラム一覧に戻る</a></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-in">
+      <div class="footer-links">
+        <a href="../news.html">コラム一覧</a>
+        <a href="../faq.html">よくある質問</a>
+        <a href="../about.html">代表プロフィール・事業概要</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../terms.html">利用規約</a>
+        <a href="../law.html">特定商取引法に基づく表記</a>
+      </div>
+      <div class="footer-copy">Copyright © 2026 BuildMate. All rights reserved.</div>
+    </div>
+  </footer>
+<script>lucide.createIcons();</script>
+<script id="buildmate-mobile-menu-script">
+(function() {
+    function getMobileMenu() {
+        return document.getElementById('mobile-menu');
+    }
+    window.closeMobileMenu = function() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'none';
+        document.body.style.overflow = '';
+    };
+    function openMobileMenu() {
+        const menu = getMobileMenu();
+        if (!menu) return;
+        menu.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('mobile-menu-btn');
+        if (button) {
+            button.addEventListener('click', openMobileMenu);
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeMobileMenu();
+        });
+    });
+})();
+</script>
+<script src="../motion.js" defer></script>
+</body>
+</html>
