@@ -47,6 +47,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="theme-a2.css">
+  <style>
+    .overview-card { padding: 16px 36px; }
+    @media (max-width: 640px) {
+      .overview-card { padding: 8px 20px; }
+      .clean-table.is-kv,
+      .clean-table.is-kv tbody,
+      .clean-table.is-kv tr,
+      .clean-table.is-kv th,
+      .clean-table.is-kv td {
+        display: block;
+        width: 100% !important;
+      }
+      .clean-table.is-kv th {
+        padding: 16px 0 4px !important;
+        border-bottom: none !important;
+        font-size: 14px !important;
+        letter-spacing: 0.04em;
+      }
+      .clean-table.is-kv td {
+        padding: 0 0 16px !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -172,7 +195,7 @@
           <div class="row-list-item">
             <span class="num">03</span>
             <h3 class="jp-keep">支援終了後も<wbr>自走できる環境を残す</h3>
-            <p>徹底した「他者優先」で、自分の得意なツールを売り込むのではなく「相手（御社のスタッフ様と、その先にいるお施主様）にとって何が一番良いか」を常に基準にします。支援が終わったあとも、ブラックボックスにならず自分たちの力で回し続けられる仕組みを残します。</p>
+            <p>徹底した「他者優先」で、自分の得意なツールを売り込むのではなく「相手（貴社のスタッフ様と、その先にいるお施主様）にとって何が一番良いか」を常に基準にします。支援が終わったあとも、ブラックボックスにならず自分たちの力で回し続けられる仕組みを残します。</p>
           </div>
         </div>
       </div>
@@ -183,8 +206,8 @@
         <span class="eyebrow">OVERVIEW</span>
         <h2 class="h2" style="margin-bottom:32px;">事業概要</h2>
 
-        <div class="surface-paper" style="padding:16px 36px;">
-          <table class="clean-table">
+        <div class="surface-paper overview-card">
+          <table class="clean-table is-kv">
             <tbody>
               <tr>
                 <th style="width:200px; color:var(--brand); font-weight:700;">屋号</th>
@@ -227,7 +250,7 @@
         </div>
 
         <div class="surface-paper" style="margin-top:40px; text-align:center; padding:48px 36px;">
-          <h2 class="h2">まずは、御社の現場のお話を聞かせてください</h2>
+          <h2 class="h2">まずは、貴社の現場のお話を聞かせてください</h2>
           <p class="body-text" style="max-width:600px; margin:0 auto 32px;">
             「何から手をつければいいかわからない」という段階でのご相談が一番多いです。無理な勧誘は一切いたしませんので、お気軽にお声がけください。
           </p>

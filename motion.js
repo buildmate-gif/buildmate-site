@@ -198,7 +198,7 @@
     box.innerHTML =
       '<span class="bm-article-cta-eyebrow">NEXT STEP / 自社の業務に当てはめてみる</span>' +
       '<h2 class="bm-article-cta-title">「うちの場合は何から始めるべき？」を整理しませんか</h2>' +
-      '<p class="bm-article-cta-text">高額な専用システムは不要です。まずは1分の無料診断や導入効果の試算から、御社に合うムリのない進め方を確認してみてください。</p>' +
+      '<p class="bm-article-cta-text">高額な専用システムは不要です。まずは1分の無料診断や導入効果の試算から、貴社に合うムリのない進め方を確認してみてください。</p>' +
       '<div class="bm-article-cta-grid">' +
         '<a href="' + base + 'diagnosis.html" class="bm-article-cta-btn">' +
           '<span class="bm-article-cta-sub">1分で完了・無料</span>' +
@@ -589,7 +589,7 @@
                     action: function () {
                       state.detail = '少人数の会社でも効果があるか知りたい';
                       addBotMessage(
-                        'むしろ<strong>1〜10名ほどの少人数工務店様こそ効果が大きい</strong>です！「事務員をもう1人雇うコスト」をかけずに社長の時間を戻せますよ。<br>まず30秒のシミュレーターで御社の人数を入れて試してみてください。',
+                        'むしろ<strong>1〜10名ほどの少人数工務店様こそ効果が大きい</strong>です！「事務員をもう1人雇うコスト」をかけずに社長の時間を戻せますよ。<br>まず30秒のシミュレーターで貴社の人数を入れて試してみてください。',
                         null,
                         { label: '導入効果シミュレーターで試算する →', url: 'services.html#roi-simulator' },
                         [
