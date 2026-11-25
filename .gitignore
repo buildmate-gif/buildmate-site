@@ -5,3 +5,9 @@
 *.md
 scripts/
 news/*.xlsx
+
+# 試作・作業用ファイル（本番へ誤公開しない）
+design-preview/
+buildmate-journal/
+line-assets/
+*.pptx
